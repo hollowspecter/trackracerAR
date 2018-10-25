@@ -18,7 +18,6 @@ public class ARManager : MonoBehaviour
     /// the application to avoid per-frame allocations.
     /// </summary>
     private List<DetectedPlane> m_AllPlanes = new List<DetectedPlane> ();
-
     private ReadOnlyReactiveProperty<bool> ShowSearchingUI { get; set; }
 
     private GameObject m_Snackbar;
@@ -41,11 +40,13 @@ public class ARManager : MonoBehaviour
 
     private void Update ()
     {
+#if UNITY_ANDROID
         _UpdateApplicationLifecycle ();
 
         Session.GetTrackables<DetectedPlane> ( m_AllPlanes );
 
         _ShowHideSearchingForPlaneUI ();
+#endif
     }
 
     /// <summary>
