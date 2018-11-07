@@ -6,15 +6,15 @@ using Zenject;
 public class StateManager : MonoBehaviour
 {
     [Inject]
-    private RootStateMachine m_stateMachine;
+    private IRootStateMachine m_stateMachine;
 
     private void Start ()
     {
-        m_stateMachine.EnterState ();
+        m_stateMachine.IEnterState ();
     }
 
     private void Update ()
     {
-        m_stateMachine.UpdateActive ( Time.deltaTime );
+        m_stateMachine.IUpdateActive ( Time.deltaTime );
     }
 }

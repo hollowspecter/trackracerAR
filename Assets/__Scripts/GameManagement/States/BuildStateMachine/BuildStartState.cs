@@ -16,7 +16,7 @@ public class BuildStartState : State, IBuildStartState
 
     public override void EnterState ()
     {
-        Debug.Log ( "Entered RaceOverState" );
+        Debug.Log ( "Entered BuildStartState" );
     }
 
     public override void ExitState ()

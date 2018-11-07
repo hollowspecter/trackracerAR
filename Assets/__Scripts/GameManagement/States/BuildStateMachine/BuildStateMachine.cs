@@ -16,10 +16,12 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
 
     public override void EnterState ()
     {
-        Debug.Log ( "Entered BuildState" );
+        Debug.Log ( "Entered BuildStateMachine" );
+        base.EnterState ();
     }
 
     public override void ExitState ()
     {
+        base.ExitState ();
     }
 }
