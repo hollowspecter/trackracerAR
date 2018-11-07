@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildState : State
+public interface IBuildStateMachine { }
+
+public class BuildStateMachine : StateMachine, IBuildStateMachine
 {
     protected override void Initialise ()
     {

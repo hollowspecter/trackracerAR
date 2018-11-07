@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RacingState : State
+public interface IBuildStartState { }
+
+public class BuildStartState : State, IBuildStartState
 {
     protected override void Initialise ()
     {
@@ -14,7 +16,7 @@ public class RacingState : State
 
     public override void EnterState ()
     {
-        Debug.Log ( "Entered RacingState" );
+        Debug.Log ( "Entered RaceOverState" );
     }
 
     public override void ExitState ()

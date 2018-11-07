@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleARCore;
 
-public class ARStateMachine : StateMachine
+public interface IARStateMachine
+{
+}
+
+public class ARStateMachine : StateMachine, IARStateMachine
 {
     private bool m_isQuitting = false;
 

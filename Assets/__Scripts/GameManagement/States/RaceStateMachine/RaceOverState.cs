@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaceSetupState : State
+public interface IRaceOverState { }
+
+public class RaceOverState : State, IRaceOverState
 {
     protected override void Initialise ()
     {
@@ -14,7 +16,7 @@ public class RaceSetupState : State
 
     public override void EnterState ()
     {
-        Debug.Log ( "Entered RaceSetupState" );
+        Debug.Log ( "Entered RaceOverState" );
     }
 
     public override void ExitState ()

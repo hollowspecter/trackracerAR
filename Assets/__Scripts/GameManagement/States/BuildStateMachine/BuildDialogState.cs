@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaceOverState : State
+public interface IBuildDialogState { }
+
+public class BuildDialogState : State, IBuildDialogState
 {
     protected override void Initialise ()
     {

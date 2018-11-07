@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaceStateMachine : StateMachine
+public interface IRaceStateMachine { }
+
+public class RaceStateMachine : StateMachine, IRaceStateMachine
 {
     public override void EnterState ()
     {

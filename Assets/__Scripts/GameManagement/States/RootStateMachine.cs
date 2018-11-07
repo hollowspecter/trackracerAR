@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RootStateMachine : StateMachine
+public interface IRootStateMachine
+{
+}
+
+public class RootStateMachine : StateMachine, IRootStateMachine
 {
     public override void EnterState ()
     {
