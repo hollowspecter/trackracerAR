@@ -79,10 +79,10 @@ public class StateMachine : State
 
     #region State Functions
 
-    protected override void Initialise () { }
-
     public override void UpdateActive ( double _deltaTime )
     {
+        base.UpdateActive ( _deltaTime );
+
         // no current state? transition to default state
         if ( !IsState ( m_currentState ) )
         {
@@ -95,6 +95,8 @@ public class StateMachine : State
 
     public override void EnterState ()
     {
+        base.EnterState ();
+
         // if there is no current state upon entering this sm
         // enter default state
         if ( !IsState ( m_currentState ) )
@@ -105,6 +107,8 @@ public class StateMachine : State
 
     public override void ExitState ()
     {
+        base.ExitState ();
+
         // if there is a current state upon exiting,
         // make it the defaultstate so you reenter this state
         if ( IsState ( m_currentState ) )
@@ -126,6 +130,23 @@ public class StateMachine : State
     #endregion
 
     #region Helper Functions
+
+    public string GetCurrentStateName ()
+    {
+        if ( !IsState ( m_currentState ) )
+        {
+            return "None";
+        }
+
+        StateMachine sm = m_states [ m_currentState ] as StateMachine;
+        string lowerState = "";
+        if ( sm != null )
+        {
+            lowerState = "/" + sm.GetCurrentStateName ();
+        }
+
+        return System.Enum.GetName ( typeof ( StateName ), m_currentState ) + lowerState;
+    }
 
     /// <returns><c>true</c>, if state is valid, <c>false</c> is statename is NONE.</returns>
     private static bool IsState ( StateName _stateName )

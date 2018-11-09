@@ -6,20 +6,9 @@ public interface IRaceOverState { }
 
 public class RaceOverState : State, IRaceOverState
 {
-    protected override void Initialise ()
-    {
-    }
-
-    public override void UpdateActive ( double _deltaTime )
-    {
-    }
-
     public override void EnterState ()
     {
         Debug.Log ( "Entered RaceOverState" );
-    }
-
-    public override void ExitState ()
-    {
+        base.EnterState ();
     }
 }

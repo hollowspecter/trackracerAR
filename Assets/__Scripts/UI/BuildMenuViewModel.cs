@@ -5,53 +5,63 @@ using DG.Tweening;
 
 public interface IBuildMenuViewModel
 {
-    void Activate ();
-    void Deactivate ();
 }
 
 public class BuildMenuViewModel : MonoBehaviour, IBuildMenuViewModel
 {
-    [Inject ( Id = "Canvas" )]
-    private Transform m_canvas;
-    [Inject]
     private IBuildDialogState m_dialogState;
 
-    private Image m_bg;
-    private Color m_origColor;
+    private Sequence m_sequence;
+    private Image [] m_images;
+    private Text [] m_texts;
 
-    private void Awake ()
+    [Inject]
+    private void Construct ( IBuildDialogState _state )
     {
-        m_bg = GetComponent<Image> ();
-        m_origColor = m_bg.color;
-        transform.SetParent ( m_canvas, false );
+        m_dialogState = _state;
+
+        // Listen for state events
+        ( ( State ) m_dialogState ).m_enteredState += Activate;
+        ( ( State ) m_dialogState ).m_exitedState += Deactivate;
+
+        // turn off this gameobject in case it is active
         gameObject.SetActive ( false );
     }
 
-    public void Activate ()
+
+    #region Unity Functions
+
+    private void Awake ()
     {
-        gameObject.SetActive ( true );
-        FadeIn ();
+        // setup references
+        m_images = GetComponentsInChildren<Image> ();
+        m_texts = GetComponentsInChildren<Text> ();
+
+        // setup tweens
+        m_sequence = DOTween.Sequence ();
+        m_sequence.SetAutoKill ( false );
+        for ( int i = 0; i < m_images.Length; ++i ) m_sequence.Join ( m_images [ i ].DOFade ( 0f, 1f ).From () ); // fade out images
+        for ( int i = 0; i < m_texts.Length; ++i ) m_sequence.Join ( m_texts [ i ].DOFade ( 0f, 1f ).From () ); // fade out textx
+        m_sequence.OnPause ( () => { if ( m_sequence.isBackwards ) gameObject.SetActive ( false ); } ); // turn of GO on complete in backwards
     }
 
-    public void Deactivate ()
-    {
-        FadeOut ();
-    }
+    #endregion
+
+    #region Public Functions
+    #endregion
 
     #region Private Methods
 
-    private void FadeIn ()
+    private void Activate ()
     {
-        m_bg.DOFade ( 0f, 1f ).From ();
+        gameObject.SetActive ( true );
+        m_sequence.PlayForward ();
     }
 
-    private void FadeOut ()
+    private void Deactivate ()
     {
-        m_bg.DOFade ( 0f, 1f ).OnComplete ( () =>
-        {
-            m_bg.color = m_origColor;
-            gameObject.SetActive ( false );
-        } );
+        Debug.Log ( "Deactivate Menu View" );
+        m_sequence.PlayBackwards ();
     }
 
     #endregion

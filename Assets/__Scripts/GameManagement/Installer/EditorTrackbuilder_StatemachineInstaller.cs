@@ -3,14 +3,8 @@ using Zenject;
 
 public class EditorTrackbuilder_StatemachineInstaller : MonoInstaller
 {
-    public GameObject prefabCanvas;
-    public GameObject prefabBuildMenuViewModel;
-
     public override void InstallBindings ()
     {
-        Container.Bind<Transform> ().WithId ( "Canvas" ).FromComponentInNewPrefab ( prefabCanvas ).AsSingle ().NonLazy ();
-        Container.Bind<IBuildMenuViewModel> ().FromComponentInNewPrefab ( prefabBuildMenuViewModel ).AsSingle ().NonLazy ();
-
         InstallMachines ();
     }
 

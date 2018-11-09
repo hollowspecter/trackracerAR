@@ -6,6 +6,7 @@ public interface IRootStateMachine
 {
     void IEnterState ();
     void IUpdateActive ( float _deltaTime );
+    string IGetCurrentStateName ();
 }
 
 public class RootStateMachine : StateMachine, IRootStateMachine
@@ -19,6 +20,11 @@ public class RootStateMachine : StateMachine, IRootStateMachine
     public void IEnterState ()
     {
         EnterState ();
+    }
+
+    public string IGetCurrentStateName ()
+    {
+        return GetCurrentStateName ();
     }
 
     public void IUpdateActive ( float _deltaTime )

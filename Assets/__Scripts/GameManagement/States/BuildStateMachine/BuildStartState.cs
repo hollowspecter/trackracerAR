@@ -6,20 +6,9 @@ public interface IBuildStartState { }
 
 public class BuildStartState : State, IBuildStartState
 {
-    protected override void Initialise ()
-    {
-    }
-
-    public override void UpdateActive ( double _deltaTime )
-    {
-    }
-
     public override void EnterState ()
     {
         Debug.Log ( "Entered BuildStartState" );
-    }
-
-    public override void ExitState ()
-    {
+        base.EnterState ();
     }
 }

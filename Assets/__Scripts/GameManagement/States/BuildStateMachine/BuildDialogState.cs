@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
-using Zenject;
 
 public interface IBuildDialogState
 {
@@ -16,34 +14,21 @@ public interface IBuildDialogState
 /// </summary>
 public class BuildDialogState : State, IBuildDialogState
 {
-    protected override void Initialise ()
-    {
-    }
-
-    public override void UpdateActive ( double _deltaTime )
-    {
-    }
-
     public override void EnterState ()
     {
+        base.EnterState ();
         Debug.Log ( "Entered BuildDialogState" );
-        //m_viewModel.Activate ();
-    }
-
-    public override void ExitState ()
-    {
-        //m_viewModel.Deactivate ();
     }
 
     public void StartNewTrack ()
     {
-        Debug.Log ( "BuildDialogState: StartNewTrack" );
+        if ( !m_active ) return;
         m_stateMachine.TransitionToState ( StateName.BUILD_START_STATE );
     }
 
     public void LoadTrack ()
     {
-        Debug.Log ( "BuildDialogState: Load Track" );
+        if ( !m_active ) return;
         m_stateMachine.TransitionToState ( StateName.BUILD_LOAD_STATE );
     }
 }
