@@ -16,6 +16,7 @@
 public abstract class State
 {
     public delegate void InputActionHandler ();
+    public delegate void TouchHandler ( float x, float y );
 
     public event InputActionHandler m_enteredState;
     public event InputActionHandler m_exitedState;
