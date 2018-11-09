@@ -22,3 +22,6 @@ MonoBehaviour:
   m_trackLayer:
     serializedVersion: 2
     m_Bits: 512
+  m_arrowLayer:
+    serializedVersion: 2
+    m_Bits: 2048

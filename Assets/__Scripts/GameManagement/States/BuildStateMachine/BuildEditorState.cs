@@ -28,8 +28,17 @@ public class BuildEditorState : State, IBuildEditorState
         Debug.Log ( "Entered BuildEditorState" );
         base.EnterState ();
 
+        m_buildSM.m_touchDetected += OnTouchDetected;
+
         FireArrowChanged ( ArrowPosition.IN );
         FireArrowChanged ( ArrowPosition.OUT );
+    }
+
+    public override void ExitState ()
+    {
+        base.ExitState ();
+
+        m_buildSM.m_touchDetected -= OnTouchDetected;
     }
 
     private void FireArrowChanged ( ArrowPosition _arrowPos )
@@ -43,6 +52,26 @@ public class BuildEditorState : State, IBuildEditorState
             case ArrowPosition.IN: m_inArrowPositionChanged ( newPos, newRot ); break;
             case ArrowPosition.OUT: m_outArrowPositionChanged ( newPos, newRot ); break;
             default: throw new System.NotImplementedException ( _arrowPos.ToString () );
+        }
+    }
+
+    // TODO GO ON HERE
+    private void OnTouchDetected ( float x, float y )
+    {
+        RaycastHit hit;
+        if ( Physics.Raycast ( Camera.main.ScreenPointToRay ( new Vector3 ( x, y, 0f ) ),
+                              out hit,
+                              50f,
+                              Configuration.ArrowLayer ) )
+        {
+            Debug.Log ( "Arrow hit!" );
+        }
+        else if ( Physics.Raycast ( Camera.main.ScreenPointToRay ( new Vector3 ( x, y, 0f ) ),
+                              out hit,
+                              50f,
+                              Configuration.TrackLayer ) )
+        {
+            Debug.Log ( "TrackPart hit!" );
         }
     }
 }

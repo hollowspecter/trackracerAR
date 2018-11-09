@@ -40,6 +40,8 @@ public class Configuration : ScriptableObject
     private LayerMask m_planeLayer;
     [SerializeField]
     private LayerMask m_trackLayer;
+    [SerializeField]
+    private LayerMask m_arrowLayer;
 
     #endregion
 
@@ -74,6 +76,14 @@ public class Configuration : ScriptableObject
         get
         {
             return DefaultConfig.m_trackParts;
+        }
+    }
+
+    public static LayerMask ArrowLayer
+    {
+        get
+        {
+            return DefaultConfig.m_arrowLayer;
         }
     }
 

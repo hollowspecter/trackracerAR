@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114678100101826698}
   - component: {fileID: 33698329573243582}
   - component: {fileID: 23574051447710650}
+  - component: {fileID: 65523238773249798}
   m_Layer: 9
   m_Name: RoadStraight
   m_TagString: Untagged
@@ -232,6 +233,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317886263325834}
   m_Mesh: {fileID: 4300000, guid: bc70d7b0d6d4042ad91369018c4a2973, type: 3}
+--- !u!65 &65523238773249798
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1317886263325834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.2, z: 10}
+  m_Center: {x: 5, y: 0.1, z: 5}
 --- !u!114 &114678100101826698
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -34,14 +34,11 @@ public class BuildStartState : State, IBuildStartState
     private void OnTouchDetected ( float x, float y )
     {
         RaycastHit hit;
-        if ( Physics.Raycast ( Camera.main.ScreenPointToRay ( new Vector3 ( x, y, 0 ) ), out hit, Configuration.PlaneLayer ) )
+        if ( Physics.Raycast ( Camera.main.ScreenPointToRay ( new Vector3 ( x, y, 0 ) ),
+                              out hit,
+                              50f,
+                              Configuration.PlaneLayer ) )
         {
-            if ( Vector3.Dot ( Camera.main.transform.position - hit.point, hit.normal ) < 0 )
-            {
-                Debug.Log ( "Hit at back of the current Plane" );
-                return;
-            }
-
             // Instantiate Starttrack
             GameObject trackStart = Object.Instantiate ( Configuration.StartPrefab, hit.point, Quaternion.identity );
             TrackPart trackPart = trackStart.GetComponent<TrackPart> ();

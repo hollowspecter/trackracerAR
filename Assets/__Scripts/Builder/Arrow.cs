@@ -13,14 +13,16 @@ public class Arrow : MonoBehaviour
     [SerializeField]
     private ArrowPosition m_arrowPosition;
 
+    public ArrowPosition ArrowPosition { get { return m_arrowPosition; } }
+
     [Inject]
     private void Construct ( IBuildEditorState _state )
     {
-        switch ( m_arrowPosition )
+        switch ( ArrowPosition )
         {
             case ArrowPosition.IN: _state.m_inArrowPositionChanged += Reposition; break;
             case ArrowPosition.OUT: _state.m_outArrowPositionChanged += Reposition; break;
-            default: throw new System.NotImplementedException ( m_arrowPosition.ToString () );
+            default: throw new System.NotImplementedException ( ArrowPosition.ToString () );
         }
 
         ( ( State ) _state ).m_enteredState += Activate;
