@@ -7,26 +7,26 @@ public interface IBuildStartState { }
 
 public class BuildStartState : State, IBuildStartState
 {
-    private IBuildStateMachine m_inputMachine;
+    private IBuildStateMachine m_buildSM;
 
     #region State Functions
 
     protected override void Initialise ()
     {
         base.Initialise ();
-        m_inputMachine = m_stateMachine as IBuildStateMachine;
+        m_buildSM = m_stateMachine as IBuildStateMachine;
     }
 
     public override void EnterState ()
     {
         base.EnterState ();
-        m_inputMachine.m_touchDetected += OnTouchDetected;
+        m_buildSM.m_touchDetected += OnTouchDetected;
     }
 
     public override void ExitState ()
     {
         base.ExitState ();
-        m_inputMachine.m_touchDetected -= OnTouchDetected;
+        m_buildSM.m_touchDetected -= OnTouchDetected;
     }
 
     #endregion
@@ -42,7 +42,15 @@ public class BuildStartState : State, IBuildStartState
                 return;
             }
 
+            // Instantiate Starttrack
             GameObject trackStart = Object.Instantiate ( Configuration.StartPrefab, hit.point, Quaternion.identity );
+            TrackPart trackPart = trackStart.GetComponent<TrackPart> ();
+            if ( trackPart == null ) Debug.LogError ( "The start tile does not have a TrackPart" );
+
+            // Create the model
+            m_buildSM.StartNewTrack ( trackPart );
+
+            // Change state
             m_stateMachine.TransitionToState ( StateName.BUILD_EDITOR_STATE );
         }
     }

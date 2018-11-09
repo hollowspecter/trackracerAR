@@ -4,12 +4,23 @@ using UnityEngine;
 
 public interface IBuildStateMachine
 {
+    // events
     event State.TouchHandler m_touchDetected;
+
+    // propertoes
+    TrackModel Track { get; }
+
+    // functions
+    void StartNewTrack ( TrackPart _start );
 }
 
 public class BuildStateMachine : StateMachine, IBuildStateMachine
 {
     public event TouchHandler m_touchDetected;
+
+    private TrackModel m_track;
+
+    public TrackModel Track { get { return m_track; } }
 
     public override void EnterState ()
     {
@@ -34,5 +45,10 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
         }
         if ( m_touchDetected != null ) m_touchDetected ( Input.mousePosition.x, Input.mousePosition.y );
 #endif
+    }
+
+    public void StartNewTrack ( TrackPart _start )
+    {
+        m_track = new TrackModel ( _start );
     }
 }
