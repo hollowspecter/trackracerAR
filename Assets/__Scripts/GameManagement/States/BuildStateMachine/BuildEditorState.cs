@@ -65,12 +65,20 @@ public class BuildEditorState : State, IBuildEditorState
                               Configuration.ArrowLayer ) )
         {
             Debug.Log ( "Arrow hit!" );
+
+            // instantiate a new track part
+
+            // add it to the track model (build_sm.track)
+
+            // reposition the corresponding arrow
+
         }
         else if ( Physics.Raycast ( Camera.main.ScreenPointToRay ( new Vector3 ( x, y, 0f ) ),
                               out hit,
                               50f,
                               Configuration.TrackLayer ) )
         {
+            // switch out this trackpart with the next one in line?
             Debug.Log ( "TrackPart hit!" );
         }
     }
