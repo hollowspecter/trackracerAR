@@ -9,6 +9,7 @@ public interface IBuildStateMachine
 
     // propertoes
     TrackModel Track { get; }
+    Transform TrackTransform { get; }
 
     // functions
     void StartNewTrack ( TrackPart _start );
@@ -19,12 +20,17 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
     public event TouchHandler m_touchDetected;
 
     private TrackModel m_track;
+    private Transform m_trackTransform;
 
     public TrackModel Track { get { return m_track; } }
+    public Transform TrackTransform { get { return m_trackTransform; } }
 
     public override void EnterState ()
     {
         base.EnterState ();
+        GameObject trackGO = new GameObject ();
+        trackGO.name = "TrackRoot";
+        m_trackTransform = trackGO.transform;
     }
 
     public override void UpdateActive ( double _deltaTime )

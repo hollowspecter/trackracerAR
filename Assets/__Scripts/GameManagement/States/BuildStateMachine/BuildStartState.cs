@@ -42,6 +42,7 @@ public class BuildStartState : State, IBuildStartState
             // Instantiate Starttrack
             GameObject trackStart = Object.Instantiate ( Configuration.StartPrefab, hit.point, Quaternion.identity );
             TrackPart trackPart = trackStart.GetComponent<TrackPart> ();
+            trackPart.transform.parent = m_buildSM.TrackTransform;
             if ( trackPart == null ) Debug.LogError ( "The start tile does not have a TrackPart" );
 
             // Create the model

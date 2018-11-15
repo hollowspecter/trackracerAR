@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Assertions;
+using Zenject;
 
 public class TrackPart : MonoBehaviour
 {
@@ -41,12 +40,46 @@ public class TrackPart : MonoBehaviour
 
     #endregion
 
+    [Inject]
+    private void Construct( [Inject ( Id = "TrackRoot", Optional = false )] Transform _trackRoot )
+    {
+        transform.parent = _trackRoot;
+        Debug.Log ( "Construct TrackPart" );
+    }
+
+    #region Unity Methods
+
     private void Awake ()
     {
         m_inTrans = transform.Find ( "in" );
         m_outTrans = transform.Find ( "out" );
         Assert.IsNotNull ( m_inTrans );
         Assert.IsNotNull ( m_outTrans );
+    }
+
+    #endregion
+
+    #region Public Methods
+
+    // if arrowpos is IN: put the OUT arrow on the given position
+    // if arrowpos is OUT: put the IN arrow on the given position
+    public void SetPositioning(ArrowPosition _arrowPos, Vector3 _position, Quaternion _rotation)
+    {
+        Vector3 difference;
+        if ( _arrowPos == ArrowPosition.IN )
+        {
+            difference = _position - m_outTrans.position;
+            transform.position += difference;
+        }
+        else if ( _arrowPos == ArrowPosition.OUT )
+        {
+            difference = _position - m_inTrans.position;
+            transform.position += difference;
+        }
+        else
+        {
+            throw new System.NotImplementedException ( _arrowPos.ToString () );
+        }
     }
 
     public void GetArrowPositioning ( ArrowPosition _arrowPos, out Vector3 _position, out Quaternion _rotation )
@@ -63,4 +96,10 @@ public class TrackPart : MonoBehaviour
         Vector3 direction = trans.TransformDirection ( trans.forward );
         _rotation = Quaternion.LookRotation ( direction );
     }
+
+    #endregion
+
+    #region Private Methods
+
+    #endregion
 }
