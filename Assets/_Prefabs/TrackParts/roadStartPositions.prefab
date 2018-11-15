@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114002716542753756}
   - component: {fileID: 65164799635379222}
   m_Layer: 9
-  m_Name: RoadStartPositions
+  m_Name: roadStartPositions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

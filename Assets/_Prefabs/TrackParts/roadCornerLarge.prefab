@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23388909145831158}
   - component: {fileID: 65469667551332110}
   m_Layer: 9
-  m_Name: RoadCornerLarge
+  m_Name: roadCornerLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

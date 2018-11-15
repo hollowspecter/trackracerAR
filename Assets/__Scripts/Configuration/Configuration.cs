@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+using System;
 
 [CreateAssetMenu ( menuName = "Custom/Configuration" )]
 public class Configuration : ScriptableObject
@@ -35,7 +37,7 @@ public class Configuration : ScriptableObject
     [SerializeField]
     private GameObject m_startPrefab;
     [SerializeField]
-    private GameObject [] m_trackParts;
+    private List<GameObject> m_trackParts;
     [SerializeField]
     private LayerMask m_planeLayer;
     [SerializeField]
@@ -71,7 +73,7 @@ public class Configuration : ScriptableObject
         }
     }
 
-    public static GameObject [] TrackParts
+    public static List<GameObject> TrackParts
     {
         get
         {

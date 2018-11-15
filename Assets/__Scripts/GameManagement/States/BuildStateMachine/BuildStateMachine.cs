@@ -49,6 +49,11 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
 
     public void StartNewTrack ( TrackPart _start )
     {
+        if (_start == null)
+        {
+            throw new System.ArgumentNullException("start");
+        }
+
         m_track = new TrackModel ( _start );
     }
 }

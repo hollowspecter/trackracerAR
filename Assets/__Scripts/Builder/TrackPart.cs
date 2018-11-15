@@ -5,8 +5,6 @@ using UnityEngine.Assertions;
 
 public class TrackPart : MonoBehaviour
 {
-
-
     private TrackPart m_previousPart;
     private TrackPart m_nextPart;
 
