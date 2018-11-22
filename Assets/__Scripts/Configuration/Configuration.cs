@@ -22,10 +22,18 @@ public class Configuration : ScriptableObject
 
     private static void LoadDefaultConfiguration ()
     {
+        // Load
         m_defaultConfiguration = Resources.Load ( FILENAME_DEFAULT_CONFIG ) as Configuration;
         if ( m_defaultConfiguration == null )
         {
             Debug.LogError ( "Failed to load default configuration at Resources/" + FILENAME_DEFAULT_CONFIG );
+        }
+
+        // Setup Trackparts
+        for ( int i = 0; i < m_defaultConfiguration.m_trackParts.Count; ++i )
+        {
+            // Every Trackpart knows it's own Index in the Array
+            m_defaultConfiguration.m_trackParts [ i ].GetComponent<TrackPart> ().Index = i;
         }
     }
 

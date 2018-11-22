@@ -7,12 +7,18 @@ public class TrackModel
     private TrackPart m_root;
     private TrackPart m_end;
 
+    #region Constructors
+
     public TrackModel ( TrackPart _start )
     {
         if ( _start == null ) throw new System.NullReferenceException ( "Start Trackpart was null" );
         m_root = _start;
         m_end = _start;
     }
+
+    #endregion
+
+    #region Building Methods
 
     public void AppendPart ( TrackPart _part )
     {
@@ -30,23 +36,35 @@ public class TrackModel
         m_root = _part;
     }
 
-    public void GetPositioning(ArrowPosition _arrowPos, out Vector3 _position, out Quaternion _rotation)
+    #endregion
+
+    #region Getters
+
+    public TrackPart GetRoot ()
     {
-        switch (_arrowPos)
+        return m_root;
+    }
+
+    public void GetPositioning ( ArrowPosition _arrowPos, out Vector3 _position, out Quaternion _rotation )
+    {
+        switch ( _arrowPos )
         {
-            case ArrowPosition.IN: m_root.GetArrowPositioning(_arrowPos, out _position, out _rotation); break;
-            case ArrowPosition.OUT: m_end.GetArrowPositioning(_arrowPos, out _position, out _rotation); break;
-            default: throw new System.NotImplementedException(_arrowPos.ToString());
+            case ArrowPosition.IN: m_root.GetArrowPositioning ( _arrowPos, out _position, out _rotation ); break;
+            case ArrowPosition.OUT: m_end.GetArrowPositioning ( _arrowPos, out _position, out _rotation ); break;
+            default: throw new System.NotImplementedException ( _arrowPos.ToString () );
         }
     }
 
     public void GetArrowPositioning ( ArrowPosition _arrowPos, out Vector3 _position, out Quaternion _rotation )
     {
-        switch (_arrowPos)
+        switch ( _arrowPos )
         {
-            case ArrowPosition.IN: m_root.GetArrowPositioning(_arrowPos, out _position, out _rotation); break;
-            case ArrowPosition.OUT: m_end.GetArrowPositioning(_arrowPos, out _position, out _rotation); break;
-            default: throw new System.NotImplementedException(_arrowPos.ToString());
+            case ArrowPosition.IN: m_root.GetArrowPositioning ( _arrowPos, out _position, out _rotation ); break;
+            case ArrowPosition.OUT: m_end.GetArrowPositioning ( _arrowPos, out _position, out _rotation ); break;
+            default: throw new System.NotImplementedException ( _arrowPos.ToString () );
         }
     }
+
+    #endregion
+
 }

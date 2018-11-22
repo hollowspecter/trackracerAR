@@ -55,27 +55,7 @@ public class BuildEditorState : State, IBuildEditorState
                               50f,
                               Configuration.ArrowLayer ) )
         {
-            // check which arrow it was
-            ArrowPosition arrowPos = hit.collider.GetComponent<Arrow> ().ArrowPosition;
-
-            // instantiate a new track part, and position it
-            Vector3 pos;
-            Quaternion rot;
-            TrackPart trackPart = Object.Instantiate(Configuration.TrackParts[0]).GetComponent<TrackPart>();
-            m_buildSM.Track.GetPositioning(arrowPos, out pos, out rot);
-            trackPart.SetPositioning(arrowPos, pos, rot);
-            trackPart.transform.parent = m_buildSM.TrackTransform;
-
-            // add it to the track model (build_sm.track)
-            switch ( arrowPos )
-            {
-                case ArrowPosition.IN: m_buildSM.Track.PrependPart ( trackPart ); break;
-                case ArrowPosition.OUT: m_buildSM.Track.AppendPart ( trackPart ); break;
-                default: throw new System.NotImplementedException ( arrowPos.ToString () );
-            }
-            
-            // reposition the corresponding arrow
-            FireArrowChanged(arrowPos);
+            ArrowTouched ( hit );
         }
         else if ( Physics.Raycast ( Camera.main.ScreenPointToRay ( new Vector3 ( x, y, 0f ) ),
                               out hit,
@@ -87,17 +67,42 @@ public class BuildEditorState : State, IBuildEditorState
         }
     }
 
-    private void FireArrowChanged(ArrowPosition _arrowPos)
+    private void ArrowTouched ( RaycastHit hit )
+    {
+        // check which arrow it was
+        ArrowPosition arrowPos = hit.collider.GetComponent<Arrow> ().ArrowPosition;
+
+        // instantiate a new track part, and position it
+        Vector3 pos;
+        Quaternion rot;
+        TrackPart trackPart = Object.Instantiate ( Configuration.TrackParts [ 0 ] ).GetComponent<TrackPart> ();
+        m_buildSM.Track.GetPositioning ( arrowPos, out pos, out rot );
+        trackPart.SetPositioning ( arrowPos, pos, rot );
+        trackPart.transform.parent = m_buildSM.TrackTransform;
+
+        // add it to the track model (build_sm.track)
+        switch ( arrowPos )
+        {
+            case ArrowPosition.IN: m_buildSM.Track.PrependPart ( trackPart ); break;
+            case ArrowPosition.OUT: m_buildSM.Track.AppendPart ( trackPart ); break;
+            default: throw new System.NotImplementedException ( arrowPos.ToString () );
+        }
+
+        // reposition the corresponding arrow
+        FireArrowChanged ( arrowPos );
+    }
+
+    private void FireArrowChanged ( ArrowPosition _arrowPos )
     {
         Vector3 newPos;
         Quaternion newRot;
-        m_buildSM.Track.GetArrowPositioning(_arrowPos, out newPos, out newRot);
+        m_buildSM.Track.GetArrowPositioning ( _arrowPos, out newPos, out newRot );
 
-        switch (_arrowPos)
+        switch ( _arrowPos )
         {
-            case ArrowPosition.IN: if (m_inArrowPositionChanged != null) m_inArrowPositionChanged(newPos, newRot); break;
-            case ArrowPosition.OUT: if (m_outArrowPositionChanged != null) m_outArrowPositionChanged(newPos, newRot); break;
-            default: throw new System.NotImplementedException(_arrowPos.ToString());
+            case ArrowPosition.IN: if ( m_inArrowPositionChanged != null ) m_inArrowPositionChanged ( newPos, newRot ); break;
+            case ArrowPosition.OUT: if ( m_outArrowPositionChanged != null ) m_outArrowPositionChanged ( newPos, newRot ); break;
+            default: throw new System.NotImplementedException ( _arrowPos.ToString () );
         }
     }
 }

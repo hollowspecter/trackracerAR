@@ -10,6 +10,13 @@ public class TrackPart : MonoBehaviour
     private Transform m_inTrans;
     private Transform m_outTrans;
 
+    /// <summary>
+    /// This will be set in <see cref="Configuration"/>
+    /// and is the index of each Trackpart in the Trackparts-Array
+    /// of the current Configuration
+    /// </summary>
+    private int m_index = -1;
+
     #region Properties
 
     public TrackPart PreviousPart
@@ -38,10 +45,25 @@ public class TrackPart : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This will be set in <see cref="Configuration"/>
+    /// and is the index of each Trackpart in the Trackparts-Array
+    /// of the current Configuration
+    /// </summary>
+    public int Index
+    {
+        get { return m_index; }
+        set
+        {
+            if ( m_index == -1 ) return;
+            else m_index = value;
+        }
+    }
+
     #endregion
 
     [Inject]
-    private void Construct( [Inject ( Id = "TrackRoot", Optional = false )] Transform _trackRoot )
+    private void Construct ( [Inject ( Id = "TrackRoot", Optional = false )] Transform _trackRoot )
     {
         transform.parent = _trackRoot;
         Debug.Log ( "Construct TrackPart" );
@@ -63,7 +85,7 @@ public class TrackPart : MonoBehaviour
 
     // if arrowpos is IN: put the OUT arrow on the given position
     // if arrowpos is OUT: put the IN arrow on the given position
-    public void SetPositioning(ArrowPosition _arrowPos, Vector3 _position, Quaternion _rotation)
+    public void SetPositioning ( ArrowPosition _arrowPos, Vector3 _position, Quaternion _rotation )
     {
         Vector3 difference;
         if ( _arrowPos == ArrowPosition.IN )
