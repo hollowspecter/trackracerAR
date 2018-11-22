@@ -1,17 +1,22 @@
 using UnityEngine;
 using System.Collections;
 
-public class NewMonoBehaviour : MonoBehaviour
+public interface ISaveMenuViewModel
 {
-	// Use this for initialization
-	void Start()
-	{
+}
 
-	}
+[RequireComponent ( typeof ( UIFader ) )]
+public class SaveMenuViewModel : MonoBehaviour, ISaveMenuViewModel
+{
+    // Use this for initialization
+    void Start ()
+    {
 
-	// Update is called once per frame
-	void Update()
-	{
-			
-	}
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+
+    }
 }
