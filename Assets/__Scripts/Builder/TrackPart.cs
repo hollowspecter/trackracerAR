@@ -15,6 +15,9 @@ public class TrackPart : MonoBehaviour
     /// and is the index of each Trackpart in the Trackparts-Array
     /// of the current Configuration
     /// </summary>
+    /// 
+    //[HideInInspector]
+    [SerializeField]
     private int m_index = -1;
 
     #region Properties
@@ -55,8 +58,7 @@ public class TrackPart : MonoBehaviour
         get { return m_index; }
         set
         {
-            if ( m_index == -1 ) return;
-            else m_index = value;
+            if ( m_index == -1 ) m_index = value;
         }
     }
 

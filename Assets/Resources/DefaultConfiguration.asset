@@ -11,9 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2e5db21895f4ac09ddf28cba082572, type: 3}
   m_Name: DefaultConfiguration
   m_EditorClassIdentifier: 
-  m_startPrefab: {fileID: 1818448583653846, guid: eab06dadc1de64500bf8991b1acb569a,
-    type: 2}
   m_trackParts:
+  - {fileID: 1818448583653846, guid: eab06dadc1de64500bf8991b1acb569a, type: 2}
   - {fileID: 1317886263325834, guid: 6c510a3d2e661476fb7c2feb11d2d8f0, type: 2}
   - {fileID: 1725767755045596, guid: e1ffb19f8cda14df3a837effc5ea3fe1, type: 2}
   m_planeLayer:
@@ -25,3 +24,5 @@ MonoBehaviour:
   m_arrowLayer:
     serializedVersion: 2
     m_Bits: 2048
+  m_loadItemList: {fileID: 1459100307635140, guid: eef163e62a519432cb04bba0d221d6fb,
+    type: 2}

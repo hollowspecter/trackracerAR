@@ -18,14 +18,13 @@ public class UIFader : MonoBehaviour
         // setup tweens
         m_sequence = DOTween.Sequence ();
         m_sequence.SetAutoKill ( false );
-        for ( int i = 0; i < m_images.Length; ++i ) m_sequence.Join ( m_images [ i ].DOFade ( 0f, 1f ).From () ); // fade out images
-        for ( int i = 0; i < m_texts.Length; ++i ) m_sequence.Join ( m_texts [ i ].DOFade ( 0f, 1f ).From () ); // fade out textx
+        for ( int i = 0; i < m_images.Length; ++i ) m_sequence.Join ( m_images [ i ].DOFade ( 0f, 0.5f ).From () ); // fade out images
+        for ( int i = 0; i < m_texts.Length; ++i ) m_sequence.Join ( m_texts [ i ].DOFade ( 0f, 0.5f ).From () ); // fade out textx
         m_sequence.OnPause ( () => { if ( m_sequence.isBackwards ) gameObject.SetActive ( false ); } ); // turn of GO on complete in backwards
     }
 
     public void RegisterCallbacks ( State state )
     {
-        Debug.Log ( "Callbacks registered" );
         state.m_enteredState += Activate;
         state.m_exitedState += Deactivate;
     }

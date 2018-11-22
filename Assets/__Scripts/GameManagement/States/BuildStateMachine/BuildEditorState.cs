@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Zenject;
+﻿using UnityEngine;
 
 public interface IBuildEditorState
 {
+    void OnTrackDone ();
     event BuildEditorState.PositioningHandler m_outArrowPositionChanged;
     event BuildEditorState.PositioningHandler m_inArrowPositionChanged;
 }
@@ -28,7 +26,6 @@ public class BuildEditorState : State, IBuildEditorState
 
     public override void EnterState ()
     {
-        Debug.Log ( "Entered BuildEditorState" );
         base.EnterState ();
 
         m_buildSM.m_touchDetected += OnTouchDetected;
@@ -46,7 +43,8 @@ public class BuildEditorState : State, IBuildEditorState
 
     #endregion
 
-    // TODO GO ON HERE
+    #region Building Functions
+
     private void OnTouchDetected ( float x, float y )
     {
         RaycastHit hit;
@@ -75,7 +73,7 @@ public class BuildEditorState : State, IBuildEditorState
         // instantiate a new track part, and position it
         Vector3 pos;
         Quaternion rot;
-        TrackPart trackPart = Object.Instantiate ( Configuration.TrackParts [ 0 ] ).GetComponent<TrackPart> ();
+        TrackPart trackPart = Object.Instantiate ( Configuration.TrackParts [ 1 ] ).GetComponent<TrackPart> ();
         m_buildSM.Track.GetPositioning ( arrowPos, out pos, out rot );
         trackPart.SetPositioning ( arrowPos, pos, rot );
         trackPart.transform.parent = m_buildSM.TrackTransform;
@@ -105,4 +103,17 @@ public class BuildEditorState : State, IBuildEditorState
             default: throw new System.NotImplementedException ( _arrowPos.ToString () );
         }
     }
+
+    #endregion
+
+    #region UI Callbacks
+
+    public void OnTrackDone ()
+    {
+        if ( !m_active ) return;
+        Debug.Log ( "BuildEditorState: OnTrackDone" );
+        m_stateMachine.TransitionToState ( StateName.BUILD_SAVE_STATE );
+    }
+
+    #endregion
 }

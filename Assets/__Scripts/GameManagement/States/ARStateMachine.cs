@@ -15,7 +15,6 @@ public class ARStateMachine : StateMachine, IARStateMachine
 
     public override void EnterState ()
     {
-        Debug.Log ( "Entered ARStateMachine" );
         base.EnterState ();
     }
 

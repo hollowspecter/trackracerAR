@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public interface IBuildDialogState
 {
@@ -17,7 +16,6 @@ public class BuildDialogState : State, IBuildDialogState
     public override void EnterState ()
     {
         base.EnterState ();
-        Debug.Log ( "Entered BuildDialogState" );
     }
 
     public void StartNewTrack ()

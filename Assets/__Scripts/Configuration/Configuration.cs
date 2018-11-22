@@ -43,8 +43,6 @@ public class Configuration : ScriptableObject
 
     [Header ( "Trackbuilder" )]
     [SerializeField]
-    private GameObject m_startPrefab;
-    [SerializeField]
     private List<GameObject> m_trackParts;
     [SerializeField]
     private LayerMask m_planeLayer;
@@ -52,18 +50,12 @@ public class Configuration : ScriptableObject
     private LayerMask m_trackLayer;
     [SerializeField]
     private LayerMask m_arrowLayer;
+    [SerializeField]
+    private GameObject m_loadItemList;
 
     #endregion
 
     #region Properties
-
-    public static GameObject StartPrefab
-    {
-        get
-        {
-            return DefaultConfig.m_startPrefab;
-        }
-    }
 
     public static LayerMask TrackLayer
     {
@@ -94,6 +86,14 @@ public class Configuration : ScriptableObject
         get
         {
             return DefaultConfig.m_arrowLayer;
+        }
+    }
+
+    public static GameObject LoadItemList
+    {
+        get
+        {
+            return DefaultConfig.m_loadItemList;
         }
     }
 

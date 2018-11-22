@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 222119091773841468}
   - component: {fileID: 114395988082785020}
   - component: {fileID: 114951188796360836}
-  - component: {fileID: 114793694776061034}
   m_Layer: 5
   m_Name: ButtonNewTrack
   m_TagString: Untagged
@@ -76,14 +75,14 @@ GameObject:
   - component: {fileID: 114244956638238942}
   - component: {fileID: 114660359816049796}
   - component: {fileID: 114278974553060074}
-  - component: {fileID: 114030012688347056}
+  - component: {fileID: 114091735250100928}
   m_Layer: 5
   m_Name: BuildMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1450032117015172
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +94,6 @@ GameObject:
   - component: {fileID: 222946996795799800}
   - component: {fileID: 114198598218981354}
   - component: {fileID: 114064229062549730}
-  - component: {fileID: 114389575385133628}
   m_Layer: 5
   m_Name: ButtonLoadTrack
   m_TagString: Untagged
@@ -103,22 +101,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114030012688347056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1356202311934892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _installers: []
-  _installerPrefabs: []
-  _scriptableObjectInstallers: []
-  _autoRun: 1
-  _kernel: {fileID: 0}
 --- !u!114 &114064229062549730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,6 +186,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Track
+--- !u!114 &114091735250100928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356202311934892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e8061eabe72497ca9fecdd34ec22ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114198598218981354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5803922}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -273,23 +266,6 @@ MonoBehaviour:
   - {fileID: 114660359816049796}
   _identifier: 
   _useSceneContext: 1
-  _context: {fileID: 0}
-  _bindType: 0
---- !u!114 &114389575385133628
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1450032117015172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0166d8ff8d905b048b2448179e1f5d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _components:
-  - {fileID: 114198598218981354}
-  _identifier: 
-  _useSceneContext: 0
   _context: {fileID: 0}
   _bindType: 0
 --- !u!114 &114395988082785020
@@ -363,23 +339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2daac43863e6c4bddb7aefee1a5c3361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114793694776061034
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071583877220410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0166d8ff8d905b048b2448179e1f5d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _components:
-  - {fileID: 114395988082785020}
-  _identifier: 
-  _useSceneContext: 0
-  _context: {fileID: 0}
-  _bindType: 0
 --- !u!114 &114951188796360836
 MonoBehaviour:
   m_ObjectHideFlags: 1
