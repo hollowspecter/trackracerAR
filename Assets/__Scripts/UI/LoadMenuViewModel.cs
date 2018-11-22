@@ -17,7 +17,7 @@ public class LoadMenuViewModel : MonoBehaviour, ILoadMenuViewModel
     private Button m_loadButton;
     private Button m_cancelButton;
 
-    private int m_selected = -1;
+    private int m_selected;
 
     [Inject]
     private void Construct ( IBuildLoadState _state,
@@ -25,9 +25,12 @@ public class LoadMenuViewModel : MonoBehaviour, ILoadMenuViewModel
                             [Inject ( Id = "LoadButton" )] Button _loadButton,
                             [Inject ( Id = "CancelButton" )] Button _cancelButton )
     {
+        m_selected = -1;
         m_state = _state;
+        ( ( State ) m_state ).m_enteredState += LoadList;
+        ( ( State ) m_state ).m_exitedState += Unload;
         m_fader = GetComponent<UIFader> ();
-        //m_fader.RegisterCallbacks ( ( State ) m_state );
+        m_fader.RegisterCallbacks ( ( State ) m_state );
 
         m_contentRect = _contentRect;
         m_loadButton = _loadButton;
@@ -35,9 +38,7 @@ public class LoadMenuViewModel : MonoBehaviour, ILoadMenuViewModel
         m_loadButton.onClick.AddListener ( OnLoadPressed );
         _cancelButton.onClick.AddListener ( OnCancelPressed );
 
-        LoadList ();
-
-        //gameObject.SetActive ( false );
+        gameObject.SetActive ( false );
     }
 
     private void LoadList ()
@@ -58,6 +59,14 @@ public class LoadMenuViewModel : MonoBehaviour, ILoadMenuViewModel
         }
     }
 
+    private void Unload ()
+    {
+        for ( int i = 0; i < m_list.Length; ++i )
+        {
+            Destroy ( m_list [ i ].gameObject );
+        }
+    }
+
     private void OnItemSelected ( int index )
     {
         if ( m_selected >= 0 && m_selected < m_list.Length )
@@ -70,11 +79,13 @@ public class LoadMenuViewModel : MonoBehaviour, ILoadMenuViewModel
 
     private void OnLoadPressed ()
     {
-        Debug.Log ( "Load Selected" );
+        Debug.Log ( "Load Selected " + m_list [ m_selected ].name );
+        m_state.Load ( m_list [ m_selected ].name );
     }
 
     private void OnCancelPressed ()
     {
         Debug.Log ( "Cancel pressed" );
+        m_state.CancelLoading ();
     }
 }

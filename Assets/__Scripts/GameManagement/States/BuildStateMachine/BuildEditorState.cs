@@ -76,7 +76,7 @@ public class BuildEditorState : State, IBuildEditorState
         TrackPart trackPart = Object.Instantiate ( Configuration.TrackParts [ 1 ] ).GetComponent<TrackPart> ();
         m_buildSM.Track.GetPositioning ( arrowPos, out pos, out rot );
         trackPart.SetPositioning ( arrowPos, pos, rot );
-        trackPart.transform.parent = m_buildSM.TrackTransform;
+        //trackPart.transform.parent = m_buildSM.TrackTransform;
 
         // add it to the track model (build_sm.track)
         switch ( arrowPos )

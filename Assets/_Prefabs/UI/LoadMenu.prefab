@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114799684499967142}
   - component: {fileID: 114982941190005980}
   - component: {fileID: 114420268448569212}
+  - component: {fileID: 114208908679989626}
   m_Layer: 5
   m_Name: LoadMenu
   m_TagString: Untagged
@@ -337,6 +338,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Cancel
+--- !u!114 &114208908679989626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023503130478054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e8061eabe72497ca9fecdd34ec22ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114420268448569212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -405,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _components:
   - {fileID: 114836289527264312}
-  _identifier: LoadButton
+  _identifier: CancelButton
   _useSceneContext: 0
   _context: {fileID: 0}
   _bindType: 0
@@ -783,7 +795,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224648706590601132}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999976
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1304,6 +1316,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000007001633}
+  m_AnchoredPosition: {x: 0, y: -0.00003247773}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}

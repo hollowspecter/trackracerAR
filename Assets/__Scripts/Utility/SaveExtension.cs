@@ -11,6 +11,12 @@ public static class SaveExtension
         return _name.RemoveWhitespace () + ".json";
     }
 
+    public static TrackDataStructure LoadTrackData ( string _fileName )
+    {
+        string json = File.ReadAllText ( Path.Combine ( m_path, _fileName ) );
+        return JsonUtility.FromJson<TrackDataStructure> ( json );
+    }
+
     public static void SaveAsJson ( this TrackModel _track, string _fileName )
     {
         TrackDataStructure trackData = new TrackDataStructure ();

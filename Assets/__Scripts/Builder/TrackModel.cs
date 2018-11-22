@@ -16,6 +16,31 @@ public class TrackModel
         m_end = _start;
     }
 
+    public TrackModel ( TrackDataStructure trackData )
+    {
+        if ( trackData == null ) throw new System.NullReferenceException ( "Start Trackpart was null" );
+
+        GameObject currentTrackPartGO;
+        TrackPart currentTrackPart;
+        int currentIndex;
+        for ( int i = 0; i < trackData.m_trackIndices.Length; ++i )
+        {
+            currentIndex = trackData.m_trackIndices [ i ];
+            currentTrackPartGO = Object.Instantiate ( Configuration.TrackParts [ currentIndex ] );
+            currentTrackPart = currentTrackPartGO.GetComponent<TrackPart> ();
+
+            if ( i == 0 )
+            {
+                m_root = currentTrackPart;
+                m_end = currentTrackPart;
+            }
+            else
+            {
+                AppendPart ( currentTrackPart );
+            }
+        }
+    }
+
     #endregion
 
     #region Building Methods

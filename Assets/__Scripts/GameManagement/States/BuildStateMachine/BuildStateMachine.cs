@@ -13,6 +13,7 @@ public interface IBuildStateMachine
 
     // functions
     void StartNewTrack ( TrackPart _start );
+    void StartTrackFromLoad ( TrackDataStructure _trackData );
 }
 
 public class BuildStateMachine : StateMachine, IBuildStateMachine
@@ -55,11 +56,21 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
 
     public void StartNewTrack ( TrackPart _start )
     {
-        if (_start == null)
+        if ( _start == null )
         {
-            throw new System.ArgumentNullException("start");
+            throw new System.ArgumentNullException ( "start" );
         }
 
         m_track = new TrackModel ( _start );
+    }
+
+    public void StartTrackFromLoad ( TrackDataStructure _trackData )
+    {
+        if ( _trackData == null )
+        {
+            throw new System.ArgumentNullException ( "_trackData" );
+        }
+
+        m_track = new TrackModel ( _trackData );
     }
 }
