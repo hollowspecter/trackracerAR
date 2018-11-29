@@ -150,6 +150,8 @@ public class shape2D : UniqueMesh
         // create the vertices
         float uSpan = GetUSpan ();
         float totalLength = Bezier.GetLength ( path );
+        float [] lengthTable = new float [ path.Length ];
+        CalcLengthTableInto ( lengthTable, m_bezier );
         for ( int i = 0; i < path.Length; i++ )
         {
             int offset = i * vertsInShape;
@@ -159,9 +161,9 @@ public class shape2D : UniqueMesh
                 vertices [ id ] = path [ i ].LocalToWorld ( shape.m_verts [ j ] );
                 normals [ id ] = path [ i ].LocalToWorldDirection ( shape.m_normals [ j ] );
 
-                float vCoord = i / ( ( float ) edgeLoops );
-                vCoord *= totalLength;
+                float vCoord = lengthTable.Sample ( i / ( ( float ) edgeLoops ) );
                 vCoord /= uSpan;
+
                 uvs [ id ] = new Vector2 ( shape.m_us [ j ], vCoord );
             }
         }
@@ -202,7 +204,11 @@ public class shape2D : UniqueMesh
         for ( int i = 1; i < _array.Length; ++i )
         {
             float t = ( ( float ) i ) / ( _array.Length - 1 );
-            //Vector3 point =
+            Vector3 point = _bezier.GetPoint ( t );
+            float diff = ( prev - point ).magnitude;
+            totalLength += diff;
+            _array [ i ] = totalLength;
+            prev = point;
         }
     }
 
