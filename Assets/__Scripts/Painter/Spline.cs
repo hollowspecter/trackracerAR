@@ -32,9 +32,20 @@ public class Spline
 
     public void DrawGizmos ()
     {
+        Color c = Color.white;
         for ( int i = 0; i < m_curves.Length; ++i )
         {
-            m_curves [ i ].DrawGizmos ();
+            switch ( i )
+            {
+                case 0: c = Color.red; break;
+                case 1: c = Color.yellow; break;
+                case 2: c = Color.green; break;
+                case 3: c = Color.blue; break;
+                case 4: c = Color.magenta; break;
+                case 5: c = Color.cyan; break;
+            }
+
+            m_curves [ i ].DrawGizmos ( c );
         }
     }
 

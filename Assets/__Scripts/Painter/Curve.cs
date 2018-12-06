@@ -37,6 +37,10 @@ public class Curve
             path [ index++ ] = p;
         }
 
+        // last point
+        p.position = _p2;
+        path [ path.Length - 1 ] = p;
+
         curve.SetPath ( ref path );
         return curve;
     }
@@ -58,15 +62,25 @@ public class Curve
 
     #region Debug Functions
 
-    public void DrawGizmos ()
+    public void DrawGizmos ( Color _color )
     {
         Color origCol = Gizmos.color;
-        Gizmos.color = Color.red;
+        Gizmos.color = _color;
         for ( int i = 0; i < m_path.Length - 1; ++i )
         {
             Gizmos.DrawLine ( m_path [ i ].position, m_path [ i + 1 ].position );
         }
         Gizmos.color = origCol;
+    }
+
+    public void DebugPrintPositions ()
+    {
+        string result = "";
+        for ( int i = 0; i < m_path.Length; ++i )
+        {
+            result += "i=" + i + ": " + m_path [ i ].position.ToString () + "\n";
+        }
+        Debug.Log ( result );
     }
 
     #endregion

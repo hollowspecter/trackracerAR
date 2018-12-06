@@ -38,4 +38,6 @@ public class SplineManager : MonoBehaviour
         if ( m_spline == null ) InitSpline ();
         m_spline.DrawGizmos ();
     }
+
+
 }
