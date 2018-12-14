@@ -41,6 +41,11 @@ public class Configuration : ScriptableObject
 
     #region Fields
 
+    [Header ( "Debug" )]
+    [SerializeField]
+    private bool m_showTangents;
+    [SerializeField]
+    private bool m_showNormals;
     [Header ( "Trackbuilder" )]
     [SerializeField]
     private List<GameObject> m_trackParts;
@@ -57,45 +62,13 @@ public class Configuration : ScriptableObject
 
     #region Properties
 
-    public static LayerMask TrackLayer
-    {
-        get
-        {
-            return DefaultConfig.m_trackLayer;
-        }
-    }
-
-    public static LayerMask PlaneLayer
-    {
-        get
-        {
-            return DefaultConfig.m_planeLayer;
-        }
-    }
-
-    public static List<GameObject> TrackParts
-    {
-        get
-        {
-            return DefaultConfig.m_trackParts;
-        }
-    }
-
-    public static LayerMask ArrowLayer
-    {
-        get
-        {
-            return DefaultConfig.m_arrowLayer;
-        }
-    }
-
-    public static GameObject LoadItemList
-    {
-        get
-        {
-            return DefaultConfig.m_loadItemList;
-        }
-    }
+    public static bool ShowTangents { get { return DefaultConfig.m_showTangents; } }
+    public static bool ShowNormals { get { return DefaultConfig.m_showNormals; } }
+    public static LayerMask TrackLayer { get { return DefaultConfig.m_trackLayer; } }
+    public static LayerMask PlaneLayer { get { return DefaultConfig.m_planeLayer; } }
+    public static List<GameObject> TrackParts { get { return DefaultConfig.m_trackParts; } }
+    public static LayerMask ArrowLayer { get { return DefaultConfig.m_arrowLayer; } }
+    public static GameObject LoadItemList { get { return DefaultConfig.m_loadItemList; } }
 
     #endregion
 }

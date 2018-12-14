@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Curve
 {
+    public OrientedPoint [] m_path;
     private const float ALPHA = 0.5f; // set betweeen 0 and 1
-
-    private OrientedPoint [] m_path;
 
     #region Constructor
 
@@ -16,33 +15,39 @@ public class Curve
         OrientedPoint [] path = new OrientedPoint [ _numPoints + 1 ];
 
         int index = 0;
-        OrientedPoint p = new OrientedPoint ();
+
         float t0 = 0.0f;
         float t1 = GetT ( t0, _p0, _p1 );
         float t2 = GetT ( t1, _p1, _p2 );
         float t3 = GetT ( t2, _p2, _p3 );
 
+
         for ( float t = t1; t < t2; t += ( ( t2 - t1 ) / _numPoints ) )
         {
-            Vector3 A1 = ( t1 - t ) / ( t1 - t0 ) * _p0 + ( t - t0 ) / ( t1 - t0 ) * _p1;
-            Vector3 A2 = ( t2 - t ) / ( t2 - t1 ) * _p1 + ( t - t1 ) / ( t2 - t1 ) * _p2;
-            Vector3 A3 = ( t3 - t ) / ( t3 - t2 ) * _p2 + ( t - t2 ) / ( t3 - t2 ) * _p3;
-
-            Vector3 B1 = ( t2 - t ) / ( t2 - t0 ) * A1 + ( t - t0 ) / ( t2 - t0 ) * A2;
-            Vector3 B2 = ( t3 - t ) / ( t3 - t1 ) * A2 + ( t - t1 ) / ( t3 - t1 ) * A3;
-
-            Vector3 C = ( t2 - t ) / ( t2 - t1 ) * B1 + ( t - t1 ) / ( t2 - t1 ) * B2;
-
-            p.position = C;
-            path [ index++ ] = p;
+            path [ index++ ] = GetOrientedPoint ( t, t0, t1, t2, t3, _p0, _p1, _p2, _p3 );
         }
 
-        // last point
-        p.position = _p2;
-        path [ path.Length - 1 ] = p;
+        // last point TODO maybe erase the last point bc the next section will have it included?
+        path [ path.Length - 1 ] = GetOrientedPoint ( t2, t0, t1, t2, t3, _p0, _p1, _p2, _p3 );
 
         curve.SetPath ( ref path );
         return curve;
+    }
+
+    #endregion
+
+    #region Public Functions
+
+    public float GetLength ()
+    {
+        if ( m_path == null ) return 0f;
+
+        float length = 0f;
+        for ( int i = 0; i < m_path.Length - 1; i++ )
+        {
+            length += ( m_path [ i + 1 ].position - m_path [ i ].position ).magnitude;
+        }
+        return length;
     }
 
     #endregion
@@ -58,6 +63,52 @@ public class Curve
         return ( c + _t );
     }
 
+    private static OrientedPoint GetOrientedPoint ( float t, float t0, float t1, float t2, float t3, Vector3 _p0, Vector3 _p1, Vector3 _p2, Vector3 _p3 )
+    {
+        OrientedPoint p = new OrientedPoint ();
+        // Cache
+        float t0_t = t0 - t;
+        float t1_t = t1 - t;
+        float t2_t = t2 - t;
+        float t3_t = t3 - t;
+
+        float t1_t0 = t1 - t0;
+        float t2_t1 = t2 - t1;
+        float t3_t2 = t3 - t2;
+        float t2_t0 = t2 - t0;
+        float t3_t1 = t3 - t1;
+
+        // Calc the Position
+        Vector3 A1 = t1_t / t1_t0 * _p0 + -t0_t / t1_t0 * _p1;
+        Vector3 A2 = t2_t / t2_t1 * _p1 + -t1_t / t2_t1 * _p2;
+        Vector3 A3 = t3_t / t3_t2 * _p2 + -t2_t / t3_t2 * _p3;
+        Vector3 B1 = t2_t / t2_t0 * A1 + -t0_t / t2_t0 * A2;
+        Vector3 B2 = t3_t / t3_t1 * A2 + -t1_t / t3_t1 * A3;
+        Vector3 C = t2_t / t2_t1 * B1 + -t1_t / t2_t1 * B2;
+
+        // Calc the Tangent
+        Vector3 A1_ = 1f / t1_t0 * ( _p1 - _p0 );
+        Vector3 A2_ = 1f / t2_t1 * ( _p2 - _p1 );
+        Vector3 A3_ = 1f / t3_t2 * ( _p3 - _p2 );
+        Vector3 B1_ = 1f / t2_t0 * ( A2 - A1 ) + t2_t / t2_t0 * A1_ + ( -t0_t / t2_t0 ) * A2_;
+        Vector3 B2_ = 1f / t3_t1 * ( A3 - A2 ) + t3_t / t3_t1 * A2_ + ( -t1_t / t3_t1 ) * A3_;
+        Vector3 C_ = 1f / t2_t1 * ( B2 - B1 ) + t2_t / t2_t1 * B1_ + ( -t1_t / t2_t1 ) * B2_;
+
+        // Calc Bi Normal
+        Vector3 binormal = Vector3.Cross ( Vector3.up, C_ ).normalized;
+        Vector3 normal = Vector3.Cross ( C_, binormal ).normalized;
+
+        // Calc Quaternion
+        Quaternion rotation = Quaternion.LookRotation ( C_.normalized, normal );
+
+        p.position = C;
+        p.tangent = C_.normalized;
+        p.normal = normal;
+        p.rotation = rotation;
+
+        return p;
+    }
+
     #endregion
 
     #region Debug Functions
@@ -68,7 +119,10 @@ public class Curve
         Gizmos.color = _color;
         for ( int i = 0; i < m_path.Length - 1; ++i )
         {
-            Gizmos.DrawLine ( m_path [ i ].position, m_path [ i + 1 ].position );
+            OrientedPoint point = m_path [ i ];
+            Gizmos.DrawLine ( point.position, m_path [ i + 1 ].position );
+            if ( Configuration.ShowTangents ) Gizmos.DrawLine ( point.position, point.position + point.tangent );
+            if ( Configuration.ShowNormals ) Gizmos.DrawLine ( point.position, point.position + point.normal );
         }
         Gizmos.color = origCol;
     }

@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class SplineManager : MonoBehaviour
+public class SplineManager : UniqueMesh
 {
+    [SerializeField]
+    private ShapeData m_shape;
+    [SerializeField]
+    private Vector2 m_scale;
+
     private Vector3 [] m_points;
     private Spline m_spline;
 
     void Start ()
     {
         InitSpline ();
+        GenerateStreet ();
     }
 
     void InitSpline ()
@@ -21,6 +27,13 @@ public class SplineManager : MonoBehaviour
             m_points [ i ] = transform.GetChild ( i ).transform.position;
         }
         m_spline = new Spline ( m_points );
+    }
+
+    void GenerateStreet ()
+    {
+        OrientedPoint [] path;
+        m_spline.GetOrientedPath ( out path );
+        Extruder.Extrude ( mesh, m_shape, path, m_scale );
     }
 
     private void OnDrawGizmos ()
@@ -37,7 +50,8 @@ public class SplineManager : MonoBehaviour
         // Draw Spline
         if ( m_spline == null ) InitSpline ();
         m_spline.DrawGizmos ();
+
+        // Draw Shape
+        if ( m_shape != null ) m_shape.DrawGizmos ( transform.position );
     }
-
-
 }

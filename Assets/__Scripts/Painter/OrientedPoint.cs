@@ -3,12 +3,16 @@
 public struct OrientedPoint
 {
     public Vector3 position;
+    public Vector3 tangent;
     public Quaternion rotation;
+    public Vector3 normal;
 
-    public OrientedPoint ( Vector3 position, Quaternion rotation )
+    public OrientedPoint ( Vector3 position, Quaternion rotation, Vector3 tangent, Vector3 normal )
     {
         this.position = position;
         this.rotation = rotation;
+        this.tangent = tangent;
+        this.normal = normal;
     }
 
     public Vector3 LocalToWorld ( Vector3 point )
