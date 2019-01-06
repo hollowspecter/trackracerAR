@@ -29,9 +29,9 @@ public class Extruder
         /* Mesh Generation */
 
         // create the vertices
-        float uSpan = shape.GetUSpan ();
-        float [] lengthTable = new float [ path.Length ];
-        //CalcLengthTableInto ( lengthTable, m_bezier );
+        float uSpan = GetUSpan ( ref verts );
+        float [] lengthTable;
+        CalcLengthTable ( out lengthTable, ref path );
         for ( int i = 0; i < path.Length; i++ )
         {
             int offset = i * vertsInShape;
@@ -75,4 +75,32 @@ public class Extruder
         mesh.normals = normals;
         mesh.uv = uvs;
     }
+
+    private static float GetUSpan(ref Vector3[] _verts)
+    {
+        float result = 0f;
+        for ( int i = 0; i < _verts.Length - 1; i++ )
+        {
+            Vector2 line = _verts [ i + 1 ] - _verts [ i ];
+            result += line.magnitude;
+        }
+        return result;
+    }
+
+    private static void CalcLengthTable( out float [] _lengthTable, ref OrientedPoint [] _path )
+    {
+        _lengthTable = new float [ _path.Length ];
+        _lengthTable [ 0 ] = 0f;
+        float totalLength = 0f;
+        OrientedPoint prev = _path [ 0 ];
+        for (int i=1; i<_path.Length;++i )
+        {
+            OrientedPoint point = _path[i];
+            float diff = ( prev.position - point.position ).magnitude;
+            totalLength += diff;
+            _lengthTable [ i ] = totalLength;
+            prev = point;
+        }
+    }
 }
+

@@ -8,17 +8,6 @@ public class ShapeData : ScriptableObject
     public Vector2 [] m_normals;
     public float [] m_us;
 
-    public float GetUSpan ()
-    {
-        float result = 0f;
-        for ( int i = 0; i < m_verts.Length - 1; i++ )
-        {
-            Vector2 line = m_verts [ i + 1 ] - m_verts [ i ];
-            result += line.magnitude;
-        }
-        return result;
-    }
-
     public void DrawGizmos ( Vector3 _pivot )
     {
         // normals

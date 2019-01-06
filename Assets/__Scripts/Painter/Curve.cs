@@ -21,7 +21,6 @@ public class Curve
         float t2 = GetT ( t1, _p1, _p2 );
         float t3 = GetT ( t2, _p2, _p3 );
 
-
         for ( float t = t1; t < t2; t += ( ( t2 - t1 ) / _numPoints ) )
         {
             path [ index++ ] = GetOrientedPoint ( t, t0, t1, t2, t3, _p0, _p1, _p2, _p3 );
