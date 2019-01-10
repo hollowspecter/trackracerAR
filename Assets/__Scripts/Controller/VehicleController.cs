@@ -1,32 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VehicleController : MonoBehaviour
 {
     private const float WAYPOINT_RADIUS = 0.3f;
 
+    public float m_maxSpeed = 3f;
     public SplineManager m_splineManager;
-    public float speed = 1f;
+    public float m_speedPercentage = 0f;
+    public Slider m_slider;
 
     private List<OrientedPoint> m_waypoints;
     private int current = 1;
 
-    // Start is called before the first frame update
     void Start()
     {
         m_waypoints = m_splineManager.m_waypoints;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, m_waypoints[current].position) <= WAYPOINT_RADIUS/2f)
+        Speed ();
+        Move ();
+    }
+
+    private void Speed()
+    {
+        m_speedPercentage = m_slider.value = Input.GetAxis ( "Vertical" );
+    }
+
+    private void Move()
+    {
+        if ( Vector3.Distance ( transform.position, m_waypoints [ current ].position ) <= WAYPOINT_RADIUS / 2f )
         {
             current = ( current + 1 ) % m_waypoints.Count;
         }
 
-        transform.position = Vector3.MoveTowards ( transform.position, m_waypoints [ current ].position, speed * Time.deltaTime );
+        transform.position = Vector3.MoveTowards ( transform.position, m_waypoints [ current ].position, m_maxSpeed * m_speedPercentage * Time.deltaTime );
     }
 
     private void OnDrawGizmos()
