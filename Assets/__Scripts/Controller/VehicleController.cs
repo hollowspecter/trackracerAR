@@ -11,6 +11,7 @@ public class VehicleController : MonoBehaviour
     public SplineManager m_splineManager;
     public float m_speedPercentage = 0f;
     public Slider m_slider;
+    public float m_maxDegrees = 30;
 
     private List<OrientedPoint> m_waypoints;
     private int current = 1;
@@ -37,7 +38,7 @@ public class VehicleController : MonoBehaviour
         {
             current = ( current + 1 ) % m_waypoints.Count;
         }
-
+        transform.rotation = Quaternion.RotateTowards ( transform.rotation, m_waypoints [ current ].rotation, m_speedPercentage*m_maxDegrees);
         transform.position = Vector3.MoveTowards ( transform.position, m_waypoints [ current ].position, m_maxSpeed * m_speedPercentage * Time.deltaTime );
     }
 
