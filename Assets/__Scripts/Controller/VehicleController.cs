@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
 
+/* TODO
+ * Use the pos difference between mesh and driver transform to respawn
+ */
+
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(HingeJoint))]
 public class VehicleController : MonoBehaviour
 {
-    private const float WAYPOINT_RADIUS = 0.3f;
-    private const bool USE_PHSYICS = true;
-
     // TODO use DI
     public SplineManager m_splineManager;
     public Slider m_slider;
 
+    [SerializeField]
+    private GameObject m_prefab;
     [SerializeField]
     private float m_maxSpeed = 20f;
     [SerializeField]
@@ -23,6 +28,10 @@ public class VehicleController : MonoBehaviour
     private List<OrientedPoint> m_waypoints;
     private int m_currWaypointIndex = 1;
     private Rigidbody m_rigidBody;
+    private Transform m_connectedMesh;
+    private Vector3 m_cachedPosition;
+    private Quaternion m_cachedRotation;
+    private bool m_respawning = false;
 
     #region Unity Functions
 
@@ -30,6 +39,7 @@ public class VehicleController : MonoBehaviour
     {
         m_waypoints = m_splineManager.m_waypoints;
         m_rigidBody = GetComponent<Rigidbody> ();
+        m_connectedMesh = GetComponent<HingeJoint>().connectedBody.transform;
 
         // set him to the first waypoint
         transform.position = m_waypoints [ 0 ].position;
@@ -40,24 +50,37 @@ public class VehicleController : MonoBehaviour
     {
         Speed ();
         UpdateWaypoint ();
-        if (!USE_PHSYICS) Move ();
     }
 
     private void FixedUpdate()
     {
-        if ( USE_PHSYICS ) MoveWithPhysics ();
+        if (!m_respawning)
+            MoveWithPhysics ();
+    }
+
+    private void OnJointBreak( float breakForce )
+    {
+        Debug.Log ( "Joint Broken! Respawn..." );
+        m_respawning = true;
+        m_cachedPosition = m_connectedMesh.position;
+        m_cachedRotation = m_connectedMesh.rotation;
+        Invoke ( "Respawn", Configuration.RespawnTime );
     }
 
     #endregion
 
     #region Private Functions
 
+    /* Movement Functions */
+
     private void Speed()
     {
         m_speedPercentage = m_slider.value = Input.GetAxis ( "Vertical" );
+        if ( m_respawning ) m_speedPercentage = 0f;
     }
 
-    private void Move()
+    [System.Obsolete("Move() is deprecated, use MoveWithPhysics() in FixedUpdate instead.")]
+    public void Move()
     {
         transform.position = Vector3.MoveTowards ( transform.position, m_waypoints [ m_currWaypointIndex ].position, m_maxSpeed * m_speedPercentage * Time.deltaTime );
         transform.rotation = Quaternion.RotateTowards ( transform.rotation, m_waypoints [ m_currWaypointIndex ].rotation, m_speedPercentage*m_maxDegrees);
@@ -71,10 +94,47 @@ public class VehicleController : MonoBehaviour
 
     private void UpdateWaypoint()
     {
-        if ( Vector3.Distance ( transform.position, m_waypoints [ m_currWaypointIndex ].position ) <= WAYPOINT_RADIUS / 2f )
+        if ( Vector3.Distance ( transform.position, m_waypoints [ m_currWaypointIndex ].position ) <= Configuration.WaypointDetectionRadius / 2f )
         {
             m_currWaypointIndex = ( m_currWaypointIndex + 1 ) % m_waypoints.Count;
         }
+    }
+
+    /* Respawn Functions */
+
+    private void Respawn()
+    {
+        Rigidbody meshRigidbody = m_prefab.transform.GetChild(1).GetComponent<Rigidbody> ();
+        HingeJoint joint = m_prefab.transform.GetChild ( 0 ).GetComponent<HingeJoint> ();
+
+        meshRigidbody.velocity = Vector3.zero;
+        meshRigidbody.angularVelocity = Vector3.zero;
+        m_connectedMesh.position = m_cachedPosition;
+        m_connectedMesh.rotation = m_cachedRotation;
+
+        m_respawning = false;
+        HingeJoint newJoint = gameObject.AddComponent<HingeJoint> ();
+        newJoint.connectedBody = m_connectedMesh.GetComponent<Rigidbody>();
+
+        Assert.IsNotNull ( newJoint );
+        Assert.IsNotNull ( joint );
+
+        newJoint.anchor = joint.anchor;
+        newJoint.axis = joint.axis;
+        newJoint.autoConfigureConnectedAnchor = joint.autoConfigureConnectedAnchor;
+        newJoint.connectedAnchor = joint.connectedAnchor;
+        newJoint.useSpring = joint.useSpring;
+        newJoint.spring = joint.spring;
+        newJoint.useMotor = joint.useMotor;
+        newJoint.motor = joint.motor;
+        newJoint.useLimits = joint.useLimits;
+        newJoint.limits = joint.limits;
+        newJoint.breakForce = joint.breakForce;
+        newJoint.breakTorque = joint.breakTorque;
+        newJoint.enableCollision = joint.enableCollision;
+        newJoint.enablePreprocessing = joint.enablePreprocessing;
+        newJoint.massScale = joint.massScale;
+        newJoint.connectedMassScale = joint.connectedMassScale;
     }
 
     #endregion
@@ -83,7 +143,7 @@ public class VehicleController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere ( transform.position, WAYPOINT_RADIUS );
+        Gizmos.DrawWireSphere ( transform.position, Configuration.WaypointDetectionRadius );
     }
 
     #endregion

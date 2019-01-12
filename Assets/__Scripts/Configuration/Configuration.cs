@@ -29,7 +29,7 @@ public class Configuration : ScriptableObject
             Debug.LogError ( "Failed to load default configuration at Resources/" + FILENAME_DEFAULT_CONFIG );
         }
 
-        // Setup Trackparts
+        // Setup Trackparts (Deprecated)
         for ( int i = 0; i < m_defaultConfiguration.m_trackParts.Count; ++i )
         {
             // Every Trackpart knows it's own Index in the Array
@@ -46,7 +46,14 @@ public class Configuration : ScriptableObject
     private bool m_showTangents;
     [SerializeField]
     private bool m_showNormals;
-    [Header ( "Trackbuilder" )]
+
+    [Header ( "Trackpainter" )]
+    [SerializeField]
+    private float m_waypointDetectionRadius = 0.3f;
+    [SerializeField]
+    private float m_respawnTime = 1f;
+
+    [Header ( "Trackbuilder (Deprecated)" )]
     [SerializeField]
     private List<GameObject> m_trackParts;
     [SerializeField]
@@ -64,11 +71,13 @@ public class Configuration : ScriptableObject
 
     public static bool ShowTangents { get { return DefaultConfig.m_showTangents; } }
     public static bool ShowNormals { get { return DefaultConfig.m_showNormals; } }
-    public static LayerMask TrackLayer { get { return DefaultConfig.m_trackLayer; } }
-    public static LayerMask PlaneLayer { get { return DefaultConfig.m_planeLayer; } }
-    public static List<GameObject> TrackParts { get { return DefaultConfig.m_trackParts; } }
-    public static LayerMask ArrowLayer { get { return DefaultConfig.m_arrowLayer; } }
-    public static GameObject LoadItemList { get { return DefaultConfig.m_loadItemList; } }
+    public static float WaypointDetectionRadius { get { return DefaultConfig.m_waypointDetectionRadius; } }
+    public static float RespawnTime { get { return DefaultConfig.m_respawnTime; } }
+    [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask TrackLayer { get { return DefaultConfig.m_trackLayer; } }
+    [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask PlaneLayer { get { return DefaultConfig.m_planeLayer; } }
+    [Obsolete ( "Only used in old Trackbuilder" )] public static List<GameObject> TrackParts { get { return DefaultConfig.m_trackParts; } }
+    [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask ArrowLayer { get { return DefaultConfig.m_arrowLayer; } }
+    [Obsolete ( "Only used in old Trackbuilder" )] public static GameObject LoadItemList { get { return DefaultConfig.m_loadItemList; } }
 
     #endregion
 }

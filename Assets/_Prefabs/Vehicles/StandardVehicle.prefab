@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1836963929}
   - component: {fileID: 1836963928}
   m_Layer: 0
-  m_Name: Mesh
+  m_Name: 1_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 1800492719530453915}
   - component: {fileID: 1800492719530453916}
   m_Layer: 0
-  m_Name: Drive
+  m_Name: 0_Driver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,12 +189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24006f6a8352e5548ae6f34636ea3710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxSpeed: 25
   m_splineManager: {fileID: 0}
-  m_speedPercentage: 0
   m_slider: {fileID: 0}
+  m_prefab: {fileID: 0}
+  m_maxSpeed: 25
+  m_speedPercentage: 0
   m_maxDegrees: 20
-  m_usePhysics: 1
 --- !u!54 &1800492719530453915
 Rigidbody:
   m_ObjectHideFlags: 0
