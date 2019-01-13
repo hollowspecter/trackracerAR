@@ -16,8 +16,6 @@ public class VehicleController : MonoBehaviour
 
     // TODO use DI
     [SerializeField]
-    private GameObject m_prefab;
-    [SerializeField]
     private float m_maxSpeed = 20f;
     [SerializeField]
     private float m_speedPercentage = 0f;
@@ -113,8 +111,9 @@ public class VehicleController : MonoBehaviour
     private void Respawn()
     {
         Debug.Log ( "Respawn" );
-        Rigidbody meshRigidbody = m_prefab.transform.GetChild(1).GetComponent<Rigidbody> ();
-        HingeJoint joint = m_prefab.transform.GetChild ( 0 ).GetComponent<HingeJoint> ();
+        GameObject prefab = Configuration.Vehicles [ 0 ];
+        Rigidbody meshRigidbody = prefab.transform.GetChild(1).GetComponent<Rigidbody> ();
+        HingeJoint joint = prefab.transform.GetChild ( 0 ).GetComponent<HingeJoint> ();
 
         meshRigidbody.velocity = Vector3.zero;
         meshRigidbody.angularVelocity = Vector3.zero;
