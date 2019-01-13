@@ -53,6 +53,10 @@ public class Configuration : ScriptableObject
     [SerializeField]
     private float m_respawnTime = 1f;
 
+    [Header ( "Vehicles" )]
+    [SerializeField]
+    private GameObject[] m_vehicles;
+
     [Header ( "Trackbuilder (Deprecated)" )]
     [SerializeField]
     private List<GameObject> m_trackParts;
@@ -73,6 +77,7 @@ public class Configuration : ScriptableObject
     public static bool ShowNormals { get { return DefaultConfig.m_showNormals; } }
     public static float WaypointDetectionRadius { get { return DefaultConfig.m_waypointDetectionRadius; } }
     public static float RespawnTime { get { return DefaultConfig.m_respawnTime; } }
+    public static GameObject[] Vehicles { get { return DefaultConfig.m_vehicles; } }
     [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask TrackLayer { get { return DefaultConfig.m_trackLayer; } }
     [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask PlaneLayer { get { return DefaultConfig.m_planeLayer; } }
     [Obsolete ( "Only used in old Trackbuilder" )] public static List<GameObject> TrackParts { get { return DefaultConfig.m_trackParts; } }

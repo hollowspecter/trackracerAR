@@ -5,19 +5,23 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class SplineManager : UniqueMesh
 {
+    private static SplineManager instance = null;
+
     [SerializeField]
     private TrackData m_trackData;
-
-    public List<OrientedPoint> m_waypoints;
 
     private Vector3 [] m_points;
     private OrientedPoint [] m_path;
     private Spline m_spline;
+    private List<OrientedPoint> m_waypoints;
 
     #region Unity Functions
 
     private void Awake()
     {
+        if ( instance == null ) instance = this;
+        else throw new System.Exception ( "There is only one SplineManager allowed!" );
+
         InitSpline ();
         GenerateStreet ();
     }
@@ -25,6 +29,11 @@ public class SplineManager : UniqueMesh
     #endregion
 
     #region Public Functions
+
+    public static List<OrientedPoint> GetWaypoints()
+    {
+        return instance.m_waypoints;
+    }
 
     #endregion
 

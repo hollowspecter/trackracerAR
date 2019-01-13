@@ -12,10 +12,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof(HingeJoint))]
 public class VehicleController : MonoBehaviour
 {
-    // TODO use DI
-    public SplineManager m_splineManager;
-    public Slider m_slider;
+    private const bool RESPAWN_USING_PREFAB = true;
 
+    // TODO use DI
     [SerializeField]
     private GameObject m_prefab;
     [SerializeField]
@@ -26,24 +25,23 @@ public class VehicleController : MonoBehaviour
     private float m_maxDegrees = 30;
 
     private List<OrientedPoint> m_waypoints;
-    private int m_currWaypointIndex = 1;
+    private int m_currWaypointIndex = 0;
     private Rigidbody m_rigidBody;
     private Transform m_connectedMesh;
-    private Vector3 m_cachedPosition;
-    private Quaternion m_cachedRotation;
     private bool m_respawning = false;
+    private Transform m_meshAnchor;
 
     #region Unity Functions
 
     void Start()
     {
-        m_waypoints = m_splineManager.m_waypoints;
+        m_waypoints = SplineManager.GetWaypoints ();
         m_rigidBody = GetComponent<Rigidbody> ();
-        m_connectedMesh = GetComponent<HingeJoint>().connectedBody.transform;
+        m_connectedMesh = GetComponent<HingeJoint> ().connectedBody.transform;
+        m_meshAnchor = transform.GetChild ( 0 );
 
-        // set him to the first waypoint
-        transform.position = m_waypoints [ 0 ].position;
-        transform.rotation = m_waypoints [ 0 ].rotation;
+        transform.position = m_waypoints [ m_currWaypointIndex ].position;
+        transform.rotation = m_waypoints [ m_currWaypointIndex ].rotation;
     }
 
     void Update()
@@ -62,9 +60,19 @@ public class VehicleController : MonoBehaviour
     {
         Debug.Log ( "Joint Broken! Respawn..." );
         m_respawning = true;
-        m_cachedPosition = m_connectedMesh.position;
-        m_cachedRotation = m_connectedMesh.rotation;
-        Invoke ( "Respawn", Configuration.RespawnTime );
+        if ( !RESPAWN_USING_PREFAB )
+            Invoke ( "Respawn", Configuration.RespawnTime );
+        else
+            Invoke ( "RespawnWithPrefab", Configuration.RespawnTime );
+    }
+
+    #endregion
+
+    #region Public Functions
+
+    public void SetWaypoint(int waypointIndex)
+    {
+        m_currWaypointIndex = waypointIndex;
     }
 
     #endregion
@@ -75,7 +83,7 @@ public class VehicleController : MonoBehaviour
 
     private void Speed()
     {
-        m_speedPercentage = m_slider.value = Input.GetAxis ( "Vertical" );
+        m_speedPercentage = Input.GetAxis ( "Vertical" );
         if ( m_respawning ) m_speedPercentage = 0f;
     }
 
@@ -104,13 +112,14 @@ public class VehicleController : MonoBehaviour
 
     private void Respawn()
     {
+        Debug.Log ( "Respawn" );
         Rigidbody meshRigidbody = m_prefab.transform.GetChild(1).GetComponent<Rigidbody> ();
         HingeJoint joint = m_prefab.transform.GetChild ( 0 ).GetComponent<HingeJoint> ();
 
         meshRigidbody.velocity = Vector3.zero;
         meshRigidbody.angularVelocity = Vector3.zero;
-        m_connectedMesh.position = m_cachedPosition;
-        m_connectedMesh.rotation = m_cachedRotation;
+        m_connectedMesh.position = m_meshAnchor.position;
+        m_connectedMesh.rotation = m_meshAnchor.rotation;
 
         m_respawning = false;
         HingeJoint newJoint = gameObject.AddComponent<HingeJoint> ();
@@ -135,6 +144,14 @@ public class VehicleController : MonoBehaviour
         newJoint.enablePreprocessing = joint.enablePreprocessing;
         newJoint.massScale = joint.massScale;
         newJoint.connectedMassScale = joint.connectedMassScale;
+    }
+
+    private void RespawnWithPrefab()
+    {
+        GameObject vehicle = Instantiate<GameObject> ( Configuration.Vehicles[0], m_waypoints[m_currWaypointIndex].position, m_waypoints[m_currWaypointIndex].rotation );
+        VehicleController controller = vehicle.transform.GetChild ( 0 ).GetComponent<VehicleController> ();
+        controller.SetWaypoint ( m_currWaypointIndex );
+        Destroy ( transform.parent.gameObject );
     }
 
     #endregion
