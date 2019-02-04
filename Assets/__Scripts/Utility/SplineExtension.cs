@@ -1,18 +1,26 @@
+/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
 using UnityEngine;
 using System.Collections;
 
-public static class SplineExtension
+namespace Baguio.Splines
 {
-    public static float GetSplineLength ( this OrientedPoint [] _path )
+    public static class SplineExtension
     {
-        float length = 0f;
-
-        for ( int i = 0; i < _path.Length - 1; i++ )
+        public static float GetSplineLength ( this OrientedPoint [] _path )
         {
-            length += ( _path [ i + 1 ].position - _path [ i ].position ).magnitude;
+            float length = 0f;
+
+            for ( int i = 0; i < _path.Length - 1; i++ )
+            {
+                length += ( _path [ i + 1 ].position - _path [ i ].position ).magnitude;
+            }
+
+            return length;
         }
 
-        return length;
     }
 
 }

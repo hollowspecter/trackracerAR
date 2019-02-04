@@ -190,8 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24006f6a8352e5548ae6f34636ea3710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_prefab: {fileID: 5550817467092024324, guid: 0afeba49abe316a4fb2cc79d8b7ff53a,
-    type: 3}
+  m_splineManager: {fileID: 0}
   m_maxSpeed: 25
   m_speedPercentage: 0
   m_maxDegrees: 20

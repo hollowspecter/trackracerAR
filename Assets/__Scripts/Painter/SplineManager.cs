@@ -1,104 +1,106 @@
-﻿using System.Collections;
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
-public class SplineManager : UniqueMesh
+namespace Baguio.Splines
 {
-    private static SplineManager instance = null;
-
-    [SerializeField]
-    private TrackData m_trackData;
-
-    private Vector3 [] m_points;
-    private OrientedPoint [] m_path;
-    private Spline m_spline;
-    private List<OrientedPoint> m_waypoints;
-
-    #region Unity Functions
-
-    private void Awake()
+    [ExecuteInEditMode]
+    public class SplineManager : UniqueMesh
     {
-        if ( instance == null ) instance = this;
-        else throw new System.Exception ( "There is only one SplineManager allowed!" );
+        [SerializeField]
+        private TrackData m_trackData;
 
-        InitSpline ();
-        GenerateStreet ();
-    }
+        private Vector3 [] m_points;
+        private OrientedPoint [] m_path;
+        private Spline m_spline;
+        private List<OrientedPoint> m_waypoints;
 
-    #endregion
+        #region Unity Functions
 
-    #region Public Functions
+        #endregion
 
-    public static List<OrientedPoint> GetWaypoints()
-    {
-        return instance.m_waypoints;
-    }
+        #region Public Functions
 
-    #endregion
-
-    #region Private Functions
-
-    private void InitSpline()
-    {
-        m_points = new Vector3 [ transform.childCount ];
-        for ( int i = 0; i < m_points.Length; ++i )
+        public void GenerateTrack ()
         {
-            m_points [ i ] = transform.GetChild ( i ).transform.position;
+            InitSpline ();
+            GenerateMesh ();
         }
-        m_spline = new Spline ( m_points );
-    }
 
-    private void GenerateStreet()
-    {
-        m_spline.GetOrientedPath ( out m_path );
-        GenerateWaypoints ();
-        Extruder.Extrude ( mesh, m_trackData.m_shape, m_path, m_trackData.m_scale );
-    }
-
-    private void GenerateWaypoints()
-    {
-        if ( m_path == null || m_path.Length == 0 ) return;
-        m_waypoints = new List<OrientedPoint> ();
-
-        // Todo: hardcoding rausnehmen
-        for (int i=0; i<m_path.Length; i+=8 )
+        public List<OrientedPoint> GetWaypoints ()
         {
-            m_waypoints.Add ( m_path [ i ] );
+            return m_waypoints;
         }
-    }
 
-    #endregion
+        #endregion
 
-    #region Debug Functions
+        #region Private Functions
 
-    private void OnDrawGizmos ()
-    {
-        // Draw Lines between points
-        if ( m_points != null && m_points.Length >= 2 )
+        private void InitSpline ()
         {
-            for ( int i = 0; i < m_points.Length - 1; ++i )
+            m_points = new Vector3 [ transform.childCount ];
+            for ( int i = 0; i < m_points.Length; ++i )
             {
-                Gizmos.DrawLine ( m_points [ i ], m_points [ i + 1 ] );
+                m_points [ i ] = transform.GetChild ( i ).transform.position;
+            }
+            m_spline = new Spline ( m_points, m_trackData.closed, m_trackData.precision );
+        }
+
+        private void GenerateMesh ()
+        {
+            m_spline.GetOrientedPath ( out m_path );
+            GenerateWaypoints ();
+            Extruder.Extrude ( mesh, m_trackData.m_shape, m_path, m_trackData.m_scale );
+        }
+
+        private void GenerateWaypoints ()
+        {
+            if ( m_path == null || m_path.Length == 0 ) return;
+            m_waypoints = new List<OrientedPoint> ();
+
+            // Todo: hardcoding rausnehmen
+            for ( int i = 0; i < m_path.Length; i += 8 )
+            {
+                m_waypoints.Add ( m_path [ i ] );
             }
         }
 
-        // Draw Spline
-        if ( m_spline == null ) InitSpline ();
-        m_spline.DrawGizmos ();
+        #endregion
 
-        // Draw Shape
-        if ( m_trackData.m_shape != null ) m_trackData.m_shape.DrawGizmos ( transform.position );
+        #region Debug Functions
 
-        // Draw WayPoints
-        if (m_waypoints != null)
+        protected override void OnDrawGizmos ()
         {
-            foreach(OrientedPoint p in m_waypoints)
+            // Draw Lines between points
+            if ( m_points != null && m_points.Length >= 2 )
             {
-                Gizmos.DrawSphere ( p.position, 0.1f );
+                for ( int i = 0; i < m_points.Length - 1; ++i )
+                {
+                    Gizmos.DrawLine ( m_points [ i ], m_points [ i + 1 ] );
+                }
+            }
+
+            // Draw Spline
+            if ( m_spline == null ) InitSpline ();
+            m_spline.DrawGizmos ();
+
+            // Draw Shape
+            if ( m_trackData.m_shape != null ) m_trackData.m_shape.DrawGizmos ( transform.position );
+
+            // Draw WayPoints
+            if ( m_waypoints != null )
+            {
+                foreach ( OrientedPoint p in m_waypoints )
+                {
+                    Gizmos.DrawSphere ( p.position, 0.1f );
+                }
             }
         }
-    }
 
-    #endregion
+        #endregion
+    }
 }
