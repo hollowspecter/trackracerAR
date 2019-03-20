@@ -45,33 +45,5 @@ namespace Baguio.Splines
             }
         }
         #endregion
-
-        #region Unity event functions
-
-        ///<summary>
-        ///Use this for very first initialization
-        ///</summary>
-        protected virtual void Awake ()
-        {
-
-        }
-
-        ///<summary>
-        ///Use this for initialization
-        ///</summary>
-        protected virtual void Start ()
-        {
-
-        }
-
-        ///<summary>
-        ///Debugging information should be put here
-        ///</summary>
-        protected virtual void OnDrawGizmos ()
-        {
-
-        }
-
-        #endregion
     }
 }

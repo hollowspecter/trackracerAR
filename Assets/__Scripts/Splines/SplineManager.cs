@@ -18,22 +18,25 @@ namespace Baguio.Splines
     public class SplineManager : UniqueMesh, ISplineManager
     {
         [SerializeField]
-        private TrackData m_trackData;
+        protected TrackData m_trackData;
 
-        private Vector3 [] m_points;
-        private OrientedPoint [] m_path;
+        protected Vector3 [] m_points;
+        protected OrientedPoint [] m_path;
+        protected List<OrientedPoint> m_waypoints;
+
         private Spline m_spline;
-        private List<OrientedPoint> m_waypoints;
 
         #region Public Functions
 
-        public void GenerateTrack ()
+        public virtual void GenerateTrack ()
         {
-            InitSpline ();
-            GenerateMesh ();
+            InitPoints ();
+            InitPath ();
+            GenerateWaypoints ();
+            GenerateMesh (mesh);
         }
 
-        public List<OrientedPoint> GetWaypoints ()
+        public virtual List<OrientedPoint> GetWaypoints ()
         {
             if (m_waypoints == null || m_waypoints.Count <= 0 )
             {
@@ -45,26 +48,29 @@ namespace Baguio.Splines
 
         #endregion
 
-        #region Private Functions
+        #region Protected Functions
 
-        private void InitSpline ()
+        protected virtual void InitPoints()
         {
             m_points = new Vector3 [ transform.childCount ];
             for ( int i = 0; i < m_points.Length; ++i )
             {
                 m_points [ i ] = transform.GetChild ( i ).transform.position;
             }
-            m_spline = new Spline ( m_points, m_trackData.closed, m_trackData.precision );
         }
 
-        private void GenerateMesh ()
+        protected virtual void InitPath ()
         {
+            m_spline = new Spline ( m_points, m_trackData.closed, m_trackData.precision );
             m_spline.GetOrientedPath ( out m_path );
-            GenerateWaypoints ();
-            Extruder.Extrude ( mesh, m_trackData.m_shape, m_path, m_trackData.m_scale );
         }
 
-        private void GenerateWaypoints ()
+        protected virtual void GenerateMesh (Mesh _mesh)
+        {
+            Extruder.Extrude ( _mesh, m_trackData.m_shape, m_path, m_trackData.m_scale );
+        }
+
+        protected virtual void GenerateWaypoints ()
         {
             if ( m_path == null || m_path.Length == 0 )
             {
@@ -84,7 +90,7 @@ namespace Baguio.Splines
 
         #region Debug Functions
 
-        protected override void OnDrawGizmos ()
+        protected virtual void OnDrawGizmos ()
         {
             // Draw Lines between points
             if ( m_points != null && m_points.Length >= 2 )
@@ -96,7 +102,7 @@ namespace Baguio.Splines
             }
 
             // Draw Spline
-            if ( m_spline == null ) InitSpline ();
+            if ( m_spline == null ) InitPath ();
             m_spline.DrawGizmos ();
 
             // Draw Shape
