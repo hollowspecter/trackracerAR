@@ -1,15 +1,21 @@
-﻿/* Copyright 2019 Vivien Baguio.
+/* Copyright 2019 Vivien Baguio.
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace Baguio.Splines
 {
+    public interface ISplineManager
+    {
+        List<OrientedPoint> GetWaypoints();
+    }
+
     [ExecuteInEditMode]
-    public class SplineManager : UniqueMesh
+    public class SplineManager : UniqueMesh, ISplineManager
     {
         [SerializeField]
         private TrackData m_trackData;
@@ -18,10 +24,6 @@ namespace Baguio.Splines
         private OrientedPoint [] m_path;
         private Spline m_spline;
         private List<OrientedPoint> m_waypoints;
-
-        #region Unity Functions
-
-        #endregion
 
         #region Public Functions
 
@@ -33,6 +35,11 @@ namespace Baguio.Splines
 
         public List<OrientedPoint> GetWaypoints ()
         {
+            if (m_waypoints == null || m_waypoints.Count <= 0 )
+            {
+                GenerateTrack ();
+            }
+
             return m_waypoints;
         }
 
@@ -59,7 +66,11 @@ namespace Baguio.Splines
 
         private void GenerateWaypoints ()
         {
-            if ( m_path == null || m_path.Length == 0 ) return;
+            if ( m_path == null || m_path.Length == 0 )
+            {
+                Debug.LogWarning ( "The Path was either null or empty!" );
+                return;
+            }
             m_waypoints = new List<OrientedPoint> ();
 
             // Todo: hardcoding rausnehmen

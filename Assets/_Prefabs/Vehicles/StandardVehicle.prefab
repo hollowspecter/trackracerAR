@@ -190,7 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24006f6a8352e5548ae6f34636ea3710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_splineManager: {fileID: 0}
   m_maxSpeed: 25
   m_speedPercentage: 0
   m_maxDegrees: 20
@@ -239,7 +238,7 @@ HingeJoint:
     bounciness: 0
     bounceMinVelocity: 1.74
     contactDistance: 0
-  m_BreakForce: Infinity
+  m_BreakForce: 300
   m_BreakTorque: 730
   m_EnableCollision: 0
   m_EnablePreprocessing: 1

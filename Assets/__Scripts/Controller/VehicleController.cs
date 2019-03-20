@@ -8,20 +8,15 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 using Baguio.Splines;
-
-/* TODO
- * Use the pos difference between mesh and driver transform to respawn
- */
+using Zenject;
 
 [RequireComponent ( typeof ( Rigidbody ) )]
 [RequireComponent ( typeof ( HingeJoint ) )]
 public class VehicleController : MonoBehaviour
 {
-    private const bool RESPAWN_USING_PREFAB = true;
+    private static readonly bool RESPAWN_USING_PREFAB = true;
 
     // TODO use DI
-    [SerializeField]
-    private SplineManager m_splineManager;
     [SerializeField]
     private float m_maxSpeed = 20f;
     [SerializeField]
@@ -35,12 +30,25 @@ public class VehicleController : MonoBehaviour
     private Transform m_connectedMesh;
     private bool m_respawning = false;
     private Transform m_meshAnchor;
+    private VehicleController.Factory m_factory;
+
+    #region Di
+
+    [Inject]
+    protected void Init( ISplineManager _splineManager, VehicleController.Factory _factory )
+    {
+        m_factory = _factory;
+        m_waypoints = _splineManager.GetWaypoints ();
+    }
+
+    public class Factory : PlaceholderFactory<VehicleFactory.Params, VehicleController> { }
+
+    #endregion
 
     #region Unity Functions
 
     void Start ()
     {
-        m_waypoints = m_splineManager.GetWaypoints ();
         m_rigidBody = GetComponent<Rigidbody> ();
         m_connectedMesh = GetComponent<HingeJoint> ().connectedBody.transform;
         m_meshAnchor = transform.GetChild ( 0 );
@@ -154,8 +162,8 @@ public class VehicleController : MonoBehaviour
 
     private void RespawnWithPrefab ()
     {
-        GameObject vehicle = Instantiate<GameObject> ( Configuration.Vehicles [ 0 ], m_waypoints [ m_currWaypointIndex ].position, m_waypoints [ m_currWaypointIndex ].rotation );
-        VehicleController controller = vehicle.transform.GetChild ( 0 ).GetComponent<VehicleController> ();
+        VehicleFactory.Params param = new VehicleFactory.Params ( m_waypoints [ m_currWaypointIndex ].position, m_waypoints [ m_currWaypointIndex ].rotation );
+        VehicleController controller = m_factory.Create (param );
         controller.SetWaypoint ( m_currWaypointIndex );
         Destroy ( transform.parent.gameObject );
     }
