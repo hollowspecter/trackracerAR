@@ -102,7 +102,7 @@ namespace Baguio.Splines
             }
 
             // Draw Spline
-            if ( m_spline == null ) InitPath ();
+            if ( m_spline == null ) return;
             m_spline.DrawGizmos ();
 
             // Draw Shape
