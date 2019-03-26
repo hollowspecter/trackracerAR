@@ -1,11 +1,10 @@
 ﻿public enum StateName
 {
     AR_SM,
-    BUILD_SM, BUILD_DIALOG_STATE, BUILD_START_STATE, BUILD_EDITOR_STATE, BUILD_SAVE_STATE, BUILD_LOAD_STATE,
+    BUILD_SM, BUILD_DIALOG_STATE, BUILD_PAINT_STATE, BUILD_EDITOR_STATE, BUILD_SAVE_STATE, BUILD_LOAD_STATE, BUILD_STREET_STATE,
     RACE_SM, RACE_SETUP, RACE_RACING, RACE_OVER,
     NONE
 }
-
 
 /// <summary>
 /// State Class
@@ -53,15 +52,15 @@ public abstract class State
     /// </summary>
     public virtual void EnterState ()
     {
-        if ( m_enteredState != null ) m_enteredState ();
+        m_enteredState?.Invoke ();
     }
 
     /// <summary>
-    /// Gets called when exitigng this state.
+    /// Gets called when exiting this state.
     /// For more info see GameManager class
     /// </summary>
     public virtual void ExitState ()
     {
-        if ( m_exitedState != null ) m_exitedState ();
+        m_exitedState?.Invoke ();
     }
 }

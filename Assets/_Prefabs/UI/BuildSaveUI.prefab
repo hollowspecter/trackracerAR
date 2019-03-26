@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222960033572818580
 CanvasRenderer:
@@ -135,7 +135,7 @@ MonoBehaviour:
   - {fileID: 114636888045091272}
   _identifier: ButtonSaveTrack
   _useSceneContext: 0
-  _context: {fileID: 0}
+  _context: {fileID: 559057074}
   _bindType: 0
 --- !u!1 &1182324870024060
 GameObject:
@@ -150,14 +150,14 @@ GameObject:
   - component: {fileID: 114889839377274322}
   - component: {fileID: 114484505439135180}
   - component: {fileID: 114790886206383966}
-  - component: {fileID: 114329007501906716}
+  - component: {fileID: 559057074}
   m_Layer: 5
-  m_Name: SaveMenu
+  m_Name: BuildSaveUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &224612789159473348
 RectTransform:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2871c5c08657c40b0bc6b2fb080d892b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114329007501906716
+--- !u!114 &559057074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,7 +328,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 2
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 0
@@ -375,8 +375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -110}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222759321135221798
 CanvasRenderer:
@@ -473,7 +473,7 @@ MonoBehaviour:
   - {fileID: 114931411441782954}
   _identifier: ButtonCancel
   _useSceneContext: 0
-  _context: {fileID: 0}
+  _context: {fileID: 559057074}
   _bindType: 0
 --- !u!1 &1577811455183358
 GameObject:
@@ -544,7 +544,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -623,7 +623,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 0
@@ -668,8 +668,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 70}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 195}
+  m_SizeDelta: {x: 300, y: 51.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222983107481334406
 CanvasRenderer:
@@ -701,16 +701,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Validate Output...
 --- !u!114 &114800611581615522
@@ -729,7 +729,7 @@ MonoBehaviour:
   - {fileID: 114678253252024228}
   _identifier: TextValidateOutput
   _useSceneContext: 0
-  _context: {fileID: 0}
+  _context: {fileID: 559057074}
   _bindType: 0
 --- !u!1 &1843673077235178
 GameObject:
@@ -800,7 +800,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -848,8 +848,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 110}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222250443615160812
 CanvasRenderer:
@@ -968,5 +968,5 @@ MonoBehaviour:
   - {fileID: 114331837072549822}
   _identifier: InputName
   _useSceneContext: 0
-  _context: {fileID: 0}
+  _context: {fileID: 559057074}
   _bindType: 0

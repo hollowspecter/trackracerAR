@@ -1,11 +1,15 @@
+/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
 using UnityEngine;
 using System.Collections;
 using Zenject;
 
-public interface IEditorViewModel { }
+public interface IBuildEditorViewModel { }
 
 [RequireComponent ( typeof ( UIFader ) )]
-public class EditorViewModel : MonoBehaviour, IEditorViewModel
+public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
 {
     private IBuildEditorState m_state;
     private UIFader m_fader;
@@ -21,6 +25,6 @@ public class EditorViewModel : MonoBehaviour, IEditorViewModel
 
     public void OnDoneButtonPressed ()
     {
-        m_state.OnTrackDone ();
+        m_state.OnShowPreview ();
     }
 }

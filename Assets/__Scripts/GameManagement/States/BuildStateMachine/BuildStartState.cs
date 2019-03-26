@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
+[System.Obsolete]
 public interface IBuildStartState { }
 
+[System.Obsolete]
 public class BuildStartState : State, IBuildStartState
 {
     private IBuildStateMachine m_buildSM;
@@ -42,11 +44,11 @@ public class BuildStartState : State, IBuildStartState
             // Instantiate Starttrack
             GameObject trackStart = Object.Instantiate ( Configuration.TrackParts [ 0 ], hit.point, Quaternion.identity );
             TrackPart trackPart = trackStart.GetComponent<TrackPart> ();
-            trackPart.transform.parent = m_buildSM.TrackTransform;
+            //trackPart.transform.parent = m_buildSM.TrackTransform;
             if ( trackPart == null ) Debug.LogError ( "The start tile does not have a TrackPart" );
 
             // Create the model
-            m_buildSM.StartNewTrack ( trackPart );
+            //m_buildSM.StartNewTrack ( trackPart );
 
             // Change state
             m_stateMachine.TransitionToState ( StateName.BUILD_EDITOR_STATE );

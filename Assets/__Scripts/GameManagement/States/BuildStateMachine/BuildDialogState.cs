@@ -21,7 +21,7 @@ public class BuildDialogState : State, IBuildDialogState
     public void StartNewTrack ()
     {
         if ( !m_active ) return;
-        m_stateMachine.TransitionToState ( StateName.BUILD_START_STATE );
+        m_stateMachine.TransitionToState ( StateName.BUILD_PAINT_STATE );
     }
 
     public void LoadTrack ()

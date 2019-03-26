@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
+using UnityEngine;
 using Zenject;
 
-public interface IBuildMenuViewModel
+public interface IBuildDialogViewModel
 {
 }
 
 [RequireComponent ( typeof ( UIFader ) )]
-public class BuildMenuViewModel : MonoBehaviour, IBuildMenuViewModel
+public class BuildDialogViewModel : MonoBehaviour, IBuildDialogViewModel
 {
     private IBuildDialogState m_state;
     private UIFader m_fader;

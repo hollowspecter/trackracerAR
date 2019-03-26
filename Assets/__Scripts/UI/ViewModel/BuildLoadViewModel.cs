@@ -1,14 +1,18 @@
-﻿using System.Collections;
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public interface ILoadMenuViewModel { }
+public interface IBuildLoadViewModel { }
 
 [RequireComponent ( typeof ( UIFader ) )]
-public class LoadMenuViewModel : MonoBehaviour, ILoadMenuViewModel
+public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
 {
     private IBuildLoadState m_state;
     private UIFader m_fader;

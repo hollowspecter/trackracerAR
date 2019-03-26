@@ -7,54 +7,64 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class PointRecorder : MonoBehaviour
+public class PointRecorder
 {
-    [SerializeField]
-    protected float m_minDistance = 0.01f;
-    [SerializeField]
+    protected Settings m_settings;
+    protected Transform m_transform;
     protected LineRenderer m_line;
-    [SerializeField]
-    protected KeyCode m_debugKeyCode = KeyCode.P;
-
     protected List<Vector3> m_points;
 
     private Vector3 m_lastPosition;
     private float m_minSqrDistance;
 
-    #region Unity Lifecycle
-
-    protected void Awake()
+    public PointRecorder( [Inject] Settings _settings,
+                         [Inject ( Id = "ARCamera" )] Transform _cameraTransform,
+                         [Inject ( Id = "Line" )] LineRenderer _line )
     {
+        m_settings = _settings;
+        m_transform = _cameraTransform;
         m_points = new List<Vector3> ();
-        m_lastPosition = transform.position;
-        m_minSqrDistance = m_minDistance * m_minDistance;
+        m_line = _line;
+        m_lastPosition = m_transform.position;
+        m_minSqrDistance = m_settings.MinDistance * m_settings.MinDistance;
     }
-
-    protected void Update()
-    {
-        if ( Input.touchCount > 0 ||
-            Input.GetKey(m_debugKeyCode))
-        {
-            Vector3 newPosition = transform.position;
-            float distance = ( newPosition - m_lastPosition ).sqrMagnitude;
-            if ( distance > m_minSqrDistance )
-            {
-                m_points.Add ( newPosition );
-                m_lastPosition = newPosition;
-                m_line?.SetPosition ( m_line.positionCount++, newPosition );
-            }
-        }
-    }
-
-    #endregion
 
     #region Public Functions
 
-    public void DumpPoints(out Vector3[] _points )
+    public void RecordPoint()
+    {
+        Vector3 newPosition = m_transform.position;
+        float distance = ( newPosition - m_lastPosition ).sqrMagnitude;
+        if ( distance > m_minSqrDistance )
+        {
+            m_points.Add ( newPosition );
+            m_lastPosition = newPosition;
+            m_line?.SetPosition ( m_line.positionCount++, newPosition );
+        }
+    }
+
+    public void DumpPoints( out Vector3 [] _points )
     {
         _points = m_points.ToArray ();
         m_points.Clear ();
     }
+
+    #endregion
+
+    #region Settings
+
+    [System.Serializable]
+    public class Settings
+    {
+        public float MinDistance = 0.01f;
+        public KeyCode DebugKeyCode = KeyCode.P;
+    }
+
+    #endregion
+
+    #region Factory
+
+    public class Factory : PlaceholderFactory<PointRecorder> { }
 
     #endregion
 }

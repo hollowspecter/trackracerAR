@@ -20,8 +20,8 @@ public class Arrow : MonoBehaviour
     {
         switch ( ArrowPosition )
         {
-            case ArrowPosition.IN: _state.m_inArrowPositionChanged += Reposition; break;
-            case ArrowPosition.OUT: _state.m_outArrowPositionChanged += Reposition; break;
+            //case ArrowPosition.IN: _state.m_inArrowPositionChanged += Reposition; break;
+            //case ArrowPosition.OUT: _state.m_outArrowPositionChanged += Reposition; break;
             default: throw new System.NotImplementedException ( ArrowPosition.ToString () );
         }
 

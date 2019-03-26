@@ -1,14 +1,18 @@
+/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 using Zenject;
 
-public interface ISaveMenuViewModel
+public interface IBuildSaveViewModel
 {
 }
 
 [RequireComponent ( typeof ( UIFader ) )]
-public class SaveMenuViewModel : MonoBehaviour, ISaveMenuViewModel
+public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
 {
     private IBuildSaveState m_state;
     private UIFader m_fader;
@@ -41,7 +45,7 @@ public class SaveMenuViewModel : MonoBehaviour, ISaveMenuViewModel
         gameObject.SetActive ( false );
     }
 
-    public void OnValueChanged ( string _value )
+    protected void OnValueChanged ( string _value )
     {
         if ( string.IsNullOrEmpty ( _value ) )
         {
@@ -64,12 +68,12 @@ public class SaveMenuViewModel : MonoBehaviour, ISaveMenuViewModel
         }
     }
 
-    public void OnSaveButtonPressed ()
+    protected void OnSaveButtonPressed ()
     {
         m_state.OnSave ( m_inputNameField.text );
     }
 
-    public void OnCancelButtonPressed ()
+    protected void OnCancelButtonPressed ()
     {
         m_state.OnCancel ();
     }

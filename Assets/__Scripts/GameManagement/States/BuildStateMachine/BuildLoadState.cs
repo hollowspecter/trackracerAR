@@ -29,7 +29,7 @@ public class BuildLoadState : State, IBuildLoadState
         if ( !m_active ) return;
 
         // try load track data
-        m_buildSM.StartTrackFromLoad ( SaveExtension.LoadTrackData ( fileName.ConvertToJsonFileName () ) );
+        //m_buildSM.StartTrackFromLoad ( SaveExtension.LoadTrackData ( fileName.ConvertToJsonFileName () ) );
 
         // switch to editor
         m_stateMachine.TransitionToState ( StateName.BUILD_EDITOR_STATE );

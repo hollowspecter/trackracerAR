@@ -26,9 +26,9 @@ public class StateMachineInstaller : MonoInstaller
         buildStateMachine.AddState ( StateName.BUILD_DIALOG_STATE, buildDialogState );
         Container.Bind<IBuildDialogState> ().To<BuildDialogState> ().FromInstance ( buildDialogState );
 
-        BuildStartState buildStartState = new BuildStartState ();
-        buildStateMachine.AddState ( StateName.BUILD_START_STATE, buildStartState );
-        Container.Bind<IBuildStartState> ().To<BuildStartState> ().FromInstance ( buildStartState );
+        BuildPaintState buildPaintState = new BuildPaintState ();
+        buildStateMachine.AddState ( StateName.BUILD_PAINT_STATE, buildPaintState );
+        Container.Bind<IBuildPaintState> ().To<BuildPaintState> ().FromInstance ( buildPaintState );
 
         BuildEditorState buildEditorState = new BuildEditorState ();
         buildStateMachine.AddState ( StateName.BUILD_EDITOR_STATE, buildEditorState );
@@ -41,6 +41,10 @@ public class StateMachineInstaller : MonoInstaller
         BuildLoadState buildLoadState = new BuildLoadState ();
         buildStateMachine.AddState ( StateName.BUILD_LOAD_STATE, buildLoadState );
         Container.Bind<IBuildLoadState> ().To<BuildLoadState> ().FromInstance ( buildLoadState );
+
+        BuildStreetState buildStreetState = new BuildStreetState ();
+        buildStateMachine.AddState ( StateName.BUILD_STREET_STATE, buildStreetState );
+        Container.Bind<IBuildStreetState> ().To<BuildStreetState> ().FromInstance ( buildStreetState );
 
         // Race StateMachine
         RaceSetupState raceSetupState = new RaceSetupState ();

@@ -25,7 +25,7 @@ public class EditorTrackbuilder_StatemachineInstaller : MonoInstaller
         Container.Bind<IBuildDialogState> ().To<BuildDialogState> ().FromInstance ( buildDialogState );
 
         BuildStartState buildStartState = new BuildStartState ();
-        buildStateMachine.AddState ( StateName.BUILD_START_STATE, buildStartState );
+        buildStateMachine.AddState ( StateName.BUILD_PAINT_STATE, buildStartState );
         Container.Bind<IBuildStartState> ().To<BuildStartState> ().FromInstance ( buildStartState );
 
         BuildEditorState buildEditorState = new BuildEditorState ();

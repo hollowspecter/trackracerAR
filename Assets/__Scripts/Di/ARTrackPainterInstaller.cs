@@ -12,7 +12,8 @@ public class ARTrackPainterInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        Debug.Log ( "ARTrackPainterInstaller" );
+        Container.BindFactory<PointRecorder, PointRecorder.Factory> ();
+
         Container.BindFactory<Point3DFactory.Params, Object, Transform, Point3DFactory.Factory> ()
             .FromFactory< Point3DFactory> ();
     }

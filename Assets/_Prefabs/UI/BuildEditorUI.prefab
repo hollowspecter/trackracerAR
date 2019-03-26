@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 114099885564751350}
   - component: {fileID: 114912091274158658}
   m_Layer: 5
-  m_Name: Editor
+  m_Name: BuildEditorUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
