@@ -52,8 +52,12 @@ public class Configuration : ScriptableObject
     private float m_waypointDetectionRadius = 0.3f;
     [SerializeField]
     private float m_respawnTime = 1f;
+    [SerializeField]
+    private float m_distanceThreshold = 0.05f;
+    [SerializeField]
+    private float m_angleThreshold = 20f;
 
-    [Header ( "Vehicles" )]
+    [ Header ( "Vehicles" )]
     [SerializeField]
     private GameObject[] m_vehicles;
 
@@ -78,6 +82,8 @@ public class Configuration : ScriptableObject
     public static float WaypointDetectionRadius { get { return DefaultConfig.m_waypointDetectionRadius; } }
     public static float RespawnTime { get { return DefaultConfig.m_respawnTime; } }
     public static GameObject[] Vehicles { get { return DefaultConfig.m_vehicles; } }
+    public static float DistanceThreshold { get { return DefaultConfig.m_distanceThreshold; } }
+    public static float AngleThreshold { get { return DefaultConfig.m_angleThreshold; } }
     [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask TrackLayer { get { return DefaultConfig.m_trackLayer; } }
     [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask PlaneLayer { get { return DefaultConfig.m_planeLayer; } }
     [Obsolete ( "Only used in old Trackbuilder" )] public static List<GameObject> TrackParts { get { return DefaultConfig.m_trackParts; } }

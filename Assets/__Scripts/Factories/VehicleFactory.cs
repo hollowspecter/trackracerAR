@@ -15,8 +15,8 @@ public class VehicleFactory : IFactory<VehicleFactory.Params, VehicleController>
     {
         public Params(Vector3 _position, Quaternion _rotation )
         {
-            if ( _position == null ) throw new System.ArgumentNullException ( nameof(_position) );
-            if ( _rotation == null ) throw new System.ArgumentNullException ( nameof(_position) );
+            _position.ThrowIfNull ( nameof ( _position ) );
+            _rotation.ThrowIfNull ( nameof ( _rotation ) );
             Position = _position;
             Rotation = _rotation;
         }
