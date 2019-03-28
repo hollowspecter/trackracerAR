@@ -15,22 +15,19 @@ public interface IBuildPaintState
 
 public class BuildPaintState : State, IBuildPaintState
 {
-    private Point3DFactory.Factory m_point3DFactory;
     private PointRecorder.Factory m_pointRecorderFactory;
     private IBuildStateMachine m_buildSM;
     private PointRecorder m_pointRecorder;
-    private Transform m_trackTransform;
+    private ITrackBuilderManager m_trackBuilder;
 
     #region Di
 
     [Inject]
-    protected void Construct( Point3DFactory.Factory _point3DFactory,
-                             PointRecorder.Factory _pointRecorderFactory,
-                             [Inject ( Id = "TrackParent" )]Transform _trackTransform )
+    protected void Construct( PointRecorder.Factory _pointRecorderFactory,
+                              ITrackBuilderManager _trackBuilder)
     {
-        m_point3DFactory = _point3DFactory;
         m_pointRecorderFactory = _pointRecorderFactory;
-        m_trackTransform = _trackTransform;
+        m_trackBuilder = _trackBuilder;
     }
 
     #endregion
@@ -75,24 +72,11 @@ public class BuildPaintState : State, IBuildPaintState
     {
         if ( !m_active ) return;
 
-        // TODO Put Code in a TrackBuilderManager!!!
-
-        // Dump the Points of the Point Recorder
-        Vector3 [] points, featurePoints;
+        // Dump the Points and give them to the track builder
+        Vector3 [] points;
         m_pointRecorder.DumpPoints ( out points );
-        Debug.LogFormat ("Recorded {0} points with the point recorder!", points.Length);
-
-        // Identify the Feature Points
-        FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
-
-        // Create the Prefabs with the Factory at the Positions to a certain injected root object
-        Transform currentPoint;
-        for (int i =0; i< featurePoints.Length;++i )
-        {
-            currentPoint = m_point3DFactory.Create ( new Point3DFactory.Params () );
-            currentPoint.position = featurePoints [ i ];
-            currentPoint.parent = m_trackTransform;
-        }
+        m_trackBuilder.InstantiateFeaturePoints ( ref points );
+        points = null;
 
         m_stateMachine.TransitionToState ( StateName.BUILD_EDITOR_STATE );
     }

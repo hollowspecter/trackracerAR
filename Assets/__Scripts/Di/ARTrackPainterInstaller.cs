@@ -9,6 +9,8 @@ public class ARTrackPainterInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
+        Container.Bind<ITrackBuilderManager> ().To<TrackBuilderManager> ().FromNew ().AsSingle ().NonLazy ();
+
         Container.BindFactory<PointRecorder, PointRecorder.Factory> ();
 
         Container.BindFactory<Point3DFactory.Params, Transform, Point3DFactory.Factory> ()

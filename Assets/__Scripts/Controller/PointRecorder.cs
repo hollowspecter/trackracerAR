@@ -27,6 +27,8 @@ public class PointRecorder
         m_line = _line;
         m_lastPosition = m_transform.position;
         m_minSqrDistance = m_settings.MinDistance * m_settings.MinDistance;
+
+        _line.positionCount = 0;
     }
 
     #region Public Functions
