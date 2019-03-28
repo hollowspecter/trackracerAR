@@ -19,7 +19,7 @@ public class PointRecorder
 
     public PointRecorder( [Inject] Settings _settings,
                          [Inject ( Id = "ARCamera" )] Transform _cameraTransform,
-                         [Inject ( Id = "Line" )] LineRenderer _line )
+                         [Inject ( Id = "TrackParent" )] LineRenderer _line )
     {
         m_settings = _settings;
         m_transform = _cameraTransform;

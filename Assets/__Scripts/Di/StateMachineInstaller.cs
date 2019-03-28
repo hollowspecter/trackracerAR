@@ -1,4 +1,5 @@
 using Zenject;
+using UnityEngine;
 
 public class StateMachineInstaller : MonoInstaller
 {
@@ -29,6 +30,7 @@ public class StateMachineInstaller : MonoInstaller
         BuildPaintState buildPaintState = new BuildPaintState ();
         buildStateMachine.AddState ( StateName.BUILD_PAINT_STATE, buildPaintState );
         Container.Bind<IBuildPaintState> ().To<BuildPaintState> ().FromInstance ( buildPaintState );
+        Container.QueueForInject ( buildPaintState );
 
         BuildEditorState buildEditorState = new BuildEditorState ();
         buildStateMachine.AddState ( StateName.BUILD_EDITOR_STATE, buildEditorState );

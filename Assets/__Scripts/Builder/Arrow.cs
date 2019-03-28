@@ -8,6 +8,7 @@ public enum ArrowPosition
     IN, OUT
 }
 
+[System.Obsolete]
 public class Arrow : MonoBehaviour
 {
     [SerializeField]

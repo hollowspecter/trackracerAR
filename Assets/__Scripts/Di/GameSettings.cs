@@ -5,9 +5,10 @@ using Zenject;
 public class GameSettings : ScriptableObjectInstaller<GameSettings>
 {
     public PointRecorder.Settings PointRecorder;
+    public Point3DFactory.Settings Point3DFactory;
 
     public override void InstallBindings()
     {
-        Container.BindInstances ( PointRecorder );
+        Container.BindInstances ( PointRecorder, Point3DFactory );
     }
 }

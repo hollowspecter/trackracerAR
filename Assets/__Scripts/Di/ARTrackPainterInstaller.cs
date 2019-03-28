@@ -14,7 +14,7 @@ public class ARTrackPainterInstaller : MonoInstaller
     {
         Container.BindFactory<PointRecorder, PointRecorder.Factory> ();
 
-        Container.BindFactory<Point3DFactory.Params, Object, Transform, Point3DFactory.Factory> ()
+        Container.BindFactory<Point3DFactory.Params, Transform, Point3DFactory.Factory> ()
             .FromFactory< Point3DFactory> ();
     }
 

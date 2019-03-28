@@ -400,7 +400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3859a92a05d4f5d418cb6ca605290e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LightEstimation: 0
   m_AttemptUpdate: 1
 --- !u!4 &427002220
 Transform:
@@ -540,36 +539,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 458915142}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &464000058
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 464000059}
-  m_Layer: 0
-  m_Name: TrackParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &464000059
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464000058}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1335839535}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &489151185 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1466087150639189966, guid: e33e9a789531ade4bb677e87480d9a1b,
@@ -1316,7 +1285,6 @@ Transform:
   m_Children:
   - {fileID: 282840814}
   - {fileID: 1809732876}
-  - {fileID: 464000059}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1348,6 +1316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 1568414836858200, guid: f0e0be81472ff1243aa2afa27e5d0e61,
     type: 3}
+  m_DetectionFlags: -1
 --- !u!114 &1335839538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1532,7 +1501,7 @@ GameObject:
   - component: {fileID: 1809732877}
   - component: {fileID: 1809732878}
   m_Layer: 0
-  m_Name: Line
+  m_Name: TrackParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1658,8 +1627,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _components:
+  - {fileID: 1809732876}
   - {fileID: 1809732877}
-  _identifier: Line
+  _identifier: TrackParent
   _useSceneContext: 1
   _context: {fileID: 0}
   _bindType: 0
@@ -1694,8 +1664,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _installers:
-  - {fileID: 264637317}
   - {fileID: 1889106113}
+  - {fileID: 264637317}
   _installerPrefabs: []
   _scriptableObjectInstallers:
   - {fileID: 11400000, guid: e4f7acb1b626d4e4895f836539eb4dc6, type: 2}
