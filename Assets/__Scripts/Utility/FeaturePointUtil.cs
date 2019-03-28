@@ -11,7 +11,7 @@ public class FeaturePointUtil
     /// </summary>
     /// <param name="_p">The point list</param>
     /// <param name="_featureP">The returned characteristic points</param>
-    public void IdentifyCharPoints( ref Vector3 [] _p, out Vector3 [] _featureP)
+    public static void IdentifyFeaturePoints( ref Vector3 [] _p, out Vector3 [] _featureP)
     {
         // check for null
         if ( _p == null || _p.Length < 1 )

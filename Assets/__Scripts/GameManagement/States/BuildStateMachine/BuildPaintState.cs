@@ -75,17 +75,22 @@ public class BuildPaintState : State, IBuildPaintState
     {
         if ( !m_active ) return;
 
+        // TODO Put Code in a TrackBuilderManager!!!
+
         // Dump the Points of the Point Recorder
-        Vector3 [] points;
+        Vector3 [] points, featurePoints;
         m_pointRecorder.DumpPoints ( out points );
         Debug.LogFormat ("Recorded {0} points with the point recorder!", points.Length);
 
+        // Identify the Feature Points
+        FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
+
         // Create the Prefabs with the Factory at the Positions to a certain injected root object
         Transform currentPoint;
-        for (int i =0; i< points.Length;++i )
+        for (int i =0; i< featurePoints.Length;++i )
         {
             currentPoint = m_point3DFactory.Create ( new Point3DFactory.Params () );
-            currentPoint.position = points [ i ];
+            currentPoint.position = featurePoints [ i ];
             currentPoint.parent = m_trackTransform;
         }
 

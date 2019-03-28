@@ -16,6 +16,8 @@ MonoBehaviour:
   m_showNormals: 0
   m_waypointDetectionRadius: 0.3
   m_respawnTime: 1
+  m_distanceThreshold: 0.1
+  m_angleThreshold: 20
   m_vehicles:
   - {fileID: 5550817467092024324, guid: 0afeba49abe316a4fb2cc79d8b7ff53a, type: 3}
   m_trackParts:
