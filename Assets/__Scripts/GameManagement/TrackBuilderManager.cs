@@ -19,7 +19,7 @@ public class TrackBuilderManager : ITrackBuilderManager
     private LineRenderer m_line;
 
     public TrackBuilderManager(Point3DFactory.Factory _point3DFactory,
-                               [Inject ( Id = "TrackParent" )]Transform _trackTransform,
+                               [Inject ( Id = "TrackParent" )] Transform _trackTransform,
                                [Inject ( Id = "TrackParent" )] LineRenderer _line )
     {
         m_point3DFactory = _point3DFactory;
@@ -29,6 +29,8 @@ public class TrackBuilderManager : ITrackBuilderManager
 
     public void InstantiateFeaturePoints(ref Vector3[] points)
     {
+        points.ThrowIfNull ( nameof ( points ) );
+
         Debug.LogFormat ( "Recorded {0} points with the point recorder!", points.Length );
         Vector3 [] featurePoints;
         FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );

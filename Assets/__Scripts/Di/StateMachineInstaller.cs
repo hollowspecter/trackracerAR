@@ -44,10 +44,6 @@ public class StateMachineInstaller : MonoInstaller
         buildStateMachine.AddState ( StateName.BUILD_LOAD_STATE, buildLoadState );
         Container.Bind<IBuildLoadState> ().To<BuildLoadState> ().FromInstance ( buildLoadState );
 
-        BuildStreetState buildStreetState = new BuildStreetState ();
-        buildStateMachine.AddState ( StateName.BUILD_STREET_STATE, buildStreetState );
-        Container.Bind<IBuildStreetState> ().To<BuildStreetState> ().FromInstance ( buildStreetState );
-
         // Race StateMachine
         RaceSetupState raceSetupState = new RaceSetupState ();
         raceStateMachine.AddState ( StateName.RACE_SETUP, raceSetupState );

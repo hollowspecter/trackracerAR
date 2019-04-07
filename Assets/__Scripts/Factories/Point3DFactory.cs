@@ -29,7 +29,7 @@ public class Point3DFactory : IFactory<Point3DFactory.Params, Transform>
 
     public Transform Create( Params _param )
     {
-        return m_container.InstantiatePrefabForComponent<Transform> ( m_settings.Prefab );
+        return m_container.InstantiatePrefab ( m_settings.Prefab ).transform;
     }
 
     [System.Serializable]

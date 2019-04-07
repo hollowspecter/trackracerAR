@@ -49,7 +49,6 @@ public class BuildEditorState : State, IBuildEditorState
     {
         if ( !m_active ) return;
         Debug.Log ( "BuildEditorState: OnShowPreview" );
-        m_stateMachine.TransitionToState ( StateName.BUILD_STREET_STATE );
     }
 
     public void OnCancel()
