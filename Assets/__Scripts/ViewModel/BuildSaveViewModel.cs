@@ -30,7 +30,7 @@ public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
     {
         m_state = _state;
         m_fader = GetComponent<UIFader> ();
-        m_fader.RegisterCallbacks ( ( State ) m_state );
+        m_fader.RegisterStateCallbacks ( ( State ) m_state );
 
         m_validateOutputText = _validateOutputText;
         m_validateOutputText.text = "Please enter a name for the Track";

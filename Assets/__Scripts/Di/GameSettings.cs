@@ -1,5 +1,6 @@
 using UnityEngine;
 using Zenject;
+using Baguio.Splines;
 
 [CreateAssetMenu(fileName = "GameSettings", menuName = "Installers/GameSettings")]
 public class GameSettings : ScriptableObjectInstaller<GameSettings>

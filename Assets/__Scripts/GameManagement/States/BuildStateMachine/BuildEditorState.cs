@@ -2,12 +2,16 @@
 
 public interface IBuildEditorState
 {
+    event State.InputActionHandler m_onShowPreview;
     void OnShowPreview();
     void OnCancel();
+    void OnSave();
 }
 
 public class BuildEditorState : State, IBuildEditorState
 {
+    public event InputActionHandler m_onShowPreview;
+
     private IBuildStateMachine m_buildSM;
 
     #region State Methods
@@ -49,6 +53,7 @@ public class BuildEditorState : State, IBuildEditorState
     {
         if ( !m_active ) return;
         Debug.Log ( "BuildEditorState: OnShowPreview" );
+        m_onShowPreview?.Invoke ();
     }
 
     public void OnCancel()
@@ -56,6 +61,13 @@ public class BuildEditorState : State, IBuildEditorState
         if ( !m_active ) return;
         Debug.Log ( "BuildEditorState: OnCancel" );
         m_stateMachine.TransitionToState ( StateName.BUILD_DIALOG_STATE );
+    }
+
+    public void OnSave()
+    {
+        if ( !m_active ) return;
+        Debug.Log ( "BuildEditorState: OnSave" );
+        m_stateMachine.TransitionToState ( StateName.BUILD_SAVE_STATE );
     }
 
     #endregion

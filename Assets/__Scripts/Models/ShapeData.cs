@@ -14,6 +14,13 @@ namespace Baguio.Splines
         public Vector2 [] m_normals;
         public float [] m_us;
 
+        public static ShapeData GetDefaultShape()
+        {
+            ShapeData result = Resources.Load<ShapeData> ( "DefaultStreetShape" );
+            if ( result == null ) throw new System.NullReferenceException ( nameof ( result ) );
+            return result;
+        }
+
         public void DrawGizmos ( Vector3 _pivot )
         {
             // normals

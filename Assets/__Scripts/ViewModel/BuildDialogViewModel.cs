@@ -22,7 +22,7 @@ public class BuildDialogViewModel : MonoBehaviour, IBuildDialogViewModel
 
         // Listen for state events
         m_fader = GetComponent<UIFader> ();
-        m_fader.RegisterCallbacks ( ( State ) m_state );
+        m_fader.RegisterStateCallbacks ( ( State ) m_state );
 
         // turn off this gameobject in case it is active
         gameObject.SetActive ( false );

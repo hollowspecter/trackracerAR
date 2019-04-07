@@ -11,6 +11,7 @@ namespace Baguio.Splines
 {
     public interface ISplineManager
     {
+        void GenerateTrack();
         List<OrientedPoint> GetWaypoints();
     }
 
@@ -23,13 +24,26 @@ namespace Baguio.Splines
         protected Vector3 [] m_points;
         protected OrientedPoint [] m_path;
         protected List<OrientedPoint> m_waypoints;
+        protected IBuildStateMachine m_session;
 
         private Spline m_spline;
+
+        #region Di
+
+        [Inject]
+        private void Construct( IBuildStateMachine _session )
+        {
+            m_session = _session;
+        }
+
+        #endregion
 
         #region Public Functions
 
         public virtual void GenerateTrack ()
         {
+            if ( m_session != null ) m_trackData = m_session.CurrentTrackData;
+
             InitPoints ();
             InitPath ();
             GenerateWaypoints ();
@@ -61,7 +75,7 @@ namespace Baguio.Splines
 
         protected virtual void InitPath ()
         {
-            m_spline = new Spline ( m_points, m_trackData.closed, m_trackData.precision );
+            m_spline = new Spline ( m_points, m_trackData.m_closed, m_trackData.m_precision );
             m_spline.GetOrientedPath ( out m_path );
         }
 

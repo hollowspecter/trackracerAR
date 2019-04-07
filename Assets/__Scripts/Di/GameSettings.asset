@@ -18,3 +18,4 @@ MonoBehaviour:
   Point3DFactory:
     Prefab: {fileID: 2980123362001335302, guid: 4ddf776c30f07574ea5dae14a5e8fb60,
       type: 3}
+  TrackData: {fileID: 11400000, guid: eb4236e5fa82acc409a09c427264b19b, type: 2}

@@ -28,7 +28,7 @@ public class UIFader : MonoBehaviour
         m_sequence.OnPause ( () => { if ( m_sequence.isBackwards ) gameObject.SetActive ( false ); } ); // turn of GO on complete in backwards
     }
 
-    public void RegisterCallbacks ( State state )
+    public void RegisterStateCallbacks ( State state )
     {
         state.m_enteredState += Activate;
         state.m_exitedState += Deactivate;

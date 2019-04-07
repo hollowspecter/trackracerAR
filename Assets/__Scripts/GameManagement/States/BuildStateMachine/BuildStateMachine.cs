@@ -10,15 +10,20 @@ public interface IBuildStateMachine
 {
     // events
     event State.TouchHandler m_touchDetected;
+    TrackData CurrentTrackData { get; set; }
 }
 
 public class BuildStateMachine : StateMachine, IBuildStateMachine
 {
+    public TrackData CurrentTrackData { get { return m_trackData; } set { m_trackData = value; } }
+
     public event TouchHandler m_touchDetected;
 
     //public event TouchHandler m_touchPressed;
     //public event TouchHandler m_touchReleased;
     //public event TouchHandler m_touch;
+
+    private TrackData m_trackData;
 
     public override void UpdateActive ( double _deltaTime )
     {

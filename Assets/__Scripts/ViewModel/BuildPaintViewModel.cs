@@ -23,7 +23,7 @@ public class BuildPaintViewModel : MonoBehaviour
         m_state = _state;
 
         // Listen for state events
-        GetComponent<UIFader> ().RegisterCallbacks ( ( State ) m_state );
+        GetComponent<UIFader> ().RegisterStateCallbacks ( ( State ) m_state );
 
         // register callbacks
         _cancelButton.onClick.AddListener ( OnCancelButtonPressed );

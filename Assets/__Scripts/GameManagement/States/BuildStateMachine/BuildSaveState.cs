@@ -3,6 +3,7 @@
  * See https://www.gnu.org/licenses/gpl.txt
  */
 using UnityEngine;
+using Zenject;
 
 public interface IBuildSaveState
 {
@@ -15,6 +16,12 @@ public class BuildSaveState : State, IBuildSaveState
 {
     private IBuildStateMachine m_buildSM;
 
+    #region Di
+
+    #endregion
+
+    #region State Lifecycle
+
     protected override void Initialise ()
     {
         base.Initialise ();
@@ -25,6 +32,10 @@ public class BuildSaveState : State, IBuildSaveState
     {
         base.EnterState ();
     }
+
+    #endregion
+
+    #region Callbacks
 
     public void OnSave ( string trackName )
     {
@@ -46,4 +57,6 @@ public class BuildSaveState : State, IBuildSaveState
         Debug.Log ( "BuildSaveState: OnDone" );
         m_stateMachine.TransitionToState ( StateName.RACE_SM );
     }
+
+    #endregion
 }

@@ -34,7 +34,7 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
         ( ( State ) m_state ).m_enteredState += LoadList;
         ( ( State ) m_state ).m_exitedState += Unload;
         m_fader = GetComponent<UIFader> ();
-        m_fader.RegisterCallbacks ( ( State ) m_state );
+        m_fader.RegisterStateCallbacks ( ( State ) m_state );
 
         m_contentRect = _contentRect;
         m_loadButton = _loadButton;

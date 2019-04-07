@@ -10,19 +10,25 @@ namespace Baguio.Splines
 {
     public class Extruder
     {
-        public static void Extrude ( Mesh mesh, ShapeData shape, OrientedPoint [] path, Vector2 scale )
+        public static void Extrude ( Mesh _mesh, ShapeData _shape, OrientedPoint [] _path, Vector2 _scale )
         {
+            // check for traps
+            _mesh.ThrowIfNull ( nameof ( _mesh ) );
+            _shape.ThrowIfNull ( nameof ( _shape ) );
+            _path.ThrowIfNull ( nameof ( _path ) );
+            _scale.ThrowIfNull ( nameof ( _scale ) );
+
             // scale
-            Vector3 [] verts = new Vector3 [ shape.m_verts.Length ];
+            Vector3 [] verts = new Vector3 [ _shape.m_verts.Length ];
             for ( int i = 0; i < verts.Length; ++i )
             {
-                verts [ i ] = shape.m_verts [ i ] * scale;
+                verts [ i ] = _shape.m_verts [ i ] * _scale;
             }
 
             // initialisation
             int vertsInShape = verts.Length;
-            int segments = path.Length - 1;
-            int edgeLoops = path.Length;
+            int segments = _path.Length - 1;
+            int edgeLoops = _path.Length;
             int vertCount = vertsInShape * edgeLoops;
             int triCount = vertsInShape * segments;
             int triIndexCount = triCount * 3;
@@ -37,20 +43,20 @@ namespace Baguio.Splines
             // create the vertices
             float uSpan = GetUSpan ( ref verts );
             float [] lengthTable;
-            CalcLengthTable ( out lengthTable, ref path );
-            for ( int i = 0; i < path.Length; i++ )
+            CalcLengthTable ( out lengthTable, ref _path );
+            for ( int i = 0; i < _path.Length; i++ )
             {
                 int offset = i * vertsInShape;
                 for ( int j = 0; j < vertsInShape; j++ )
                 {
                     int id = offset + j;
-                    vertices [ id ] = path [ i ].LocalToWorld ( verts [ j ] );
-                    normals [ id ] = path [ i ].LocalToWorldDirection ( shape.m_normals [ j ] );
+                    vertices [ id ] = _path [ i ].LocalToWorld ( verts [ j ] );
+                    normals [ id ] = _path [ i ].LocalToWorldDirection ( _shape.m_normals [ j ] );
 
                     float vCoord = lengthTable.Sample ( i / ( ( float ) edgeLoops ) );
                     vCoord /= uSpan;
 
-                    uvs [ id ] = new Vector2 ( shape.m_us [ j ], vCoord );
+                    uvs [ id ] = new Vector2 ( _shape.m_us [ j ], vCoord );
                 }
             }
 
@@ -75,11 +81,11 @@ namespace Baguio.Splines
             }
 
             // apply
-            mesh.Clear ();
-            mesh.vertices = vertices;
-            mesh.triangles = triangleIndices;
-            mesh.normals = normals;
-            mesh.uv = uvs;
+            _mesh.Clear ();
+            _mesh.vertices = vertices;
+            _mesh.triangles = triangleIndices;
+            _mesh.normals = normals;
+            _mesh.uv = uvs;
         }
 
         private static float GetUSpan ( ref Vector3 [] _verts )
