@@ -1,3 +1,7 @@
+/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
 using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
@@ -11,31 +15,16 @@ public static class SaveExtension
         return _name.RemoveWhitespace () + ".json";
     }
 
-    public static TrackDataStructure LoadTrackData ( string _fileName )
+    public static TrackData LoadTrackData ( string _fileName )
     {
         string json = File.ReadAllText ( Path.Combine ( m_path, _fileName ) );
-        return JsonUtility.FromJson<TrackDataStructure> ( json );
+        return JsonUtility.FromJson<TrackData> ( json );
     }
 
-    public static void SaveAsJson ( this TrackModel _track, string _fileName )
+    public static void SaveAsJson ( this TrackData _track, string _fileName )
     {
-        TrackDataStructure trackData = new TrackDataStructure ();
-        List<int> indexList = new List<int> ();
-        TrackPart root = _track.GetRoot ();
-        TrackPart currentTrack = root;
-
-        // traverse the tree until root or null are hit
-        do
-        {
-            indexList.Add ( currentTrack.Index );
-            currentTrack = currentTrack.NextPart;
-        } while ( currentTrack != null &&
-                 currentTrack != root );
-
-        trackData.m_trackIndices = indexList.ToArray ();
-
         // save as json
-        string json = JsonUtility.ToJson ( trackData );
+        string json = JsonUtility.ToJson ( _track );
         File.WriteAllText ( Path.Combine ( m_path, _fileName ), json );
     }
 }

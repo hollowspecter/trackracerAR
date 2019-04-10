@@ -28,13 +28,6 @@ public class Configuration : ScriptableObject
         {
             Debug.LogError ( "Failed to load default configuration at Resources/" + FILENAME_DEFAULT_CONFIG );
         }
-
-        // Setup Trackparts (Deprecated)
-        for ( int i = 0; i < m_defaultConfiguration.m_trackParts.Count; ++i )
-        {
-            // Every Trackpart knows it's own Index in the Array
-            m_defaultConfiguration.m_trackParts [ i ].GetComponent<TrackPart> ().Index = i;
-        }
     }
 
     #endregion
@@ -84,11 +77,6 @@ public class Configuration : ScriptableObject
     public static GameObject[] Vehicles { get { return DefaultConfig.m_vehicles; } }
     public static float DistanceThreshold { get { return DefaultConfig.m_distanceThreshold; } }
     public static float AngleThreshold { get { return DefaultConfig.m_angleThreshold; } }
-    [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask TrackLayer { get { return DefaultConfig.m_trackLayer; } }
-    [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask PlaneLayer { get { return DefaultConfig.m_planeLayer; } }
-    [Obsolete ( "Only used in old Trackbuilder" )] public static List<GameObject> TrackParts { get { return DefaultConfig.m_trackParts; } }
-    [Obsolete ( "Only used in old Trackbuilder" )] public static LayerMask ArrowLayer { get { return DefaultConfig.m_arrowLayer; } }
-    [Obsolete ( "Only used in old Trackbuilder" )] public static GameObject LoadItemList { get { return DefaultConfig.m_loadItemList; } }
 
     #endregion
 }

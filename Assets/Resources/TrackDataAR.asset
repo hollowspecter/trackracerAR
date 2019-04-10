@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbc115677def2549900878682118104, type: 3}
   m_Name: TrackDataAR
   m_EditorClassIdentifier: 
-  m_scale: {x: 0.1, y: 0.05}
-  precision: 4
-  closed: 0
-  m_shape: {fileID: 11400000, guid: 067ca6ef5859e44df9448cc58ea436b3, type: 2}
+  m_track:
+    m_scale: {x: 0.01, y: 0.01}
+    m_precision: 5
+    m_closed: 0
+    m_shape: {fileID: 0}
+    m_featurePoints: []

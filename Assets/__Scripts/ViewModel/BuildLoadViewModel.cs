@@ -55,7 +55,8 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
         {
             int closureIndex = i;
             fileName = Path.GetFileNameWithoutExtension ( fileNames [ i ] );
-            currentListItem = ( Instantiate ( Configuration.LoadItemList, m_contentRect ) as GameObject ).GetComponent<Button> ();
+            // TODO!!!
+            currentListItem = ( Instantiate ( /*Configuration.LoadItemList*/ null, m_contentRect ) as GameObject ).GetComponent<Button> ();
             currentListItem.name = fileName;
             currentListItem.GetComponentInChildren<Text> ().text = fileName;
             currentListItem.onClick.AddListener ( () => { OnItemSelected ( closureIndex ); } );
