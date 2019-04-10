@@ -43,8 +43,8 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
 
     protected virtual void Awake()
     {
-        m_scaleXSlider.onValueChanged.AddListener ( val => { m_scaleXValueLabel.text = val.ToString ( "0.00" ); } );
-        m_scaleYSlider.onValueChanged.AddListener ( val => { m_scaleYValueLabel.text = val.ToString ( "0.00" ); } );
+        m_scaleXSlider.onValueChanged.AddListener ( val => { m_scaleXValueLabel.text = val.ToString ( "0.000" ); } );
+        m_scaleYSlider.onValueChanged.AddListener ( val => { m_scaleYValueLabel.text = val.ToString ( "0.000" ); } );
         m_precisionSlider.onValueChanged.AddListener ( val => { m_precisionValueLabel.text = val.ToString ( ); } );
         m_discardChangesButton.onClick.AddListener ( Deactivate );
         m_saveChangesButton.onClick.AddListener ( SaveAndDeactivate );
@@ -64,6 +64,10 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
         m_precisionSlider.value = m_session.CurrentTrackData.m_precision;
         m_precisionSlider.onValueChanged.Invoke ( m_precisionSlider.value );
         m_closedToggle.isOn = m_session.CurrentTrackData.m_closed;
+
+        m_scaleXValueLabel.text = m_scaleXSlider.value.ToString ( "0.00" );
+        m_scaleYValueLabel.text = m_scaleYSlider.value.ToString ( "0.00" );
+        m_precisionValueLabel.text = m_precisionSlider.value.ToString ();
 
         // activate
         gameObject.SetActive ( true );
