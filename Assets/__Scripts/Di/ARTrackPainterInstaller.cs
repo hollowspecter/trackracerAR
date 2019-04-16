@@ -9,6 +9,9 @@ public class ARTrackPainterInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
+        // Install State Machines
+        StateMachineInstaller.Install (Container);
+
         Container.Bind<ITrackBuilderManager> ().To<TrackBuilderManager> ().FromNew ().AsSingle ().NonLazy ();
 
         Container.BindFactory<PointRecorder, PointRecorder.Factory> ();

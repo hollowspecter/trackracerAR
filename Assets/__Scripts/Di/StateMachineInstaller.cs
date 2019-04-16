@@ -1,10 +1,17 @@
+/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
 using Zenject;
 using UnityEngine;
 
-public class StateMachineInstaller : MonoInstaller
+public class StateMachineInstaller : Installer<StateMachineInstaller>
 {
     public override void InstallBindings ()
     {
+        // StateMachineInstaller
+        Container.BindInterfacesTo<StateManager> ().AsSingle ().NonLazy ();
+
         // Root StateMachine
         RootStateMachine root = new RootStateMachine ();
         Container.Bind<IRootStateMachine> ().To<RootStateMachine> ().FromInstance ( root );
