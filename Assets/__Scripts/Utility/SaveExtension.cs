@@ -8,7 +8,7 @@ using System.IO;
 
 public static class SaveExtension
 {
-    public static string m_path = Path.Combine ( Application.streamingAssetsPath, "Tracks/JSON/" );
+    public static string m_path = Path.Combine ( Application.streamingAssetsPath, "Tracks/" );
 
     public static string ConvertToJsonFileName ( this string _name )
     {

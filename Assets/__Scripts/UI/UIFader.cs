@@ -25,7 +25,6 @@ public class UIFader : MonoBehaviour
         m_sequence = DOTween.Sequence ();
         m_sequence.SetAutoKill ( false );
         for ( int i = 0; i < m_graphics.Length; ++i ) m_sequence.Join ( m_graphics [ i ].DOFade ( 0f, 0.5f ).From () ); // fade out graphics
-        m_sequence.OnPause ( () => { if ( m_sequence.isBackwards ) gameObject.SetActive ( false ); } ); // turn of GO on complete in backwards
     }
 
     public void RegisterStateCallbacks ( State state )
@@ -42,6 +41,6 @@ public class UIFader : MonoBehaviour
 
     private void Deactivate ()
     {
-        m_sequence.PlayBackwards ();
+        gameObject.SetActive ( false );
     }
 }

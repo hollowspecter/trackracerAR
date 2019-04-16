@@ -18,6 +18,7 @@ public class TrackBuilderManager : ITrackBuilderManager
     private Point3DFactory.Factory m_point3DFactory;
     private Transform m_trackTransform;
     private LineRenderer m_line;
+    private List<GameObject> m_featurePoints;
 
     public TrackBuilderManager(Point3DFactory.Factory _point3DFactory,
                                [Inject ( Id = "TrackParent" )] Transform _trackTransform,
@@ -26,8 +27,10 @@ public class TrackBuilderManager : ITrackBuilderManager
         m_point3DFactory = _point3DFactory;
         m_trackTransform = _trackTransform;
         m_line = _line;
+        m_featurePoints = new List<GameObject> ();
     }
 
+    // TODO make that you can also add feature points directly you know
     public void InstantiateFeaturePoints(ref Vector3[] points)
     {
         points.ThrowIfNull ( nameof ( points ) );
@@ -36,6 +39,13 @@ public class TrackBuilderManager : ITrackBuilderManager
         Vector3 [] featurePoints;
         FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
 
+        // Destroy all previous feature points if there are any
+        foreach(GameObject obj in m_featurePoints )
+        {
+            Object.Destroy ( obj );
+        }
+        m_featurePoints.Clear ();
+
         // Create the Prefabs with the Factory at the Positions to a certain injected root object
         Transform currentPoint;
         for ( int i = 0; i < featurePoints.Length; ++i )
@@ -43,6 +53,7 @@ public class TrackBuilderManager : ITrackBuilderManager
             currentPoint = m_point3DFactory.Create ( new Point3DFactory.Params () );
             currentPoint.position = featurePoints [ i ];
             currentPoint.parent = m_trackTransform;
+            m_featurePoints.Add ( currentPoint.gameObject );
         }
     }
 }

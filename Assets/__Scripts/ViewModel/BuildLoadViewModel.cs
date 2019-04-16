@@ -14,6 +14,13 @@ public interface IBuildLoadViewModel { }
 [RequireComponent ( typeof ( UIFader ) )]
 public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
 {
+    [System.Serializable]
+    public class Settings
+    {
+        public GameObject ListItem;
+    }
+
+    private Settings m_settings;
     private IBuildLoadState m_state;
     private UIFader m_fader;
     private RectTransform m_contentRect;
@@ -23,11 +30,14 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
 
     private int m_selected;
 
+    #region Di
+
     [Inject]
-    private void Construct ( IBuildLoadState _state,
+    private void Construct( IBuildLoadState _state,
                             [Inject ( Id = "Content" )] RectTransform _contentRect,
                             [Inject ( Id = "LoadButton" )] Button _loadButton,
-                            [Inject ( Id = "CancelButton" )] Button _cancelButton )
+                            [Inject ( Id = "CancelButton" )] Button _cancelButton,
+                            Settings _settings)
     {
         m_selected = -1;
         m_state = _state;
@@ -41,9 +51,12 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
         m_loadButton.interactable = false;
         m_loadButton.onClick.AddListener ( OnLoadPressed );
         _cancelButton.onClick.AddListener ( OnCancelPressed );
+        m_settings = _settings;
 
         gameObject.SetActive ( false );
     }
+
+    #endregion
 
     private void LoadList ()
     {
@@ -55,8 +68,7 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
         {
             int closureIndex = i;
             fileName = Path.GetFileNameWithoutExtension ( fileNames [ i ] );
-            // TODO!!!
-            currentListItem = ( Instantiate ( /*Configuration.LoadItemList*/ null, m_contentRect ) as GameObject ).GetComponent<Button> ();
+            currentListItem = ( Instantiate ( m_settings.ListItem, m_contentRect ) as GameObject ).GetComponent<Button> ();
             currentListItem.name = fileName;
             currentListItem.GetComponentInChildren<Text> ().text = fileName;
             currentListItem.onClick.AddListener ( () => { OnItemSelected ( closureIndex ); } );
@@ -71,6 +83,8 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
             Destroy ( m_list [ i ].gameObject );
         }
     }
+
+    #region Callbacks
 
     private void OnItemSelected ( int index )
     {
@@ -93,4 +107,6 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
         Debug.Log ( "Cancel pressed" );
         m_state.CancelLoading ();
     }
+
+    #endregion
 }

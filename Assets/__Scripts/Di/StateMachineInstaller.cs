@@ -50,6 +50,7 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         BuildLoadState buildLoadState = new BuildLoadState ();
         buildStateMachine.AddState ( StateName.BUILD_LOAD_STATE, buildLoadState );
         Container.Bind<IBuildLoadState> ().To<BuildLoadState> ().FromInstance ( buildLoadState );
+        Container.QueueForInject ( buildLoadState );
 
         // Race StateMachine
         RaceSetupState raceSetupState = new RaceSetupState ();

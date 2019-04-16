@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e4b182a5072384b898ef61a2027fd5, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  PointRecorder:
-    MinDistance: 0.01
-    DebugKeyCode: 112
-  Point3DFactory:
-    Prefab: {fileID: 2980123362001335302, guid: 4ddf776c30f07574ea5dae14a5e8fb60,
-      type: 3}
-  TrackData: {fileID: 11400000, guid: eb4236e5fa82acc409a09c427264b19b, type: 2}
+  TrackPainter:
+    PointRecorder:
+      MinDistance: 0.01
+      DebugKeyCode: 112
+    Point3DFactory:
+      Prefab: {fileID: 2980123362001335302, guid: 4ddf776c30f07574ea5dae14a5e8fb60,
+        type: 3}
+  UI:
+    LoadingSettings:
+      ListItem: {fileID: 1459100307635140, guid: eef163e62a519432cb04bba0d221d6fb,
+        type: 3}

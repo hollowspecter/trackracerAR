@@ -19,7 +19,11 @@ public class FeaturePointUtil
     {
         // check for null
         if ( _p == null || _p.Length < 1 )
-            throw new System.ArgumentNullException ( nameof ( _p ), "The points parameter was null or empty!" );
+        {
+            Debug.LogWarning ( "The Points were null or empty, therefore no FeaturePoints were detected." );
+            _featureP = new Vector3 [0];
+            return;
+        }
 
         using ( var block = DisposeBlock.Spawn() )
         {
