@@ -60,19 +60,38 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
 
     private void LoadList ()
     {
-        string [] fileNames = Directory.GetFiles ( SaveExtension.m_path, "*.json" );
-        m_list = new Button [ fileNames.Length ];
-        Button currentListItem;
-        string fileName;
-        for ( int i = 0; i < fileNames.Length; ++i )
+        Debug.Log ( "BuildLoadViewModel: Load list" );
+        try
         {
-            int closureIndex = i;
-            fileName = Path.GetFileNameWithoutExtension ( fileNames [ i ] );
-            currentListItem = ( Instantiate ( m_settings.ListItem, m_contentRect ) as GameObject ).GetComponent<Button> ();
-            currentListItem.name = fileName;
-            currentListItem.GetComponentInChildren<Text> ().text = fileName;
-            currentListItem.onClick.AddListener ( () => { OnItemSelected ( closureIndex ); } );
-            m_list [ i ] = currentListItem;
+            // Check if the directory exists.
+            if ( !Directory.Exists ( SaveExtension.m_path ) )
+            {
+                // if not, create the directories
+                ( new FileInfo ( SaveExtension.m_path ) ).Directory.Create ();
+                Debug.Log ( "Created neccessary folder structure" );
+            }
+
+            // load all json files in the directory
+            string [] fileNames = Directory.GetFiles ( SaveExtension.m_path, "*.json" );
+
+            // Create Buttons
+            m_list = new Button [ fileNames.Length ];
+            Button currentListItem;
+            string fileName;
+            for ( int i = 0; i < fileNames.Length; ++i )
+            {
+                int closureIndex = i;
+                fileName = Path.GetFileNameWithoutExtension ( fileNames [ i ] );
+                currentListItem = ( Instantiate ( m_settings.ListItem, m_contentRect ) as GameObject ).GetComponent<Button> ();
+                currentListItem.name = fileName;
+                currentListItem.GetComponentInChildren<Text> ().text = fileName;
+                currentListItem.onClick.AddListener ( () => { OnItemSelected ( closureIndex ); } );
+                m_list [ i ] = currentListItem;
+            }
+        }
+        catch(System.Exception e )
+        {
+            Debug.LogError ( e );
         }
     }
 

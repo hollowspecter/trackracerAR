@@ -30,15 +30,29 @@ public class BuildLoadState : State, IBuildLoadState
         m_buildSM = m_stateMachine as IBuildStateMachine;
     }
 
+    public override void EnterState()
+    {
+        base.EnterState ();
+        Debug.Log ( "BuildLoadSTate: EnterState" );
+    }
+
+    public override void ExitState()
+    {
+        base.ExitState ();
+        Debug.Log ( "BuildLoadSTate: ExitState" );
+    }
+
     public void CancelLoading ()
     {
         if ( !m_active ) return;
+        Debug.Log ( "BuildLoadState: CancelLoading" );
         m_stateMachine.TransitionToState ( StateName.BUILD_DIALOG_STATE );
     }
 
     public void Load ( string fileName )
     {
         if ( !m_active ) return;
+        Debug.Log ( "BuildLoadSTate: Load fileName" );
 
         // try load track data
         m_buildSM.CurrentTrackData = SaveExtension.LoadTrackData ( fileName );

@@ -29,6 +29,13 @@ public class BuildDialogState : State, IBuildDialogState
     public override void EnterState ()
     {
         base.EnterState ();
+        Debug.Log ( "Entering BuildDialogState" );
+    }
+
+    public override void ExitState()
+    {
+        base.ExitState ();
+        Debug.Log ( "Exiting BuildDialogState" );
     }
 
     public void StartNewTrack ()
@@ -44,6 +51,7 @@ public class BuildDialogState : State, IBuildDialogState
     public void LoadTrack ()
     {
         if ( !m_active ) return;
+        Debug.Log ( "BuildDialogState: LoadTrack" );
         m_stateMachine.TransitionToState ( StateName.BUILD_LOAD_STATE );
     }
 }
