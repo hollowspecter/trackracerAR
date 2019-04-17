@@ -46,9 +46,6 @@ public class BuildEditorState : State, IBuildEditorState
 
         // Instantiate the Feature Points
         m_trackBuilder.InstantiateFeaturePoints ( ref m_buildSM.CurrentTrackData.m_featurePoints );
-
-        // Preview Once
-        OnShowPreview ();
     }
 
     public override void ExitState ()

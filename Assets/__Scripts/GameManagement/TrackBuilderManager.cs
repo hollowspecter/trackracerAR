@@ -49,31 +49,36 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
         m_signalBus.Unsubscribe<FeaturePointMovedSignal> ( FeaturePointMoved );
     }
 
-
-    public void InstantiateFeaturePoints(ref Vector3[] featurePoints)
+    public void ClearFeaturePoints()
     {
-        featurePoints.ThrowIfNull ( nameof ( featurePoints ) );
-
-        // Destroy all previous feature points if there are any
-        foreach(GameObject obj in m_pointGOs )
+        foreach ( GameObject obj in m_pointGOs )
         {
             UnityEngine.Object.Destroy ( obj );
         }
         m_pointGOs.Clear ();
+        m_line.positionCount = 0;
+    }
+
+    public void InstantiateFeaturePoints(ref Vector3[] featurePoints)
+    {
+        featurePoints.ThrowIfNull ( nameof ( featurePoints ) );
+        Debug.LogFormat ( "TrackBuilderManager: Instantiating {0} feature points", featurePoints.Length );
+
+        // Destroy all previous feature points if there are any
+        ClearFeaturePoints ();
 
         // Create the Prefabs with the Factory at the Positions to a certain injected root object
         Transform currentPoint;
+        m_line.positionCount = featurePoints.Length;
         for ( int i = 0; i < featurePoints.Length; ++i )
         {
             currentPoint = m_point3DFactory.Create ( new Point3DFactory.Params () );
             currentPoint.position = featurePoints [ i ];
             currentPoint.parent = m_trackTransform;
+            m_line.SetPosition ( i, featurePoints [ i ] );
             m_pointGOs.Add ( currentPoint.gameObject );
         }
-
-        // Update the LineRenderer
-        m_line.SetPositions ( featurePoints );
-        m_line.positionCount = featurePoints.Length;
+        Debug.LogFormat ( "TrackBuilderManager: managing {0} pointGOs!", m_pointGOs.Count );
     }
 
     public Vector3[] GetFeaturePoints()
@@ -83,6 +88,7 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
         {
             featurePoints [ i ] = m_pointGOs [ i ].transform.position;
         }
+        Debug.LogFormat ( "TrackBuilderManager/GetFeaturePoints found {0} points", featurePoints.Length );
         return featurePoints;
     }
 

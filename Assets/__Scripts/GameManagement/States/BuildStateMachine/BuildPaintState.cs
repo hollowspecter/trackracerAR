@@ -74,11 +74,13 @@ public class BuildPaintState : State, IBuildPaintState
 
         // Dump the Points and give them to the track builder
         Vector3 [] points, featurePoints;
-        m_pointRecorder.DumpPoints ( out points, true );
+        //m_pointRecorder.DumpPoints ( out points, true );
+        m_pointRecorder.DumpPoints ( out points );
 
         // Identify the feature points
         FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
         m_buildSM.CurrentTrackData.m_featurePoints = featurePoints;
+        Debug.LogFormat ( "BuildPaintState: Found {0} feature points!", featurePoints.Length );
 
         points = null;
         featurePoints = null;

@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/ARTrackPainter.unity
     guid: fa234d73c95a8b24a8ffe4b40aa04f77
-  - enabled: 0
-    path: Assets/_Scenes/FeaturePointTest.unity
-    guid: a755c419e36c7594aa4d101769545dfb
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b21feb4eab749b04ea24af496b4f0385,
       type: 2}
