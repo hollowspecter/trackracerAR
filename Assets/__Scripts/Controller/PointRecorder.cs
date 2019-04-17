@@ -45,9 +45,20 @@ public class PointRecorder
         }
     }
 
-    public void DumpPoints( out Vector3 [] _points )
+    public void DumpPoints( out Vector3 [] _points, bool _notLastPoint = false)
     {
-        _points = m_points.ToArray ();
+        if ( _notLastPoint )
+        {
+            _points = new Vector3 [ m_points.Count - 1 ];
+            for ( int i = 0; i < m_points.Count - 1; ++i )
+            {
+                _points [ i ] = m_points [ i ];
+            }
+        }
+        else
+        {
+            _points = m_points.ToArray ();
+        }
         m_points.Clear ();
     }
 
