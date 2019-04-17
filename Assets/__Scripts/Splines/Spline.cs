@@ -9,8 +9,6 @@ namespace Baguio.Splines
 {
     public class Spline
     {
-        private const float THRESHOLD = 1f;
-
         private Vector3 [] m_points;
         private int m_pointsPerCurve;
         private Curve [] m_curves;
@@ -67,14 +65,14 @@ namespace Baguio.Splines
 
         private void CalculateClosedSpline ()
         {
-            // check if last and first point are on the same position
-            bool skipLastPoint = ( ( m_points [ 0 ] - m_points [ m_points.Length - 1 ] ).magnitude < THRESHOLD );
+            //// check if last and first point are on the same position
+            //bool skipLastPoint = ( ( m_points [ 0 ] - m_points [ m_points.Length - 1 ] ).magnitude < THRESHOLD );
             Vector3 [] points = m_points;
-            if ( skipLastPoint )
-            {
-                points = new Vector3 [ m_points.Length - 1 ];
-                for ( int i = 0; i < points.Length; ++i ) points [ i ] = m_points [ i ];
-            }
+            //if ( skipLastPoint )
+            //{
+            //    points = new Vector3 [ m_points.Length - 1 ];
+            //    for ( int i = 0; i < points.Length; ++i ) points [ i ] = m_points [ i ];
+            //}
             m_curves = new Curve [ points.Length ];
 
             // generate spline

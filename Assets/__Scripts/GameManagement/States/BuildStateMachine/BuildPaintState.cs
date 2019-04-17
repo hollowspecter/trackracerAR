@@ -74,8 +74,8 @@ public class BuildPaintState : State, IBuildPaintState
 
         // Dump the Points and give them to the track builder
         Vector3 [] points, featurePoints;
-        //m_pointRecorder.DumpPoints ( out points, true );
-        m_pointRecorder.DumpPoints ( out points );
+        m_pointRecorder.DumpPoints ( out points, true );
+        //m_pointRecorder.DumpPoints ( out points );
 
         // Identify the feature points
         FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
