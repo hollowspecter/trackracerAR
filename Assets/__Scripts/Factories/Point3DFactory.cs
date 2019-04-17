@@ -2,12 +2,8 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Point3DFactory : IFactory<Point3DFactory.Params, Transform>
 {

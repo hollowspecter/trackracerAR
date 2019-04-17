@@ -73,10 +73,15 @@ public class BuildPaintState : State, IBuildPaintState
         if ( !m_active ) return;
 
         // Dump the Points and give them to the track builder
-        Vector3 [] points;
+        Vector3 [] points, featurePoints;
         m_pointRecorder.DumpPoints ( out points );
-        m_trackBuilder.InstantiateFeaturePoints ( ref points );
+
+        // Identify the feature points
+        FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
+        m_buildSM.CurrentTrackData.m_featurePoints = featurePoints;
+
         points = null;
+        featurePoints = null;
 
         m_stateMachine.TransitionToState ( StateName.BUILD_EDITOR_STATE );
     }

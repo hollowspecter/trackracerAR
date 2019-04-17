@@ -12,7 +12,10 @@ public class ARTrackPainterInstaller : MonoInstaller
         // Install State Machines
         StateMachineInstaller.Install (Container);
 
-        Container.Bind<ITrackBuilderManager> ().To<TrackBuilderManager> ().FromNew ().AsSingle ().NonLazy ();
+        // Install Signals
+        SignalsInstaller.Install ( Container );
+
+        Container.BindInterfacesTo<TrackBuilderManager> ().FromNew ().AsSingle ().NonLazy ();
 
         Container.BindFactory<PointRecorder, PointRecorder.Factory> ();
 

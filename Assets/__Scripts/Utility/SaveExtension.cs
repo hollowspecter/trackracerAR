@@ -17,7 +17,7 @@ public static class SaveExtension
 
     public static TrackData LoadTrackData ( string _fileName )
     {
-        string json = File.ReadAllText ( Path.Combine ( m_path, _fileName ) );
+        string json = File.ReadAllText ( Path.Combine ( m_path, _fileName.ConvertToJsonFileName() ) );
         return JsonUtility.FromJson<TrackData> ( json );
     }
 
@@ -25,6 +25,6 @@ public static class SaveExtension
     {
         // save as json
         string json = JsonUtility.ToJson ( _track );
-        File.WriteAllText ( Path.Combine ( m_path, _fileName ), json );
+        File.WriteAllText ( Path.Combine ( m_path, _fileName.ConvertToJsonFileName() ), json );
     }
 }

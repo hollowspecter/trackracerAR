@@ -42,8 +42,7 @@ public class BuildSaveState : State, IBuildSaveState
     {
         if ( !m_active ) return;
         Debug.Log ( "BuildSaveState: OnSave" );
-        m_buildSM.CurrentTrackData.SaveAsJson ( trackName.ConvertToJsonFileName () );
-        //m_buildSM.Track.SaveAsJson ( trackName.ConvertToJsonFileName () );
+        m_buildSM.CurrentTrackData.SaveAsJson ( trackName );
 #if UNITY_EDITOR
         AssetDatabase.Refresh ();
 #endif

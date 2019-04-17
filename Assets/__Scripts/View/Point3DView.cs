@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Point3DView : MonoBehaviour
 {
@@ -13,6 +14,13 @@ public class Point3DView : MonoBehaviour
 
     private Vector3 m_screenPoint;
     private Vector3 m_offset;
+    private SignalBus m_signalBus;
+
+    [Inject]
+    private void Construct(SignalBus _signalBus )
+    {
+        m_signalBus = _signalBus;
+    }
 
     private void Awake()
     {
@@ -37,6 +45,7 @@ public class Point3DView : MonoBehaviour
     private void OnMouseUp()
     {
         Deselect ();
+        m_signalBus.Fire ( new FeaturePointMovedSignal () );
     }
 
     public void Select()

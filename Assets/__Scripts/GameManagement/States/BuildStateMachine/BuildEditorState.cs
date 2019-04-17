@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
+using UnityEngine;
+using Zenject;
 
 public interface IBuildEditorState
 {
@@ -13,6 +18,17 @@ public class BuildEditorState : State, IBuildEditorState
     public event InputActionHandler m_onShowPreview;
 
     private IBuildStateMachine m_buildSM;
+    private ITrackBuilderManager m_trackBuilder;
+
+    #region DI
+
+    [Inject]
+    private void Construct(ITrackBuilderManager _trackBuilder )
+    {
+        m_trackBuilder = _trackBuilder;
+    }
+
+    #endregion
 
     #region State Methods
 
@@ -27,6 +43,9 @@ public class BuildEditorState : State, IBuildEditorState
         base.EnterState ();
 
         m_buildSM.m_touchDetected += OnTouchDetected;
+
+        // Instantiate the Feature Points
+        m_trackBuilder.InstantiateFeaturePoints ( ref m_buildSM.CurrentTrackData.m_featurePoints );
     }
 
     public override void ExitState ()
@@ -34,6 +53,8 @@ public class BuildEditorState : State, IBuildEditorState
         base.ExitState ();
 
         m_buildSM.m_touchDetected -= OnTouchDetected;
+
+        m_buildSM.CurrentTrackData.m_featurePoints = m_trackBuilder.GetFeaturePoints ();
     }
 
     #endregion

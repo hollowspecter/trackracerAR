@@ -16,4 +16,18 @@ public class TrackData
     public bool m_closed = true;
     public ShapeData m_shape;
     public Vector3[] m_featurePoints;
+
+    public override string ToString()
+    {
+        return string.Format ( "Scale: {0}\n" +
+                             "Precision: {1}\n" +
+                             "Closed: {2}\n" +
+                             "Shape: {3}\n" +
+                             "Number of Featurepoints: {4}",
+                             m_scale,
+                             m_precision,
+                             m_closed,
+                             m_shape,
+                             m_featurePoints.Length );
+    }
 }

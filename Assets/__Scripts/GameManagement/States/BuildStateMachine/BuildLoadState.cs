@@ -41,7 +41,7 @@ public class BuildLoadState : State, IBuildLoadState
         if ( !m_active ) return;
 
         // try load track data
-        m_buildSM.CurrentTrackData = SaveExtension.LoadTrackData ( fileName.ConvertToJsonFileName () );
+        m_buildSM.CurrentTrackData = SaveExtension.LoadTrackData ( fileName );
         m_trackBuilder.InstantiateFeaturePoints ( ref m_buildSM.CurrentTrackData.m_featurePoints );
 
         // switch to editor

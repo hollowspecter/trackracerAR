@@ -42,6 +42,7 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         BuildEditorState buildEditorState = new BuildEditorState ();
         buildStateMachine.AddState ( StateName.BUILD_EDITOR_STATE, buildEditorState );
         Container.Bind<IBuildEditorState> ().To<BuildEditorState> ().FromInstance ( buildEditorState );
+        Container.QueueForInject ( buildEditorState );
 
         BuildSaveState buildSaveState = new BuildSaveState ();
         buildStateMachine.AddState ( StateName.BUILD_SAVE_STATE, buildSaveState );
