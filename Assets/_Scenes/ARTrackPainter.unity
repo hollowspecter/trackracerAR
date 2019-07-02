@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildDialogUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1356202311934892, guid: 898057741817b4c269a2776726b42742, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224766760688507298, guid: 898057741817b4c269a2776726b42742,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -489,6 +493,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005854358850414180, guid: 898057741817b4c269a2776726b42742,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005854358850414180, guid: 898057741817b4c269a2776726b42742,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470566447847536092, guid: 898057741817b4c269a2776726b42742,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470566447847536092, guid: 898057741817b4c269a2776726b42742,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 898057741817b4c269a2776726b42742, type: 3}
@@ -588,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 224250700522519980, guid: 86fb6aeec396b4c44b12d99d169153e5,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 99.9
+      value: 52.95
       objectReference: {fileID: 0}
     - target: {fileID: 224250700522519980, guid: 86fb6aeec396b4c44b12d99d169153e5,
         type: 3}
@@ -598,7 +622,7 @@ PrefabInstance:
     - target: {fileID: 224250700522519980, guid: 86fb6aeec396b4c44b12d99d169153e5,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224250700522519980, guid: 86fb6aeec396b4c44b12d99d169153e5,
         type: 3}
@@ -608,7 +632,7 @@ PrefabInstance:
     - target: {fileID: 224250700522519980, guid: 86fb6aeec396b4c44b12d99d169153e5,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224250700522519980, guid: 86fb6aeec396b4c44b12d99d169153e5,
         type: 3}
@@ -618,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 224250700522519980, guid: 86fb6aeec396b4c44b12d99d169153e5,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86fb6aeec396b4c44b12d99d169153e5, type: 3}
@@ -1470,7 +1494,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1922,10 +1946,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildSaveUI
       objectReference: {fileID: 0}
-    - target: {fileID: 1182324870024060, guid: bafcfbe7ea88940728fe7dfb8bb074f9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224612789159473348, guid: bafcfbe7ea88940728fe7dfb8bb074f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2030,6 +2050,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188474620544069843, guid: bafcfbe7ea88940728fe7dfb8bb074f9,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188474620544069843, guid: bafcfbe7ea88940728fe7dfb8bb074f9,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497026062062770720, guid: bafcfbe7ea88940728fe7dfb8bb074f9,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497026062062770720, guid: bafcfbe7ea88940728fe7dfb8bb074f9,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bafcfbe7ea88940728fe7dfb8bb074f9, type: 3}
