@@ -7,8 +7,15 @@ using UnityEngine.UI;
 using TMPro;
 using UniRx;
 
+/// <summary>
+/// TODO 
+/// * write summary
+/// * test if this actually works
+/// </summary>
 public class DiscreteSlider : MonoBehaviour
 {
+    public IReadOnlyReactiveProperty<float> Value { get { return m_model.Value; } }
+
     [SerializeField]
     protected GameObject m_togglePrefab;
     [SerializeField]
@@ -23,6 +30,9 @@ public class DiscreteSlider : MonoBehaviour
 
     private int m_numberOfElements = 0;
     private DiscreteSliderModel m_model;
+    private CompositeDisposable m_disposables;
+
+    #region Unity Lifecycle
 
     private void Awake()
     {
@@ -31,6 +41,7 @@ public class DiscreteSlider : MonoBehaviour
         m_numberOfElements = Mathf.Min ( m_labels.Length, m_values.Length );
         m_toggles = new Toggle [ m_numberOfElements ];
         m_defaultValueIndex = Mathf.Clamp ( m_defaultValueIndex, 0, m_numberOfElements - 1 );
+        m_disposables = new CompositeDisposable ();
 
         ToggleGroup toggleGroup = GetComponent<ToggleGroup> ();
         GameObject tmpGameObject;
@@ -52,12 +63,31 @@ public class DiscreteSlider : MonoBehaviour
         }
         m_toggles [ m_defaultValueIndex ].isOn = true;
 
-        m_model = new DiscreteSliderModel ( m_values [ m_defaultValueIndex ] );
+        m_model = new DiscreteSliderModel ( m_values, m_defaultValueIndex );
     }
 
-    public ReactiveProperty<float> observeCurrentValue()
+    protected virtual void OnEnable()
     {
-        return m_model.value;
+        for (int i=0; i<m_numberOfElements; ++i )
+        {
+            m_toggles [ i ]
+                .OnValueChangedAsObservable ()
+                .Where ( isOn => isOn )
+                .Subscribe ( isOn => m_model.Index.Value = i )
+                .AddTo ( m_disposables );
+        }
+    }
+
+    protected virtual void OnDisable()
+    {
+        m_disposables.Dispose ();
+    }
+
+    #endregion
+
+    public void setClosestValue(float value)
+    {
+        // todo: find the closest value and set the index;
     }
 
     protected virtual void validateSettings()
