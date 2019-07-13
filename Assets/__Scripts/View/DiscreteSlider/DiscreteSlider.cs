@@ -6,13 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UniRx;
+using Zenject;
 
 /// <summary>
 /// TODO 
 /// * write summary
 /// * test if this actually works
 /// </summary>
-public class DiscreteSlider : MonoBehaviour
+public class DiscreteSlider : MonoBehaviour, IInitializable
 {
     public IReadOnlyReactiveProperty<float> Value { get { return m_model.Value; } }
 
@@ -26,7 +27,7 @@ public class DiscreteSlider : MonoBehaviour
     protected int m_defaultValueIndex = 0;
 
     protected Transform m_transform;
-    protected Toggle[] m_toggles;
+    protected Toggle [] m_toggles;
 
     private int m_numberOfElements = 0;
     private DiscreteSliderModel m_model;
@@ -34,73 +35,96 @@ public class DiscreteSlider : MonoBehaviour
 
     #region Unity Lifecycle
 
-    private void Awake()
+    public void Initialize()
     {
         validateSettings ();
-        m_transform = transform;
-        m_numberOfElements = Mathf.Min ( m_labels.Length, m_values.Length );
-        m_toggles = new Toggle [ m_numberOfElements ];
-        m_defaultValueIndex = Mathf.Clamp ( m_defaultValueIndex, 0, m_numberOfElements - 1 );
-        m_disposables = new CompositeDisposable ();
+        m_numberOfElements = Mathf.Min (m_labels.Length, m_values.Length);
+        m_defaultValueIndex = Mathf.Clamp (m_defaultValueIndex, 0, m_numberOfElements - 1);
+        m_model = new DiscreteSliderModel (m_values, m_defaultValueIndex);
+    }
 
+    private void Awake()
+    {
+        m_transform = transform;
+        m_toggles = new Toggle [m_numberOfElements];
         ToggleGroup toggleGroup = GetComponent<ToggleGroup> ();
         GameObject tmpGameObject;
         Toggle tmpToggle;
         TextMeshProUGUI tmpText;
-        for (int i=0; i<m_numberOfElements; ++i )
-        {
+        for ( int i = 0; i < m_numberOfElements; ++i ) {
             // instantiate and get all of the objects
-            tmpGameObject = Instantiate ( m_togglePrefab, m_transform );
+            tmpGameObject = Instantiate (m_togglePrefab, m_transform);
             tmpToggle = tmpGameObject.GetComponent<Toggle> ();
-            tmpToggle.ThrowIfNull ( nameof ( tmpToggle ) );
-            tmpText = tmpGameObject.transform.GetChild ( 0 ).GetChild ( 1 ).GetComponent<TextMeshProUGUI> ();
-            tmpText.ThrowIfNull ( nameof ( tmpText ) );
+            tmpToggle.ThrowIfNull (nameof (tmpToggle));
+            tmpText = tmpGameObject.transform.GetChild (0).GetChild (1).GetComponent<TextMeshProUGUI> ();
+            tmpText.ThrowIfNull (nameof (tmpText));
             tmpToggle.group = toggleGroup;
-            m_toggles [ i ] = tmpToggle;
+            m_toggles [i] = tmpToggle;
 
             // set stuff
-            tmpText.text = m_labels [ i ];
+            tmpText.text = m_labels [i];
         }
-        m_toggles [ m_defaultValueIndex ].isOn = true;
-
-        m_model = new DiscreteSliderModel ( m_values, m_defaultValueIndex );
+        m_toggles [m_model.Index.Value].isOn = true;
     }
 
     protected virtual void OnEnable()
     {
-        for (int i=0; i<m_numberOfElements; ++i )
-        {
-            m_toggles [ i ]
+        Debug.Log ("OnEnable!");
+        m_disposables = new CompositeDisposable ();
+        for ( int i = 0; i < m_numberOfElements; ++i ) {
+            m_toggles [i]
                 .OnValueChangedAsObservable ()
-                .Where ( isOn => isOn )
-                .Subscribe ( isOn => m_model.Index.Value = i )
-                .AddTo ( m_disposables );
+                .Where (isOn => isOn == true)
+                .Subscribe (isOn => {
+                    setIndex ();
+                })
+                .AddTo (m_disposables);
         }
+
+        m_model.Index.Subscribe (i => Debug.Log ("Index changed to " + i)).AddTo (m_disposables);
     }
 
     protected virtual void OnDisable()
     {
+        Debug.Log ("OnDisable!");
         m_disposables.Dispose ();
+        for ( int i = 0; i < m_numberOfElements; ++i ) {
+            m_toggles [i].isOn = false;
+        }
     }
 
     #endregion
 
-    public void setClosestValue(float value)
+    public void setClosestValue( float value )
     {
-        // todo: find the closest value and set the index;
+        m_model.setClosestValue (value);
+
+        if ( m_toggles != null ) {
+            if (m_toggles[m_model.Index.Value] != null) {
+                m_toggles[m_model.Index.Value].isOn = true;
+            }
+        }
+    }
+
+    private void setIndex()
+    {
+        for ( int i = 0; i < m_toggles.Length; ++i ) {
+            if ( m_toggles [i].isOn ) {
+                m_model.Index.Value = i;
+                break;
+            }
+        }
     }
 
     protected virtual void validateSettings()
     {
-        if ( m_togglePrefab == null )
-        {
-            Debug.LogWarning ( "The Discrete Slider cannot initialize, if the prefab is null!", this );
+        if ( m_togglePrefab == null ) {
+            Debug.LogWarning ("The Discrete Slider cannot initialize, if the prefab is null!", this);
         }
-        m_labels.ThrowIfNull ( nameof ( m_labels ) );
-        m_labels.ThrowIfNull ( nameof ( m_values ) );
-        if (m_labels.Length != m_values.Length)
-        {
-            Debug.LogWarning ( "There should be an equal amount of labels and values!", this );
+        m_labels.ThrowIfNull (nameof (m_labels));
+        m_labels.ThrowIfNull (nameof (m_values));
+        if ( m_labels.Length != m_values.Length ) {
+            Debug.LogWarning ("There should be an equal amount of labels and values!", this);
         }
     }
 }
