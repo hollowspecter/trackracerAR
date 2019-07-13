@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Main Firebase API that manages the FirebaseApp
+/// </summary>
 public class FirebaseApi : IInitializable
 {
     private Firebase.FirebaseApp m_app;
@@ -21,6 +24,8 @@ public class FirebaseApi : IInitializable
             if ( dependencyStatus == Firebase.DependencyStatus.Available ) {
                 // Create and hold a reference to your FirebaseApp,
                 // where app is a Firebase.FirebaseApp property of your application class.
+                // Crashlytics will use the DefaultInstance, as well;
+                // this ensures that Crashlytics is initialized.
                 m_app = Firebase.FirebaseApp.DefaultInstance;
 
                 // Set a flag here to indicate whether Firebase is ready to use by your app.
