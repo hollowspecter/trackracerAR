@@ -14,6 +14,7 @@ public interface ISettingsViewModel
     void Activate();
 }
 
+//todo remove comments if not needed, add summary
 public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
 {
     [SerializeField] protected DiscreteSlider m_scaleXSlider;
@@ -40,6 +41,7 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
 
     protected virtual void Awake()
     {
+        //todo remove this if not needed
         //m_scaleXSlider.onValueChanged.AddListener ( val => { m_scaleXValueLabel.text = val.ToString ( "0.000" ); } );
         //m_scaleYSlider.onValueChanged.AddListener ( val => { m_scaleYValueLabel.text = val.ToString ( "0.000" ); } );
         //m_precisionSlider.onValueChanged.AddListener ( val => { m_precisionValueLabel.text = val.ToString ( ); } );
@@ -54,9 +56,14 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
     public void Activate()
     {
         // load
-        //m_scaleXSlider.Value = m_session.CurrentTrackData.m_scale.x;
+        m_scaleXSlider.setClosestValue ( m_session.CurrentTrackData.m_scale.x );
+        m_scaleYSlider.setClosestValue ( m_session.CurrentTrackData.m_scale.y );
+        m_precisionSlider.setClosestValue ( m_session.CurrentTrackData.m_precision );
 
+        Debug.Log ("LOAD!");
+        Debug.Log (m_session.CurrentTrackData.ToString ());
 
+        // load 
         //m_scaleXSlider.value = m_session.CurrentTrackData.m_scale.x;
         //m_scaleXSlider.onValueChanged.Invoke ( m_scaleXSlider.value );
         //m_scaleYSlider.value = m_session.CurrentTrackData.m_scale.y;
@@ -81,10 +88,12 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
     protected void SaveAndDeactivate()
     {
         // save
-        //m_session.CurrentTrackData.m_scale.x = m_scaleXSlider.value;
-        //m_session.CurrentTrackData.m_scale.y = m_scaleYSlider.value;
-        //m_session.CurrentTrackData.m_precision = Mathf.RoundToInt(m_precisionSlider.value);
+        m_session.CurrentTrackData.m_scale.x = m_scaleXSlider.Value.Value;
+        m_session.CurrentTrackData.m_scale.y = m_scaleYSlider.Value.Value;
+        m_session.CurrentTrackData.m_precision = Mathf.RoundToInt(m_precisionSlider.Value.Value);
         m_session.CurrentTrackData.m_closed = m_closedToggle.isOn;
+        Debug.Log ("Saved!");
+        Debug.Log (m_session.CurrentTrackData.ToString ());
 
         // deactivate
         Deactivate ();

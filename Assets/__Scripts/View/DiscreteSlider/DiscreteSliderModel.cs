@@ -4,6 +4,8 @@
  */
 using UniRx;
 using UnityEngine;
+using System.Linq;
+using System;
 
 /// <summary>
 /// TODO
@@ -19,10 +21,16 @@ public class DiscreteSliderModel
     {
         _values.ThrowIfNull ( nameof ( _values ) );
         values = _values;
-        _initialIndex = Mathf.Clamp ( _initialIndex, 0, _values.Length );
+        _initialIndex = Mathf.Clamp ( _initialIndex, 0, values.Length );
         Index = new ReactiveProperty<int> ( _initialIndex );
         Value = Index
-            .Select ( index => values [ Mathf.Clamp ( index, 0, _values.Length )] )
+            .Select ( index => values [index] )
             .ToReactiveProperty ();
+    }
+
+    // TODO write tests?
+    public void setClosestValue( float newValue )
+    {
+        Index.Value = Array.IndexOf ( values, values.OrderBy ( val => Math.Abs ( newValue - val ) ).First () );
     }
 }
