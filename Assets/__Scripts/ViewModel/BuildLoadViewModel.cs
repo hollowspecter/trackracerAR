@@ -27,7 +27,7 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
     private RectTransform m_contentRect;
     private Button [] m_list = null;
     private Button m_loadButton;
-    private Button m_cancelButton;
+    private Button m_raceButton;
 
     private int m_selected;
 
@@ -38,6 +38,7 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
                             [Inject ( Id = "Content" )] RectTransform _contentRect,
                             [Inject ( Id = "LoadButton" )] Button _loadButton,
                             [Inject ( Id = "CancelButton" )] Button _cancelButton,
+                            [Inject ( Id = "RaceButton" )] Button _raceButton,
                             Settings _settings)
     {
         m_selected = -1;
@@ -50,8 +51,11 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
         m_contentRect = _contentRect;
         m_loadButton = _loadButton;
         m_loadButton.interactable = false;
-        m_loadButton.onClick.AddListener ( OnLoadPressed );
+        m_loadButton.onClick.AddListener ( OnEditPressed );
         _cancelButton.onClick.AddListener ( OnCancelPressed );
+        m_raceButton = _raceButton;
+        m_raceButton.interactable = false;
+        m_raceButton.onClick.AddListener (OnRacePressed);
         m_settings = _settings;
 
         gameObject.SetActive ( false );
@@ -114,18 +118,24 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
         }
         m_selected = index;
         m_loadButton.interactable = true;
+        m_raceButton.interactable = true;
     }
 
-    private void OnLoadPressed ()
+    private void OnEditPressed ()
     {
         Debug.Log ( "Load Selected " + m_list [ m_selected ].name );
-        m_state.Load ( m_list [ m_selected ].name );
+        m_state.LoadAndEdit ( m_list [ m_selected ].name );
     }
 
     private void OnCancelPressed ()
     {
         Debug.Log ( "Cancel pressed" );
         m_state.CancelLoading ();
+    }
+
+    private void OnRacePressed()
+    {
+        m_state.LoadAndRace (m_list [m_selected].name);
     }
 
     #endregion

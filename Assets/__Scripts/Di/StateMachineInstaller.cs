@@ -24,6 +24,7 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         BuildStateMachine buildStateMachine = new BuildStateMachine ();
         aRStateMachine.AddState ( StateName.BUILD_SM, buildStateMachine );
         Container.Bind<IBuildStateMachine> ().To<BuildStateMachine> ().FromInstance ( buildStateMachine );
+        Container.QueueForInject (buildStateMachine);
 
         RaceStateMachine raceStateMachine = new RaceStateMachine ();
         aRStateMachine.AddState ( StateName.RACE_SM, raceStateMachine );
