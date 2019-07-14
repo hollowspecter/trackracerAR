@@ -8,6 +8,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using TMPro;
 
 public interface IBuildLoadViewModel { }
 
@@ -84,7 +85,7 @@ public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
                 fileName = Path.GetFileNameWithoutExtension ( fileNames [ i ] );
                 currentListItem = ( Instantiate ( m_settings.ListItem, m_contentRect ) as GameObject ).GetComponent<Button> ();
                 currentListItem.name = fileName;
-                currentListItem.GetComponentInChildren<Text> ().text = fileName;
+                currentListItem.GetComponentInChildren<TextMeshProUGUI> ().text = fileName;
                 currentListItem.onClick.AddListener ( () => { OnItemSelected ( closureIndex ); } );
                 m_list [ i ] = currentListItem;
             }

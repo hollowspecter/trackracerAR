@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>196995254089-acjoje8snkas1dj671qdpacrl5hna1vp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.196995254089-acjoje8snkas1dj671qdpacrl5hna1vp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBjXn9nwABoXCw18ireTw9KGVgaJVBTxEw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>196995254089</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vivienbaguio.trackracerar</string>
+	<key>PROJECT_ID</key>
+	<string>trackracerar</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trackracerar.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:196995254089:ios:3c628cb9c3526e92</string>
+	<key>DATABASE_URL</key>
+	<string>https://trackracerar.firebaseio.com</string>
+</dict>
+</plist>
