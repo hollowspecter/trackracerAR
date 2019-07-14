@@ -2224,26 +2224,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7188474620544069843, guid: bafcfbe7ea88940728fe7dfb8bb074f9,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7188474620544069843, guid: bafcfbe7ea88940728fe7dfb8bb074f9,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5497026062062770720, guid: bafcfbe7ea88940728fe7dfb8bb074f9,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5497026062062770720, guid: bafcfbe7ea88940728fe7dfb8bb074f9,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bafcfbe7ea88940728fe7dfb8bb074f9, type: 3}
 --- !u!224 &1444144629 stripped
