@@ -27,10 +27,9 @@ public static class SaveExtension
         return track;
     }
 
-    public static void SaveAsJson ( this TrackData _track, string _fileName )
+    public static bool SaveAsJson ( this TrackData _track, string _fileName )
     {
-        try
-        {
+        try {
             // save as json
             string json = JsonUtility.ToJson ( _track );
             string completePath = Path.Combine ( m_path, _fileName.ConvertToJsonFileName () );
@@ -38,9 +37,11 @@ public static class SaveExtension
             File.WriteAllText ( completePath, json );
             Debug.Log ( "Written Track Data to " + completePath );
             Debug.Log ( _track.ToString () );
-        }catch (System.Exception e )
-        {
+            return true;
+        }
+        catch (System.Exception e ) {
             Debug.LogError ( e );
+            return false;
         }
 
     }
