@@ -16,5 +16,6 @@ public class MainInstaller : MonoInstaller
     {
         // init firebase api
         Container.BindInterfacesAndSelfTo<FirebaseApi> ().FromNew ().AsSingle ().NonLazy ();
+        Container.BindInterfacesAndSelfTo<AuthApi> ().FromNew ().AsSingle ().NonLazy ();
     }
 }
