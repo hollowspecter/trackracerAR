@@ -3,30 +3,30 @@
  * See https://www.gnu.org/licenses/gpl.txt
  */
 
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class Point3DFactory : IFactory<Point3DFactory.Params, Transform>
+// TODO SUMMARY
+public class DialogFactory : IFactory<DialogFactory.Params, Dialog>
 {
     protected readonly DiContainer m_container;
     protected Settings m_settings;
 
-    public class Params
-    {
-        
-    }
+    public class Params { }
 
-    public class Factory : PlaceholderFactory<Params, Transform> { }
+    public class Factory : PlaceholderFactory<Params, Dialog> { }
 
-    public Point3DFactory(DiContainer _container, Settings _settings)
+    public DialogFactory(DiContainer _container, Settings _settings)
     {
         m_container = _container;
         m_settings = _settings;
     }
 
-    public Transform Create( Params _param )
+    public Dialog Create(Params _params)
     {
-        return m_container.InstantiatePrefab ( m_settings.Prefab ).transform;
+        return m_container.InstantiatePrefab (m_settings.Prefab).GetComponent<Dialog> ();
     }
 
     [System.Serializable]
