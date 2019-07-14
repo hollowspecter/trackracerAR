@@ -3,21 +3,20 @@
  * See https://www.gnu.org/licenses/gpl.txt
  */
 
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class RandomStringUtil : MonoBehaviour
+public class RandomStringUtil
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private static Random random = new Random ();
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Creates an alphanumeric random String with a given length.
+    /// </summary>
+    public static string RandomString(int length)
     {
-        
+        return new string (Enumerable.Repeat (chars, length)
+            .Select (s => s [Random.Range (0, s.Length)]).ToArray ());
     }
 }
