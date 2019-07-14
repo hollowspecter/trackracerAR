@@ -81,6 +81,7 @@ public class BuildEditorState : State, IBuildEditorState
     {
         if ( !m_active ) return;
         Debug.Log ( "BuildEditorState: OnCancel" );
+        m_trackBuilder.ClearFeaturePoints ();
         m_stateMachine.TransitionToState ( StateName.BUILD_DIALOG_STATE );
     }
 

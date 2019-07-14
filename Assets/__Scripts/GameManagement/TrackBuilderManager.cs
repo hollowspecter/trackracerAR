@@ -13,6 +13,8 @@ public interface ITrackBuilderManager
 {
     void InstantiateFeaturePoints( ref Vector3 [] points );
     Vector3 [] GetFeaturePoints();
+    void ClearFeaturePoints();
+    void SetFeaturePointVisibility(bool _visible);
 }
 
 public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDisposable
@@ -76,6 +78,14 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
             m_pointGOs.Add ( currentPoint.gameObject );
         }
         Debug.LogFormat ( "TrackBuilderManager: managing {0} pointGOs!", m_pointGOs.Count );
+    }
+
+    public void SetFeaturePointVisibility( bool _visible )
+    {
+        foreach ( GameObject obj in m_pointGOs ) {
+            obj.SetActive (_visible);
+        }
+        m_line.positionCount = (_visible) ? m_pointGOs.Count : 0;
     }
 
     public Vector3[] GetFeaturePoints()

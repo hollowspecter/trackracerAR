@@ -10,13 +10,13 @@ using DG.Tweening;
 [RequireComponent(typeof(MeshRenderer))]
 public class StreetView : MonoBehaviour
 {
+    public bool IsOn { get; private set; }
+
     private const string DISSOLVE_ID = "_Dissolve";
 
     [SerializeField] protected float m_dissolveDuration = 2f;
 
     protected MeshRenderer m_renderer;
-
-    private bool m_isOn = false;
 
     protected void Awake()
     {
@@ -26,13 +26,13 @@ public class StreetView : MonoBehaviour
     public void ToggleAppearance(bool _isOn, TweenCallback _onComplete )
     {
         // if there is nothing to turn off, skip
-        if ( !m_isOn && !_isOn )
+        if ( !IsOn && !_isOn )
         {
             m_renderer.material.SetFloat ( DISSOLVE_ID, 0f );
             _onComplete?.Invoke ();
             return;
         }
-        m_isOn = _isOn;
+        IsOn = _isOn;
 
         // tween on the material
         float endvalue = _isOn ? 1f : 0f;
