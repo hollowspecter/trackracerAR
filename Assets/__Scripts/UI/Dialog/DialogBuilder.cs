@@ -34,7 +34,7 @@ public class DialogBuilder
     private Icon m_icon = Icon.NONE;
     private List<ButtonModel> m_buttons;
 
-    public DialogBuilder(DialogFactory.Factory _dialogFactory,
+    DialogBuilder(DialogFactory.Factory _dialogFactory,
                          Settings _settings)
     {
         m_factory = _dialogFactory;

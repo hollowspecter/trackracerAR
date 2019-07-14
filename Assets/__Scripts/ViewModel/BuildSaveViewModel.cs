@@ -81,12 +81,14 @@ public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
             builder.SetTitle ("Save successful!")
                 .SetMessage ("Would you like to keep editing this track or start a new one?\n" +
                              "Or you can race it immediately!")
+                .SetIcon(DialogBuilder.Icon.STAR)
                 .AddButton ("Keep Editing", m_state.OnCancel)
                 .AddButton ("New Track", m_state.OnNewTrack)
                 .AddButton ("Race!", m_state.OnDone);
         } else {
             builder.SetTitle ("Save unsuccessful!")
                 .SetMessage ("Please check the storage of your device or contact the developer.")
+                .SetIcon(DialogBuilder.Icon.WARNING)
                 .AddButton ("Back")
                 .AddButton ("Try Again", () => m_state.OnSave(m_inputNameField.text));
         }
