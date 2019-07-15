@@ -9,19 +9,29 @@ using UnityEngine;
 using Zenject;
 using Baguio.Splines;
 
-public interface IRaceSetupState { }
+public interface IRaceSetupState {
+    void OnBack();
+    void OnStart();
+}
 
 public class RaceSetupState : State, IRaceSetupState
 {
     private ISplineManager m_splineMgr;
     private StreetView m_streetView;
+    private DialogBuilder.Factory m_dialogBuilderFactory;
+    private VehicleManager m_vehicleManager;
+    private GameObject m_vehicle;
 
     [Inject]
     private void Construct( [Inject (Id = "TrackParent")] ISplineManager _splineMgr,
-                            [Inject (Id = "TrackParent")] StreetView _streetView)
+                            [Inject (Id = "TrackParent")] StreetView _streetView,
+                            DialogBuilder.Factory _dialogBuilderFactory,
+                            VehicleManager _vehicleManager)
     {
         m_streetView = _streetView;
         m_splineMgr = _splineMgr;
+        m_dialogBuilderFactory = _dialogBuilderFactory;
+        m_vehicleManager = _vehicleManager;
     }
 
     public override void EnterState ()
@@ -35,5 +45,27 @@ public class RaceSetupState : State, IRaceSetupState
             m_splineMgr.GenerateTrack ();
             m_streetView.ToggleAppearance (true, null);
         });
+
+        // Spawn the Vehicle
+        m_vehicle = m_vehicleManager.SpawnVehicleAtStart ();
+    }
+
+    public void OnBack()
+    {
+        m_dialogBuilderFactory.Create ()
+            .SetTitle ("Exit the race?")
+            .SetMessage ("Are you sure you would like to exit the race mode?")
+            .SetIcon (DialogBuilder.Icon.QUESTION)
+            .AddButton ("Yes", () => {
+                m_stateMachine.TransitionToState (StateName.BUILD_SM);
+                if (m_vehicle != null) {
+                    Object.Destroy (m_vehicle);
+                }})
+            .AddButton ("Keep Racing!");
+    }
+
+    public void OnStart()
+    {
+        m_stateMachine.TransitionToState (StateName.RACE_RACING);
     }
 }
