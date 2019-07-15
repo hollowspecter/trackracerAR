@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class VehicleController : MonoBehaviour
 {
     private static readonly bool RESPAWN_USING_PREFAB = true;
 
-    // TODO use DI
+    //TODO make settings? or different cars!
     [SerializeField]
     private float m_maxSpeed = 20f;
     [SerializeField]
@@ -31,14 +32,18 @@ public class VehicleController : MonoBehaviour
     private bool m_respawning = false;
     private Transform m_meshAnchor;
     private VehicleController.Factory m_factory;
+    private TouchInput m_input;
 
     #region Di
 
     [Inject]
-    protected void Init( ISplineManager _splineManager, VehicleController.Factory _factory )
+    protected void Init( ISplineManager _splineManager,
+                         VehicleController.Factory _factory,
+                         TouchInput _input)
     {
         m_factory = _factory;
         m_waypoints = _splineManager.GetWaypoints ();
+        m_input = _input;
     }
 
     public class Factory : PlaceholderFactory<VehicleFactory.Params, VehicleController> { }
@@ -96,7 +101,8 @@ public class VehicleController : MonoBehaviour
 
     private void Speed ()
     {
-        m_speedPercentage = Input.GetAxis ( "Vertical" );
+        //m_speedPercentage = Input.GetAxis ( "Vertical" );
+        m_speedPercentage = m_input.Value;
         if ( m_respawning ) m_speedPercentage = 0f;
     }
 

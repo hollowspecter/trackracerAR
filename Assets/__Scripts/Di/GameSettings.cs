@@ -8,11 +8,12 @@ using Zenject;
 using Baguio.Splines;
 
 // TODO SUMMARY
-[CreateAssetMenu(fileName = "GameSettings", menuName = "Installers/GameSettings")]
+[CreateAssetMenu (fileName = "GameSettings", menuName = "Installers/GameSettings")]
 public class GameSettings : ScriptableObjectInstaller<GameSettings>
 {
     public TrackPainterSettings TrackPainter;
     public UISettings UI;
+    public RaceSettings Race;
 
     [System.Serializable]
     public class TrackPainterSettings
@@ -29,12 +30,19 @@ public class GameSettings : ScriptableObjectInstaller<GameSettings>
         public DialogFactory.Settings DialogFactorySettings;
     }
 
+    [System.Serializable]
+    public class RaceSettings
+    {
+        public TouchInput.Settings InputSettings;
+    }
+
     public override void InstallBindings()
     {
-        Container.BindInstance ( TrackPainter.PointRecorder ).IfNotBound ();
-        Container.BindInstance ( TrackPainter.Point3DFactory ).IfNotBound ();
-        Container.BindInstance ( UI.LoadingSettings ).IfNotBound ();
-        Container.BindInstance ( UI.DialogSettings).IfNotBound ();
-        Container.BindInstance ( UI.DialogFactorySettings).IfNotBound ();
+        Container.BindInstance (TrackPainter.PointRecorder).IfNotBound ();
+        Container.BindInstance (TrackPainter.Point3DFactory).IfNotBound ();
+        Container.BindInstance (UI.LoadingSettings).IfNotBound ();
+        Container.BindInstance (UI.DialogSettings).IfNotBound ();
+        Container.BindInstance (UI.DialogFactorySettings).IfNotBound ();
+        Container.BindInstance (Race.InputSettings).IfNotBound ();
     }
 }

@@ -31,7 +31,7 @@ namespace Baguio.Splines
         #region Di
 
         [Inject]
-        private void Construct( IBuildStateMachine _session )
+        private void Construct( [InjectOptional] IBuildStateMachine _session )
         {
             m_session = _session;
         }

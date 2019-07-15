@@ -17,7 +17,6 @@ public class SplineTestInstaller : MonoInstaller
             .AsSingle ()
             .NonLazy ();
 
-        Container.BindFactory<VehicleFactory.Params, VehicleController, VehicleController.Factory> ()
-            .FromFactory<VehicleFactory> ();
+        RaceInstaller.Install (Container);
     }
 }
