@@ -39,7 +39,7 @@ public class RacingUI : MonoBehaviour
     private void OnEnable()
     {
         m_subscription = m_raceManager.Laps
-            .Subscribe (laps => m_lapText.text = string.Format ("{0}/{1} Laps", laps, RaceManager.MAX_LAPS));
+            .Subscribe (laps => m_lapText.text = string.Format ("{0}/{1} Laps", laps, m_raceManager.MaxLaps));
     }
 
     private void OnDisable()
