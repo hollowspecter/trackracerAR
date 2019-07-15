@@ -3,6 +3,7 @@
  * See https://www.gnu.org/licenses/gpl.txt
  */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ using UnityEngine.Assertions;
 using UnityEngine.UI;
 using Baguio.Splines;
 using Zenject;
+using UniRx;
 
 [RequireComponent ( typeof ( Rigidbody ) )]
 [RequireComponent ( typeof ( HingeJoint ) )]
@@ -27,6 +29,7 @@ public class VehicleController : MonoBehaviour
     private VehicleController.Factory m_factory;
     private TouchInput m_input;
     private Settings m_settings;
+    private SignalBus m_signalBus;
 
     #region Di
 
@@ -34,12 +37,14 @@ public class VehicleController : MonoBehaviour
     protected void Init( ISplineManager _splineManager,
                          VehicleController.Factory _factory,
                          TouchInput _input,
-                         Settings _settings)
+                         Settings _settings,
+                         SignalBus _signalBus)
     {
         m_factory = _factory;
         m_waypoints = _splineManager.GetWaypoints ();
         m_input = _input;
         m_settings = _settings;
+        m_signalBus = _signalBus;
     }
 
     public class Factory : PlaceholderFactory<VehicleFactory.Params, VehicleController> { }
@@ -74,10 +79,21 @@ public class VehicleController : MonoBehaviour
     {
         Debug.Log ( "Joint Broken! Respawn..." );
         m_respawning = true;
+        m_signalBus.Fire<RespawnSignal> ();
         if ( !RESPAWN_USING_PREFAB )
             Invoke ( "Respawn", Configuration.RespawnTime );
         else
             Invoke ( "RespawnWithPrefab", Configuration.RespawnTime );
+    }
+
+    private void OnEnable()
+    {
+        m_signalBus.Subscribe<DestroyVehicleSignal> (Destroy);
+    }
+
+    private void OnDisable()
+    {
+        m_signalBus.Unsubscribe<DestroyVehicleSignal> (Destroy);
     }
 
     #endregion
@@ -97,7 +113,6 @@ public class VehicleController : MonoBehaviour
 
     private void Speed ()
     {
-        //m_speedPercentage = Input.GetAxis ( "Vertical" );
         m_speedPercentage = m_input.Value;
         if ( m_respawning ) m_speedPercentage = 0f;
     }
@@ -119,7 +134,12 @@ public class VehicleController : MonoBehaviour
     {
         if ( Vector3.Distance ( transform.position, m_waypoints [ m_currWaypointIndex ].position ) <= Configuration.WaypointDetectionRadius / 2f )
         {
-            m_currWaypointIndex = ( m_currWaypointIndex + 1 ) % m_waypoints.Count;
+            m_currWaypointIndex++;
+
+            if (m_currWaypointIndex == m_waypoints.Count) {
+                m_currWaypointIndex = 0;
+                m_signalBus.Fire<LapSignal> ();
+            }
         }
     }
 
@@ -167,7 +187,12 @@ public class VehicleController : MonoBehaviour
         VehicleFactory.Params param = new VehicleFactory.Params ( m_waypoints [ m_currWaypointIndex ].position, m_waypoints [ m_currWaypointIndex ].rotation );
         VehicleController controller = m_factory.Create (param );
         controller.SetWaypoint ( m_currWaypointIndex );
-        Destroy ( transform.parent.gameObject );
+        Destroy ();
+    }
+
+    private void Destroy()
+    {
+        Destroy (transform.parent.gameObject);
     }
 
     #endregion

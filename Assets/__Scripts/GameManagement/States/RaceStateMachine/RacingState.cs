@@ -11,16 +11,19 @@ using Zenject;
 public interface IRacingState
 {
     void OnBack();
+    void OnFinish();
 }
 
 public class RacingState : State, IRacingState
 {
     private TouchInput m_input;
+    private SignalBus m_signalBus;
 
     [Inject]
-    private void Construct( TouchInput _input)
+    private void Construct(TouchInput _input, SignalBus _signalBus)
     {
         m_input = _input;
+        m_signalBus = _signalBus;
     }
 
     public override void EnterState()
@@ -37,6 +40,13 @@ public class RacingState : State, IRacingState
 
     public void OnBack()
     {
+        m_signalBus.Fire<DestroyVehicleSignal> ();
         m_stateMachine.TransitionToState (StateName.RACE_SETUP);
+    }
+
+    public void OnFinish()
+    {
+        m_input.SetValue (0.5f);
+        m_stateMachine.TransitionToState (StateName.RACE_OVER);
     }
 }

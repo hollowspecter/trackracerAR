@@ -12,6 +12,7 @@ public class RaceInstaller : Installer<RaceInstaller>
     {
         Container.BindInterfacesAndSelfTo<TouchInput> ().AsSingle ();
         Container.BindInterfacesAndSelfTo<VehicleManager> ().AsSingle ();
+        Container.BindInterfacesAndSelfTo<RaceManager> ().AsSingle ();
 
         Container.BindFactory<VehicleFactory.Params, VehicleController, VehicleController.Factory> ()
             .FromFactory<VehicleFactory> ();

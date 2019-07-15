@@ -21,17 +21,20 @@ public class RaceSetupState : State, IRaceSetupState
     private DialogBuilder.Factory m_dialogBuilderFactory;
     private VehicleManager m_vehicleManager;
     private GameObject m_vehicle;
+    private TouchInput m_input;
 
     [Inject]
     private void Construct( [Inject (Id = "TrackParent")] ISplineManager _splineMgr,
                             [Inject (Id = "TrackParent")] StreetView _streetView,
                             DialogBuilder.Factory _dialogBuilderFactory,
-                            VehicleManager _vehicleManager)
+                            VehicleManager _vehicleManager,
+                            TouchInput _input)
     {
         m_streetView = _streetView;
         m_splineMgr = _splineMgr;
         m_dialogBuilderFactory = _dialogBuilderFactory;
         m_vehicleManager = _vehicleManager;
+        m_input = _input;
     }
 
     public override void EnterState ()
@@ -46,8 +49,12 @@ public class RaceSetupState : State, IRaceSetupState
             m_streetView.ToggleAppearance (true, null);
         });
 
+        // Reset the speed value;
+        m_input.ResetValue ();
+
         // Spawn the Vehicle
         m_vehicle = m_vehicleManager.SpawnVehicleAtStart ();
+
     }
 
     public void OnBack()
