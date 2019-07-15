@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -664,6 +664,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 2639713138661621177, guid: c1dc66e829f8b584f88712286cd8f74e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -722,17 +727,17 @@ PrefabInstance:
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -75.000244
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 680.2
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
@@ -742,7 +747,7 @@ PrefabInstance:
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
@@ -752,7 +757,7 @@ PrefabInstance:
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
@@ -768,6 +773,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639713138136892067, guid: c1dc66e829f8b584f88712286cd8f74e,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639713138136892067, guid: c1dc66e829f8b584f88712286cd8f74e,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1dc66e829f8b584f88712286cd8f74e, type: 3}
@@ -2254,7 +2269,7 @@ MonoBehaviour:
     m_scale: {x: 0.01, y: 0.01}
     m_precision: 5
     m_closed: 1
-    m_shape: {fileID: 11400000, guid: 067ca6ef5859e44df9448cc58ea436b3, type: 2}
+    m_shapeIndex: 0
     m_featurePoints: []
 --- !u!114 &1809732882
 MonoBehaviour:

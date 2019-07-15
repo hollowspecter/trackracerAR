@@ -131,7 +131,7 @@ namespace Baguio.Splines
             {
                 foreach ( OrientedPoint p in m_waypoints )
                 {
-                    Gizmos.DrawSphere ( p.position, 0.1f );
+                    Gizmos.DrawSphere ( p.position, 0.01f );
                 }
             }
         }
