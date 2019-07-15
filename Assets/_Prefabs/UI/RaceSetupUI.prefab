@@ -270,13 +270,14 @@ GameObject:
   - component: {fileID: 3148075531675277089}
   - component: {fileID: 3148075531675277091}
   - component: {fileID: 3148075531675277088}
+  - component: {fileID: 6998692369810770385}
   m_Layer: 5
   m_Name: RaceSetupUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3148075531675277118
 RectTransform:
   m_ObjectHideFlags: 0
@@ -330,6 +331,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e8061eabe72497ca9fecdd34ec22ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6998692369810770385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3148075531675277119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0166d8ff8d905b048b2448179e1f5d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _components:
+  - {fileID: 3148075531675277091}
+  _identifier: 
+  _useSceneContext: 0
+  _context: {fileID: 0}
+  _bindType: 0
 --- !u!1 &3148075531971942500
 GameObject:
   m_ObjectHideFlags: 0

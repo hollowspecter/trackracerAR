@@ -64,6 +64,7 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         RacingState racingState = new RacingState ();
         raceStateMachine.AddState ( StateName.RACE_RACING, racingState );
         Container.Bind<IRacingState> ().To<RacingState> ().FromInstance ( racingState );
+        Container.QueueForInject (racingState);
 
         RaceOverState raceOverState = new RaceOverState ();
         raceStateMachine.AddState ( StateName.RACE_OVER, raceOverState );

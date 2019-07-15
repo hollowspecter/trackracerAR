@@ -23,7 +23,7 @@ public class TouchInput
         m_settings = _settings;
     }
 
-    public void Tick(float _deltaTime)
+    public void Tick(double _deltaTime)
     {
 #if !UNITY_EDITOR
         Touch(_deltaTime);
@@ -32,7 +32,7 @@ public class TouchInput
 #endif
     }
 
-    private void Touch( float _deltaTime )
+    private void Touch( double _deltaTime )
     {
         if ( Input.touchCount < 1 ) {
             SlowDown (_deltaTime);
@@ -41,7 +41,7 @@ public class TouchInput
         SpeedUp (_deltaTime);
     }
 
-    private void Editor( float _deltaTime )
+    private void Editor( double _deltaTime )
     {
         if ( !Input.GetMouseButton (0) ) {
             SlowDown (_deltaTime);
@@ -50,12 +50,12 @@ public class TouchInput
         SpeedUp (_deltaTime);
     }
 
-    private void SpeedUp( float _deltaTime )
+    private void SpeedUp( double _deltaTime )
     {
         Value = Mathf.Clamp01 (Value + Time.deltaTime * m_settings.Sensitivity);
     }
 
-    private void SlowDown( float _deltaTime )
+    private void SlowDown( double _deltaTime )
     {
         Value = Mathf.Clamp01 (Value - Time.deltaTime * m_settings.Gravity);
     }
