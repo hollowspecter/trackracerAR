@@ -33,13 +33,19 @@ public class UIFader : MonoBehaviour
         state.m_exitedState += Deactivate;
     }
 
-    private void Activate ()
+    public void RegisterStateCallbacks(State enterState, State exitState )
+    {
+        enterState.m_enteredState += Activate;
+        exitState.m_exitedState += Deactivate;
+    }
+
+    public void Activate ()
     {
         gameObject.SetActive ( true );
         m_sequence.PlayForward ();
     }
 
-    private void Deactivate ()
+    public void Deactivate ()
     {
         gameObject.SetActive ( false );
     }

@@ -47,7 +47,7 @@ public class BuildSaveState : State, IBuildSaveState
     /// or the state wasn't currently active</returns>
     public bool OnSave ( string trackName )
     {
-        if ( !m_active ) return false;
+        if ( !Active ) return false;
         Debug.Log ( "BuildSaveState: OnSave" );
         if (m_buildSM.CurrentTrackData.SaveAsJson ( trackName )) {
             #if UNITY_EDITOR
@@ -60,21 +60,21 @@ public class BuildSaveState : State, IBuildSaveState
 
     public void OnCancel ()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ( "BuildSaveState: OnCancel" );
         m_stateMachine.TransitionToState ( StateName.BUILD_EDITOR_STATE );
     }
 
     public void OnNewTrack()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ("BuildSaveState: OnNewTrack");
         m_stateMachine.TransitionToState (StateName.BUILD_DIALOG_STATE);
     }
 
     public void OnDone()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ( "BuildSaveState: OnDone" );
         m_stateMachine.TransitionToState ( StateName.RACE_SM );
     }

@@ -40,7 +40,7 @@ public class BuildDialogState : State, IBuildDialogState
 
     public void StartNewTrack ()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ( "BuildDialogState: StartNewTrack" );
         m_buildSM.CurrentTrackData = new TrackData ();
         m_buildSM.CurrentTrackData.m_shape = ShapeData.GetDefaultShape ();
@@ -50,7 +50,7 @@ public class BuildDialogState : State, IBuildDialogState
 
     public void LoadTrack ()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ( "BuildDialogState: LoadTrack" );
         m_stateMachine.TransitionToState ( StateName.BUILD_LOAD_STATE );
     }

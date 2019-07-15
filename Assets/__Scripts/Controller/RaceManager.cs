@@ -15,6 +15,8 @@ public class RaceManager
 {
     public IReadOnlyReactiveProperty<int> Laps { get { return m_laps; } }
     public int MaxLaps { get; private set; }
+    public float StartTime { get; private set; }
+    public float EndTime { get; private set; }
 
     private const int MAX_LAPS = 3;
 
@@ -40,6 +42,7 @@ public class RaceManager
     {
         m_laps.Value = 0;
         m_respawns = 0;
+        StartTime = Time.time;
         MaxLaps = (m_splineMgr.ClosedTrack) ? MAX_LAPS : 1; // for closed tracks just one lap
 
         m_signalBus.Subscribe<LapSignal> (LapSignalReceived);
@@ -54,6 +57,7 @@ public class RaceManager
 
     private void EndRace()
     {
+        EndTime = Time.time;
         m_state.OnFinish ();
     }
 

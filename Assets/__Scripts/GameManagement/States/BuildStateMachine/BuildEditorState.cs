@@ -74,14 +74,14 @@ public class BuildEditorState : State, IBuildEditorState
 
     public void OnShowPreview()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ( "BuildEditorState: OnShowPreview" );
         m_onShowPreview?.Invoke ();
     }
 
     public void OnCancel()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ( "BuildEditorState: OnCancel" );
         m_trackBuilder.ClearFeaturePoints ();
         m_stateMachine.TransitionToState ( StateName.BUILD_DIALOG_STATE );
@@ -89,14 +89,14 @@ public class BuildEditorState : State, IBuildEditorState
 
     public void OnSave()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ( "BuildEditorState: OnSave" );
         m_stateMachine.TransitionToState ( StateName.BUILD_SAVE_STATE );
     }
 
     public void OnRace()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ("BuildEditorState: OnRace");
         m_stateMachine.TransitionToState (StateName.RACE_SM);
     }
