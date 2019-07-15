@@ -7,7 +7,7 @@ using UnityEngine;
 using Zenject;
 
 // TODO SUMMARY
-public class DialogInstaller : MonoInstaller
+public class DialogInstaller : Installer<DialogInstaller>
 {
     public override void InstallBindings()
     {
