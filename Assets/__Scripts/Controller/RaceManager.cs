@@ -28,7 +28,7 @@ public class RaceManager
 
     public RaceManager(IRacingState _state,
                        SignalBus _signalBus,
-                       ISplineManager _splineMgr)
+                       [Inject(Id = "TrackParent")]ISplineManager _splineMgr)
     {
         m_state = _state;
         ((State)m_state).m_enteredState += StartRace;

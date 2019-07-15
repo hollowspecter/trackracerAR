@@ -54,14 +54,15 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
 
     public void Activate()
     {
+        // activate
+        gameObject.SetActive ( true );
+
         // load
         m_scaleXSlider.setClosestValue ( m_session.CurrentTrackData.m_scale.x );
         m_scaleYSlider.setClosestValue ( m_session.CurrentTrackData.m_scale.y );
         m_precisionSlider.setClosestValue ( m_session.CurrentTrackData.m_precision );
         m_closedToggle.isOn = m_session.CurrentTrackData.m_closed;
 
-        // activate
-        gameObject.SetActive ( true );
     }
 
     protected void OnDiscard()
