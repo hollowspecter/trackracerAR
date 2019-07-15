@@ -30,6 +30,7 @@ public class VehicleController : MonoBehaviour
     private TouchInput m_input;
     private Settings m_settings;
     private SignalBus m_signalBus;
+    private bool m_trackIsClosed;
 
     #region Di
 
@@ -45,6 +46,7 @@ public class VehicleController : MonoBehaviour
         m_input = _input;
         m_settings = _settings;
         m_signalBus = _signalBus;
+        m_trackIsClosed = _splineManager.ClosedTrack;
     }
 
     public class Factory : PlaceholderFactory<VehicleFactory.Params, VehicleController> { }
@@ -137,8 +139,12 @@ public class VehicleController : MonoBehaviour
             m_currWaypointIndex++;
 
             if (m_currWaypointIndex == m_waypoints.Count) {
-                m_currWaypointIndex = 0;
                 m_signalBus.Fire<LapSignal> ();
+                if ( m_trackIsClosed ) {
+                    m_currWaypointIndex = 0;
+                } else {
+                    m_currWaypointIndex = m_waypoints.Count - 1;
+                }
             }
         }
     }
