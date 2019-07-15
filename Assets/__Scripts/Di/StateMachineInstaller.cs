@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using Zenject;
 using UnityEngine;
 
@@ -58,6 +59,7 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         RaceSetupState raceSetupState = new RaceSetupState ();
         raceStateMachine.AddState ( StateName.RACE_SETUP, raceSetupState );
         Container.Bind<IRaceSetupState> ().To<RaceSetupState> ().FromInstance ( raceSetupState );
+        Container.QueueForInject (raceSetupState);
 
         RacingState racingState = new RacingState ();
         raceStateMachine.AddState ( StateName.RACE_RACING, racingState );

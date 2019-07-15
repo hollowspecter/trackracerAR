@@ -34,6 +34,7 @@ public class GameSettings : ScriptableObjectInstaller<GameSettings>
     public class RaceSettings
     {
         public TouchInput.Settings InputSettings;
+        public VehicleController.Settings VehicleSettings;
     }
 
     public override void InstallBindings()
@@ -44,5 +45,6 @@ public class GameSettings : ScriptableObjectInstaller<GameSettings>
         Container.BindInstance (UI.DialogSettings).IfNotBound ();
         Container.BindInstance (UI.DialogFactorySettings).IfNotBound ();
         Container.BindInstance (Race.InputSettings).IfNotBound ();
+        Container.BindInstance (Race.VehicleSettings).IfNotBound ();
     }
 }

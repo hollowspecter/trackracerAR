@@ -11,6 +11,7 @@ public class SplineTestInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Debug.Log ( "Spline Test Installer: InstallBindings" );
+
         Container.Bind<ISplineManager> ()
             .To<SplineManager>()
             .FromComponentInHierarchy ()
@@ -18,5 +19,7 @@ public class SplineTestInstaller : MonoInstaller
             .NonLazy ();
 
         RaceInstaller.Install (Container);
+        RaceTestStateMachineInstaller.Install (Container);
+        SignalsInstaller.Install (Container);
     }
 }
