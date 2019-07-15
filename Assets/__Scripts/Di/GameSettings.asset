@@ -40,3 +40,7 @@ MonoBehaviour:
     DialogFactorySettings:
       Prefab: {fileID: 2219231692719172238, guid: a5253f90b7472554dbf3752d455b0d1e,
         type: 3}
+  Race:
+    InputSettings:
+      Gravity: 2
+      Sensitivity: 2
