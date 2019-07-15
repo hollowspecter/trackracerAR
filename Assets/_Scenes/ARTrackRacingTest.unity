@@ -1625,6 +1625,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 2639713138661621177, guid: c1dc66e829f8b584f88712286cd8f74e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2639713138661621176, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1743,7 +1748,7 @@ PrefabInstance:
     - target: {fileID: 2639713138136892067, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2639713138136892067, guid: c1dc66e829f8b584f88712286cd8f74e,
         type: 3}

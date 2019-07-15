@@ -13,7 +13,7 @@ using Zenject;
 /// * write summary
 /// * test if this actually works
 /// </summary>
-public class DiscreteSlider : MonoBehaviour, IInitializable
+public class DiscreteSlider : MonoBehaviour
 {
     public IReadOnlyReactiveProperty<float> Value { get { return m_model.Value; } }
 
@@ -35,16 +35,13 @@ public class DiscreteSlider : MonoBehaviour, IInitializable
 
     #region Unity Lifecycle
 
-    public void Initialize()
+    private void Awake()
     {
         validateSettings ();
         m_numberOfElements = Mathf.Min (m_labels.Length, m_values.Length);
         m_defaultValueIndex = Mathf.Clamp (m_defaultValueIndex, 0, m_numberOfElements - 1);
         m_model = new DiscreteSliderModel (m_values, m_defaultValueIndex);
-    }
 
-    private void Awake()
-    {
         m_transform = transform;
         m_toggles = new Toggle [m_numberOfElements];
         ToggleGroup toggleGroup = GetComponent<ToggleGroup> ();
@@ -69,7 +66,6 @@ public class DiscreteSlider : MonoBehaviour, IInitializable
 
     protected virtual void OnEnable()
     {
-        Debug.Log ("OnEnable!");
         m_disposables = new CompositeDisposable ();
         for ( int i = 0; i < m_numberOfElements; ++i ) {
             m_toggles [i]
@@ -86,7 +82,6 @@ public class DiscreteSlider : MonoBehaviour, IInitializable
 
     protected virtual void OnDisable()
     {
-        Debug.Log ("OnDisable!");
         m_disposables.Dispose ();
         for ( int i = 0; i < m_numberOfElements; ++i ) {
             m_toggles [i].isOn = false;
@@ -94,7 +89,7 @@ public class DiscreteSlider : MonoBehaviour, IInitializable
     }
 
     #endregion
-
+    
     public void setClosestValue( float value )
     {
         m_model.setClosestValue (value);

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using TMPro;
+using UnityEngine.Assertions;
 
 [RequireComponent(typeof(UIFader))]
 public class TimerView : MonoBehaviour

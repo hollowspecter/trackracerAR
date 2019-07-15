@@ -39,7 +39,6 @@ public class RaceSetupUI : MonoBehaviour
     {
         if (m_subscription != null) {
             m_subscription.Dispose ();
-            m_subscription = null;
         } else {
             m_state.OnBack ();
         }
@@ -53,10 +52,20 @@ public class RaceSetupUI : MonoBehaviour
                 Observable.Timer (TimeSpan.FromSeconds (1), TimeSpan.FromSeconds (1))
                 .Select (i => m_settings.CountdownDurationInSeconds - i)
                 .Take (m_settings.CountdownDurationInSeconds + 1)
-                .Subscribe (
-                    i => m_countdownText.text=i.ToString(), //onNext
+                .Subscribe (i => m_countdownText.text=i.ToString(), //onNext
                     m_state.OnStart); //doOnComplete
         }
+    }
+
+    private void OnEnable()
+    {
+        m_countdownText.text = "";
+    }
+
+    private void OnDisable()
+    {
+        m_subscription?.Dispose ();
+        m_subscription = null;
     }
 
     [Serializable]

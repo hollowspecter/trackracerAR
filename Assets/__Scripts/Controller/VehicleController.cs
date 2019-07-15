@@ -35,7 +35,7 @@ public class VehicleController : MonoBehaviour
     #region Di
 
     [Inject]
-    protected void Init( ISplineManager _splineManager,
+    protected void Init( [Inject(Id = "TrackParent")]ISplineManager _splineManager,
                          VehicleController.Factory _factory,
                          TouchInput _input,
                          Settings _settings,

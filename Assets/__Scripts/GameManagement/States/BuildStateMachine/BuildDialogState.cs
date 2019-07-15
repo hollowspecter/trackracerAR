@@ -43,7 +43,7 @@ public class BuildDialogState : State, IBuildDialogState
         if ( !Active ) return;
         Debug.Log ( "BuildDialogState: StartNewTrack" );
         m_buildSM.CurrentTrackData = new TrackData ();
-        m_buildSM.CurrentTrackData.m_shape = ShapeData.GetDefaultShape ();
+        //m_buildSM.CurrentTrackData.m_shape = ShapeData.GetDefaultShape ();
         m_buildSM.CurrentTrackData.m_shape.ThrowIfNull ( "Shape in StartNewTrack" );
         m_stateMachine.TransitionToState ( StateName.BUILD_PAINT_STATE );
     }

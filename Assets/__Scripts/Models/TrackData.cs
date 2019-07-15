@@ -10,11 +10,13 @@ using Baguio.Splines;
 [System.Serializable]
 public class TrackData
 {
+    public ShapeData m_shape { get { return Configuration.ShapeDatas [m_shapeIndex]; } }
+
     public Vector2 m_scale = new Vector2(0.01f, 0.01f);
     [Range ( 1, 10 )]
     public int m_precision = 5;
     public bool m_closed = true;
-    public ShapeData m_shape;
+    public int m_shapeIndex = 0;
     public Vector3[] m_featurePoints;
 
     public override string ToString()
