@@ -67,13 +67,13 @@ public class BuildPaintState : State, IBuildPaintState
 
     public void OnCancel()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         m_stateMachine.TransitionToState ( StateName.BUILD_DIALOG_STATE );
     }
 
     public void OnDone()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
 
         if (m_pointRecorder.PointCount < 2) {
             m_dialogBuilderFactory.Create ()

@@ -20,7 +20,7 @@ public abstract class State
     public event InputActionHandler m_enteredState;
     public event InputActionHandler m_exitedState;
 
-    protected bool m_active = false;
+    public bool Active { get; protected set; }
     protected StateMachine m_stateMachine; // parent state machine
 
     public void SetParentStateMachine ( StateMachine _sm )
@@ -31,14 +31,16 @@ public abstract class State
 
     public virtual void SetActive ( bool _active )
     {
-        m_active = _active;
+        Active = _active;
     }
 
     /// <summary>
     /// Override this as your Awake/Start/Init Function.
     /// Is called when this State is added to a StateMachine
     /// </summary>
-    protected virtual void Initialise () { }
+    protected virtual void Initialise () {
+        Active = false;
+    }
 
     /// <summary>
     /// Override this as your Update Function in the State.

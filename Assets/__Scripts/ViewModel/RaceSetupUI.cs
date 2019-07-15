@@ -37,20 +37,26 @@ public class RaceSetupUI : MonoBehaviour
 
     public void BackButtonPressed()
     {
-        m_subscription?.Dispose ();
-        m_state.OnBack ();
+        if (m_subscription != null) {
+            m_subscription.Dispose ();
+            m_subscription = null;
+        } else {
+            m_state.OnBack ();
+        }
     }
 
     public void StartButtonPressed()
     {
-        // Start Countdown
-        m_subscription = 
-            Observable.Timer (TimeSpan.FromSeconds (1), TimeSpan.FromSeconds (1))
-            .Select (i => m_settings.CountdownDurationInSeconds - i)
-            .Take (m_settings.CountdownDurationInSeconds + 1)
-            .Subscribe (
-                i => m_countdownText.text=i.ToString(), //onNext
-                m_state.OnStart); //doOnComplete
+        if (m_subscription == null) {
+            // Start Countdown
+            m_subscription = 
+                Observable.Timer (TimeSpan.FromSeconds (1), TimeSpan.FromSeconds (1))
+                .Select (i => m_settings.CountdownDurationInSeconds - i)
+                .Take (m_settings.CountdownDurationInSeconds + 1)
+                .Subscribe (
+                    i => m_countdownText.text=i.ToString(), //onNext
+                    m_state.OnStart); //doOnComplete
+        }
     }
 
     [Serializable]

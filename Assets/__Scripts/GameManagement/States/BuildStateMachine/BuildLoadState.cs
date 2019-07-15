@@ -48,14 +48,14 @@ public class BuildLoadState : State, IBuildLoadState
 
     public void CancelLoading ()
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ( "BuildLoadState: CancelLoading" );
         m_stateMachine.TransitionToState ( StateName.BUILD_DIALOG_STATE );
     }
 
     public void LoadAndEdit( string fileName )
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Load (fileName);
 
         // check if the right button was pressed
@@ -70,7 +70,7 @@ public class BuildLoadState : State, IBuildLoadState
 
     public void LoadAndRace( string fileName )
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Load (fileName);
 
         // check if the right button was pressed
@@ -85,7 +85,7 @@ public class BuildLoadState : State, IBuildLoadState
 
     private void Load ( string fileName )
     {
-        if ( !m_active ) return;
+        if ( !Active ) return;
         Debug.Log ( "BuildLoadSTate: Load fileName" );
 
         // try load track data
