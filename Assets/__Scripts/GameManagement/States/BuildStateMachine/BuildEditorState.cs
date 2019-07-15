@@ -11,6 +11,7 @@ public interface IBuildEditorState
     void OnShowPreview();
     void OnCancel();
     void OnSave();
+    void OnRace();
 }
 
 public class BuildEditorState : State, IBuildEditorState
@@ -90,6 +91,13 @@ public class BuildEditorState : State, IBuildEditorState
         if ( !m_active ) return;
         Debug.Log ( "BuildEditorState: OnSave" );
         m_stateMachine.TransitionToState ( StateName.BUILD_SAVE_STATE );
+    }
+
+    public void OnRace()
+    {
+        if ( !m_active ) return;
+        Debug.Log ("BuildEditorState: OnRace");
+        m_stateMachine.TransitionToState (StateName.RACE_SM);
     }
 
     #endregion

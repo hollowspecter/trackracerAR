@@ -17,14 +17,7 @@ public class VehicleController : MonoBehaviour
 {
     private static readonly bool RESPAWN_USING_PREFAB = true;
 
-    //TODO make settings? or different cars!
-    [SerializeField]
-    private float m_maxSpeed = 20f;
-    [SerializeField]
     private float m_speedPercentage = 0f;
-    [SerializeField]
-    private float m_maxDegrees = 30;
-
     private List<OrientedPoint> m_waypoints;
     private int m_currWaypointIndex = 0;
     private Rigidbody m_rigidBody;
@@ -33,17 +26,20 @@ public class VehicleController : MonoBehaviour
     private Transform m_meshAnchor;
     private VehicleController.Factory m_factory;
     private TouchInput m_input;
+    private Settings m_settings;
 
     #region Di
 
     [Inject]
     protected void Init( ISplineManager _splineManager,
                          VehicleController.Factory _factory,
-                         TouchInput _input)
+                         TouchInput _input,
+                         Settings _settings)
     {
         m_factory = _factory;
         m_waypoints = _splineManager.GetWaypoints ();
         m_input = _input;
+        m_settings = _settings;
     }
 
     public class Factory : PlaceholderFactory<VehicleFactory.Params, VehicleController> { }
@@ -109,14 +105,14 @@ public class VehicleController : MonoBehaviour
     [System.Obsolete ( "Move() is deprecated, use MoveWithPhysics() in FixedUpdate instead." )]
     public void Move ()
     {
-        transform.position = Vector3.MoveTowards ( transform.position, m_waypoints [ m_currWaypointIndex ].position, m_maxSpeed * m_speedPercentage * Time.deltaTime );
-        transform.rotation = Quaternion.RotateTowards ( transform.rotation, m_waypoints [ m_currWaypointIndex ].rotation, m_speedPercentage * m_maxDegrees );
+        transform.position = Vector3.MoveTowards ( transform.position, m_waypoints [ m_currWaypointIndex ].position, m_settings.MaxSpeed * m_speedPercentage * Time.deltaTime );
+        transform.rotation = Quaternion.RotateTowards ( transform.rotation, m_waypoints [ m_currWaypointIndex ].rotation, m_speedPercentage * m_settings.MaxDegrees );
     }
 
     private void MoveWithPhysics ()
     {
-        m_rigidBody.MovePosition ( Vector3.MoveTowards ( transform.position, m_waypoints [ m_currWaypointIndex ].position, m_maxSpeed * m_speedPercentage * Time.deltaTime ) );
-        m_rigidBody.MoveRotation ( Quaternion.RotateTowards ( transform.rotation, m_waypoints [ m_currWaypointIndex ].rotation, m_speedPercentage * m_maxDegrees ) );
+        m_rigidBody.MovePosition ( Vector3.MoveTowards ( transform.position, m_waypoints [ m_currWaypointIndex ].position, m_settings.MaxSpeed * m_speedPercentage * Time.deltaTime ) );
+        m_rigidBody.MoveRotation ( Quaternion.RotateTowards ( transform.rotation, m_waypoints [ m_currWaypointIndex ].rotation, m_speedPercentage * m_settings.MaxDegrees ) );
     }
 
     private void UpdateWaypoint ()
@@ -181,6 +177,17 @@ public class VehicleController : MonoBehaviour
     private void OnDrawGizmos ()
     {
         Gizmos.DrawWireSphere ( transform.position, Configuration.WaypointDetectionRadius );
+    }
+
+    #endregion
+
+    #region Settings
+
+    [System.Serializable]
+    public class Settings
+    {
+        public float MaxSpeed = 20f;
+        public float MaxDegrees = 30;
     }
 
     #endregion

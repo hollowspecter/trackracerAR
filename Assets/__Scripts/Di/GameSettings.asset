@@ -44,3 +44,6 @@ MonoBehaviour:
     InputSettings:
       Gravity: 2
       Sensitivity: 2
+    VehicleSettings:
+      MaxSpeed: 25
+      MaxDegrees: 30

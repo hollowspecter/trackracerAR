@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class TouchInput : ITickable
+public class TouchInput
 {
     /// <summary>
     /// Clamped between 0 and 1
@@ -23,39 +23,39 @@ public class TouchInput : ITickable
         m_settings = _settings;
     }
 
-    void ITickable.Tick()
+    public void Tick(float _deltaTime)
     {
 #if !UNITY_EDITOR
-        Touch();
+        Touch(_deltaTime);
 #else
-        Editor ();
+        Editor (_deltaTime);
 #endif
     }
 
-    private void Touch()
+    private void Touch( float _deltaTime )
     {
         if ( Input.touchCount < 1 ) {
-            SlowDown ();
+            SlowDown (_deltaTime);
             return;
         }
-        SpeedUp ();
+        SpeedUp (_deltaTime);
     }
 
-    private void Editor()
+    private void Editor( float _deltaTime )
     {
         if ( !Input.GetMouseButton (0) ) {
-            SlowDown ();
+            SlowDown (_deltaTime);
             return;
         }
-        SpeedUp ();
+        SpeedUp (_deltaTime);
     }
 
-    private void SpeedUp()
+    private void SpeedUp( float _deltaTime )
     {
         Value = Mathf.Clamp01 (Value + Time.deltaTime * m_settings.Sensitivity);
     }
 
-    private void SlowDown()
+    private void SlowDown( float _deltaTime )
     {
         Value = Mathf.Clamp01 (Value - Time.deltaTime * m_settings.Gravity);
     }
