@@ -2,9 +2,11 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using UnityEngine;
 using Zenject;
 
+// TODO SUMMARY
 public class ARTrackPainterInstaller : MonoInstaller
 {
     public override void InstallBindings()
@@ -21,5 +23,7 @@ public class ARTrackPainterInstaller : MonoInstaller
 
         Container.BindFactory<Point3DFactory.Params, Transform, Point3DFactory.Factory> ()
             .FromFactory< Point3DFactory> ();
+
+        RaceInstaller.Install (Container);
     }
 }

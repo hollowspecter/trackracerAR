@@ -1,9 +1,15 @@
-﻿using UnityEngine;
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the GNU General Public License.
+ * See https://www.gnu.org/licenses/gpl.txt
+ */
+
+using UnityEngine;
 
 public interface IARStateMachine
 {
 }
 
+// TODO SUMMARY
 public class ARStateMachine : StateMachine, IARStateMachine
 {
     //private bool m_isQuitting = false;

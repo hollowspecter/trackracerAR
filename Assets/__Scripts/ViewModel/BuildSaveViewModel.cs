@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -20,13 +21,15 @@ public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
     private Text m_validateOutputText;
     private Button m_saveButton;
     private InputField m_inputNameField;
+    private DialogBuilder.Factory m_dialogBuilderFactory;
 
     [Inject]
     private void Construct ( IBuildSaveState _state,
                             [Inject ( Id = "TextValidateOutput" )] Text _validateOutputText,
                             [Inject ( Id = "InputName" )] InputField _inputNameField,
                             [Inject ( Id = "ButtonSaveTrack" )] Button _saveButton,
-                            [Inject ( Id = "ButtonCancel" )] Button _cancelButton )
+                            [Inject ( Id = "ButtonCancel" )] Button _cancelButton,
+                            DialogBuilder.Factory _dialogBuilderFactory)
     {
         m_state = _state;
         m_fader = GetComponent<UIFader> ();
@@ -41,6 +44,7 @@ public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
         m_saveButton.onClick.AddListener ( OnSaveButtonPressed );
         m_saveButton.interactable = false;
         _cancelButton.onClick.AddListener ( OnCancelButtonPressed );
+        m_dialogBuilderFactory = _dialogBuilderFactory;
 
         gameObject.SetActive ( false );
     }
@@ -70,7 +74,26 @@ public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
 
     protected void OnSaveButtonPressed ()
     {
-        m_state.OnSave ( m_inputNameField.text );
+        DialogBuilder builder = m_dialogBuilderFactory.Create ();
+
+        // if save is successful
+        if (m_state.OnSave ( m_inputNameField.text )) {
+            builder.SetTitle ("Save successful!")
+                .SetMessage ("Would you like to keep editing this track or start a new one?\n" +
+                             "Or you can race it immediately!")
+                .SetIcon(DialogBuilder.Icon.STAR)
+                .AddButton ("Keep Editing", m_state.OnCancel)
+                .AddButton ("New Track", m_state.OnNewTrack)
+                .AddButton ("Race!", m_state.OnDone);
+        } else {
+            builder.SetTitle ("Save unsuccessful!")
+                .SetMessage ("Please check the storage of your device or contact the developer.")
+                .SetIcon(DialogBuilder.Icon.WARNING)
+                .AddButton ("Back")
+                .AddButton ("Try Again", () => m_state.OnSave(m_inputNameField.text));
+        }
+
+        builder.Build ();
     }
 
     protected void OnCancelButtonPressed ()

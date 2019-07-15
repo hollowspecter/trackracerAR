@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +12,7 @@ public interface IBuildEditorState
     void OnShowPreview();
     void OnCancel();
     void OnSave();
+    void OnRace();
 }
 
 public class BuildEditorState : State, IBuildEditorState
@@ -81,6 +83,7 @@ public class BuildEditorState : State, IBuildEditorState
     {
         if ( !m_active ) return;
         Debug.Log ( "BuildEditorState: OnCancel" );
+        m_trackBuilder.ClearFeaturePoints ();
         m_stateMachine.TransitionToState ( StateName.BUILD_DIALOG_STATE );
     }
 
@@ -89,6 +92,13 @@ public class BuildEditorState : State, IBuildEditorState
         if ( !m_active ) return;
         Debug.Log ( "BuildEditorState: OnSave" );
         m_stateMachine.TransitionToState ( StateName.BUILD_SAVE_STATE );
+    }
+
+    public void OnRace()
+    {
+        if ( !m_active ) return;
+        Debug.Log ("BuildEditorState: OnRace");
+        m_stateMachine.TransitionToState (StateName.RACE_SM);
     }
 
     #endregion

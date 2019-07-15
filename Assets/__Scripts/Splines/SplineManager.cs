@@ -11,6 +11,7 @@ namespace Baguio.Splines
 {
     public interface ISplineManager
     {
+        bool ClosedTrack { get; }
         void GenerateTrack();
         List<OrientedPoint> GetWaypoints();
     }
@@ -18,6 +19,8 @@ namespace Baguio.Splines
     [ExecuteInEditMode]
     public class SplineManager : UniqueMesh, ISplineManager
     {
+        public bool ClosedTrack { get { return m_trackData.m_closed; } }
+
         [SerializeField]
         protected TrackData m_trackData;
 
@@ -31,7 +34,7 @@ namespace Baguio.Splines
         #region Di
 
         [Inject]
-        private void Construct( IBuildStateMachine _session )
+        private void Construct( [InjectOptional] IBuildStateMachine _session )
         {
             m_session = _session;
         }

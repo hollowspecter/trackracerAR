@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using UnityEngine;
 using UnityEditor;
 using Zenject;
@@ -9,8 +10,9 @@ using Zenject;
 public interface IBuildSaveState
 {
     void OnDone();
-    void OnSave ( string trackName );
+    bool OnSave ( string trackName );
     void OnCancel ();
+    void OnNewTrack();
 }
 
 public class BuildSaveState : State, IBuildSaveState
@@ -38,14 +40,22 @@ public class BuildSaveState : State, IBuildSaveState
 
     #region Callbacks
 
-    public void OnSave ( string trackName )
+    /// <summary>
+    /// Attempts to save a track.
+    /// </summary>
+    /// <returns>true if save was successful, false it an exception was thrown,
+    /// or the state wasn't currently active</returns>
+    public bool OnSave ( string trackName )
     {
-        if ( !m_active ) return;
+        if ( !m_active ) return false;
         Debug.Log ( "BuildSaveState: OnSave" );
-        m_buildSM.CurrentTrackData.SaveAsJson ( trackName );
-#if UNITY_EDITOR
-        AssetDatabase.Refresh ();
-#endif
+        if (m_buildSM.CurrentTrackData.SaveAsJson ( trackName )) {
+            #if UNITY_EDITOR
+                        AssetDatabase.Refresh ();
+            #endif
+            return true;
+        }
+        return false;
     }
 
     public void OnCancel ()
@@ -53,6 +63,13 @@ public class BuildSaveState : State, IBuildSaveState
         if ( !m_active ) return;
         Debug.Log ( "BuildSaveState: OnCancel" );
         m_stateMachine.TransitionToState ( StateName.BUILD_EDITOR_STATE );
+    }
+
+    public void OnNewTrack()
+    {
+        if ( !m_active ) return;
+        Debug.Log ("BuildSaveState: OnNewTrack");
+        m_stateMachine.TransitionToState (StateName.BUILD_DIALOG_STATE);
     }
 
     public void OnDone()

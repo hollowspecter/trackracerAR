@@ -25,13 +25,16 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
     [SerializeField] protected Button m_saveChangesButton;
 
     protected IBuildStateMachine m_session;
+    protected DialogBuilder.Factory m_dialogBuilderFactory;
 
     #region Di
 
     [Inject]
-    private void Construct(IBuildStateMachine _session)
+    private void Construct(IBuildStateMachine _session,
+                           DialogBuilder.Factory _dialogBuilderFactory)
     {
         m_session = _session;
+        m_dialogBuilderFactory = _dialogBuilderFactory;
         Deactivate ();
     }
 
@@ -41,11 +44,7 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
 
     protected virtual void Awake()
     {
-        //todo remove this if not needed
-        //m_scaleXSlider.onValueChanged.AddListener ( val => { m_scaleXValueLabel.text = val.ToString ( "0.000" ); } );
-        //m_scaleYSlider.onValueChanged.AddListener ( val => { m_scaleYValueLabel.text = val.ToString ( "0.000" ); } );
-        //m_precisionSlider.onValueChanged.AddListener ( val => { m_precisionValueLabel.text = val.ToString ( ); } );
-        m_discardChangesButton.onClick.AddListener ( Deactivate );
+        m_discardChangesButton.onClick.AddListener ( OnDiscard );
         m_saveChangesButton.onClick.AddListener ( SaveAndDeactivate );
     }
 
@@ -59,30 +58,26 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
         m_scaleXSlider.setClosestValue ( m_session.CurrentTrackData.m_scale.x );
         m_scaleYSlider.setClosestValue ( m_session.CurrentTrackData.m_scale.y );
         m_precisionSlider.setClosestValue ( m_session.CurrentTrackData.m_precision );
-
-        Debug.Log ("LOAD!");
-        Debug.Log (m_session.CurrentTrackData.ToString ());
-
-        // load 
-        //m_scaleXSlider.value = m_session.CurrentTrackData.m_scale.x;
-        //m_scaleXSlider.onValueChanged.Invoke ( m_scaleXSlider.value );
-        //m_scaleYSlider.value = m_session.CurrentTrackData.m_scale.y;
-        //m_scaleYSlider.onValueChanged.Invoke ( m_scaleYSlider.value );
-        //m_precisionSlider.value = m_session.CurrentTrackData.m_precision;
-        //m_precisionSlider.onValueChanged.Invoke ( m_precisionSlider.value );
         m_closedToggle.isOn = m_session.CurrentTrackData.m_closed;
-
-        //m_scaleXValueLabel.text = m_scaleXSlider.value.ToString ( "0.00" );
-        //m_scaleYValueLabel.text = m_scaleYSlider.value.ToString ( "0.00" );
-        //m_precisionValueLabel.text = m_precisionSlider.value.ToString ();
 
         // activate
         gameObject.SetActive ( true );
     }
 
+    protected void OnDiscard()
+    {
+        m_dialogBuilderFactory.Create ()
+            .SetTitle ("Discard changes?")
+            .SetMessage ("Would you like to discard the changes done to the tracks´ settings?")
+            .SetIcon (DialogBuilder.Icon.QUESTION)
+            .AddButton ("YES", Deactivate)
+            .AddButton ("NO")
+            .Build ();
+    }
+
     protected void Deactivate()
     {
-        gameObject.SetActive ( false );
+        gameObject.SetActive (false);
     }
 
     protected void SaveAndDeactivate()
