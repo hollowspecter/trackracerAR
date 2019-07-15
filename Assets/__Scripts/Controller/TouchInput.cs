@@ -32,6 +32,16 @@ public class TouchInput
 #endif
     }
 
+    public void ResetValue()
+    {
+        Value = 0f;
+    }
+
+    public void SetValue(float value )
+    {
+        Value = Mathf.Clamp01 (value);
+    }
+
     private void Touch( double _deltaTime )
     {
         if ( Input.touchCount < 1 ) {

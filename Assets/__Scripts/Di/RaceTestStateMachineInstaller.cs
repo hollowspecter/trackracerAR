@@ -45,5 +45,6 @@ public class RaceTestStateMachineInstaller : Installer<RaceTestStateMachineInsta
         RaceOverState raceOverState = new RaceOverState ();
         raceStateMachine.AddState (StateName.RACE_OVER, raceOverState);
         Container.Bind<IRaceOverState> ().To<RaceOverState> ().FromInstance (raceOverState);
+        Container.QueueForInject (raceOverState);
     }
 }

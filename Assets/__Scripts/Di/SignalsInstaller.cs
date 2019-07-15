@@ -14,5 +14,8 @@ public class SignalsInstaller : Installer<SignalsInstaller>
         SignalBusInstaller.Install ( Container );
 
         Container.DeclareSignal<FeaturePointMovedSignal> ();
+        Container.DeclareSignal<DestroyVehicleSignal> ();
+        Container.DeclareSignal<LapSignal> ();
+        Container.DeclareSignal<RespawnSignal> ();
     }
 }

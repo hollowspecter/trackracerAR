@@ -6,6 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public interface IRaceOverState
 {
@@ -15,10 +16,24 @@ public interface IRaceOverState
 
 public class RaceOverState : State, IRaceOverState
 {
+    private SignalBus m_signalBus;
+
+    [Inject]
+    private void Construct(SignalBus _signalBus )
+    {
+        m_signalBus = _signalBus;
+    }
+
     public override void EnterState ()
     {
         Debug.Log ( "Entered RaceOverState" );
         base.EnterState ();
+    }
+
+    public override void ExitState()
+    {
+        base.ExitState ();
+        m_signalBus.Fire<DestroyVehicleSignal> ();
     }
 
     public void OnRetry()
