@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using UnityEngine;
 using System.Collections;
 using Zenject;
@@ -15,11 +16,13 @@ public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
     private IBuildEditorState m_state;
     private UIFader m_fader;
     private StreetView m_streetView;
+    private DialogBuilder.Factory m_dialogBuilderFactory;
 
     [Inject]
     private void Construct( IBuildEditorState _state,
-                             [Inject ( Id = "TrackParent" )] ISplineManager _splineMgr,
-                             [Inject ( Id = "TrackParent" )] StreetView _streetView )
+                             [Inject (Id = "TrackParent")] ISplineManager _splineMgr,
+                             [Inject (Id = "TrackParent")] StreetView _streetView,
+                             DialogBuilder.Factory _dialogBuilderFactory)
     {
         m_state = _state;
         m_fader = GetComponent<UIFader> ();
@@ -27,6 +30,7 @@ public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
         gameObject.SetActive ( false );
         _state.m_onShowPreview += _splineMgr.GenerateTrack;
         m_streetView = _streetView;
+        m_dialogBuilderFactory = _dialogBuilderFactory;
     }
 
     public void OnCancelButtonPressed()
@@ -46,5 +50,16 @@ public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
                 m_state.OnShowPreview ();
                 m_streetView.ToggleAppearance ( true, null );
             } );
+    }
+
+    public void OnRaceButtonPressed()
+    {
+        m_dialogBuilderFactory.Create ()
+            .SetTitle ("Ready to race?")
+            .SetMessage ("Are you ready to start the race?")
+            .SetIcon (DialogBuilder.Icon.QUESTION)
+            .AddButton ("Cancel")
+            .AddButton ("Yes", m_state.OnRace)
+            .Build ();
     }
 }

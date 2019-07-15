@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using Zenject;
 using UnityEngine;
 
@@ -24,6 +25,7 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         BuildStateMachine buildStateMachine = new BuildStateMachine ();
         aRStateMachine.AddState ( StateName.BUILD_SM, buildStateMachine );
         Container.Bind<IBuildStateMachine> ().To<BuildStateMachine> ().FromInstance ( buildStateMachine );
+        Container.QueueForInject (buildStateMachine);
 
         RaceStateMachine raceStateMachine = new RaceStateMachine ();
         aRStateMachine.AddState ( StateName.RACE_SM, raceStateMachine );
@@ -57,13 +59,16 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         RaceSetupState raceSetupState = new RaceSetupState ();
         raceStateMachine.AddState ( StateName.RACE_SETUP, raceSetupState );
         Container.Bind<IRaceSetupState> ().To<RaceSetupState> ().FromInstance ( raceSetupState );
+        Container.QueueForInject (raceSetupState);
 
         RacingState racingState = new RacingState ();
         raceStateMachine.AddState ( StateName.RACE_RACING, racingState );
         Container.Bind<IRacingState> ().To<RacingState> ().FromInstance ( racingState );
+        Container.QueueForInject (racingState);
 
         RaceOverState raceOverState = new RaceOverState ();
         raceStateMachine.AddState ( StateName.RACE_OVER, raceOverState );
         Container.Bind<IRaceOverState> ().To<RaceOverState> ().FromInstance ( raceOverState );
+        Container.QueueForInject (raceOverState);
     }
 }

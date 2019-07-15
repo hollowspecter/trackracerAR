@@ -9,6 +9,8 @@ using Zenject;
 
 public class PointRecorder
 {
+    public int PointCount { get { return m_points.Count; } }
+
     protected Settings m_settings;
     protected Transform m_transform;
     protected LineRenderer m_line;

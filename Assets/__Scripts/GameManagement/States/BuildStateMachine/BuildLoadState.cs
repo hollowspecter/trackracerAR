@@ -6,20 +6,24 @@ using Zenject;
 public interface IBuildLoadState
 {
     void CancelLoading ();
-    void Load ( string fileName );
+    void LoadAndEdit( string fileName );
+    void LoadAndRace( string fileName );
 }
 
 public class BuildLoadState : State, IBuildLoadState
 {
     private IBuildStateMachine m_buildSM;
     private ITrackBuilderManager m_trackBuilder;
+    private DialogBuilder.Factory m_dialogBuilderFactory;
 
     #region Di
 
     [Inject]
-    protected void Construct( ITrackBuilderManager _trackBuilder )
+    protected void Construct( ITrackBuilderManager _trackBuilder,
+                              DialogBuilder.Factory _dialogBuilderFactory)
     {
         m_trackBuilder = _trackBuilder;
+        m_dialogBuilderFactory = _dialogBuilderFactory;
     }
 
     #endregion
@@ -49,7 +53,37 @@ public class BuildLoadState : State, IBuildLoadState
         m_stateMachine.TransitionToState ( StateName.BUILD_DIALOG_STATE );
     }
 
-    public void Load ( string fileName )
+    public void LoadAndEdit( string fileName )
+    {
+        if ( !m_active ) return;
+        Load (fileName);
+
+        // check if the right button was pressed
+        m_dialogBuilderFactory.Create ()
+            .SetTitle ("Edit the track?")
+            .SetMessage ("Would you like to edit the loaded track?")
+            .SetIcon (DialogBuilder.Icon.QUESTION)
+            .AddButton ("Cancel")
+            .AddButton ("Yes", () => m_stateMachine.TransitionToState (StateName.BUILD_EDITOR_STATE))
+            .Build ();
+    }
+
+    public void LoadAndRace( string fileName )
+    {
+        if ( !m_active ) return;
+        Load (fileName);
+
+        // check if the right button was pressed
+        m_dialogBuilderFactory.Create ()
+            .SetTitle ("Ready to race?")
+            .SetMessage (string.Format("Are you ready to start the race on {0}?", fileName))
+            .SetIcon (DialogBuilder.Icon.QUESTION)
+            .AddButton ("Cancel")
+            .AddButton ("Yes", () => m_stateMachine.TransitionToState (StateName.RACE_SM))
+            .Build ();
+    }
+
+    private void Load ( string fileName )
     {
         if ( !m_active ) return;
         Debug.Log ( "BuildLoadSTate: Load fileName" );
@@ -57,8 +91,5 @@ public class BuildLoadState : State, IBuildLoadState
         // try load track data
         m_buildSM.CurrentTrackData = SaveExtension.LoadTrackData ( fileName );
         m_trackBuilder.InstantiateFeaturePoints ( ref m_buildSM.CurrentTrackData.m_featurePoints );
-
-        // switch to editor
-        m_stateMachine.TransitionToState ( StateName.BUILD_EDITOR_STATE );
     }
 }

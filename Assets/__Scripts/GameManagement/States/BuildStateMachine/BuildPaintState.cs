@@ -19,15 +19,18 @@ public class BuildPaintState : State, IBuildPaintState
     private IBuildStateMachine m_buildSM;
     private PointRecorder m_pointRecorder;
     private ITrackBuilderManager m_trackBuilder;
+    private DialogBuilder.Factory m_dialogBuilderFactory;
 
     #region Di
 
     [Inject]
     protected void Construct( PointRecorder.Factory _pointRecorderFactory,
-                              ITrackBuilderManager _trackBuilder)
+                              ITrackBuilderManager _trackBuilder,
+                              DialogBuilder.Factory _dialogBuilderFactory)
     {
         m_pointRecorderFactory = _pointRecorderFactory;
         m_trackBuilder = _trackBuilder;
+        m_dialogBuilderFactory = _dialogBuilderFactory;
     }
 
     #endregion
@@ -72,10 +75,18 @@ public class BuildPaintState : State, IBuildPaintState
     {
         if ( !m_active ) return;
 
+        if (m_pointRecorder.PointCount < 2) {
+            m_dialogBuilderFactory.Create ()
+                .SetTitle ("Keep drawing!")
+                .SetIcon (DialogBuilder.Icon.ALERT)
+                .SetMessage ("It seems you did not draw enough to generate a track!")
+                .Build ();
+            return;
+        }
+
         // Dump the Points and give them to the track builder
         Vector3 [] points, featurePoints;
         m_pointRecorder.DumpPoints ( out points, true );
-        //m_pointRecorder.DumpPoints ( out points );
 
         // Identify the feature points
         FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );

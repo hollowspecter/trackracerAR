@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public interface IBuildStateMachine
 {
@@ -19,11 +20,18 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
 
     public event TouchHandler m_touchDetected;
 
-    //public event TouchHandler m_touchPressed;
-    //public event TouchHandler m_touchReleased;
-    //public event TouchHandler m_touch;
-
     private TrackData m_trackData;
+    private ITrackBuilderManager m_trackBuilder;
+
+    #region Di
+
+    [Inject]
+    protected void Construct( ITrackBuilderManager _trackBuilder )
+    {
+        m_trackBuilder = _trackBuilder;
+    }
+
+    #endregion
 
     public override void UpdateActive ( double _deltaTime )
     {
@@ -34,6 +42,18 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
 #else
         EditorInput ();
 #endif
+    }
+
+    public override void EnterState()
+    {
+        base.EnterState ();
+        m_trackBuilder.SetFeaturePointVisibility (true);
+    }
+
+    public override void ExitState()
+    {
+        base.ExitState ();
+        m_trackBuilder.SetFeaturePointVisibility (false);
     }
 
     private void TouchInput()

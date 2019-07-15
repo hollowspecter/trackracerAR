@@ -11,13 +11,15 @@ public class SplineTestInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Debug.Log ( "Spline Test Installer: InstallBindings" );
+
         Container.Bind<ISplineManager> ()
             .To<SplineManager>()
             .FromComponentInHierarchy ()
             .AsSingle ()
             .NonLazy ();
 
-        Container.BindFactory<VehicleFactory.Params, VehicleController, VehicleController.Factory> ()
-            .FromFactory<VehicleFactory> ();
+        RaceInstaller.Install (Container);
+        RaceTestStateMachineInstaller.Install (Container);
+        SignalsInstaller.Install (Container);
     }
 }

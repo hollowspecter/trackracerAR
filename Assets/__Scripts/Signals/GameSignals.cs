@@ -4,3 +4,8 @@
  */
 
 public class FeaturePointMovedSignal { }
+
+public class DestroyVehicleSignal { }
+
+public class LapSignal { }
+public class RespawnSignal { }

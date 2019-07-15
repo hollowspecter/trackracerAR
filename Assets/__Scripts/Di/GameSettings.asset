@@ -23,3 +23,27 @@ MonoBehaviour:
     LoadingSettings:
       ListItem: {fileID: 1459100307635140, guid: eef163e62a519432cb04bba0d221d6fb,
         type: 3}
+    DialogSettings:
+      ButtonPrefab: {fileID: 7161580735221904552, guid: b34c96f26f4067e47a1b5aed2125a697,
+        type: 3}
+      Icons:
+      - {fileID: 21300000, guid: debbffd33674704418e2f6345a3155d9, type: 3}
+      - {fileID: 21300000, guid: 86693557fe3d620458158ae9fabeb4dd, type: 3}
+      - {fileID: 21300000, guid: 917d8f87139747c4dae6a276f9db612e, type: 3}
+      - {fileID: 21300000, guid: 1cdc84f009568fe4f8e9bae12810c72a, type: 3}
+      - {fileID: 21300000, guid: 6b6870f1344ae8c4a81e07ff1895a76c, type: 3}
+      - {fileID: 21300000, guid: 81814a2159e6a7443918b9f026eaf3bd, type: 3}
+      - {fileID: 21300000, guid: b7f78c0a7b7d45a4191a3cc997aad613, type: 3}
+      - {fileID: 21300000, guid: 084b225ddfc63684f9d72b47adce28cd, type: 3}
+      - {fileID: 21300000, guid: 04f2375f186a4a64bafe92e7db5f3870, type: 3}
+      DefaultButtonText: OK
+    DialogFactorySettings:
+      Prefab: {fileID: 2219231692719172238, guid: a5253f90b7472554dbf3752d455b0d1e,
+        type: 3}
+  Race:
+    InputSettings:
+      Gravity: 2
+      Sensitivity: 2
+    VehicleSettings:
+      MaxSpeed: 25
+      MaxDegrees: 30
