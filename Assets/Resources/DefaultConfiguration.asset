@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_showTangents: 0
   m_showNormals: 0
-  m_waypointDetectionRadius: 0.3
+  m_waypointDetectionRadius: 0.06
   m_respawnTime: 1
   m_distanceThreshold: 0.1
   m_angleThreshold: 20
+  m_shapeDatas:
+  - {fileID: 11400000, guid: 067ca6ef5859e44df9448cc58ea436b3, type: 2}
   m_vehicles:
-  - {fileID: 5550817467092024324, guid: 0afeba49abe316a4fb2cc79d8b7ff53a, type: 3}
+  - {fileID: 2586731853333570865, guid: f34c917a27ad0294b94e97d1b0e2f14a, type: 3}
   m_trackParts:
   - {fileID: 1818448583653846, guid: eab06dadc1de64500bf8991b1acb569a, type: 3}
   - {fileID: 1317886263325834, guid: 6c510a3d2e661476fb7c2feb11d2d8f0, type: 3}

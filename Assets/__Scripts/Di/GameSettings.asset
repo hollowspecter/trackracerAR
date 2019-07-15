@@ -45,5 +45,7 @@ MonoBehaviour:
       Gravity: 2
       Sensitivity: 2
     VehicleSettings:
-      MaxSpeed: 25
+      MaxSpeed: 1
       MaxDegrees: 30
+    SetupSettings:
+      CountdownDurationInSeconds: 3
