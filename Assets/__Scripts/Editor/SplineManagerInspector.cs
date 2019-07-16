@@ -30,6 +30,9 @@ namespace Baguio.Splines
             {
                 myTarget.GenerateTrack ();
             }
+            if ( GUILayout.Button ("Rebuild mesh using TrackData's FeaturePoints") ) {
+                myTarget.GenerateTrackFromTrackData ();
+            }
 
             DrawDefaultInspector ();
         }

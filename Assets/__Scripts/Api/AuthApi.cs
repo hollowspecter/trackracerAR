@@ -34,8 +34,7 @@ public class AuthApi : IDisposable
             .Subscribe (init => {
                 Initialize ();
                 signInAnonymously ();
-            }
-            );
+            });
     }
 
     public void Initialize()
