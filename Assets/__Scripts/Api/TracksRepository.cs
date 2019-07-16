@@ -47,14 +47,16 @@ public class TracksRepository
             .Select (datasnapshot => JsonUtility.FromJson<TrackData> (datasnapshot.GetRawJsonValue ()));
     }
 
+    //todo test if events get even fired
     public IObservable<TrackData> ObserveTrack(string _key )
     {
         DatabaseReference reference = m_remote.TracksReference.Child (_key);
+
         return Observable.FromEvent<EventHandler<ValueChangedEventArgs>, ValueChangedEventArgs> (
             handler => {
                 EventHandler<ValueChangedEventArgs> _handler = ( sender, e ) => handler (e);
                 return _handler;
-            },
+             },
             h => reference.ValueChanged += h,
             h => reference.ValueChanged -= h)
             .Where (args => args.DatabaseError != null)
