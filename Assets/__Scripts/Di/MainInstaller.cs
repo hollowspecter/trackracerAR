@@ -18,5 +18,9 @@ public class MainInstaller : MonoInstaller
         Container.BindInterfacesAndSelfTo<FirebaseApi> ().FromNew ().AsSingle ().NonLazy ();
         Container.BindInterfacesAndSelfTo<AuthApi> ().FromNew ().AsSingle ().NonLazy ();
         DialogInstaller.Install (Container);
+
+        // Install Signals
+        SignalsInstaller.Install (Container);
+
     }
 }
