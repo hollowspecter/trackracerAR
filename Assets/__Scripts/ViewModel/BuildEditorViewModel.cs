@@ -62,4 +62,21 @@ public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
             .AddButton ("Yes", m_state.OnRace)
             .Build ();
     }
+
+    public void OnShareButtonPressed()
+    {
+        string key = m_state.OnShare ();
+        if ( string.IsNullOrWhiteSpace (key) ) {
+            m_dialogBuilderFactory.Create ()
+                .SetTitle ("Not uploaded yet!")
+                .SetIcon (DialogBuilder.Icon.INFO)
+                .SetMessage ("If you would like to share this track, go to the save menu and upload this track to the cloud.")
+                .Build ();
+        } else {
+            m_dialogBuilderFactory.Create ()
+                .SetTitle ("Success!")
+                .SetMessage (string.Format ("The key to the track\n{0}\nwas copied into your clipboard. Share it with your friends now!", key))
+                .Build ();
+        }
+    }
 }

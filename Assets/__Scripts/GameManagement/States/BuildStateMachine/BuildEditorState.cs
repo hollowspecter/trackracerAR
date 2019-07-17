@@ -16,6 +16,7 @@ public interface IBuildEditorState
     void OnCancel();
     void OnSave();
     void OnRace();
+    string OnShare();
 }
 
 public class BuildEditorState : State, IBuildEditorState
@@ -133,6 +134,13 @@ public class BuildEditorState : State, IBuildEditorState
         if ( !Active ) return;
         Debug.Log ("BuildEditorState: OnRace");
         m_stateMachine.TransitionToState (StateName.RACE_SM);
+    }
+
+    public string OnShare()
+    {
+        if ( !Active ) return null;
+        UniClipboard.SetText (m_buildSM.CurrentTrackData.m_dbKey);
+        return m_buildSM.CurrentTrackData.m_dbKey;
     }
 
     #endregion
