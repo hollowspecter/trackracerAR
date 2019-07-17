@@ -62,7 +62,6 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
     public void InstantiateFeaturePoints(ref Vector3[] featurePoints)
     {
         featurePoints.ThrowIfNull ( nameof ( featurePoints ) );
-        Debug.LogFormat ( "TrackBuilderManager: Instantiating {0} feature points", featurePoints.Length );
 
         // Destroy all previous feature points if there are any
         ClearFeaturePoints ();
@@ -78,7 +77,6 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
             m_line.SetPosition ( i, featurePoints [ i ] );
             m_pointGOs.Add ( currentPoint.gameObject );
         }
-        Debug.LogFormat ( "TrackBuilderManager: managing {0} pointGOs!", m_pointGOs.Count );
     }
 
     public void SetFeaturePointVisibility( bool _visible )

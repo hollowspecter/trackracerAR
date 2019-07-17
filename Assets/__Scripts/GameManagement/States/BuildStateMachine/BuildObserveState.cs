@@ -81,7 +81,7 @@ public class BuildObserveState : State, IBuildObserveState
     public override void ExitState()
     {
         base.ExitState ();
-        m_subscription.Dispose ();
+        m_subscription?.Dispose ();
     }
 
     #endregion

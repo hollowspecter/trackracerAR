@@ -42,7 +42,7 @@ public class DatabaseApi : IDisposable
 
     public void Dispose()
     {
-        m_subscription.Dispose ();
+        m_subscription?.Dispose ();
     }
 
     #endregion

@@ -17,5 +17,6 @@ public class SignalsInstaller : Installer<SignalsInstaller>
         Container.DeclareSignal<DestroyVehicleSignal> ().OptionalSubscriber ();
         Container.DeclareSignal<LapSignal> ().OptionalSubscriber ();
         Container.DeclareSignal<RespawnSignal> ().OptionalSubscriber ();
+        Container.DeclareSignal<SettingsChangedSignal> ().OptionalSubscriber ();
     }
 }
