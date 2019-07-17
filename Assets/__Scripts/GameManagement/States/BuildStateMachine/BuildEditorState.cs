@@ -11,7 +11,6 @@ using Baguio.Splines;
 
 public interface IBuildEditorState
 {
-    event State.InputActionHandler m_onShowPreview;
     void OnCancel();
     void OnSave();
     void OnRace();
@@ -20,8 +19,6 @@ public interface IBuildEditorState
 
 public class BuildEditorState : State, IBuildEditorState
 {
-    public event InputActionHandler m_onShowPreview;
-
     private IBuildStateMachine m_buildSM;
     private ITrackBuilderManager m_trackBuilder;
     private SignalBus m_signalBus;

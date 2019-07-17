@@ -28,7 +28,6 @@ public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
         m_fader = GetComponent<UIFader> ();
         m_fader.RegisterStateCallbacks ( ( State ) m_state );
         gameObject.SetActive ( false );
-        _state.m_onShowPreview += _splineMgr.GenerateTrack;
         m_streetView = _streetView;
         m_dialogBuilderFactory = _dialogBuilderFactory;
     }
