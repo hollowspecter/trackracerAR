@@ -35,16 +35,18 @@ public class DatabaseTester : MonoBehaviour, IBuildStateMachine
     {
         Debug.Log ("Start pushing to DB!");
         m_repository.PushTrack (m_trackData)
-            .Subscribe (key => Debug.Log ("Successful! " + key));
+            .Subscribe (key => Debug.Log ("Successful! " + key))
+            .AddTo (this);
     }
 
     public void OnGetTrackOnce()
     {
         Debug.Log ("Start Get Track once!");
         m_repository.GetTrackOnce (m_keyToLoad)
-            .SubscribeOn(Scheduler.ThreadPool)
-            .ObserveOnMainThread()
-            .Subscribe (UpdateTrack, Debug.LogError,()=> { Debug.Log ("Successful!"); });
+            .SubscribeOn (Scheduler.ThreadPool)
+            .ObserveOnMainThread ()
+            .Subscribe (UpdateTrack, Debug.LogError, () => { Debug.Log ("Successful!"); })
+            .AddTo (this);
     }
 
     public void OnObserveTrack()
@@ -53,13 +55,28 @@ public class DatabaseTester : MonoBehaviour, IBuildStateMachine
         m_subscription = m_repository.ObserveTrack (m_keyToLoad)
             .SubscribeOn (Scheduler.ThreadPool)
             .ObserveOnMainThread ()
-            .Subscribe (UpdateTrack, Debug.LogError, () => { Debug.Log ("Successful!"); });
+            .Subscribe (UpdateTrack, Debug.LogError, () => { Debug.Log ("Successful!"); })
+            .AddTo (this);
     }
 
     public void OnStopObservingTrackChanges()
     {
         Debug.Log ("Stop observing track changes");
         m_subscription.Dispose ();
+    }
+
+    public void OnEvaluateKey()
+    {
+        Debug.Log ("Start checking if key exists");
+        m_repository.EvaluateKey (m_keyToLoad)
+            .Subscribe (keyExists => {
+                if ( keyExists ) {
+                    Debug.Log ("Key Exists!");
+                } else {
+                    Debug.Log ("Key does not exist!");
+                }
+            }, Debug.LogError, () => { })
+            .AddTo (this);
     }
 
     private void UpdateTrack(TrackData _track )

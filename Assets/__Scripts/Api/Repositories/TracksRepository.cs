@@ -39,6 +39,9 @@ public class TracksRepository
         return task.ToObservable ().Select (unit => key);
     }
 
+    /// <summary>
+    /// Fetches the trackdata of the given key at once.
+    /// </summary>
     public IObservable<TrackData> GetTrackOnce(string _key)
     {
         return m_remote.TracksReference.Child (_key)
@@ -47,7 +50,11 @@ public class TracksRepository
             .Select (datasnapshot => JsonUtility.FromJson<TrackData> (datasnapshot.GetRawJsonValue ()));
     }
 
-    //todo test if events get even fired
+    /// <summary>
+    /// Observe the track with the given key.
+    /// </summary>
+    /// <returns>an Observable that pushes a new TrackData object everytime
+    /// the database entry of the given key gets changed.</returns>
     public IObservable<TrackData> ObserveTrack(string _key )
     {
         DatabaseReference reference = m_remote.TracksReference.Child (_key);
@@ -61,5 +68,17 @@ public class TracksRepository
             h => reference.ValueChanged -= h)
             //.Where (args => args.DatabaseError == null) don't filter errors out, but handle them later in subscription
             .Select (args => JsonUtility.FromJson<TrackData> (args.Snapshot.GetRawJsonValue ()));
+    }
+
+    /// <summary>
+    /// Check if a key exists.
+    /// </summary>
+    /// <returns>an Observable that emits true if key exists, or else if doesn't or problems occured</returns>
+    public IObservable<bool> EvaluateKey(string _key )
+    {
+        return m_remote.TracksReference.Child (_key)
+            .GetValueAsync ()
+            .ToObservable ()
+            .Select (datasnapshot => datasnapshot.Exists);
     }
 }
