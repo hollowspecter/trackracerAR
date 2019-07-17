@@ -22,5 +22,7 @@ public class ARTrackPainterInstaller : MonoInstaller
             .FromFactory< Point3DFactory> ();
 
         RaceInstaller.Install (Container);
+
+        SharingInstaller.Install (Container);
     }
 }

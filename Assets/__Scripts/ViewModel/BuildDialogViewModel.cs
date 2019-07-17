@@ -50,5 +50,10 @@ public class BuildDialogViewModel : MonoBehaviour, IBuildDialogViewModel
         m_state.LoadTrack ();
     }
 
+    public void OnDownloadTrackPressed()
+    {
+        m_state.ObserveTrack ();
+    }
+
     #endregion
 }
