@@ -59,7 +59,7 @@ public class TracksRepository
              },
             h => reference.ValueChanged += h,
             h => reference.ValueChanged -= h)
-            .Where (args => args.DatabaseError != null)
+            //.Where (args => args.DatabaseError == null) don't filter errors out, but handle them later in subscription
             .Select (args => JsonUtility.FromJson<TrackData> (args.Snapshot.GetRawJsonValue ()));
     }
 }
