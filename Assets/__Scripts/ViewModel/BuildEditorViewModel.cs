@@ -43,15 +43,6 @@ public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
         m_state.OnSave ();
     }
 
-    public void OnPreviewButtonPressed()
-    {
-        m_streetView.ToggleAppearance ( false, ()=>
-            {
-                m_state.OnShowPreview ();
-                m_streetView.ToggleAppearance ( true, null );
-            } );
-    }
-
     public void OnRaceButtonPressed()
     {
         m_dialogBuilderFactory.Create ()
