@@ -17,6 +17,11 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         RootStateMachine root = new RootStateMachine ();
         Container.Bind<IRootStateMachine> ().To<RootStateMachine> ().FromInstance ( root );
 
+        CalibrateState calibrateState = new CalibrateState ();
+        root.AddState (StateName.CALIBRATE_STATE, calibrateState);
+        Container.Bind<ICalibrateState> ().To<CalibrateState> ().FromInstance (calibrateState);
+        Container.QueueForInject (calibrateState);
+
         ARStateMachine aRStateMachine = new ARStateMachine ();
         root.AddState ( StateName.AR_SM, aRStateMachine );
         Container.Bind<IARStateMachine> ().To<ARStateMachine> ().FromInstance ( aRStateMachine );

@@ -34,12 +34,6 @@ public class BuildDialogState : State, IBuildDialogState
         Debug.Log ( "Entering BuildDialogState" );
     }
 
-    public override void ExitState()
-    {
-        base.ExitState ();
-        Debug.Log ( "Exiting BuildDialogState" );
-    }
-
     public void StartNewTrack ()
     {
         if ( !Active ) return;
