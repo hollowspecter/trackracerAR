@@ -9,7 +9,7 @@ using UnityEngine;
 
 public interface IBuildObserveDialogState
 {
-    void ObserveTrack( string _key, bool _withLiveUpdates );
+    void ObserveTrack();
     void Back();
 }
 
@@ -26,7 +26,7 @@ public class BuildObserveDialogState : State, IBuildObserveDialogState
     public override void EnterState()
     {
         base.EnterState ();
-        Debug.Log ("BuildObserveDialogState Entered");
+        Debug.Log ("BuildObserveDialogState entered!");
     }
 
     public void Back()
@@ -35,10 +35,9 @@ public class BuildObserveDialogState : State, IBuildObserveDialogState
         m_stateMachine.TransitionToState (StateName.BUILD_DIALOG_STATE);
     }
 
-    public void ObserveTrack( string _key, bool _withLiveUpdates )
+    public void ObserveTrack()
     {
         if ( !Active ) return;
-        // todo save key and with live updates somewhere! in the observe state?
         m_stateMachine.TransitionToState (StateName.BUILD_OBSERVE_STATE);
     }
 }

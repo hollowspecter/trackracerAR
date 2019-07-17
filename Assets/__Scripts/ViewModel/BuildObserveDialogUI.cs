@@ -15,18 +15,19 @@ using UniRx;
 [RequireComponent(typeof(UIFader))]
 public class BuildObserveDialogUI : MonoBehaviour
 {
+    public string KeyToDownload { get => m_keyInputField.text; }
+    public bool DoReceiveLiveUpdates { get => m_receiveLiveUpdatesToggle.isOn; }
+
     public TMP_InputField m_keyInputField;
     public Toggle m_receiveLiveUpdatesToggle;
     public Button m_downloadButton;
+    public Button m_backButton;
 
     private IBuildObserveDialogState m_state;
     private DialogBuilder.Factory m_dialogBuilderFactory;
     private ObserveDialogUseCase m_useCase;
     private IDisposable m_subscription;
 
-    private string KeyToDownload { get => m_keyInputField.text; }
-    private bool DoReceiveLiveUpdates { get => m_receiveLiveUpdatesToggle.isOn; }
-    
     [Inject]
     private void Construct(IBuildObserveDialogState _state,
                            DialogBuilder.Factory _dialogBuilderFactory,
@@ -46,6 +47,7 @@ public class BuildObserveDialogUI : MonoBehaviour
 
         m_downloadButton.onClick.AddListener(OnDownloadButtonPressed);
         m_downloadButton.interactable = false;
+        m_backButton.onClick.AddListener (OnBackButtonPressed);
         
         UIFader fader = GetComponent<UIFader> ();
         fader.RegisterStateCallbacks ((State)m_state);
@@ -61,7 +63,7 @@ public class BuildObserveDialogUI : MonoBehaviour
             .ObserveOnMainThread()
             .Subscribe (keyExists => {
                 if ( keyExists ) {
-                    m_state.ObserveTrack (KeyToDownload, DoReceiveLiveUpdates);
+                    m_state.ObserveTrack ();
                 } else {
                     ShowInvalidKeyDialog ();
                 }
@@ -73,6 +75,11 @@ public class BuildObserveDialogUI : MonoBehaviour
             },
             () => { m_keyInputField.interactable = true; })
             .AddTo (this);
+    }
+
+    private void OnBackButtonPressed()
+    {
+        m_state.Back ();
     }
 
     private void OnDisable()

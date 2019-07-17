@@ -59,6 +59,11 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         buildStateMachine.AddState (StateName.BUILD_OBSERVE_DIALOG_STATE, buildObserveDialogState);
         Container.Bind<IBuildObserveDialogState> ().To<BuildObserveDialogState> ().FromInstance (buildObserveDialogState);
 
+        BuildObserveState buildObserveState = new BuildObserveState ();
+        buildStateMachine.AddState (StateName.BUILD_OBSERVE_STATE, buildObserveState);
+        Container.Bind<IBuildObserveState> ().To<BuildObserveState> ().FromInstance (buildObserveState);
+        Container.QueueForInject (buildObserveState);
+
         // Race StateMachine
         RaceSetupState raceSetupState = new RaceSetupState ();
         raceStateMachine.AddState ( StateName.RACE_SETUP, raceSetupState );
