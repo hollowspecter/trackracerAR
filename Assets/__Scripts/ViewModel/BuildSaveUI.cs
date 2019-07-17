@@ -7,14 +7,19 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 using Zenject;
+using UniRx;
+using System;
 
-public interface IBuildSaveViewModel
+public interface IBuildSaveUI
 {
 }
 
 [RequireComponent ( typeof ( UIFader ) )]
-public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
+public class BuildSaveUI : MonoBehaviour, IBuildSaveUI
 {
+    public Toggle m_updateToCloudToggle;
+
+    private IBuildStateMachine m_session;
     private IBuildSaveState m_state;
     private UIFader m_fader;
 
@@ -22,6 +27,8 @@ public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
     private Button m_saveButton;
     private InputField m_inputNameField;
     private DialogBuilder.Factory m_dialogBuilderFactory;
+    private CompositeDisposable m_subscriptions;
+    private UpdateUseCase m_useCase;
 
     [Inject]
     private void Construct ( IBuildSaveState _state,
@@ -29,9 +36,13 @@ public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
                             [Inject ( Id = "InputName" )] InputField _inputNameField,
                             [Inject ( Id = "ButtonSaveTrack" )] Button _saveButton,
                             [Inject ( Id = "ButtonCancel" )] Button _cancelButton,
-                            DialogBuilder.Factory _dialogBuilderFactory)
+                            DialogBuilder.Factory _dialogBuilderFactory,
+                            IBuildStateMachine _buildSM,
+                            UpdateUseCase _useCase)
     {
         m_state = _state;
+        m_session = _buildSM;
+        m_useCase = _useCase;
         m_fader = GetComponent<UIFader> ();
         m_fader.RegisterStateCallbacks ( ( State ) m_state );
 
@@ -99,5 +110,26 @@ public class BuildSaveViewModel : MonoBehaviour, IBuildSaveViewModel
     protected void OnCancelButtonPressed ()
     {
         m_state.OnCancel ();
+    }
+
+    private void OnEnable()
+    {
+        m_subscriptions = new CompositeDisposable ();
+        m_updateToCloudToggle.isOn = m_session.CurrentTrackData.m_updateToCloud;
+        m_subscriptions.Add(m_updateToCloudToggle.OnValueChangedAsObservable ()
+            .Subscribe (isOn => {
+                // update session
+                m_session.CurrentTrackData.m_updateToCloud = isOn;
+                // update to cloud if turned on
+                if (isOn) {
+                    m_subscriptions.Add (m_useCase.UpdateTrackToCloud (m_session.CurrentTrackData)
+                        .Subscribe(_=> { }));
+                }
+            }));
+    }
+
+    private void OnDisable()
+    {
+        m_subscriptions?.Dispose ();
     }
 }

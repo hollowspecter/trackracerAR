@@ -91,7 +91,6 @@ public class BuildPaintState : State, IBuildPaintState
         // Identify the feature points
         FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
         m_buildSM.CurrentTrackData.m_featurePoints = featurePoints;
-        Debug.LogFormat ( "BuildPaintState: Found {0} feature points!", featurePoints.Length );
 
         points = null;
         featurePoints = null;

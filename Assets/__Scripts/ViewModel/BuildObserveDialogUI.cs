@@ -84,7 +84,7 @@ public class BuildObserveDialogUI : MonoBehaviour
 
     private void OnDisable()
     {
-        m_subscription.Dispose ();
+        m_subscription?.Dispose ();
     }
 
     private void ShowInvalidKeyDialog()

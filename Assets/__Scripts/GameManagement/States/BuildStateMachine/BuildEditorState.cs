@@ -5,6 +5,9 @@
 
 using UnityEngine;
 using Zenject;
+using System;
+using UniRx;
+
 
 public interface IBuildEditorState
 {
@@ -21,13 +24,21 @@ public class BuildEditorState : State, IBuildEditorState
 
     private IBuildStateMachine m_buildSM;
     private ITrackBuilderManager m_trackBuilder;
+    private SignalBus m_signalBus;
+    private IDisposable m_updateToCloudSubscription;
+    private IDisposable m_trackChangesSubscription;
+    private UpdateUseCase m_useCase;
 
     #region DI
 
     [Inject]
-    private void Construct(ITrackBuilderManager _trackBuilder )
+    private void Construct(ITrackBuilderManager _trackBuilder,
+                           SignalBus _signalBus,
+                           UpdateUseCase _useCase)
     {
         m_trackBuilder = _trackBuilder;
+        m_signalBus = _signalBus;
+        m_useCase = _useCase;
     }
 
     #endregion
@@ -48,6 +59,17 @@ public class BuildEditorState : State, IBuildEditorState
 
         // Instantiate the Feature Points
         m_trackBuilder.InstantiateFeaturePoints ( ref m_buildSM.CurrentTrackData.m_featurePoints );
+
+        if (m_buildSM.CurrentTrackData.m_updateToCloud) {
+            Debug.Log ("Update To Cloud is true!");
+            UpdateToCloud ();
+            m_updateToCloudSubscription = m_signalBus
+                .GetStream<FeaturePointMovedSignal> ()
+                .Select(_ => new Unit())
+                .Merge(m_signalBus.GetStream<SettingsChangedSignal>().Select(_=>new Unit()))
+                .Throttle (TimeSpan.FromSeconds (1))
+                .Subscribe (_ => UpdateToCloud ());
+        }
     }
 
     public override void ExitState ()
@@ -57,15 +79,27 @@ public class BuildEditorState : State, IBuildEditorState
         m_buildSM.m_touchDetected -= OnTouchDetected;
 
         m_buildSM.CurrentTrackData.m_featurePoints = m_trackBuilder.GetFeaturePoints ();
-    }
+
+        m_updateToCloudSubscription?.Dispose ();
+        m_trackChangesSubscription?.Dispose ();
+}
 
     #endregion
 
-    #region Building Functions
+    #region Private Functions
 
     private void OnTouchDetected ( float x, float y )
     {
 
+    }
+
+    private void UpdateToCloud()
+    {
+        m_trackChangesSubscription?.Dispose ();
+
+        m_trackChangesSubscription = m_useCase
+            .UpdateTrackToCloud (m_buildSM.CurrentTrackData)
+            .Subscribe (key => Debug.Log ("Successful update! " + key));
     }
 
     #endregion

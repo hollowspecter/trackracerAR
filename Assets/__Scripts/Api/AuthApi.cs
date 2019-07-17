@@ -53,7 +53,7 @@ public class AuthApi : IDisposable
 
     public void Dispose()
     {
-        m_subscription.Dispose ();
+        m_subscription?.Dispose ();
     }
 
     /// <summary>

@@ -81,7 +81,6 @@ namespace Baguio.Splines
         protected virtual void InitPoints()
         {
             m_points = new Vector3 [ transform.childCount ];
-            Debug.LogFormat ( "SplineManager: found {0} points as children", m_points.Length );
             for ( int i = 0; i < m_points.Length; ++i )
             {
                 m_points [ i ] = transform.GetChild ( i ).transform.position;

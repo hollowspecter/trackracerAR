@@ -20,6 +20,7 @@ public class TrackData
     public int m_shapeIndex = 0;
     public Vector3[] m_featurePoints;
     public string m_dbKey;
+    public bool m_updateToCloud = false;
 
     public override string ToString()
     {
@@ -28,12 +29,14 @@ public class TrackData
                              "Closed: {2}\n" +
                              "Shape: {3}\n" +
                              "Number of Featurepoints: {4}\n" +
-                             "DB Key: {5}",
+                             "DB Key: {5}," +
+                             "Update to Cloud: {6}",
                              m_scale,
                              m_precision,
                              m_closed,
                              m_shape,
                              m_featurePoints.Length,
-                             m_dbKey);
+                             m_dbKey,
+                             m_updateToCloud);
     }
 }

@@ -14,5 +14,6 @@ public class SharingInstaller : Installer<SharingInstaller>
         Container.BindInterfacesAndSelfTo<TracksRepository> ().FromNew ().AsSingle ().NonLazy ();
         Container.BindInterfacesAndSelfTo<ObserveDialogUseCase> ().FromNew ().AsSingle ();
         Container.BindInterfacesAndSelfTo<ObserveUseCase> ().FromNew ().AsSingle ();
+        Container.BindInterfacesAndSelfTo<UpdateUseCase> ().FromNew ().AsSingle ();
     }
 }

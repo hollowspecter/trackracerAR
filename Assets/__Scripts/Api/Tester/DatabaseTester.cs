@@ -62,7 +62,7 @@ public class DatabaseTester : MonoBehaviour, IBuildStateMachine
     public void OnStopObservingTrackChanges()
     {
         Debug.Log ("Stop observing track changes");
-        m_subscription.Dispose ();
+        m_subscription?.Dispose ();
     }
 
     public void OnEvaluateKey()
