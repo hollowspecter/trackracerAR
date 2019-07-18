@@ -11,6 +11,7 @@ public interface IBuildDialogState
     void StartNewTrack ();
     void LoadTrack ();
     void ObserveTrack();
+    void Recalibrate();
 }
 
 /// <summary>
@@ -55,5 +56,11 @@ public class BuildDialogState : State, IBuildDialogState
     {
         if ( !Active ) return;
         m_stateMachine.TransitionToState (StateName.BUILD_OBSERVE_DIALOG_STATE);
+    }
+
+    public void Recalibrate()
+    {
+        if ( !Active ) return;
+        m_stateMachine.TransitionToState (StateName.CALIBRATE_STATE);
     }
 }
