@@ -12,6 +12,7 @@ public interface IBuildPaintState
     void OnCancel();
     void OnDone();
     void Clear();
+    void OnTouchDetected( float x, float y );
 }
 
 public class BuildPaintState : State, IBuildPaintState
@@ -47,7 +48,6 @@ public class BuildPaintState : State, IBuildPaintState
     public override void EnterState()
     {
         base.EnterState ();
-        m_buildSM.m_touchDetected += OnTouchDetected;
 
         m_pointRecorder = m_pointRecorderFactory.Create ();
         m_pointRecorder.ThrowIfNull ( nameof ( m_pointRecorder ) );
@@ -57,7 +57,6 @@ public class BuildPaintState : State, IBuildPaintState
     {
         base.ExitState ();
         m_pointRecorder = null;
-        m_buildSM.m_touchDetected -= OnTouchDetected;
     }
 
     #endregion
@@ -85,7 +84,7 @@ public class BuildPaintState : State, IBuildPaintState
 
         // Dump the Points and give them to the track builder
         Vector3 [] points, featurePoints;
-        m_pointRecorder.DumpPoints ( out points, true );
+        m_pointRecorder.DumpPoints ( out points, false );
 
         // Identify the feature points
         FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
@@ -110,11 +109,13 @@ public class BuildPaintState : State, IBuildPaintState
 
     public void Clear()
     {
+        if ( !Active ) return;
         m_pointRecorder.ClearPoints ();
     }
 
-    private void OnTouchDetected( float x, float y )
+    public void OnTouchDetected( float x, float y )
     {
+        if ( !Active ) return;
         m_pointRecorder.RecordPoint ();
     }
 
