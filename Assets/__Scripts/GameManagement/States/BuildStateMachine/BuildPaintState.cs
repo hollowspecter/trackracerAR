@@ -11,6 +11,7 @@ public interface IBuildPaintState
 {
     void OnCancel();
     void OnDone();
+    void Clear();
 }
 
 public class BuildPaintState : State, IBuildPaintState
@@ -48,7 +49,6 @@ public class BuildPaintState : State, IBuildPaintState
         base.EnterState ();
         m_buildSM.m_touchDetected += OnTouchDetected;
 
-        // TODO Create a Point Recorder and Call the Record Function for every Touch Input
         m_pointRecorder = m_pointRecorderFactory.Create ();
         m_pointRecorder.ThrowIfNull ( nameof ( m_pointRecorder ) );
     }
@@ -56,7 +56,6 @@ public class BuildPaintState : State, IBuildPaintState
     public override void ExitState()
     {
         base.ExitState ();
-        // Dispose of the Point Recorder here
         m_pointRecorder = null;
         m_buildSM.m_touchDetected -= OnTouchDetected;
     }
@@ -90,12 +89,28 @@ public class BuildPaintState : State, IBuildPaintState
 
         // Identify the feature points
         FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
+
+        // Check number of feature points
+        if ( featurePoints.Length < 2) {
+            m_dialogBuilderFactory.Create ()
+                .SetTitle ("Keep drawing!")
+                .SetIcon (DialogBuilder.Icon.ALERT)
+                .SetMessage ("It seems you did not draw enough to generate a track!")
+                .Build ();
+            return;
+        }
+
         m_buildSM.CurrentTrackData.m_featurePoints = featurePoints;
 
         points = null;
         featurePoints = null;
 
         m_stateMachine.TransitionToState ( StateName.BUILD_EDITOR_STATE );
+    }
+
+    public void Clear()
+    {
+        m_pointRecorder.ClearPoints ();
     }
 
     private void OnTouchDetected( float x, float y )

@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -329,7 +329,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 20
   field of view: 60
   orthographic: 0
@@ -2544,6 +2544,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPaintUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1466087150639189967, guid: e33e9a789531ade4bb677e87480d9a1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1466087150639189966, guid: e33e9a789531ade4bb677e87480d9a1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2648,6 +2653,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839701668541667685, guid: e33e9a789531ade4bb677e87480d9a1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 406997129454307327, guid: e33e9a789531ade4bb677e87480d9a1b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 406997129454307327, guid: e33e9a789531ade4bb677e87480d9a1b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459741669280650244, guid: e33e9a789531ade4bb677e87480d9a1b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e33e9a789531ade4bb677e87480d9a1b, type: 3}
@@ -3094,6 +3119,16 @@ PrefabInstance:
     - target: {fileID: 7528060213224077249, guid: e6cc8ba4f06449949870d1a574f7f97a,
         type: 3}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145196583197078959, guid: e6cc8ba4f06449949870d1a574f7f97a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056376788126793249, guid: e6cc8ba4f06449949870d1a574f7f97a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

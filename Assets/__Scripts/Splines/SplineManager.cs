@@ -15,6 +15,7 @@ namespace Baguio.Splines
         void GenerateTrack();
         void GenerateTrackFromTrackData();
         List<OrientedPoint> GetWaypoints();
+        void ClearMesh();
     }
 
     [ExecuteInEditMode]
@@ -72,6 +73,11 @@ namespace Baguio.Splines
             }
 
             return m_waypoints;
+        }
+
+        public virtual void ClearMesh()
+        {
+            mesh.Clear ();
         }
 
         #endregion

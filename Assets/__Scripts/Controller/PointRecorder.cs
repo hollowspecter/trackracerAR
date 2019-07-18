@@ -37,7 +37,7 @@ public class PointRecorder
 
     public void RecordPoint()
     {
-        Vector3 newPosition = m_transform.position;
+        Vector3 newPosition = m_transform.position + m_transform.forward * m_settings.zOffset;
         float distance = ( newPosition - m_lastPosition ).sqrMagnitude;
         if ( distance > m_minSqrDistance )
         {
@@ -64,6 +64,14 @@ public class PointRecorder
         m_points.Clear ();
     }
 
+    public void ClearPoints()
+    {
+        m_points.Clear ();
+        if (m_line) {
+            m_line.positionCount = 0;
+        }
+    }
+
     #endregion
 
     #region Settings
@@ -73,6 +81,7 @@ public class PointRecorder
     {
         public float MinDistance = 0.01f;
         public KeyCode DebugKeyCode = KeyCode.P;
+        public float zOffset = 0.05f;
     }
 
     #endregion
