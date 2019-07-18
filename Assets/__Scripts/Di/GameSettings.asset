@@ -25,6 +25,8 @@ MonoBehaviour:
     Point3DFactory:
       Prefab: {fileID: 2980123362001335302, guid: 4ddf776c30f07574ea5dae14a5e8fb60,
         type: 3}
+    CenterToolSettings:
+      Offset: 1
   UI:
     LoadingSettings:
       ListItem: {fileID: 1459100307635140, guid: eef163e62a519432cb04bba0d221d6fb,
@@ -54,7 +56,7 @@ MonoBehaviour:
       MaxSpeed: 1
       MaxDegrees: 30
     SetupSettings:
-      CountdownDurationInSeconds: 3
+      CountdownDurationInSeconds: 2
   Firebase:
     DbSettings:
       DatabaseUrl: https://trackracerar.firebaseio.com/

@@ -12,11 +12,13 @@ public interface IBuildStateMachine
     // events
     event State.TouchHandler m_touchDetected;
     TrackData CurrentTrackData { get; set; }
+    Vector3 CurrentFeaturePointOffset { get; set; }
 }
 
 public class BuildStateMachine : StateMachine, IBuildStateMachine
 {
     public TrackData CurrentTrackData { get { return m_trackData; } set { m_trackData = value; } }
+    public Vector3 CurrentFeaturePointOffset { get; set; }
 
     public event TouchHandler m_touchDetected;
 

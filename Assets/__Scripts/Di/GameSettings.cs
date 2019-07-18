@@ -22,6 +22,7 @@ public class GameSettings : ScriptableObjectInstaller<GameSettings>
         public CalibrateUI.Settings CalibrateSettings;
         public PointRecorder.Settings PointRecorder;
         public Point3DFactory.Settings Point3DFactory;
+        public CenterTrackTool.Settings CenterToolSettings;
     }
 
     [System.Serializable]
@@ -51,6 +52,7 @@ public class GameSettings : ScriptableObjectInstaller<GameSettings>
         Container.BindInstance (TrackPainter.PointRecorder).IfNotBound ();
         Container.BindInstance (TrackPainter.Point3DFactory).IfNotBound ();
         Container.BindInstance (TrackPainter.CalibrateSettings).IfNotBound ();
+        Container.BindInstance (TrackPainter.CenterToolSettings).IfNotBound ();
 
         Container.BindInstance (UI.LoadingSettings).IfNotBound ();
         Container.BindInstance (UI.DialogSettings).IfNotBound ();

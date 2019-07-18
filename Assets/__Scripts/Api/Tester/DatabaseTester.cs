@@ -14,6 +14,8 @@ using Baguio.Splines;
 public class DatabaseTester : MonoBehaviour, IBuildStateMachine
 {
     public TrackData CurrentTrackData { get => m_trackData; set => value = m_trackData; }
+    public Vector3 CurrentFeaturePointOffset { get; set; }
+
     public event State.TouchHandler m_touchDetected;
 
     public TrackData m_trackData;
