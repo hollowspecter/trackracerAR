@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class ImpressView : MonoBehaviour
+public class PopupView : MonoBehaviour
 {
     private RectTransform rect;
 

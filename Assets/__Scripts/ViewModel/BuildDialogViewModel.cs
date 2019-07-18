@@ -13,7 +13,7 @@ public interface IBuildDialogViewModel
 [RequireComponent ( typeof ( UIFader ) )]
 public class BuildDialogViewModel : MonoBehaviour, IBuildDialogViewModel
 {
-    public ImpressView m_impress;
+    public PopupView m_impress;
     private IBuildDialogState m_state;
     private UIFader m_fader;
 

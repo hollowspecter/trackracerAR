@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   TrackPainter:
+    CalibrateSettings:
+      PlaneWeight: 0.4
+      PointWeight: 0.6
+      MinNumberOfPlanes: 2
+      MinNumberOfPoints: 300
     PointRecorder:
       MinDistance: 0.01
       DebugKeyCode: 112
+      zOffset: 0.1
     Point3DFactory:
       Prefab: {fileID: 2980123362001335302, guid: 4ddf776c30f07574ea5dae14a5e8fb60,
         type: 3}

@@ -40,6 +40,7 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         BuildDialogState buildDialogState = new BuildDialogState ();
         buildStateMachine.AddState ( StateName.BUILD_DIALOG_STATE, buildDialogState );
         Container.Bind<IBuildDialogState> ().To<BuildDialogState> ().FromInstance ( buildDialogState );
+        Container.QueueForInject (buildDialogState);
 
         BuildPaintState buildPaintState = new BuildPaintState ();
         buildStateMachine.AddState ( StateName.BUILD_PAINT_STATE, buildPaintState );
