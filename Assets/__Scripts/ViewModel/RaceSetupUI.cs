@@ -7,14 +7,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 using TMPro;
 using UniRx;
+using TMPro;
 
 [RequireComponent (typeof (UIFader))]
 public class RaceSetupUI : MonoBehaviour
 {
     public TextMeshProUGUI m_countdownText;
+    public Button m_startButton;
+    public TextMeshProUGUI m_startButtonText;
 
     private IRaceSetupState m_state;
     private UIFader m_fader;
@@ -22,10 +26,11 @@ public class RaceSetupUI : MonoBehaviour
     private IDisposable m_subscription;
 
     [Inject]
-    private void Construct(IRaceSetupState _state, Settings _settings)
+    private void Construct( IRaceSetupState _state, Settings _settings )
     {
         m_state = _state;
         m_settings = _settings;
+        m_startButton.onClick.AddListener (StartButtonPressed);
 
         // Listen for state events
         m_fader = GetComponent<UIFader> ();
@@ -37,23 +42,32 @@ public class RaceSetupUI : MonoBehaviour
 
     public void BackButtonPressed()
     {
-        if (m_subscription != null) {
-            m_subscription?.Dispose ();
-        } else {
-            m_state.OnBack ();
-        }
+        m_subscription?.Dispose ();
+        m_subscription = null;
+        m_state.OnBack ();
     }
 
     public void StartButtonPressed()
     {
-        if (m_subscription == null) {
+        if ( m_subscription == null ) {
             // Start Countdown
-            m_subscription = 
+            m_countdownText.text = (m_settings.CountdownDurationInSeconds + 1).ToString ();
+            m_subscription =
                 Observable.Timer (TimeSpan.FromSeconds (1), TimeSpan.FromSeconds (1))
                 .Select (i => m_settings.CountdownDurationInSeconds - i)
                 .Take (m_settings.CountdownDurationInSeconds + 1)
-                .Subscribe (i => m_countdownText.text=i.ToString(), //onNext
-                    m_state.OnStart); //doOnComplete
+                .Subscribe (i => m_countdownText.text = i.ToString (), //onNext
+                    () => {
+                        m_startButtonText.text = "Start";
+                        m_state.OnStart ();
+                    }); //doOnComplete
+
+            m_startButtonText.text = "Abort";
+        } else {
+            m_subscription.Dispose ();
+            m_subscription = null;
+            m_startButtonText.text = "Start";
+            m_countdownText.text = "";
         }
     }
 
@@ -71,6 +85,6 @@ public class RaceSetupUI : MonoBehaviour
     [Serializable]
     public class Settings
     {
-        public int CountdownDurationInSeconds = 3;
+        public int CountdownDurationInSeconds = 2;
     }
 }

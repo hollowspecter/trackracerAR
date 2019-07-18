@@ -54,7 +54,6 @@ public class RaceSetupState : State, IRaceSetupState
 
         // Spawn the Vehicle
         m_vehicle = m_vehicleManager.SpawnVehicleAtStart ();
-
     }
 
     public void OnBack()
@@ -65,10 +64,12 @@ public class RaceSetupState : State, IRaceSetupState
             .SetIcon (DialogBuilder.Icon.QUESTION)
             .AddButton ("Yes", () => {
                 m_stateMachine.TransitionToState (StateName.BUILD_SM);
-                if (m_vehicle != null) {
+                if ( m_vehicle != null ) {
                     Object.Destroy (m_vehicle);
-                }})
-            .AddButton ("Keep Racing!");
+                }
+            })
+            .AddButton ("Keep Racing!")
+            .Build ();
     }
 
     public void OnStart()

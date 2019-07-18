@@ -49,7 +49,12 @@ namespace Baguio.Splines
         {
             if ( m_session != null ) m_trackData = m_session.CurrentTrackData;
 
-            m_points = m_trackData.m_featurePoints;
+            m_points = new Vector3 [m_trackData.m_featurePoints.Length];
+
+            for (int i=0; i<m_points.Length;++i ) {
+                m_points[i] = m_trackData.m_featurePoints[i] + m_session.CurrentFeaturePointOffset;
+            }
+
             InitPath ();
             GenerateWaypoints ();
             GenerateMesh (mesh);

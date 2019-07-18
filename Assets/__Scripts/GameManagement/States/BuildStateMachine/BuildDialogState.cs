@@ -45,6 +45,7 @@ public class BuildDialogState : State, IBuildDialogState
     {
         base.EnterState ();
         Debug.Log ( "Entering BuildDialogState" );
+        m_buildSM.CurrentFeaturePointOffset = Vector3.zero;
     }
 
     public void StartNewTrack ()
