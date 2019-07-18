@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using UnityEngine;
 using Baguio.Splines;
 
@@ -9,6 +10,8 @@ public interface IBuildDialogState
 {
     void StartNewTrack ();
     void LoadTrack ();
+    void ObserveTrack();
+    void Recalibrate();
 }
 
 /// <summary>
@@ -32,12 +35,6 @@ public class BuildDialogState : State, IBuildDialogState
         Debug.Log ( "Entering BuildDialogState" );
     }
 
-    public override void ExitState()
-    {
-        base.ExitState ();
-        Debug.Log ( "Exiting BuildDialogState" );
-    }
-
     public void StartNewTrack ()
     {
         if ( !Active ) return;
@@ -53,5 +50,17 @@ public class BuildDialogState : State, IBuildDialogState
         if ( !Active ) return;
         Debug.Log ( "BuildDialogState: LoadTrack" );
         m_stateMachine.TransitionToState ( StateName.BUILD_LOAD_STATE );
+    }
+
+    public void ObserveTrack()
+    {
+        if ( !Active ) return;
+        m_stateMachine.TransitionToState (StateName.BUILD_OBSERVE_DIALOG_STATE);
+    }
+
+    public void Recalibrate()
+    {
+        if ( !Active ) return;
+        m_stateMachine.TransitionToState (StateName.CALIBRATE_STATE);
     }
 }

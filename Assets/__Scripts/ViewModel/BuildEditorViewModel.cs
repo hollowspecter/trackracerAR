@@ -28,7 +28,6 @@ public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
         m_fader = GetComponent<UIFader> ();
         m_fader.RegisterStateCallbacks ( ( State ) m_state );
         gameObject.SetActive ( false );
-        _state.m_onShowPreview += _splineMgr.GenerateTrack;
         m_streetView = _streetView;
         m_dialogBuilderFactory = _dialogBuilderFactory;
     }
@@ -43,15 +42,6 @@ public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
         m_state.OnSave ();
     }
 
-    public void OnPreviewButtonPressed()
-    {
-        m_streetView.ToggleAppearance ( false, ()=>
-            {
-                m_state.OnShowPreview ();
-                m_streetView.ToggleAppearance ( true, null );
-            } );
-    }
-
     public void OnRaceButtonPressed()
     {
         m_dialogBuilderFactory.Create ()
@@ -61,5 +51,22 @@ public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
             .AddButton ("Cancel")
             .AddButton ("Yes", m_state.OnRace)
             .Build ();
+    }
+
+    public void OnShareButtonPressed()
+    {
+        string key = m_state.OnShare ();
+        if ( string.IsNullOrWhiteSpace (key) ) {
+            m_dialogBuilderFactory.Create ()
+                .SetTitle ("Not uploaded yet!")
+                .SetIcon (DialogBuilder.Icon.INFO)
+                .SetMessage ("If you would like to share this track, go to the save menu and upload this track to the cloud.")
+                .Build ();
+        } else {
+            m_dialogBuilderFactory.Create ()
+                .SetTitle ("Success!")
+                .SetMessage (string.Format ("The key to the track\n{0}\nwas copied into your clipboard. Share it with your friends now!", key))
+                .Build ();
+        }
     }
 }

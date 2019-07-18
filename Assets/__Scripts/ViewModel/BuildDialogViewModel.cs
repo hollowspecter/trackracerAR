@@ -13,6 +13,7 @@ public interface IBuildDialogViewModel
 [RequireComponent ( typeof ( UIFader ) )]
 public class BuildDialogViewModel : MonoBehaviour, IBuildDialogViewModel
 {
+    public ImpressView m_impress;
     private IBuildDialogState m_state;
     private UIFader m_fader;
 
@@ -27,6 +28,7 @@ public class BuildDialogViewModel : MonoBehaviour, IBuildDialogViewModel
 
         // turn off this gameobject in case it is active
         gameObject.SetActive ( false );
+        m_impress.gameObject.SetActive (false);
     }
 
     #region Unity Functions
@@ -48,6 +50,21 @@ public class BuildDialogViewModel : MonoBehaviour, IBuildDialogViewModel
     public void OnLoadTrackButtonPressed ()
     {
         m_state.LoadTrack ();
+    }
+
+    public void OnDownloadTrackPressed()
+    {
+        m_state.ObserveTrack ();
+    }
+
+    public void OnRecalibratePressed()
+    {
+        m_state.Recalibrate ();
+    }
+
+    public void OnImpressButtonPressed()
+    {
+        m_impress.Activate ();
     }
 
     #endregion

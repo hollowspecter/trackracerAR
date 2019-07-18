@@ -45,7 +45,7 @@ public class RaceSetupState : State, IRaceSetupState
         // Rebuild track once more before the race
         m_streetView.ToggleAppearance (false, () =>
         {
-            m_splineMgr.GenerateTrack ();
+            m_splineMgr.GenerateTrackFromTrackData ();
             m_streetView.ToggleAppearance (true, null);
         });
 

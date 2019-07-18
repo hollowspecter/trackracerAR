@@ -49,3 +49,7 @@ MonoBehaviour:
       MaxDegrees: 30
     SetupSettings:
       CountdownDurationInSeconds: 3
+  Firebase:
+    DbSettings:
+      DatabaseUrl: https://trackracerar.firebaseio.com/
+      TracksReference: tracks

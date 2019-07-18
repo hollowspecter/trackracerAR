@@ -17,6 +17,11 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         RootStateMachine root = new RootStateMachine ();
         Container.Bind<IRootStateMachine> ().To<RootStateMachine> ().FromInstance ( root );
 
+        CalibrateState calibrateState = new CalibrateState ();
+        root.AddState (StateName.CALIBRATE_STATE, calibrateState);
+        Container.Bind<ICalibrateState> ().To<CalibrateState> ().FromInstance (calibrateState);
+        Container.QueueForInject (calibrateState);
+
         ARStateMachine aRStateMachine = new ARStateMachine ();
         root.AddState ( StateName.AR_SM, aRStateMachine );
         Container.Bind<IARStateMachine> ().To<ARStateMachine> ().FromInstance ( aRStateMachine );
@@ -54,6 +59,15 @@ public class StateMachineInstaller : Installer<StateMachineInstaller>
         buildStateMachine.AddState ( StateName.BUILD_LOAD_STATE, buildLoadState );
         Container.Bind<IBuildLoadState> ().To<BuildLoadState> ().FromInstance ( buildLoadState );
         Container.QueueForInject ( buildLoadState );
+
+        BuildObserveDialogState buildObserveDialogState = new BuildObserveDialogState ();
+        buildStateMachine.AddState (StateName.BUILD_OBSERVE_DIALOG_STATE, buildObserveDialogState);
+        Container.Bind<IBuildObserveDialogState> ().To<BuildObserveDialogState> ().FromInstance (buildObserveDialogState);
+
+        BuildObserveState buildObserveState = new BuildObserveState ();
+        buildStateMachine.AddState (StateName.BUILD_OBSERVE_STATE, buildObserveState);
+        Container.Bind<IBuildObserveState> ().To<BuildObserveState> ().FromInstance (buildObserveState);
+        Container.QueueForInject (buildObserveState);
 
         // Race StateMachine
         RaceSetupState raceSetupState = new RaceSetupState ();

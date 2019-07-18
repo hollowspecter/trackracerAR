@@ -9,3 +9,4 @@ public class DestroyVehicleSignal { }
 
 public class LapSignal { }
 public class RespawnSignal { }
+public class SettingsChangedSignal { }
