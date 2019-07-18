@@ -76,13 +76,11 @@ public class DiscreteSlider : MonoBehaviour
                 })
                 .AddTo (m_disposables);
         }
-
-        m_model.Index.Subscribe (i => Debug.Log ("Index changed to " + i)).AddTo (m_disposables);
     }
 
     protected virtual void OnDisable()
     {
-        m_disposables.Dispose ();
+        m_disposables?.Dispose ();
         for ( int i = 0; i < m_numberOfElements; ++i ) {
             m_toggles [i].isOn = false;
         }

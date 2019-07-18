@@ -26,15 +26,18 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
 
     protected IBuildStateMachine m_session;
     protected DialogBuilder.Factory m_dialogBuilderFactory;
+    protected SignalBus m_signalBus;
 
     #region Di
 
     [Inject]
     private void Construct(IBuildStateMachine _session,
-                           DialogBuilder.Factory _dialogBuilderFactory)
+                           DialogBuilder.Factory _dialogBuilderFactory,
+                           SignalBus _signalBus)
     {
         m_session = _session;
         m_dialogBuilderFactory = _dialogBuilderFactory;
+        m_signalBus = _signalBus;
         Deactivate ();
     }
 
@@ -90,6 +93,7 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
         m_session.CurrentTrackData.m_closed = m_closedToggle.isOn;
         Debug.Log ("Saved!");
         Debug.Log (m_session.CurrentTrackData.ToString ());
+        m_signalBus.Fire<SettingsChangedSignal> ();
 
         // deactivate
         Deactivate ();

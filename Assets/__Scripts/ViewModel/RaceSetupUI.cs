@@ -38,7 +38,7 @@ public class RaceSetupUI : MonoBehaviour
     public void BackButtonPressed()
     {
         if (m_subscription != null) {
-            m_subscription.Dispose ();
+            m_subscription?.Dispose ();
         } else {
             m_state.OnBack ();
         }

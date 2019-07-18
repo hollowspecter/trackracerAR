@@ -15,6 +15,7 @@ public interface ITrackBuilderManager
     Vector3 [] GetFeaturePoints();
     void ClearFeaturePoints();
     void SetFeaturePointVisibility(bool _visible);
+    void UpdateFeaturePoints( ref Vector3 [] _featurePoints );
 }
 
 public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDisposable
@@ -61,7 +62,6 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
     public void InstantiateFeaturePoints(ref Vector3[] featurePoints)
     {
         featurePoints.ThrowIfNull ( nameof ( featurePoints ) );
-        Debug.LogFormat ( "TrackBuilderManager: Instantiating {0} feature points", featurePoints.Length );
 
         // Destroy all previous feature points if there are any
         ClearFeaturePoints ();
@@ -77,7 +77,6 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
             m_line.SetPosition ( i, featurePoints [ i ] );
             m_pointGOs.Add ( currentPoint.gameObject );
         }
-        Debug.LogFormat ( "TrackBuilderManager: managing {0} pointGOs!", m_pointGOs.Count );
     }
 
     public void SetFeaturePointVisibility( bool _visible )
@@ -97,6 +96,32 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
         }
         Debug.LogFormat ( "TrackBuilderManager/GetFeaturePoints found {0} points", featurePoints.Length );
         return featurePoints;
+    }
+
+    /// <summary>
+    /// Updates the featurepoints positions. if the array sizes
+    /// don't match (so featurepoints got added or removed),
+    /// all featurepoints will be cleared and instantiated newly.
+    /// </summary>
+    /// <param name="_featurePoints">Do nothing if param is null!</param>
+    public void UpdateFeaturePoints( ref Vector3 [] _featurePoints )
+    {
+        if (_featurePoints == null) {
+            return;
+        }
+
+        // instantiate new if the array lengths don't match
+        if ( _featurePoints.Length != m_pointGOs.Count) {
+            InstantiateFeaturePoints (ref _featurePoints);
+        } 
+        // else, just update the positions
+        else {
+            for (int i=0; i<_featurePoints.Length; ++i ) {
+                m_pointGOs [i].transform.position = _featurePoints [i];
+            }
+        }
+
+        FeaturePointMoved ();
     }
 
     private void FeaturePointMoved()

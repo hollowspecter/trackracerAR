@@ -19,6 +19,7 @@ public class ARStateMachine : StateMachine, IARStateMachine
     public override void EnterState ()
     {
         base.EnterState ();
+        Debug.Log ("ARStateMachine entered!");
     }
 
     //    public override void UpdateActive ( double _deltaTime )

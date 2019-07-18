@@ -34,8 +34,7 @@ public class AuthApi : IDisposable
             .Subscribe (init => {
                 Initialize ();
                 signInAnonymously ();
-            }
-            );
+            });
     }
 
     public void Initialize()
@@ -54,7 +53,7 @@ public class AuthApi : IDisposable
 
     public void Dispose()
     {
-        m_subscription.Dispose ();
+        m_subscription?.Dispose ();
     }
 
     /// <summary>

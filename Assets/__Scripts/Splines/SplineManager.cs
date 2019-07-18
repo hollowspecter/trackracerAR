@@ -13,6 +13,7 @@ namespace Baguio.Splines
     {
         bool ClosedTrack { get; }
         void GenerateTrack();
+        void GenerateTrackFromTrackData();
         List<OrientedPoint> GetWaypoints();
     }
 
@@ -43,6 +44,16 @@ namespace Baguio.Splines
 
         #region Public Functions
 
+        public void GenerateTrackFromTrackData()
+        {
+            if ( m_session != null ) m_trackData = m_session.CurrentTrackData;
+
+            m_points = m_trackData.m_featurePoints;
+            InitPath ();
+            GenerateWaypoints ();
+            GenerateMesh (mesh);
+        }
+
         public virtual void GenerateTrack ()
         {
             if ( m_session != null ) m_trackData = m_session.CurrentTrackData;
@@ -70,7 +81,6 @@ namespace Baguio.Splines
         protected virtual void InitPoints()
         {
             m_points = new Vector3 [ transform.childCount ];
-            Debug.LogFormat ( "SplineManager: found {0} points as children", m_points.Length );
             for ( int i = 0; i < m_points.Length; ++i )
             {
                 m_points [ i ] = transform.GetChild ( i ).transform.position;

@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class TrackData
     public bool m_closed = true;
     public int m_shapeIndex = 0;
     public Vector3[] m_featurePoints;
+    public string m_dbKey;
+    public bool m_updateToCloud = false;
 
     public override string ToString()
     {
@@ -25,11 +28,15 @@ public class TrackData
                              "Precision: {1}\n" +
                              "Closed: {2}\n" +
                              "Shape: {3}\n" +
-                             "Number of Featurepoints: {4}",
+                             "Number of Featurepoints: {4}\n" +
+                             "DB Key: {5}," +
+                             "Update to Cloud: {6}",
                              m_scale,
                              m_precision,
                              m_closed,
                              m_shape,
-                             m_featurePoints.Length );
+                             m_featurePoints.Length,
+                             m_dbKey,
+                             m_updateToCloud);
     }
 }
