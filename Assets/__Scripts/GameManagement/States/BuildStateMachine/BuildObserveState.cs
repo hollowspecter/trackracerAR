@@ -80,7 +80,7 @@ public class BuildObserveState : State, IBuildObserveState
                 () => { }));
 
         // rebuild track if the track move tool was used
-        m_subscriptions.Add(m_signalBus.GetStream<FeaturePointMovedSignal>()
+        m_subscriptions.Add(m_signalBus.GetStream<FeaturePointChanged>()
             .SubscribeOn (Scheduler.ThreadPool)
             .ObserveOnMainThread ()
             .Subscribe (
