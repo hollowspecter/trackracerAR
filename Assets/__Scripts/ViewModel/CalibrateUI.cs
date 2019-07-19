@@ -19,6 +19,7 @@ public class CalibrateUI : MonoBehaviour
 {
     public Slider m_progressSlider;
     public Button m_resetButton;
+    public Button m_skipButton;
 
     private ReactiveProperty<int> m_planeSatisfaction;
     private ReactiveProperty<int> m_pointSatisfaction;
@@ -28,17 +29,20 @@ public class CalibrateUI : MonoBehaviour
     private ARPointCloudManager m_pointCloudManager;
     private Settings m_settings;
     private IDisposable m_subscription;
+    private DialogBuilder.Factory m_dialogBuilderFactory;
 
     [Inject]
-    private void Construct(ICalibrateState _state,
+    private void Construct( ICalibrateState _state,
                            ARPlaneManager _planeManager,
                            ARPointCloudManager _pointCloudManager,
-                           Settings _settings)
+                           Settings _settings,
+                           DialogBuilder.Factory _dialogBuilderFactory)
     {
         m_state = _state;
         m_settings = _settings;
         m_planeManager = _planeManager;
         m_pointCloudManager = _pointCloudManager;
+        m_dialogBuilderFactory = _dialogBuilderFactory;
 
         UIFader fader = GetComponent<UIFader> ();
         fader.RegisterStateCallbacks ((State)_state);
@@ -48,24 +52,12 @@ public class CalibrateUI : MonoBehaviour
         m_pointSatisfaction = new ReactiveProperty<int> ();
 
         m_resetButton.onClick.AddListener (Reset);
+        m_skipButton.onClick.AddListener (OnSkipButtonPressed);
 
         gameObject.SetActive (false);
     }
 
-#if UNITY_EDITOR
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return)) {
-            OnStart ();
-        }
-    }
-#endif
-
-    private void Reset()
-    {
-        m_planeSatisfaction.Value = m_settings.MinNumberOfPlanes;
-        m_pointSatisfaction.Value = m_settings.MinNumberOfPoints;
-    }
+    #region Unity Lifecycle
 
     private void OnEnable()
     {
@@ -79,21 +71,56 @@ public class CalibrateUI : MonoBehaviour
             .Subscribe (OnCheckSatisfaction);
     }
 
-    private void OnCheckSatisfaction(float _satisfactionPercentage )
+    private void OnDisable()
+    {
+        m_planeManager.planeAdded -= OnPlaneAdded;
+        m_subscription?.Dispose ();
+    }
+
+    #endregion
+
+    #region Button Callbacks
+
+    private void OnRestart()
+    {
+        m_state.Restart ();
+    }
+
+    private void OnSkipButtonPressed()
+    {
+        m_dialogBuilderFactory.Create ()
+            .SetTitle ("Are you sure you want to skip?")
+            .SetIcon (DialogBuilder.Icon.QUESTION)
+            .SetMessage ("Skipping this step may result in an instable experience. Make sure you are in a well lit room and have at least one uncluttered visible surface.")
+            .AddButton ("Skip", OnStart)
+            .AddButton ("Stay")
+            .Build ();
+    }
+
+    #endregion
+
+    #region private methods
+
+    private void Reset()
+    {
+        m_planeSatisfaction.Value = m_settings.MinNumberOfPlanes;
+        m_pointSatisfaction.Value = m_settings.MinNumberOfPoints;
+    }
+
+    private void OnStart()
+    {
+        m_state.DoStart ();
+    }
+
+    private void OnCheckSatisfaction( float _satisfactionPercentage )
     {
         // todo make start button visible, and make snackbar disappear, or change text to: you can start now!
         // and then automatically transition!
         m_progressSlider.value = _satisfactionPercentage;
 
-        if (_satisfactionPercentage >= 1.0f - Mathf.Epsilon) {
+        if ( _satisfactionPercentage >= 1.0f - Mathf.Epsilon ) {
             OnStart ();
         }
-    }
-
-    private void OnDisable()
-    {
-        m_planeManager.planeAdded -= OnPlaneAdded;
-        m_subscription?.Dispose ();
     }
 
     private void OnPlaneAdded(ARPlaneAddedEventArgs args )
@@ -106,15 +133,9 @@ public class CalibrateUI : MonoBehaviour
         m_pointSatisfaction.Value = Mathf.Max (0, m_pointSatisfaction.Value - 1);
     }
 
-    private void OnRestart()
-    {
-        m_state.Restart ();
-    }
+    #endregion
 
-    private void OnStart()
-    {
-        m_state.DoStart ();
-    }
+    #region Settings
 
     [System.Serializable]
     public class Settings
@@ -124,4 +145,6 @@ public class CalibrateUI : MonoBehaviour
         public int MinNumberOfPlanes = 2;
         public int MinNumberOfPoints = 300;
     }
+
+    #endregion
 }

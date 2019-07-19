@@ -15,7 +15,7 @@ MonoBehaviour:
   TrackPainter:
     CalibrateSettings:
       PlaneWeight: 0.4
-      PointWeight: 0.6
+      PointWeight: 0.8
       MinNumberOfPlanes: 2
       MinNumberOfPoints: 300
     PointRecorder:

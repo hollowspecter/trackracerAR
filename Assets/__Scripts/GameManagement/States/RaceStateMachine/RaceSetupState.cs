@@ -20,21 +20,23 @@ public class RaceSetupState : State, IRaceSetupState
     private StreetView m_streetView;
     private DialogBuilder.Factory m_dialogBuilderFactory;
     private VehicleManager m_vehicleManager;
-    private GameObject m_vehicle;
     private TouchInput m_input;
+    private SignalBus m_signalBus;
 
     [Inject]
     private void Construct( [Inject (Id = "TrackParent")] ISplineManager _splineMgr,
                             [Inject (Id = "TrackParent")] StreetView _streetView,
                             DialogBuilder.Factory _dialogBuilderFactory,
                             VehicleManager _vehicleManager,
-                            TouchInput _input)
+                            TouchInput _input,
+                            SignalBus _signalBus)
     {
         m_streetView = _streetView;
         m_splineMgr = _splineMgr;
         m_dialogBuilderFactory = _dialogBuilderFactory;
         m_vehicleManager = _vehicleManager;
         m_input = _input;
+        m_signalBus = _signalBus;
     }
 
     public override void EnterState ()
@@ -46,14 +48,12 @@ public class RaceSetupState : State, IRaceSetupState
         m_streetView.ToggleAppearance (false, () =>
         {
             m_splineMgr.GenerateTrackFromTrackData ();
+            m_vehicleManager.SpawnVehicleAtStart ();
             m_streetView.ToggleAppearance (true, null);
         });
 
         // Reset the speed value;
         m_input.ResetValue ();
-
-        // Spawn the Vehicle
-        m_vehicle = m_vehicleManager.SpawnVehicleAtStart ();
     }
 
     public void OnBack()
@@ -63,10 +63,8 @@ public class RaceSetupState : State, IRaceSetupState
             .SetMessage ("Are you sure you would like to exit the race mode?")
             .SetIcon (DialogBuilder.Icon.QUESTION)
             .AddButton ("Yes", () => {
+                m_signalBus.Fire<DestroyVehicleSignal> ();
                 m_stateMachine.TransitionToState (StateName.BUILD_SM);
-                if ( m_vehicle != null ) {
-                    Object.Destroy (m_vehicle);
-                }
             })
             .AddButton ("Keep Racing!")
             .Build ();
