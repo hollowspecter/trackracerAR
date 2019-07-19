@@ -26,6 +26,7 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
     private SignalBus m_signalBus;
 
     private List<GameObject> m_pointGOs;
+    private List<Point3DView> m_pointViews;
 
     public TrackBuilderManager(Point3DFactory.Factory _point3DFactory,
                                [Inject ( Id = "TrackParent" )] Transform _trackTransform,
@@ -36,17 +37,18 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
         m_trackTransform = _trackTransform;
         m_line = _line;
         m_pointGOs = new List<GameObject> ();
+        m_pointViews = new List<Point3DView> ();
         m_signalBus = _signalBus;
     }
 
     public void Initialize()
     {
-        m_signalBus.Subscribe<FeaturePointMovedSignal> ( FeaturePointMoved );
+        m_signalBus.Subscribe<FeaturePointChanged> ( FeaturePointChanged );
     }
 
     public void Dispose()
     {
-        m_signalBus.Unsubscribe<FeaturePointMovedSignal> ( FeaturePointMoved );
+        m_signalBus.Unsubscribe<FeaturePointChanged> ( FeaturePointChanged );
     }
 
     public void ClearFeaturePoints()
@@ -56,6 +58,7 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
             UnityEngine.Object.Destroy ( obj );
         }
         m_pointGOs.Clear ();
+        m_pointViews.Clear ();
         m_line.positionCount = 0;
     }
 
@@ -76,6 +79,7 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
             currentPoint.parent = m_trackTransform;
             m_line.SetPosition ( i, featurePoints [ i ] );
             m_pointGOs.Add ( currentPoint.gameObject );
+            m_pointViews.Add (currentPoint.GetComponent<Point3DView> ());
         }
     }
 
@@ -121,11 +125,29 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
             }
         }
 
-        FeaturePointMoved ();
+        FeaturePointChanged ();
     }
 
-    private void FeaturePointMoved()
+    private void FeaturePointChanged()
     {
+        for (int i=0; i<m_pointViews.Count; ++i) {
+            if (m_pointViews[i].IsDirty) {
+                UnityEngine.Object.Destroy (m_pointGOs [i]);
+                m_pointViews.RemoveAt (i);
+                m_pointGOs.RemoveAt (i);
+                break;
+            } else if (m_pointViews[i].IsCopied) {
+                m_pointViews [i].IsCopied = false;
+                Transform newPoint = m_point3DFactory.Create (new Point3DFactory.Params ());
+                newPoint.parent = m_trackTransform;
+                newPoint.SetSiblingIndex (i);
+                newPoint.position = m_pointGOs [i].transform.position + Vector3.up * 0.05f;
+                m_pointGOs.Insert (i, newPoint.gameObject);
+                m_pointViews.Insert (i, newPoint.GetComponent<Point3DView> ());
+            }
+        }
+
+        m_line.positionCount = m_pointGOs.Count;
         for (int i=0; i<m_pointGOs.Count;++i )
         {
             m_line.SetPosition ( i, m_pointGOs [ i ].transform.position );

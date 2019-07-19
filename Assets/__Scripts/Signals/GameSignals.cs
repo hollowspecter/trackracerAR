@@ -3,7 +3,7 @@
  * See https://www.gnu.org/licenses/gpl.txt
  */
 
-public class FeaturePointMovedSignal { }
+public class FeaturePointChanged { }
 
 public class DestroyVehicleSignal { }
 

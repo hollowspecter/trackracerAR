@@ -65,7 +65,7 @@ public class BuildEditorState : State, IBuildEditorState
 
         OnTrackChanged ();
         m_trackChangedSubscription = m_signalBus
-            .GetStream<FeaturePointMovedSignal> ()
+            .GetStream<FeaturePointChanged> ()
             .Select(_ => new Unit())
             .Merge(m_signalBus.GetStream<SettingsChangedSignal>().Select(_=>new Unit()))
             .Throttle (TimeSpan.FromSeconds (1))
