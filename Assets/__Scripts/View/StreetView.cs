@@ -35,7 +35,7 @@ public class StreetView : MonoBehaviour
         IsOn = _isOn;
 
         // tween on the material
-        float endvalue = _isOn ? 1f : 0f;
+        float endvalue = _isOn ? 1.1f : 0f;
         m_renderer.material.DOFloat ( endvalue, DISSOLVE_ID, m_dissolveDuration )
                            .OnComplete ( _onComplete );
     }

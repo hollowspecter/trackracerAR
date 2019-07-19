@@ -56,6 +56,8 @@ public class Configuration : ScriptableObject
     private float m_angleThreshold = 20f;
     [SerializeField]
     private ShapeData[] m_shapeDatas;
+    [SerializeField]
+    private Material [] m_streetMaterials;
 
     [ Header ( "Vehicles" )]
     [SerializeField]
@@ -83,6 +85,7 @@ public class Configuration : ScriptableObject
     public static float RespawnTime { get { return DefaultConfig.m_respawnTime; } }
     public static GameObject[] Vehicles { get { return DefaultConfig.m_vehicles; } }
     public static ShapeData[] ShapeDatas { get { return DefaultConfig.m_shapeDatas; } }
+    public static Material[] StreetMaterials { get { return DefaultConfig.m_streetMaterials; } }
     public static float DistanceThreshold { get { return DefaultConfig.m_distanceThreshold; } }
     public static float AngleThreshold { get { return DefaultConfig.m_angleThreshold; } }
 

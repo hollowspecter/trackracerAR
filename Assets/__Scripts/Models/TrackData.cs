@@ -12,12 +12,14 @@ using Baguio.Splines;
 public class TrackData
 {
     public ShapeData m_shape { get { return Configuration.ShapeDatas [m_shapeIndex]; } }
+    public Material m_material { get { return Configuration.StreetMaterials [m_materialIndex]; } }
 
     public Vector2 m_scale = new Vector2(0.01f, 0.01f);
     [Range ( 1, 10 )]
     public int m_precision = 5;
     public bool m_closed = true;
     public int m_shapeIndex = 0;
+    public int m_materialIndex = 0;
     public Vector3[] m_featurePoints;
     public string m_dbKey;
     public bool m_updateToCloud = false;
@@ -31,12 +33,14 @@ public class TrackData
                              "Number of Featurepoints: {4}\n" +
                              "DB Key: {5}," +
                              "Update to Cloud: {6}",
+                             "Material Index: {7}",
                              m_scale,
                              m_precision,
                              m_closed,
                              m_shape,
                              m_featurePoints.Length,
                              m_dbKey,
-                             m_updateToCloud);
+                             m_updateToCloud,
+                             m_materialIndex);
     }
 }
