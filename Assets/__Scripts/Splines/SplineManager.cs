@@ -22,6 +22,7 @@ namespace Baguio.Splines
     public class SplineManager : UniqueMesh, ISplineManager
     {
         public bool ClosedTrack { get { return m_trackData.m_closed; } }
+        public MeshRenderer m_meshRenderer;
 
         [SerializeField]
         protected TrackData m_trackData;
@@ -39,6 +40,7 @@ namespace Baguio.Splines
         private void Construct( [InjectOptional] IBuildStateMachine _session )
         {
             m_session = _session;
+            m_meshRenderer = GetComponent<MeshRenderer> ();
         }
 
         #endregion
@@ -106,6 +108,7 @@ namespace Baguio.Splines
 
         protected virtual void GenerateMesh (Mesh _mesh)
         {
+            m_meshRenderer.material = m_trackData.m_material;
             Extruder.Extrude ( _mesh, m_trackData.m_shape, m_path, m_trackData.m_scale );
         }
 
