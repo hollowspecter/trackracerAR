@@ -20,6 +20,7 @@ MonoBehaviour:
   m_angleThreshold: 20
   m_shapeDatas:
   - {fileID: 11400000, guid: 067ca6ef5859e44df9448cc58ea436b3, type: 2}
+  - {fileID: 11400000, guid: a050b53371ea164419163aa6e9b268fb, type: 2}
   m_vehicles:
   - {fileID: 2586731853333570865, guid: f34c917a27ad0294b94e97d1b0e2f14a, type: 3}
   m_trackParts:

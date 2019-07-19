@@ -24,13 +24,16 @@ public class BuildDialogState : State, IBuildDialogState
 {
     private IBuildStateMachine m_buildSM;
     private ISplineManager m_splineManager;
+    private ITrackBuilderManager m_trackBuilder;
 
     #region DI
 
     [Inject]
-    private void Construct( [Inject (Id = "TrackParent")] ISplineManager _splineManager )
+    private void Construct( [Inject (Id = "TrackParent")] ISplineManager _splineManager,
+                            ITrackBuilderManager _trackBuilder)
     {
         m_splineManager = _splineManager;
+        m_trackBuilder = _trackBuilder;
     }
 
     #endregion
@@ -53,8 +56,8 @@ public class BuildDialogState : State, IBuildDialogState
         if ( !Active ) return;
         Debug.Log ( "BuildDialogState: StartNewTrack" );
         m_buildSM.CurrentTrackData = new TrackData ();
-        m_buildSM.CurrentTrackData.m_shape.ThrowIfNull ( "Shape in StartNewTrack" );
         m_splineManager.ClearMesh ();
+        m_trackBuilder.ClearFeaturePoints ();
         m_stateMachine.TransitionToState ( StateName.BUILD_PAINT_STATE );
     }
 

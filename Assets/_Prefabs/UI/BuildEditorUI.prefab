@@ -681,7 +681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_toolButton: {fileID: 262451197140138823}
-  m_useFeaturePointsFromSession: 0
+  m_useTransforms: 1
 --- !u!114 &6231830339178175450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,7 +1479,7 @@ PrefabInstance:
     - target: {fileID: 6913312877751237821, guid: cb2c984984053f444880b507e48710cf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 650
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 6913312877751237821, guid: cb2c984984053f444880b507e48710cf,
         type: 3}
@@ -1489,7 +1489,7 @@ PrefabInstance:
     - target: {fileID: 6913312877751237821, guid: cb2c984984053f444880b507e48710cf,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 650
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 6913312877751237821, guid: cb2c984984053f444880b507e48710cf,
         type: 3}

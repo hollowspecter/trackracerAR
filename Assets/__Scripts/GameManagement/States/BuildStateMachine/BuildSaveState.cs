@@ -13,6 +13,7 @@ public interface IBuildSaveState
     bool OnSave ( string trackName );
     void OnCancel ();
     void OnNewTrack();
+    string OnShare();
 }
 
 public class BuildSaveState : State, IBuildSaveState
@@ -77,6 +78,13 @@ public class BuildSaveState : State, IBuildSaveState
         if ( !Active ) return;
         Debug.Log ( "BuildSaveState: OnDone" );
         m_stateMachine.TransitionToState ( StateName.RACE_SM );
+    }
+
+    public string OnShare()
+    {
+        if ( !Active ) return null;
+        UniClipboard.SetText (m_buildSM.CurrentTrackData.m_dbKey);
+        return m_buildSM.CurrentTrackData.m_dbKey;
     }
 
     #endregion

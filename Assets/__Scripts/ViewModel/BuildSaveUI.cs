@@ -36,6 +36,7 @@ public class BuildSaveUI : MonoBehaviour, IBuildSaveUI
                             [Inject ( Id = "InputName" )] InputField _inputNameField,
                             [Inject ( Id = "ButtonSaveTrack" )] Button _saveButton,
                             [Inject ( Id = "ButtonCancel" )] Button _cancelButton,
+                            [Inject ( Id = "ButtonShare" )] Button _shareButton,
                             DialogBuilder.Factory _dialogBuilderFactory,
                             IBuildStateMachine _buildSM,
                             UpdateUseCase _useCase)
@@ -56,6 +57,7 @@ public class BuildSaveUI : MonoBehaviour, IBuildSaveUI
         m_saveButton.interactable = false;
         _cancelButton.onClick.AddListener ( OnCancelButtonPressed );
         m_dialogBuilderFactory = _dialogBuilderFactory;
+        _shareButton.onClick.AddListener (OnShareButtonPressed);
 
         gameObject.SetActive ( false );
     }
@@ -110,6 +112,24 @@ public class BuildSaveUI : MonoBehaviour, IBuildSaveUI
     protected void OnCancelButtonPressed ()
     {
         m_state.OnCancel ();
+    }
+
+    // todo refactor this bc it was copied from editorviewmodel
+    protected void OnShareButtonPressed()
+    {
+        string key = m_state.OnShare ();
+        if ( string.IsNullOrWhiteSpace (key) ) {
+            m_dialogBuilderFactory.Create ()
+                .SetTitle ("Not uploaded yet!")
+                .SetIcon (DialogBuilder.Icon.INFO)
+                .SetMessage ("If you would like to share this track, go to the save menu and upload this track to the cloud.")
+                .Build ();
+        } else {
+            m_dialogBuilderFactory.Create ()
+                .SetTitle ("Success!")
+                .SetMessage (string.Format ("The key to the track\n{0}\nwas copied into your clipboard. Share it with your friends now!", key))
+                .Build ();
+        }
     }
 
     private void OnEnable()
