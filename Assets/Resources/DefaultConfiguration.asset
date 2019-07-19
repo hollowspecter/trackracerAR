@@ -25,9 +25,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d3ff2da249c726447bea464f5f7e2a1c, type: 2}
   - {fileID: 11400000, guid: d192ad3f091cccf46bab02e6f250e762, type: 2}
   m_streetMaterials:
-  - {fileID: 2100000, guid: dc3a35e8808bbd849bb8d559b09a4d14, type: 2}
-  - {fileID: 2100000, guid: 92a51c30a0b614e4a8c3ae8136c97f99, type: 2}
   - {fileID: 2100000, guid: 31944f0cdfc0ae14ca2295c7ab1b9c78, type: 2}
+  - {fileID: 2100000, guid: 92a51c30a0b614e4a8c3ae8136c97f99, type: 2}
+  - {fileID: 2100000, guid: dc3a35e8808bbd849bb8d559b09a4d14, type: 2}
   m_vehicles:
   - {fileID: 2586731853333570865, guid: f34c917a27ad0294b94e97d1b0e2f14a, type: 3}
   m_trackParts:
