@@ -2,6 +2,7 @@
  * Subject to the GNU General Public License.
  * See https://www.gnu.org/licenses/gpl.txt
  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,7 +34,7 @@ namespace Baguio.Splines
         protected IBuildStateMachine m_session;
 
         private Spline m_spline;
-
+        
         #region Di
 
         [Inject]
@@ -108,8 +109,8 @@ namespace Baguio.Splines
 
         protected virtual void GenerateMesh (Mesh _mesh)
         {
-            m_meshRenderer.material = m_trackData.m_material;
-            Extruder.Extrude ( _mesh, m_trackData.m_shape, m_path, m_trackData.m_scale );
+            m_meshRenderer.material = m_trackData.Material;
+            Extruder.Extrude ( _mesh, m_trackData.Shape, m_path, m_trackData.m_scale );
         }
 
         protected virtual void GenerateWaypoints ()
@@ -148,7 +149,7 @@ namespace Baguio.Splines
             m_spline.DrawGizmos ();
 
             // Draw Shape
-            if ( m_trackData.m_shape != null ) m_trackData.m_shape.DrawGizmos ( transform.position );
+            if ( m_trackData.Shape != null ) m_trackData.Shape.DrawGizmos ( transform.position );
 
             // Draw WayPoints
             if ( m_waypoints != null )
