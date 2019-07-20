@@ -8,6 +8,10 @@ using UnityEditor;
 
 namespace Baguio.Splines
 {
+    /// <summary>
+    /// Custom inspector for the spline manager to add generate
+    /// buttons and instructions
+    /// </summary>
     [CustomEditor ( typeof ( SplineManager ) )]
     public class SplineManagerInspector : Editor
     {

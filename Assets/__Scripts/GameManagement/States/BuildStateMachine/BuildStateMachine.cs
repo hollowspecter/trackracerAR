@@ -40,12 +40,12 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
 
     public event TouchHandler m_touchDetected;
 
-    private ITrackBuilderManager m_trackBuilder;
+    private IFeaturePointsManager m_trackBuilder;
 
     #region Di
 
     [Inject]
-    protected void Construct( ITrackBuilderManager _trackBuilder )
+    protected void Construct( IFeaturePointsManager _trackBuilder )
     {
         m_trackBuilder = _trackBuilder;
     }

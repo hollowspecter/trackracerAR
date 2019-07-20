@@ -3,22 +3,48 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 namespace Baguio.Splines
 {
+    /// <summary>
+    /// Interface for <see cref="SplineManager"/>
+    /// </summary>
     public interface ISplineManager
     {
+        /// <summary>
+        /// Property, if the track is currently closed.
+        /// </summary>
         bool ClosedTrack { get; }
+
+        /// <summary>
+        /// Generates the track using the feature point gameobjects
+        /// </summary>
         void GenerateTrack();
+
+        /// <summary>
+        /// Generates the track using the feature points from the
+        /// <see cref="TrackData"/> session model
+        /// </summary>
         void GenerateTrackFromTrackData();
+
+        /// <summary>
+        /// Returns the waypoints for the vehicles steering
+        /// </summary>
         List<OrientedPoint> GetWaypoints();
+
+        /// <summary>
+        /// Clears the mesh
+        /// </summary>
         void ClearMesh();
     }
 
+    /// <summary>
+    /// The SplineManager is the interface between the application
+    /// and the spline and 
+    /// </summary>
     [ExecuteInEditMode]
     public class SplineManager : UniqueMesh, ISplineManager
     {
@@ -50,27 +76,29 @@ namespace Baguio.Splines
 
         public void GenerateTrackFromTrackData()
         {
+            // update trackdata with the data from current session
             if ( m_session != null ) m_trackData = m_session.CurrentTrackData;
 
             m_points = new Vector3 [m_trackData.m_featurePoints.Length];
 
+            // add the feature point offset for the center-track-tool
             for (int i=0; i<m_points.Length;++i ) {
                 m_points[i] = m_trackData.m_featurePoints[i] + m_session.CurrentFeaturePointOffset;
             }
 
             InitPath ();
             GenerateWaypoints ();
-            GenerateMesh (mesh);
+            GenerateMesh (mMesh);
         }
 
         public virtual void GenerateTrack ()
         {
             if ( m_session != null ) m_trackData = m_session.CurrentTrackData;
 
-            InitPoints ();
+            InitPointsFromChildTransforms ();
             InitPath ();
             GenerateWaypoints ();
-            GenerateMesh (mesh);
+            GenerateMesh (mMesh);
         }
 
         public virtual List<OrientedPoint> GetWaypoints ()
@@ -85,14 +113,14 @@ namespace Baguio.Splines
 
         public virtual void ClearMesh()
         {
-            mesh.Clear ();
+            mMesh.Clear ();
         }
 
         #endregion
 
         #region Protected Functions
 
-        protected virtual void InitPoints()
+        protected virtual void InitPointsFromChildTransforms()
         {
             m_points = new Vector3 [ transform.childCount ];
             for ( int i = 0; i < m_points.Length; ++i )
@@ -122,8 +150,8 @@ namespace Baguio.Splines
             }
             m_waypoints = new List<OrientedPoint> ();
 
-            // Todo: hardcoding rausnehmen
-            for ( int i = 0; i < m_path.Length; i += 8 )
+            int stepSize = Configuration.WaypointStepSize;
+            for ( int i = 0; i < m_path.Length; i += stepSize )
             {
                 m_waypoints.Add ( m_path [ i ] );
             }

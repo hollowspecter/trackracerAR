@@ -38,6 +38,7 @@ public class RaceManager
         m_laps = new ReactiveProperty<int> (0);
         m_signalBus = _signalBus;
         m_splineMgr = _splineMgr;
+        m_settings = _settings;
     }
 
     private void StartRace()

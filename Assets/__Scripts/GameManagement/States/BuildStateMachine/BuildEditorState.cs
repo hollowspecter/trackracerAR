@@ -39,7 +39,7 @@ public interface IBuildEditorState
 public class BuildEditorState : State, IBuildEditorState
 {
     private IBuildStateMachine m_buildSM;
-    private ITrackBuilderManager m_trackBuilder;
+    private IFeaturePointsManager m_trackBuilder;
     private SignalBus m_signalBus;
     private IDisposable m_trackChangedSubscription;
     private IDisposable m_trackUploadSubscription;
@@ -50,7 +50,7 @@ public class BuildEditorState : State, IBuildEditorState
     #region DI
 
     [Inject]
-    private void Construct(ITrackBuilderManager _trackBuilder,
+    private void Construct(IFeaturePointsManager _trackBuilder,
                            SignalBus _signalBus,
                            UpdateUseCase _useCase,
                            [Inject(Id="TrackParent")] StreetView _streetView,
