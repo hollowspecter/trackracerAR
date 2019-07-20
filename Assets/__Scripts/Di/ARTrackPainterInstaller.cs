@@ -1,12 +1,14 @@
 /* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
 using UnityEngine;
 using Zenject;
 
-// TODO SUMMARY
+/// <summary>
+/// Installer for the ARTrackPainter Scene.
+/// </summary>
 public class ARTrackPainterInstaller : MonoInstaller
 {
     public override void InstallBindings()

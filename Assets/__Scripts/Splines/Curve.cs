@@ -1,5 +1,5 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 using System.Collections;
@@ -126,8 +126,8 @@ namespace Baguio.Splines
             {
                 OrientedPoint point = m_path [ i ];
                 Gizmos.DrawLine ( point.position, m_path [ i + 1 ].position );
-                //if ( Configuration.ShowTangents ) Gizmos.DrawLine ( point.position, point.position + point.tangent );
-                //if ( Configuration.ShowNormals ) Gizmos.DrawLine ( point.position, point.position + point.normal );
+                if ( Configuration.ShowTangents ) Gizmos.DrawLine ( point.position, point.position + point.tangent );
+                if ( Configuration.ShowNormals ) Gizmos.DrawLine ( point.position, point.position + point.normal );
             }
             Gizmos.color = origCol;
         }

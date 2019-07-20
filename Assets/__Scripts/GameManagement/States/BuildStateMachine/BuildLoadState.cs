@@ -1,15 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the MIT License License.
+ * See https://mit-license.org/
+ */
+
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Interface of the <see cref="BuildLoadState"/>
+/// </summary>
 public interface IBuildLoadState
 {
+    /// <summary>
+    /// Returns to the <see cref="BuildDialogState"/>
+    /// </summary>
     void CancelLoading ();
+
+    /// <summary>
+    /// Loads the trackdata with the given filename and
+    /// transitions to <see cref="BuildEditorState"/>
+    /// </summary>
     void LoadAndEdit( string fileName );
+
+    /// <summary>
+    /// Loads the trackdata with the given filename and
+    /// transitions to the <see cref="RaceSetupState"/>
+    /// </summary>
+    /// <param name="fileName"></param>
     void LoadAndRace( string fileName );
 }
 
+/// <summary>
+/// State that displays all tracks that are saved to the device.
+/// From here players can load, edit, delete and race old tracks.
+/// </summary>
 public class BuildLoadState : State, IBuildLoadState
 {
     private IBuildStateMachine m_buildSM;
@@ -28,6 +52,8 @@ public class BuildLoadState : State, IBuildLoadState
 
     #endregion
 
+    #region State Methods
+
     protected override void Initialise ()
     {
         base.Initialise ();
@@ -45,6 +71,10 @@ public class BuildLoadState : State, IBuildLoadState
         base.ExitState ();
         Debug.Log ( "BuildLoadSTate: ExitState" );
     }
+
+    #endregion
+
+    #region Callbacks
 
     public void CancelLoading ()
     {
@@ -83,6 +113,10 @@ public class BuildLoadState : State, IBuildLoadState
             .Build ();
     }
 
+    #endregion
+
+    #region Helper methods
+
     private void Load ( string fileName )
     {
         if ( !Active ) return;
@@ -92,4 +126,6 @@ public class BuildLoadState : State, IBuildLoadState
         m_buildSM.CurrentTrackData = SaveExtension.LoadTrackData ( fileName );
         m_trackBuilder.InstantiateFeaturePoints ( ref m_buildSM.CurrentTrackData.m_featurePoints );
     }
+
+    #endregion
 }

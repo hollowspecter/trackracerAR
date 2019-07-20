@@ -1,14 +1,19 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
 using System;
 using UniRx;
-using Zenject;
 using Firebase.Auth;
 using UnityEngine;
 
+/// <summary>
+/// Deals with the Firebase Authentication API.
+/// Automatically logs the current user in,
+/// using anonymous authentication, once the
+/// general Firebase API is initialized.
+/// </summary>
 public class AuthApi : IDisposable
 {
     public bool SignedIn { get { return m_auth?.CurrentUser != null; } }

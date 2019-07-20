@@ -1,14 +1,14 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using Zenject;
 
+/// <summary>
+/// Tickable class that simulates the behaviour of the unity
+/// axis input, to use on button or mouse press.
+/// </summary>
 public class TouchInput
 {
     /// <summary>
@@ -18,12 +18,20 @@ public class TouchInput
 
     private Settings m_settings;
 
-    public TouchInput( Settings _settings)
+    public TouchInput( Settings _settings )
     {
         m_settings = _settings;
     }
 
-    public void Tick(double _deltaTime)
+    #region Public methods
+
+    /// <summary>
+    /// Call this in Update populate the Value with
+    /// either Mouseclick (in Editor) or Touch Input
+    /// (on device)
+    /// </summary>
+    /// <param name="_deltaTime"></param>
+    public void Tick( double _deltaTime )
     {
 #if !UNITY_EDITOR
         Touch(_deltaTime);
@@ -32,15 +40,18 @@ public class TouchInput
 #endif
     }
 
-    public void ResetValue()
+    /// <summary>
+    /// Sets the value. Value will be clamped between 0 and 1
+    /// </summary>
+    /// <param name="_value"></param>
+    public void SetValue( float _value )
     {
-        Value = 0f;
+        Value = Mathf.Clamp01 (_value);
     }
 
-    public void SetValue(float value )
-    {
-        Value = Mathf.Clamp01 (value);
-    }
+    #endregion
+
+    #region Private methods
 
     private void Touch( double _deltaTime )
     {
@@ -69,6 +80,8 @@ public class TouchInput
     {
         Value = Mathf.Clamp01 (Value - Time.deltaTime * m_settings.Gravity);
     }
+
+    #endregion
 
     [System.Serializable]
     public class Settings

@@ -1,24 +1,48 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using System;
 
-public interface ITrackBuilderManager
+/// <summary>
+/// Interface for <see cref="FeaturePointsManager"/>
+/// </summary>
+public interface IFeaturePointsManager
 {
+    /// <summary>
+    /// Instantiates the feature point game objects
+    /// </summary>
     void InstantiateFeaturePoints( ref Vector3 [] points );
+
+    /// <summary>
+    /// Returns the feature points positions in an array
+    /// from beginning to end of the track
+    /// </summary>
     Vector3 [] GetFeaturePoints();
+
+    /// <summary>
+    /// Clears all feature points
+    /// </summary>
     void ClearFeaturePoints();
+
+    /// <summary>
+    /// Toggles the visibility of the feature points by turning
+    /// them on and off
+    /// </summary>
+    /// <param name="_visible"></param>
     void SetFeaturePointVisibility(bool _visible);
+
+    /// <summary>
+    /// Updates the feature points to the given position array
+    /// </summary>
     void UpdateFeaturePoints( ref Vector3 [] _featurePoints );
 }
 
-public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDisposable
+public class FeaturePointsManager : IFeaturePointsManager, IInitializable, IDisposable
 {
     private Point3DFactory.Factory m_point3DFactory;
     private Transform m_trackTransform;
@@ -28,7 +52,7 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
     private List<GameObject> m_pointGOs;
     private List<Point3DView> m_pointViews;
 
-    public TrackBuilderManager(Point3DFactory.Factory _point3DFactory,
+    public FeaturePointsManager(Point3DFactory.Factory _point3DFactory,
                                [Inject ( Id = "TrackParent" )] Transform _trackTransform,
                                [Inject ( Id = "TrackParent" )] LineRenderer _line,
                                SignalBus _signalBus)
@@ -128,10 +152,18 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
         FeaturePointChanged ();
     }
 
+    /// <summary>
+    /// Callback for a <see cref="FeaturePointChanged"/> event.
+    /// Checks if any feature points get deleted or copied,
+    /// then updates the line renderer with the new positions.
+    /// </summary>
     private void FeaturePointChanged()
     {
         for (int i=0; i<m_pointViews.Count; ++i) {
+
+            // is a point flagged as dirty and should therefore be removed?
             if (m_pointViews[i].IsDirty) {
+                // only remove if there will still be three points left
                 if ( m_pointViews.Count > 3 ) {
                     UnityEngine.Object.Destroy (m_pointGOs [i]);
                     m_pointViews.RemoveAt (i);
@@ -140,7 +172,9 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
                     m_pointViews [i].IsDirty = false;
                 }
                 break;
-            } else if (m_pointViews[i].IsCopied) {
+            } 
+            // check for copy action
+            else if (m_pointViews[i].IsCopied) {
                 m_pointViews [i].IsCopied = false;
                 Transform newPoint = m_point3DFactory.Create (new Point3DFactory.Params ());
                 newPoint.parent = m_trackTransform;
@@ -152,6 +186,7 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
             }
         }
 
+        // update line renderer
         m_line.positionCount = m_pointGOs.Count;
         for (int i=0; i<m_pointGOs.Count;++i )
         {

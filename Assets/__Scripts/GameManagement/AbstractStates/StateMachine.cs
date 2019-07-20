@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the MIT License License.
+ * See https://mit-license.org/
+ */
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -57,6 +61,11 @@ public class StateMachine : State
         }
     }
 
+    /// <summary>
+    /// Adds a new state to the statemachine.
+    /// The first added state will be the default state and will be
+    /// entered first.
+    /// </summary>
     public void AddState ( StateName _stateName, State _state )
     {
         // check for traps
@@ -131,6 +140,11 @@ public class StateMachine : State
 
     #region Helper Functions
 
+    /// <summary>
+    /// Returns the current statename, prefixing the path through the
+    /// hierarchial statemachine structure.
+    /// </summary>
+    /// <returns></returns>
     public string GetCurrentStateName ()
     {
         if ( !IsState ( m_currentState ) )
@@ -148,7 +162,9 @@ public class StateMachine : State
         return System.Enum.GetName ( typeof ( StateName ), m_currentState ) + lowerState;
     }
 
-    /// <returns><c>true</c>, if state is valid, <c>false</c> is statename is NONE.</returns>
+    /// <summary>
+    /// return true if state is valid, <c>false</c> is statename is NONE.
+    /// </summary>
     private static bool IsState ( StateName _stateName )
     {
         return _stateName != StateName.NONE;

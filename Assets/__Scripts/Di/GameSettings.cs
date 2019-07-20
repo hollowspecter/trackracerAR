@@ -1,13 +1,15 @@
 /* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
 using UnityEngine;
 using Zenject;
-using Baguio.Splines;
 
-// TODO SUMMARY
+/// <summary>
+/// Game Settings Installer as a Scriptable Object.
+/// Provides the settings for all the objects in the graph.
+/// </summary>
 [CreateAssetMenu (fileName = "GameSettings", menuName = "Installers/GameSettings")]
 public class GameSettings : ScriptableObjectInstaller<GameSettings>
 {
@@ -39,6 +41,7 @@ public class GameSettings : ScriptableObjectInstaller<GameSettings>
         public TouchInput.Settings InputSettings;
         public VehicleController.Settings VehicleSettings;
         public RaceSetupUI.Settings SetupSettings;
+        public RaceManager.Settings RacingSettings;
     }
 
     [System.Serializable]
@@ -61,6 +64,7 @@ public class GameSettings : ScriptableObjectInstaller<GameSettings>
         Container.BindInstance (Race.InputSettings).IfNotBound ();
         Container.BindInstance (Race.VehicleSettings).IfNotBound ();
         Container.BindInstance (Race.SetupSettings).IfNotBound ();
+        Container.BindInstance (Race.RacingSettings).IfNotBound ();
 
         Container.BindInstance (Firebase.DbSettings).IfNotBound ();
     }

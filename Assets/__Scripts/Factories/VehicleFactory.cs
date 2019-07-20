@@ -1,12 +1,19 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Prefab-Instantiating Factory that spawns vehicles at a given
+/// position with a given rotation.
+/// Can be altered so that different vehicles get spawned.
+/// As of now, only one vehicle type exists (set in <see cref="Configuration"/>).
+/// 
+/// Todo Improvement: Convert to memory pool
+/// </summary>
 public class VehicleFactory : IFactory<VehicleFactory.Params, VehicleController>
 {
     protected readonly DiContainer m_container;

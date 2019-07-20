@@ -1,18 +1,19 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Zenject;
 using UniRx;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 
+/// <summary>
+/// Initializes the firebase database connection
+/// automatically and provides the neccessary
+/// database references for the repositories.
+/// </summary>
 public class DatabaseApi : IDisposable
 {
     public DatabaseReference TracksReference { get; private set; }

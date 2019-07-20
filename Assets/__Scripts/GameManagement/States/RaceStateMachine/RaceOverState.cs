@@ -1,19 +1,31 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Interface for <see cref="RaceOverState"/>
+/// </summary>
 public interface IRaceOverState
 {
+    /// <summary>
+    /// Returns to the <see cref="RaceSetupState"/>
+    /// </summary>
     void OnRetry();
+
+    /// <summary>
+    /// Returns to the <see cref="BuildDialogState"/>
+    /// </summary>
     void OnExit();
 }
 
+/// <summary>
+/// State displays the racing score and you can
+/// see the vehicle still racing.
+/// </summary>
 public class RaceOverState : State, IRaceOverState
 {
     private SignalBus m_signalBus;

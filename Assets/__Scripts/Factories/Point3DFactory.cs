@@ -1,11 +1,15 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Prefab-Instantiating Factory to create new FeaturePoints
+/// Todo Improvement: Convert to Memory Pool
+/// </summary>
 public class Point3DFactory : IFactory<Point3DFactory.Params, Transform>
 {
     protected readonly DiContainer m_container;

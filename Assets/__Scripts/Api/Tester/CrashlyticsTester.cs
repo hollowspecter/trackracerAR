@@ -1,6 +1,14 @@
-﻿using System;
+﻿/*
+ * Source: https://firebase.google.com/docs/crashlytics/force-a-crash?platform=unity
+ */
+
+using System;
 using UnityEngine;
 
+/// <summary>
+/// Periodically throws exceptions to test the connection to
+/// Firebase Crashlytics crash reporting
+/// </summary>
 public class CrashlyticsTester : MonoBehaviour
 {
 
