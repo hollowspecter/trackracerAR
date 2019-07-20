@@ -1,6 +1,6 @@
 ﻿/* Copyright 2019 Vivien Baguio.
  * Subject to the GNU General Public License.
- * See https://www.gnu.org/licenses/gpl.txt
+ * See https://mit-license.org/
  */
 
 using System.Collections;
@@ -22,6 +22,7 @@ public class SnackbarView : MonoBehaviour
 
     private RectTransform m_rectTransform;
     private float m_originalY;
+    private Tweener m_tweener;
 
     private void Awake()
     {
@@ -46,7 +47,10 @@ public class SnackbarView : MonoBehaviour
 
     public void Hide(float _duration)
     {
-        m_rectTransform.DOMoveY (0f, _duration, true).SetAutoKill (false).SetEase (Ease.InOutQuint);
+        if (m_tweener != null && m_tweener.IsPlaying()) {
+            return;
+        }
+        m_tweener = m_rectTransform.DOMoveY (0f, _duration, true).SetAutoKill (false).SetEase (Ease.InOutQuint);
         m_hideButton.interactable = false;
         m_showButton.gameObject.SetActive (true);
         m_showButtonImage.DOFade (1f, _duration);
@@ -55,7 +59,10 @@ public class SnackbarView : MonoBehaviour
 
     public void Show(float _duration)
     {
-        m_rectTransform.DOMoveY (m_originalY, _duration, true).SetAutoKill (false).SetEase (Ease.InOutQuint);
+        if ( m_tweener != null && m_tweener.IsPlaying () ) {
+            return;
+        }
+        m_tweener = m_rectTransform.DOMoveY (m_originalY, _duration, true).SetAutoKill (false).SetEase (Ease.InOutQuint);
         m_hideButton.interactable = true;
         m_showButtonImage.DOFade (0f, _duration).OnComplete (() => m_showButton.gameObject.SetActive (false));
         PlayerPrefs.SetInt (m_playerPrefsKey, SHOW_STATUS);
