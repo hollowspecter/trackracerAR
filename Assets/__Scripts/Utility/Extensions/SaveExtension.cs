@@ -27,6 +27,15 @@ public static class SaveExtension
         return track;
     }
 
+    public static void DeleteTrackData (string _fileName)
+    {
+        try {
+            File.Delete (Path.Combine (m_path, _fileName.ConvertToJsonFileName ()));
+        } catch (System.Exception e) {
+            Debug.LogError (e);
+        }
+    }
+
     public static bool SaveAsJson ( this TrackData _track, string _fileName )
     {
         try {
