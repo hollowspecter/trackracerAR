@@ -6,12 +6,12 @@
 using UnityEngine;
 using Zenject;
 
-public interface IBuildDialogViewModel
+public interface IBuildDialogUI
 {
 }
 
 [RequireComponent ( typeof ( UIFader ) )]
-public class BuildDialogViewModel : MonoBehaviour, IBuildDialogViewModel
+public class BuildDialogUI : MonoBehaviour, IBuildDialogUI
 {
     public PopupView m_impress;
     private IBuildDialogState m_state;

@@ -1,6 +1,6 @@
 /* Copyright 2019 Vivien Baguio.
  * Subject to the GNU General Public License.
- * See https://www.gnu.org/licenses/gpl.txt
+ * See https://mit-license.org/
  */
 using UnityEngine;
 using Zenject;

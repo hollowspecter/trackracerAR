@@ -28,7 +28,7 @@ public class GameSettings : ScriptableObjectInstaller<GameSettings>
     [System.Serializable]
     public class UISettings
     {
-        public BuildLoadViewModel.Settings LoadingSettings;
+        public BuildLoadUI.Settings LoadingSettings;
         public DialogBuilder.Settings DialogSettings;
         public DialogFactory.Settings DialogFactorySettings;
     }

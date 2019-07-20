@@ -9,13 +9,13 @@ using Zenject;
 using Baguio.Splines;
 using UnityEngine.UI;
 
-public interface ISettingsViewModel
+public interface ISettingsUI
 {
     void Activate();
 }
 
 //todo remove comments if not needed, add summary
-public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
+public class SettingsUI : MonoBehaviour, ISettingsUI
 {
     [SerializeField] protected DiscreteSlider m_scaleXSlider;
     [SerializeField] protected DiscreteSlider m_scaleYSlider;
