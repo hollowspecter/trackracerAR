@@ -56,7 +56,7 @@ public class Point3DView : MonoBehaviour
                 m_signalBus.Fire<FeaturePointChanged> ();
             }));
 
-        m_subscriptions.Add (m_mouseDownAsObservable.Buffer (TimeSpan.FromMilliseconds (250))
+        m_subscriptions.Add (m_mouseDownAsObservable.Buffer (TimeSpan.FromMilliseconds (600))
             .Where (xs => xs.Count >= 2)
             .Subscribe (_ => {
                 IsCopied = true;

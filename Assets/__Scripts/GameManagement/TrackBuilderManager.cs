@@ -132,18 +132,23 @@ public class TrackBuilderManager : ITrackBuilderManager, IInitializable, IDispos
     {
         for (int i=0; i<m_pointViews.Count; ++i) {
             if (m_pointViews[i].IsDirty) {
-                UnityEngine.Object.Destroy (m_pointGOs [i]);
-                m_pointViews.RemoveAt (i);
-                m_pointGOs.RemoveAt (i);
+                if ( m_pointViews.Count > 3 ) {
+                    UnityEngine.Object.Destroy (m_pointGOs [i]);
+                    m_pointViews.RemoveAt (i);
+                    m_pointGOs.RemoveAt (i);
+                } else {
+                    m_pointViews [i].IsDirty = false;
+                }
                 break;
             } else if (m_pointViews[i].IsCopied) {
                 m_pointViews [i].IsCopied = false;
                 Transform newPoint = m_point3DFactory.Create (new Point3DFactory.Params ());
                 newPoint.parent = m_trackTransform;
-                newPoint.SetSiblingIndex (i);
+                newPoint.SetSiblingIndex (i+1);
                 newPoint.position = m_pointGOs [i].transform.position + Vector3.up * 0.05f;
-                m_pointGOs.Insert (i, newPoint.gameObject);
-                m_pointViews.Insert (i, newPoint.GetComponent<Point3DView> ());
+                m_pointGOs.Insert (i+1, newPoint.gameObject);
+                m_pointViews.Insert (i+1, newPoint.GetComponent<Point3DView> ());
+                break;
             }
         }
 
