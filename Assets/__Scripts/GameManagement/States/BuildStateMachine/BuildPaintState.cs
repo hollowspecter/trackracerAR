@@ -45,14 +45,14 @@ public class BuildPaintState : State, IBuildPaintState
     private PointRecorder.Factory m_pointRecorderFactory;
     private IBuildStateMachine m_buildSM;
     private PointRecorder m_pointRecorder;
-    private ITrackBuilderManager m_trackBuilder;
+    private IFeaturePointsManager m_trackBuilder;
     private DialogBuilder.Factory m_dialogBuilderFactory;
 
     #region Di
 
     [Inject]
     protected void Construct( PointRecorder.Factory _pointRecorderFactory,
-                              ITrackBuilderManager _trackBuilder,
+                              IFeaturePointsManager _trackBuilder,
                               DialogBuilder.Factory _dialogBuilderFactory)
     {
         m_pointRecorderFactory = _pointRecorderFactory;

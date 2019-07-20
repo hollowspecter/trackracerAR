@@ -7,6 +7,9 @@ using System.Collections.Generic;
 
 namespace Baguio.Splines
 {
+    /// <summary>
+    /// A Spline consists of several <see cref="Curve"/>s.
+    /// </summary>
     public class Spline
     {
         private Vector3 [] m_points;
@@ -15,6 +18,12 @@ namespace Baguio.Splines
 
         #region Constructor
 
+        /// <summary>
+        /// Generate an new spline through the given points.
+        /// </summary>
+        /// <param name="_points">The points the spline will pass through</param>
+        /// <param name="closed">Determins whether the spline is closed or not</param>
+        /// <param name="_precision">2 to the power of n - times points will be calculated on one curve</param>
         public Spline ( Vector3 [] _points, bool closed = true, int _precision = 5 )
         {
             // check for traps
@@ -36,6 +45,43 @@ namespace Baguio.Splines
         }
 
         #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Returns the length of the spline by accumulating
+        /// the lengths of the curves.
+        /// </summary>
+        public float GetLength()
+        {
+            if ( m_curves == null ) return 0f;
+
+            float length = 0f;
+
+            for ( int i = 0; i < m_curves.Length; ++i ) {
+                length += m_curves [i].GetLength ();
+            }
+
+            return length;
+        }
+
+        /// <summary>
+        /// Returns the complete path of the spline.
+        /// </summary>
+        public void GetOrientedPath( out OrientedPoint [] _path )
+        {
+            List<OrientedPoint> pathList = new List<OrientedPoint> ();
+
+            for ( int i = 0; i < m_curves.Length; ++i ) {
+                pathList.AddRange (m_curves [i].m_path);
+            }
+
+            _path = pathList.ToArray ();
+        }
+
+        #endregion
+
+        #region Private Methods
 
         private void CalculateSpline ()
         {
@@ -66,13 +112,7 @@ namespace Baguio.Splines
         private void CalculateClosedSpline ()
         {
             //// check if last and first point are on the same position
-            //bool skipLastPoint = ( ( m_points [ 0 ] - m_points [ m_points.Length - 1 ] ).magnitude < THRESHOLD );
             Vector3 [] points = m_points;
-            //if ( skipLastPoint )
-            //{
-            //    points = new Vector3 [ m_points.Length - 1 ];
-            //    for ( int i = 0; i < points.Length; ++i ) points [ i ] = m_points [ i ];
-            //}
             m_curves = new Curve [ points.Length ];
 
             // generate spline
@@ -99,31 +139,7 @@ namespace Baguio.Splines
             }
         }
 
-        public float GetLength ()
-        {
-            if ( m_curves == null ) return 0f;
-
-            float length = 0f;
-
-            for ( int i = 0; i < m_curves.Length; ++i )
-            {
-                length += m_curves [ i ].GetLength ();
-            }
-
-            return length;
-        }
-
-        public void GetOrientedPath ( out OrientedPoint [] _path )
-        {
-            List<OrientedPoint> pathList = new List<OrientedPoint> ();
-
-            for ( int i = 0; i < m_curves.Length; ++i )
-            {
-                pathList.AddRange ( m_curves [ i ].m_path );
-            }
-
-            _path = pathList.ToArray ();
-        }
+        #endregion
 
         #region Debug Methods
 

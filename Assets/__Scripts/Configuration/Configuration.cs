@@ -44,6 +44,9 @@ public class Configuration : ScriptableObject
 
     #region Fields
 
+#pragma warning disable IDE0044 // Readonly-Modifizierer hinzufügen
+#pragma warning disable CS0649 // unused
+
     [Header ( "Debug" )]
     [SerializeField]
     private bool m_showTangents;
@@ -59,6 +62,8 @@ public class Configuration : ScriptableObject
     private ShapeData[] m_shapeDatas;
     [SerializeField]
     private Material [] m_streetMaterials;
+    [SerializeField]
+    private int m_waypointStepSize = 8;
 
     [ Header ( "Vehicles" )]
     [SerializeField]
@@ -76,6 +81,9 @@ public class Configuration : ScriptableObject
     [SerializeField]
     private GameObject m_loadItemList;
 
+#pragma warning restore CS0649 // unused
+#pragma warning restore IDE0044 // Readonly-Modifizierer hinzufügen
+
     #endregion
 
     #region Properties
@@ -87,6 +95,7 @@ public class Configuration : ScriptableObject
     public static Material[] StreetMaterials { get { return DefaultConfig.m_streetMaterials; } }
     public static float DistanceThreshold { get { return DefaultConfig.m_distanceThreshold; } }
     public static float AngleThreshold { get { return DefaultConfig.m_angleThreshold; } }
+    public static int WaypointStepSize { get { return DefaultConfig.m_waypointStepSize; } }
 
     #endregion
 }

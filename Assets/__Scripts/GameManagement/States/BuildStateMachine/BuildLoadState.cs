@@ -37,13 +37,13 @@ public interface IBuildLoadState
 public class BuildLoadState : State, IBuildLoadState
 {
     private IBuildStateMachine m_buildSM;
-    private ITrackBuilderManager m_trackBuilder;
+    private IFeaturePointsManager m_trackBuilder;
     private DialogBuilder.Factory m_dialogBuilderFactory;
 
     #region Di
 
     [Inject]
-    protected void Construct( ITrackBuilderManager _trackBuilder,
+    protected void Construct( IFeaturePointsManager _trackBuilder,
                               DialogBuilder.Factory _dialogBuilderFactory)
     {
         m_trackBuilder = _trackBuilder;

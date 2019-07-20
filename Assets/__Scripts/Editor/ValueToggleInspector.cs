@@ -3,11 +3,12 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// Custom inspector to override the Toggle
+/// inspector to use the default inspector
+/// </summary>
 [CustomEditor (typeof (ValueToggle))]
 public class ValueToggleInspector : Editor
 {

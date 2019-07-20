@@ -2,12 +2,16 @@
  * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 namespace Baguio.Splines
 {
+    /// <summary>
+    /// Provides static methods to extrude a <see cref="ShapeData"/> along
+    /// an oriented path (consisting of <see cref="OrientedPoint"/>s).
+    /// Calculates vertices, normals and UVs.
+    /// </summary>
     public class Extruder
     {
         public static void Extrude ( Mesh _mesh, ShapeData _shape, OrientedPoint [] _path, Vector2 _scale )

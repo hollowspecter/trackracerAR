@@ -4,46 +4,49 @@
  */
 
 using UnityEngine;
-using System.Collections;
 
 namespace Baguio.Splines
 {
+    /// <summary>
+    /// Derive from this class to ensure the GameObject has
+    /// a unique mesh and a mesh filter.
+    /// </summary>
     [RequireComponent ( typeof ( MeshFilter ) )]
     [RequireComponent ( typeof ( Mesh ) )]
     public class UniqueMesh : MonoBehaviour
     {
-        #region variables (private)
         [HideInInspector]
-        int ownerID; // to ensure they have a unique mesh
-        MeshFilter _mf;
-        Mesh _mesh;
-        #endregion
+        private int m_ownerID; // to ensure they have a unique mesh
+        private MeshFilter m_meshFilter;
+        private Mesh m_mesh;
 
         #region Properties (public)
-        MeshFilter mf
+
+        MeshFilter mMeshFilter
         { // tries to find a mesh filter, adds one if it doesnt exist yet
             get
             {
-                _mf = _mf == null ? GetComponent<MeshFilter> () : _mf;
-                _mf = _mf == null ? gameObject.AddComponent<MeshFilter> () : _mf;
-                return _mf;
+                m_meshFilter = m_meshFilter ?? GetComponent<MeshFilter> ();
+                m_meshFilter = m_meshFilter ?? gameObject.AddComponent<MeshFilter> ();
+                return m_meshFilter;
             }
         }
 
-        protected Mesh mesh
+        protected Mesh mMesh
         {
             get
             {
-                bool isOwner = ownerID == gameObject.GetInstanceID ();
-                if ( mf.sharedMesh == null || !isOwner )
+                bool isOwner = m_ownerID == gameObject.GetInstanceID ();
+                if ( mMeshFilter.sharedMesh == null || !isOwner )
                 {
-                    mf.sharedMesh = _mesh = new Mesh ();
-                    ownerID = gameObject.GetInstanceID ();
-                    _mesh.name = "Mesh [" + ownerID + "]";
+                    mMeshFilter.sharedMesh = m_mesh = new Mesh ();
+                    m_ownerID = gameObject.GetInstanceID ();
+                    m_mesh.name = "Mesh [" + m_ownerID + "]";
                 }
-                return _mesh;
+                return m_mesh;
             }
         }
+
         #endregion
     }
 }

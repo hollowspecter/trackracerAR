@@ -42,13 +42,13 @@ public class BuildDialogState : State, IBuildDialogState
 {
     private IBuildStateMachine m_buildSM;
     private ISplineManager m_splineManager;
-    private ITrackBuilderManager m_trackBuilder;
+    private IFeaturePointsManager m_trackBuilder;
 
     #region DI
 
     [Inject]
     private void Construct( [Inject (Id = "TrackParent")] ISplineManager _splineManager,
-                            ITrackBuilderManager _trackBuilder)
+                            IFeaturePointsManager _trackBuilder)
     {
         m_splineManager = _splineManager;
         m_trackBuilder = _trackBuilder;

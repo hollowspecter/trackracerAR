@@ -2,19 +2,25 @@
  * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 namespace Baguio.Splines
 {
+    /// <summary>
+    /// Represents one curve segment of a spline.
+    /// </summary>
     public class Curve
     {
-        public OrientedPoint [] m_path;
         private const float ALPHA = 0.5f; // set betweeen 0 and 1
+
+        public OrientedPoint [] m_path;
 
         #region Constructor
 
+        /// <summary>
+        /// Creates a CatmulRom Curve segment
+        /// </summary>
         public static Curve CatmulRom ( Vector3 _p0, Vector3 _p1, Vector3 _p2, Vector3 _p3, int _numPoints )
         {
             Curve curve = new Curve ();
@@ -43,6 +49,9 @@ namespace Baguio.Splines
 
         #region Public Functions
 
+        /// <summary>
+        /// Returns the length of this curve
+        /// </summary>
         public float GetLength ()
         {
             if ( m_path == null ) return 0f;
@@ -71,6 +80,7 @@ namespace Baguio.Splines
         private static OrientedPoint GetOrientedPoint ( float t, float t0, float t1, float t2, float t3, Vector3 _p0, Vector3 _p1, Vector3 _p2, Vector3 _p3 )
         {
             OrientedPoint p = new OrientedPoint ();
+
             // Cache
             float t0_t = t0 - t;
             float t1_t = t1 - t;

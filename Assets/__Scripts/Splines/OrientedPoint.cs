@@ -6,6 +6,11 @@ using UnityEngine;
 
 namespace Baguio.Splines
 {
+    /// <summary>
+    /// Represents a point in 3D space with orientation,
+    /// meaning it has a position, a rotation, a tangent
+    /// and a normal
+    /// </summary>
     public struct OrientedPoint
     {
         public Vector3 position;
