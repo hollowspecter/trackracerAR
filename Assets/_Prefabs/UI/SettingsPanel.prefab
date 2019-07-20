@@ -2574,8 +2574,16 @@ MonoBehaviour:
   m_closedToggle: {fileID: 5088647235521853937}
   m_discardChangesButton: {fileID: 6061933735418262305}
   m_saveChangesButton: {fileID: 5088647235779373427}
-  m_materialGroup: {fileID: 8633125219282461}
-  m_shapeGroup: {fileID: 3334390207516021091}
+  m_materialToggles:
+  - {fileID: 3588685230106888413}
+  - {fileID: 7698971388585722643}
+  - {fileID: 1690539264302134199}
+  m_shapeToggles:
+  - {fileID: 9133074678212582100}
+  - {fileID: 5783241503771685433}
+  - {fileID: 109081486273142442}
+  - {fileID: 3154468552816354586}
+  - {fileID: 178589530916830844}
 --- !u!114 &5088647236361349008
 MonoBehaviour:
   m_ObjectHideFlags: 0
