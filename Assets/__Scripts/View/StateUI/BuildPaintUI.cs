@@ -9,10 +9,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public interface IBuildPaintViewModel { }
+public interface IBuildPaintUI { }
 
 [RequireComponent ( typeof ( UIFader ) )]
-public class BuildPaintViewModel : MonoBehaviour
+public class BuildPaintUI : MonoBehaviour
 {
     private IBuildPaintState m_state;
     private DialogBuilder.Factory m_dialogBuilderFactory;

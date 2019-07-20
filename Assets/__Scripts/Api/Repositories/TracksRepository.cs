@@ -1,6 +1,6 @@
 ﻿/* Copyright 2019 Vivien Baguio.
  * Subject to the GNU General Public License.
- * See https://www.gnu.org/licenses/gpl.txt
+ * See https://mit-license.org/
  */
 
 using System;
@@ -8,6 +8,10 @@ using UnityEngine;
 using Firebase.Database;
 using UniRx;
 
+/// <summary>
+/// Fetches the track data from the database and provides methods
+/// to 
+/// </summary>
 public class TracksRepository
 {
     private DatabaseApi m_remote;

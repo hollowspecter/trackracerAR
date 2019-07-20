@@ -8,10 +8,10 @@ using System.Collections;
 using Zenject;
 using Baguio.Splines;
 
-public interface IBuildEditorViewModel { }
+public interface IBuildEditorUI { }
 
 [RequireComponent ( typeof ( UIFader ) )]
-public class BuildEditorViewModel : MonoBehaviour, IBuildEditorViewModel
+public class BuildEditorUI : MonoBehaviour, IBuildEditorUI
 {
     private IBuildEditorState m_state;
     private UIFader m_fader;

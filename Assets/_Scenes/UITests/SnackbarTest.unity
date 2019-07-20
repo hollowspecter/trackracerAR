@@ -509,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 6913312877751237821, guid: cb2c984984053f444880b507e48710cf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 216.1001
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 6913312877751237821, guid: cb2c984984053f444880b507e48710cf,
         type: 3}
@@ -519,7 +519,7 @@ PrefabInstance:
     - target: {fileID: 6913312877751237821, guid: cb2c984984053f444880b507e48710cf,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 216.1
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 6913312877751237821, guid: cb2c984984053f444880b507e48710cf,
         type: 3}
@@ -551,6 +551,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6913312877751237820, guid: cb2c984984053f444880b507e48710cf,
+        type: 3}
+      propertyPath: m_playerPrefsKey
+      value: SNACKBAR_TEST
+      objectReference: {fileID: 0}
     - target: {fileID: 6913312878492800695, guid: cb2c984984053f444880b507e48710cf,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -560,6 +565,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913312878492800695, guid: cb2c984984053f444880b507e48710cf,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913312878492800695, guid: cb2c984984053f444880b507e48710cf,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913312878492800695, guid: cb2c984984053f444880b507e48710cf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 41.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb2c984984053f444880b507e48710cf, type: 3}

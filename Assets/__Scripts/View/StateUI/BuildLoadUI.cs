@@ -10,10 +10,10 @@ using UnityEngine.UI;
 using Zenject;
 using TMPro;
 
-public interface IBuildLoadViewModel { }
+public interface IBuildLoadUI { }
 
 [RequireComponent (typeof (UIFader))]
-public class BuildLoadViewModel : MonoBehaviour, IBuildLoadViewModel
+public class BuildLoadUI : MonoBehaviour, IBuildLoadUI
 {
     [System.Serializable]
     public class Settings
