@@ -23,8 +23,8 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
     [SerializeField] protected Toggle m_closedToggle;
     [SerializeField] protected Button m_discardChangesButton;
     [SerializeField] protected Button m_saveChangesButton;
-    [SerializeField] protected ToggleGroup m_materialGroup;
-    [SerializeField] protected ToggleGroup m_shapeGroup;
+    [SerializeField] protected ValueToggle [] m_materialToggles;
+    [SerializeField] protected ValueToggle [] m_shapeToggles;
 
     protected IBuildStateMachine m_session;
     protected DialogBuilder.Factory m_dialogBuilderFactory;
@@ -33,9 +33,9 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
     #region Di
 
     [Inject]
-    private void Construct(IBuildStateMachine _session,
+    private void Construct( IBuildStateMachine _session,
                            DialogBuilder.Factory _dialogBuilderFactory,
-                           SignalBus _signalBus)
+                           SignalBus _signalBus )
     {
         m_session = _session;
         m_dialogBuilderFactory = _dialogBuilderFactory;
@@ -49,8 +49,8 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
 
     protected virtual void Awake()
     {
-        m_discardChangesButton.onClick.AddListener ( OnDiscard );
-        m_saveChangesButton.onClick.AddListener ( SaveAndDeactivate );
+        m_discardChangesButton.onClick.AddListener (OnDiscard);
+        m_saveChangesButton.onClick.AddListener (SaveAndDeactivate);
     }
 
     #endregion
@@ -60,26 +60,19 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
     public void Activate()
     {
         // activate
-        gameObject.SetActive ( true );
+        gameObject.SetActive (true);
 
         // load
-        m_scaleXSlider.setClosestValue ( m_session.CurrentTrackData.m_scale.x );
-        m_scaleYSlider.setClosestValue ( m_session.CurrentTrackData.m_scale.y );
-        m_precisionSlider.setClosestValue ( m_session.CurrentTrackData.m_precision );
+        m_scaleXSlider.setClosestValue (m_session.CurrentTrackData.m_scale.x);
+        m_scaleYSlider.setClosestValue (m_session.CurrentTrackData.m_scale.y);
+        m_precisionSlider.setClosestValue (m_session.CurrentTrackData.m_precision);
         m_closedToggle.isOn = m_session.CurrentTrackData.m_closed;
-        foreach (Toggle t in m_materialGroup.ActiveToggles ()) { //todo refactor this
-            ValueToggle valueToggle = (ValueToggle)t;
-            if (valueToggle.Value == m_session.CurrentTrackData.m_materialIndex) {
-                valueToggle.Select ();
-                break;
-            }
+
+        for ( int i = 0; i < m_materialToggles.Length; ++i ) {
+            m_materialToggles [i].isOn = m_materialToggles [i].Value == m_session.CurrentTrackData.m_materialIndex;
         }
-        foreach ( Toggle t in m_shapeGroup.ActiveToggles () ) {
-            ValueToggle valueToggle = (ValueToggle)t;
-            if ( valueToggle.Value == m_session.CurrentTrackData.m_shapeIndex ) {
-                valueToggle.Select ();
-                break;
-            }
+        for ( int i = 0; i < m_shapeToggles.Length; ++i ) {
+            m_shapeToggles [i].isOn = m_shapeToggles [i].Value == m_session.CurrentTrackData.m_shapeIndex;
         }
     }
 
@@ -104,18 +97,18 @@ public class SettingsViewModel : MonoBehaviour, ISettingsViewModel
         // save
         m_session.CurrentTrackData.m_scale.x = m_scaleXSlider.Value.Value;
         m_session.CurrentTrackData.m_scale.y = m_scaleYSlider.Value.Value;
-        m_session.CurrentTrackData.m_precision = Mathf.RoundToInt(m_precisionSlider.Value.Value);
+        m_session.CurrentTrackData.m_precision = Mathf.RoundToInt (m_precisionSlider.Value.Value);
         m_session.CurrentTrackData.m_closed = m_closedToggle.isOn;
-        foreach ( Toggle t in m_materialGroup.ActiveToggles () ) { //todo refactor this
-            ValueToggle valueToggle = (ValueToggle)t;
-            if (valueToggle.isOn) {
-                m_session.CurrentTrackData.m_materialIndex = valueToggle.Value;
+        for ( int i = 0; i < m_materialToggles.Length; ++i ) {
+            if (m_materialToggles[i].isOn) {
+                m_session.CurrentTrackData.m_materialIndex = m_materialToggles [i].Value;
+                break;
             }
         }
-        foreach ( Toggle t in m_shapeGroup.ActiveToggles () ) {
-            ValueToggle valueToggle = (ValueToggle)t;
-            if ( valueToggle.isOn) {
-                m_session.CurrentTrackData.m_shapeIndex = valueToggle.Value;
+        for ( int i = 0; i < m_shapeToggles.Length; ++i ) {
+            if ( m_shapeToggles [i].isOn ) {
+                m_session.CurrentTrackData.m_shapeIndex = m_shapeToggles [i].Value;
+                break;
             }
         }
 

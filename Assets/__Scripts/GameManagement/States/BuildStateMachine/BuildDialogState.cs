@@ -55,7 +55,7 @@ public class BuildDialogState : State, IBuildDialogState
     {
         if ( !Active ) return;
         Debug.Log ( "BuildDialogState: StartNewTrack" );
-        m_buildSM.CurrentTrackData = new TrackData ();
+        m_buildSM.CurrentTrackData = TrackData.CreateRandomizedTrackData ();
         m_splineManager.ClearMesh ();
         m_trackBuilder.ClearFeaturePoints ();
         m_stateMachine.TransitionToState ( StateName.BUILD_PAINT_STATE );

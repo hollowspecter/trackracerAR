@@ -24,6 +24,14 @@ public class TrackData
     public string m_dbKey;
     public bool m_updateToCloud = false;
 
+    public static TrackData CreateRandomizedTrackData()
+    {
+        TrackData track = new TrackData ();
+        track.m_shapeIndex = Random.Range (0, Configuration.ShapeDatas.Length);
+        track.m_materialIndex = Random.Range (0, Configuration.StreetMaterials.Length);
+        return track;
+    }
+
     public override string ToString()
     {
         return string.Format ( "Scale: {0}\n" +
