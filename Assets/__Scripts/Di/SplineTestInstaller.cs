@@ -20,6 +20,5 @@ public class SplineTestInstaller : MonoInstaller
 
         RaceInstaller.Install (Container);
         RaceTestStateMachineInstaller.Install (Container);
-        SignalsInstaller.Install (Container);
     }
 }

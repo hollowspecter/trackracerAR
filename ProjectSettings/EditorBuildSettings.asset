@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/ARTrackPainter.unity
     guid: fa234d73c95a8b24a8ffe4b40aa04f77
+  - enabled: 1
+    path: Assets/_Scenes/Tests/ARRaceCameraTest.unity
+    guid: 2a78baac4b543d246bb15ad05d1354ef
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b21feb4eab749b04ea24af496b4f0385,
       type: 2}
