@@ -9,8 +9,7 @@ using Firebase.Database;
 using UniRx;
 
 /// <summary>
-/// Fetches the track data from the database and provides methods
-/// to 
+/// Manages the communication to the database regarding track data.
 /// </summary>
 public class TracksRepository
 {
