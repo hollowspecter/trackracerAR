@@ -55,10 +55,9 @@ public class CenterTrackTool : MonoBehaviour
         Vector3 translate = newTrackCenter - centerOfTrack;
         
         for (int i=1; i<transforms.Length; ++i) {
-            transforms [i].DOMove (transforms [i].position + translate, .7f).SetEase (Ease.OutBack);
+            transforms [i].DOMove (transforms [i].position + translate, .7f).SetEase (Ease.OutQuint);
         }
-
-        m_signalBus.Fire<FeaturePointChanged> ();
+        Invoke (nameof(SendSignal), .7f);
     }
 
     private void OffsetFeaturePoints()
@@ -73,6 +72,11 @@ public class CenterTrackTool : MonoBehaviour
         Vector3 translate = newTrackCenter - centerOfTrack;
         m_buildSM.CurrentFeaturePointOffset = translate;
 
+        SendSignal ();
+    }
+
+    private void SendSignal()
+    {
         m_signalBus.Fire<FeaturePointChanged> ();
     }
 
