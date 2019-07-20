@@ -13,7 +13,7 @@ using UnityEngine.EventSystems;
 
 public class ObservableLongPointerDownTrigger : ObservableTriggerBase
 {
-    public float SqrDistanceThreshold = 0.01f;
+    public float SqrDistanceThreshold = 0.001f;
     public float IntervalSecond = .7f;
 
     Subject<Unit> onLongPointerDown;

@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3696,6 +3696,11 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8287557693528495731, guid: e33e9a789531ade4bb677e87480d9a1b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1466087150639189967, guid: e33e9a789531ade4bb677e87480d9a1b,
         type: 3}
       propertyPath: m_Name
@@ -3824,6 +3829,11 @@ PrefabInstance:
     - target: {fileID: 2632202812459537096, guid: e33e9a789531ade4bb677e87480d9a1b,
         type: 3}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108742355795323375, guid: e33e9a789531ade4bb677e87480d9a1b,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
