@@ -1,21 +1,31 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARExtensions;
 using Zenject;
 
+/// <summary>
+/// Interface for <see cref="CalibrateState"/>
+/// </summary>
 public interface ICalibrateState
 {
+    /// <summary>
+    /// Transitions to <see cref="BuildStateMachine"/>
+    /// </summary>
     void DoStart();
+
+    /// <summary>
+    /// Restarts the AR Session and resets the calibration progress
+    /// </summary>
     void Restart();
 }
 
+/// <summary>
+/// Resets the AR session to calibrate ARFoundation
+/// </summary>
 public class CalibrateState : State, ICalibrateState
 {
     private ARSession m_arSession;

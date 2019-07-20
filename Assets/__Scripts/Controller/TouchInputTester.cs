@@ -1,13 +1,15 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Component to test the <see cref="TouchInput"/> functionality
+/// in an extra scenario.
+/// </summary>
 public class TouchInputTester : MonoBehaviour
 {
     private TouchInput m_input;

@@ -560,7 +560,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "<b>License and copyright notices</b>\nCopyright 2019 Vivien Baguio.\r\n<link=\"http://vivienbaguio.com/legal.php\">http://vivienbaguio.com/legal.php</link>\nSubject
     to the GNU General Public License.\r\nSee <link=\"https://www.gnu.org/licenses/gpl.txt\r\">https://www.gnu.org/licenses/gpl.txt\r</link>\n\nVersion
-    0.9.1"
+    0.9.2"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

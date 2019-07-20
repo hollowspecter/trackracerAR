@@ -1,18 +1,30 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.UI;
 using Baguio.Splines;
 using Zenject;
-using UniRx;
 
+/// <summary>
+/// The vehicles follow the tracks waypoints.
+/// 
+/// There are two different acceleration modes:
+/// 1. movement by translation of the transform (though deprecated)
+/// 2. movement by translation of the rigidbody
+/// Due to the fact that the respawn mechanism is triggered
+/// using Unitys physics engine, the latter movement mode is
+/// required.
+/// 
+/// There are also two different respawn modes implemented:
+/// 1. respawning by restore the vehicle to its original status
+/// 2. respawning by destroying the old vehicle and spawning a new one
+/// Because the first mode was difficult to implement due to
+/// unpredictable physics interactions, the latter is used here as well.
+/// </summary>
 [RequireComponent ( typeof ( Rigidbody ) )]
 [RequireComponent ( typeof ( HingeJoint ) )]
 public class VehicleController : MonoBehaviour
@@ -26,7 +38,7 @@ public class VehicleController : MonoBehaviour
     private Transform m_connectedMesh;
     private bool m_respawning = false;
     private Transform m_meshAnchor;
-    private VehicleController.Factory m_factory;
+    private Factory m_factory;
     private TouchInput m_input;
     private Settings m_settings;
     private SignalBus m_signalBus;
@@ -36,7 +48,7 @@ public class VehicleController : MonoBehaviour
 
     [Inject]
     protected void Init( [Inject(Id = "TrackParent")]ISplineManager _splineManager,
-                         VehicleController.Factory _factory,
+                         Factory _factory,
                          TouchInput _input,
                          Settings _settings,
                          SignalBus _signalBus)
@@ -77,15 +89,15 @@ public class VehicleController : MonoBehaviour
             MoveWithPhysics ();
     }
 
-    private void OnJointBreak ( float breakForce )
+    private void OnJointBreak ( float _breakForce )
     {
         Debug.Log ( "Joint Broken! Respawn..." );
         m_respawning = true;
         m_signalBus.Fire<RespawnSignal> ();
         if ( !RESPAWN_USING_PREFAB )
-            Invoke ( "Respawn", Configuration.RespawnTime );
+            Invoke ( "Respawn", m_settings.RespawnTime );
         else
-            Invoke ( "RespawnWithPrefab", Configuration.RespawnTime );
+            Invoke ( "RespawnWithPrefab", m_settings.RespawnTime );
     }
 
     private void OnEnable()
@@ -134,7 +146,7 @@ public class VehicleController : MonoBehaviour
 
     private void UpdateWaypoint ()
     {
-        if ( Vector3.Distance ( transform.position, m_waypoints [ m_currWaypointIndex ].position ) <= Configuration.WaypointDetectionRadius / 2f )
+        if ( Vector3.Distance ( transform.position, m_waypoints [ m_currWaypointIndex ].position ) <= m_settings.WaypointDetectionRadius / 2f )
         {
             m_currWaypointIndex++;
 
@@ -150,7 +162,7 @@ public class VehicleController : MonoBehaviour
     }
 
     /* Respawn Functions */
-
+    [System.Obsolete ("Respawn() is deprecated, use RespawnWithPrefab() instead.")]
     private void Respawn ()
     {
         Debug.Log ( "Respawn" );
@@ -207,7 +219,7 @@ public class VehicleController : MonoBehaviour
 
     private void OnDrawGizmos ()
     {
-        Gizmos.DrawWireSphere ( transform.position, Configuration.WaypointDetectionRadius );
+        Gizmos.DrawWireSphere ( transform.position, m_settings.WaypointDetectionRadius );
     }
 
     #endregion
@@ -218,7 +230,9 @@ public class VehicleController : MonoBehaviour
     public class Settings
     {
         public float MaxSpeed = 20f;
-        public float MaxDegrees = 30;
+        public float MaxDegrees = 30f;
+        public float WaypointDetectionRadius = 0.06f;
+        public float RespawnTime = 1f;
     }
 
     #endregion

@@ -1,16 +1,14 @@
 /* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using UnityEngine.Assertions;
-using UnityEngine;
 using Zenject;
 
 /// <summary>
-/// Installed in the project context, do all app wide initialization here.
+/// Installed in the project context (hence, globally), do all app wide initialization here.
 /// </summary>
-public class MainInstaller : MonoInstaller
+public class ProjectMainInstaller : MonoInstaller
 {
     public override void InstallBindings ()
     {

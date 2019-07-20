@@ -1,14 +1,15 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-// TODO SUMMARY
+/// <summary>
+/// Prefab-instantiating factory to create Dialog-Canvases
+/// Todo Improvement: Convert to MemoryPool
+/// </summary>
 public class DialogFactory : IFactory<DialogFactory.Params, Dialog>
 {
     protected readonly DiContainer m_container;

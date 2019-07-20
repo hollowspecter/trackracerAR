@@ -1,13 +1,18 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
+/// <summary>
+/// Has a reference to the <see cref="IRootStateMachine"/> to kick it off
+/// at the start of the application.
+/// Receives init and tick calls from Zenject using <see cref="IInitializable"/>
+/// and <see cref="ITickable"/>
+/// </summary>
 public class StateManager : IInitializable, ITickable
 {
     private IRootStateMachine m_stateMachine;

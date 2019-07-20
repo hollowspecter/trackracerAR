@@ -1,12 +1,17 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Records the points in the <see cref="BuildPaintState"/>
+/// Automatically adds them to the LineRenderer. Points will
+/// only be added if they are distanced "far enough".
+/// </summary>
 public class PointRecorder
 {
     public int PointCount { get { return m_points.Count; } }
@@ -35,7 +40,11 @@ public class PointRecorder
 
     #region Public Functions
 
-    public void RecordPoint()
+    /// <summary>
+    /// Tries to add the current position to the points array.
+    /// Checks if the new point is distanced enough.
+    /// </summary>
+    public void RecordCurrentPoint()
     {
         Vector3 newPosition = m_transform.position + m_transform.forward * m_settings.zOffset;
         float distance = ( newPosition - m_lastPosition ).sqrMagnitude;
@@ -47,12 +56,19 @@ public class PointRecorder
         }
     }
 
+    /// <summary>
+    /// Dumps the recorded points into the array and clears
+    /// the points of this recorder.
+    /// </summary>
     public void DumpPoints( out Vector3 [] _points)
     {
         _points = m_points.ToArray ();
-        m_points.Clear ();
+        ClearPoints ();
     }
 
+    /// <summary>
+    /// Clears the array and the lineRenderer
+    /// </summary>
     public void ClearPoints()
     {
         m_points.Clear ();

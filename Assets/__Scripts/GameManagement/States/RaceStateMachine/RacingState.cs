@@ -1,19 +1,31 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Interface for <see cref="RacingState"/>
+/// </summary>
 public interface IRacingState
 {
+    /// <summary>
+    /// Transitions to <see cref="RaceSetupState"/>
+    /// </summary>
     void OnBack();
+
+    /// <summary>
+    /// Transitions to <see cref="RaceOverState"/>
+    /// </summary>
     void OnFinish();
 }
 
+/// <summary>
+/// State during the race. Special race input will be
+/// enabled, and the time will be recorded in this state.
+/// </summary>
 public class RacingState : State, IRacingState
 {
     private TouchInput m_input;

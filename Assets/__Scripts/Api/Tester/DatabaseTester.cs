@@ -1,16 +1,18 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using UniRx;
 using Baguio.Splines;
 
+/// <summary>
+/// Use this component to test the functionality of the
+/// database interface.
+/// </summary>
 public class DatabaseTester : MonoBehaviour, IBuildStateMachine
 {
     public TrackData CurrentTrackData { get => m_trackData; set => value = m_trackData; }

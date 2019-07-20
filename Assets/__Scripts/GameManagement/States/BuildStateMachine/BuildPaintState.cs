@@ -1,20 +1,45 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Interface for <see cref="BuildPaintState"/>
+/// </summary>
 public interface IBuildPaintState
 {
+    /// <summary>
+    /// Transitions back to the <see cref="BuildDialogState"/>
+    /// </summary>
     void OnCancel();
+
+    /// <summary>
+    /// Converts the recorded points into the feature points of the track.
+    /// Transitions to <see cref="BuildEditorState"/>
+    /// </summary>
     void OnDone();
+
+    /// <summary>
+    /// Clears all recorded points for a fresh start
+    /// </summary>
     void Clear();
+
+    /// <summary>
+    /// Callback for alternative input sources to fire that a touch
+    /// point was detected
+    /// </summary>
+    /// <param name="x">in screenspace</param>
+    /// <param name="y">in screenspace</param>
     void OnTouchDetected( float x, float y );
 }
 
+/// <summary>
+/// Track creating state where players can draw with their
+/// device through the air
+/// </summary>
 public class BuildPaintState : State, IBuildPaintState
 {
     private PointRecorder.Factory m_pointRecorderFactory;
@@ -116,7 +141,7 @@ public class BuildPaintState : State, IBuildPaintState
     public void OnTouchDetected( float x, float y )
     {
         if ( !Active ) return;
-        m_pointRecorder.RecordPoint ();
+        m_pointRecorder.RecordCurrentPoint ();
     }
 
     #endregion

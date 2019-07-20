@@ -1,28 +1,48 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
 using UnityEngine;
 using UnityEditor;
-using Zenject;
 
+/// <summary>
+/// Interface for the <see cref="BuildSaveState"/>
+/// </summary>
 public interface IBuildSaveState
 {
+    /// <summary>
+    /// Call for ending this state and go to race state
+    /// </summary>
     void OnDone();
+
+    /// <summary>
+    /// Call to attempt to save the current track data to device
+    /// </summary>
     bool OnSave ( string trackName );
+
+    /// <summary>
+    /// Returns back to the <see cref="BuildEditorState"/>
+    /// </summary>
     void OnCancel ();
+
+    /// <summary>
+    /// Returns back to the <see cref="BuildDialogState"/>
+    /// </summary>
     void OnNewTrack();
+
+    /// <summary>
+    /// Tries to copy the database key to clipboard, also returns it.
+    /// </summary>
     string OnShare();
 }
 
+/// <summary>
+/// State to handle saving the currently built track to device and cloud.
+/// </summary>
 public class BuildSaveState : State, IBuildSaveState
 {
     private IBuildStateMachine m_buildSM;
-
-    #region Di
-
-    #endregion
 
     #region State Lifecycle
 
@@ -80,6 +100,10 @@ public class BuildSaveState : State, IBuildSaveState
         m_stateMachine.TransitionToState ( StateName.RACE_SM );
     }
 
+    /// <summary>
+    /// Copies the database key to clipboard and returns it
+    /// </summary>
+    /// <returns></returns>
     public string OnShare()
     {
         if ( !Active ) return null;

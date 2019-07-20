@@ -1,11 +1,15 @@
 /* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
+
 using UnityEngine;
 using Zenject;
 using Baguio.Splines;
 
+/// <summary>
+/// Test installer to install everything needed to setup a race
+/// </summary>
 public class SplineTestInstaller : MonoInstaller
 {
     public override void InstallBindings()

@@ -1,8 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the MIT License License.
+ * See https://mit-license.org/
+ */
+
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.TestTools;
 
 namespace Tests
 {

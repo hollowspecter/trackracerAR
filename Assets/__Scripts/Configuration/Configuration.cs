@@ -1,12 +1,17 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using UnityEngine;
+ 
+ using UnityEngine;
 using System.Collections.Generic;
-using System;
 using Baguio.Splines;
 
+/// <summary>
+/// Configuration file as singleton.
+/// Use this to setup different build configurations
+/// i.e. for CI.
+/// </summary>
 [CreateAssetMenu ( menuName = "Custom/Configuration" )]
 public class Configuration : ScriptableObject
 {
@@ -47,10 +52,6 @@ public class Configuration : ScriptableObject
 
     [Header ( "Trackpainter" )]
     [SerializeField]
-    private float m_waypointDetectionRadius = 0.3f;
-    [SerializeField]
-    private float m_respawnTime = 1f;
-    [SerializeField]
     private float m_distanceThreshold = 0.05f;
     [SerializeField]
     private float m_angleThreshold = 20f;
@@ -81,8 +82,6 @@ public class Configuration : ScriptableObject
 
     public static bool ShowTangents { get { return DefaultConfig.m_showTangents; } }
     public static bool ShowNormals { get { return DefaultConfig.m_showNormals; } }
-    public static float WaypointDetectionRadius { get { return DefaultConfig.m_waypointDetectionRadius; } }
-    public static float RespawnTime { get { return DefaultConfig.m_respawnTime; } }
     public static GameObject[] Vehicles { get { return DefaultConfig.m_vehicles; } }
     public static ShapeData[] ShapeDatas { get { return DefaultConfig.m_shapeDatas; } }
     public static Material[] StreetMaterials { get { return DefaultConfig.m_streetMaterials; } }

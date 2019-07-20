@@ -1,15 +1,17 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using Baguio.Splines;
 
-public class VehicleManager
+/// <summary>
+/// Manages the spawning of the vehicle for the race setup.
+/// </summary>
+public class VehicleSpawnManager
 {
     private VehicleController.Factory m_vehicleFactory;
     private ISplineManager m_splineManager;
@@ -22,6 +24,10 @@ public class VehicleManager
         m_splineManager = _splineManager;
     }
 
+    /// <summary>
+    /// Spawns a vehicle on the tracks first waypoint.
+    /// </summary>
+    /// <returns>The vehicles gameobject.</returns>
     public GameObject SpawnVehicleAtStart()
     {
         List<OrientedPoint> waypoints = m_splineManager.GetWaypoints ();

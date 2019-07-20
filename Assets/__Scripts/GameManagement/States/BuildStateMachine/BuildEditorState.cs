@@ -1,5 +1,5 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
@@ -9,11 +9,30 @@ using System;
 using UniRx;
 using Baguio.Splines;
 
+/// <summary>
+/// Interface for the <see cref="BuildEditorState"/>
+/// </summary>
 public interface IBuildEditorState
 {
+    /// <summary>
+    /// Returns to the <see cref="BuildDialogState"/>
+    /// </summary>
     void OnCancel();
+
+    /// <summary>
+    /// Transitions to the <see cref="BuildSaveState"/>
+    /// </summary>
     void OnSave();
+
+    /// <summary>
+    /// Transitions to the <see cref="RaceSetupState"/>
+    /// </summary>
     void OnRace();
+
+    /// <summary>
+    /// Copies the current tracks database key to the devices
+    /// clipboard and returns it.
+    /// </summary>
     string OnShare();
 }
 
@@ -58,8 +77,6 @@ public class BuildEditorState : State, IBuildEditorState
     {
         base.EnterState ();
 
-        m_buildSM.m_touchDetected += OnTouchDetected;
-
         // Instantiate the Feature Points
         m_trackBuilder.InstantiateFeaturePoints ( ref m_buildSM.CurrentTrackData.m_featurePoints );
 
@@ -76,8 +93,6 @@ public class BuildEditorState : State, IBuildEditorState
     {
         base.ExitState ();
 
-        m_buildSM.m_touchDetected -= OnTouchDetected;
-
         m_buildSM.CurrentTrackData.m_featurePoints = m_trackBuilder.GetFeaturePoints ();
 
         m_trackChangedSubscription?.Dispose ();
@@ -87,11 +102,6 @@ public class BuildEditorState : State, IBuildEditorState
     #endregion
 
     #region Private Functions
-
-    private void OnTouchDetected ( float x, float y )
-    {
-
-    }
 
     private void OnTrackChanged()
     {

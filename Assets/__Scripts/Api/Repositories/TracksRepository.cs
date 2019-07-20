@@ -1,5 +1,5 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
@@ -72,7 +72,7 @@ public class TracksRepository
     }
 
     /// <summary>
-    /// Check if a key exists.
+    /// Checks if a key exists in the firebase.
     /// </summary>
     /// <returns>an Observable that emits true if key exists, or else if doesn't or problems occured</returns>
     public IObservable<bool> EvaluateKey(string _key )

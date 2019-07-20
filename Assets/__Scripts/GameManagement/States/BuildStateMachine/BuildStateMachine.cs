@@ -1,28 +1,45 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Interface for <see cref="BuildStateMachine"/>
+/// </summary>
 public interface IBuildStateMachine
 {
-    // events
+    /// <summary>
+    /// Gets fired when a touch input was detected.
+    /// </summary>
     event State.TouchHandler m_touchDetected;
+
+    /// <summary>
+    /// The current session's trackdata.
+    /// </summary>
     TrackData CurrentTrackData { get; set; }
+
+    /// <summary>
+    /// The current session's feature point offset.
+    /// This is important for the <see cref="BuildObserveState"/>
+    /// as there are no gameobjects for the feature points.
+    /// It's cached here to enable the <see cref="CenterTrackTool"/>.
+    /// </summary>
     Vector3 CurrentFeaturePointOffset { get; set; }
 }
 
+/// <summary>
+/// Overall statemachine for the build process
+/// </summary>
 public class BuildStateMachine : StateMachine, IBuildStateMachine
 {
-    public TrackData CurrentTrackData { get { return m_trackData; } set { m_trackData = value; } }
+    public TrackData CurrentTrackData { get; set; }
     public Vector3 CurrentFeaturePointOffset { get; set; }
 
     public event TouchHandler m_touchDetected;
 
-    private TrackData m_trackData;
     private ITrackBuilderManager m_trackBuilder;
 
     #region Di
@@ -47,7 +64,7 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
     }
 
     public override void EnterState()
-    {
+    { 
         base.EnterState ();
         m_trackBuilder.SetFeaturePointVisibility (true);
     }

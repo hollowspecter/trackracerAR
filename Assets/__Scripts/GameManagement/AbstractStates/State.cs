@@ -1,4 +1,9 @@
-﻿public enum StateName
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the MIT License License.
+ * See https://mit-license.org/
+ */
+
+public enum StateName
 {
     AR_SM,
     CALIBRATE_STATE,

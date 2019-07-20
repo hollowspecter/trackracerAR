@@ -1,12 +1,13 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 using Zenject;
 
+/// <summary>
+/// Installs the neccessary signals (using Zenject's Signal Bus).
+/// </summary>
 public class SignalsInstaller : Installer<SignalsInstaller>
 {
     public override void InstallBindings()

@@ -1,23 +1,40 @@
 ﻿/* Copyright 2019 Vivien Baguio.
- * Subject to the GNU General Public License.
+ * Subject to the MIT License License.
  * See https://mit-license.org/
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using UniRx;
 using Baguio.Splines;
 
+/// <summary>
+/// Interface for <see cref="BuildObserveState"/>
+/// </summary>
 public interface IBuildObserveState
 {
+    /// <summary>
+    /// Races the current status of the observed track
+    /// </summary>
     void Race();
+
+    /// <summary>
+    /// Returns to the <see cref="BuildDialogState"/>
+    /// </summary>
     void Back();
+
+    /// <summary>
+    /// Copies the current status of the observed track
+    /// into the <see cref="BuildEditorState"/>
+    /// </summary>
     void EditCopy();
 }
 
+/// <summary>
+/// State to view and receive live updates for a track
+/// that was uploaded to the cloud.
+/// </summary>
 public class BuildObserveState : State, IBuildObserveState
 {
     private IBuildStateMachine m_buildSM;
