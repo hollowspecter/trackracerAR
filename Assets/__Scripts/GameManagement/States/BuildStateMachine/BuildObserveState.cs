@@ -45,6 +45,7 @@ public class BuildObserveState : State, IBuildObserveState
     private ISplineManager m_splineManager;
     private StreetView m_streetView;
     private SignalBus m_signalBus;
+    private IFeaturePointsManager m_featurePointsManager;
 
     #region DI
 
@@ -54,7 +55,8 @@ public class BuildObserveState : State, IBuildObserveState
                             DialogBuilder.Factory _dialogBuilderFactory,
                             [Inject (Id = "TrackParent")] ISplineManager _splineManager,
                             [Inject (Id = "TrackParent")] StreetView _streetView,
-                            SignalBus _signalBus)
+                            SignalBus _signalBus,
+                            IFeaturePointsManager _featurePointsManager)
     {
         m_observeDialogUI = _buildObserveDialogUI;
         m_useCase = _useCase;
@@ -62,6 +64,7 @@ public class BuildObserveState : State, IBuildObserveState
         m_splineManager = _splineManager;
         m_streetView = _streetView;
         m_signalBus = _signalBus;
+        m_featurePointsManager = _featurePointsManager;
     }
 
     #endregion
@@ -79,6 +82,9 @@ public class BuildObserveState : State, IBuildObserveState
         base.EnterState ();
         Debug.Log ("BuildObserveState entered!");
         m_subscriptions = new CompositeDisposable ();
+
+        // clear existing feature points
+        m_featurePointsManager.ClearFeaturePoints ();
 
         IObservable<TrackData> observable;
         if ( m_observeDialogUI.DoReceiveLiveUpdates ) {
