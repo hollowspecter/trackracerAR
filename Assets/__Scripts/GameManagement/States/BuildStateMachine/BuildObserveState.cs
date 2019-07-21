@@ -38,7 +38,7 @@ public interface IBuildObserveState
 public class BuildObserveState : State, IBuildObserveState
 {
     private IBuildStateMachine m_buildSM;
-    private BuildObserveDialogUI m_observeDialogUI;
+    private IBuildObserveDialogUI m_observeDialogUI;
     private CompositeDisposable m_subscriptions;
     private ObserveUseCase m_useCase;
     private DialogBuilder.Factory m_dialogBuilderFactory;
@@ -49,7 +49,7 @@ public class BuildObserveState : State, IBuildObserveState
     #region DI
 
     [Inject]
-    private void Construct( BuildObserveDialogUI _buildObserveDialogUI,
+    private void Construct( IBuildObserveDialogUI _buildObserveDialogUI,
                             ObserveUseCase _useCase,
                             DialogBuilder.Factory _dialogBuilderFactory,
                             [Inject (Id = "TrackParent")] ISplineManager _splineManager,

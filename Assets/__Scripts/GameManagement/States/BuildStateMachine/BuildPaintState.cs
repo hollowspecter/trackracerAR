@@ -112,7 +112,7 @@ public class BuildPaintState : State, IBuildPaintState
         m_pointRecorder.DumpPoints ( out points );
 
         // Identify the feature points
-        FeaturePointUtil.IdentifyFeaturePoints ( ref points, out featurePoints );
+        FeaturePointUtility.IdentifyFeaturePoints ( ref points, out featurePoints );
 
         // Check number of feature points
         if ( featurePoints.Length < 2) {

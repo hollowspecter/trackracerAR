@@ -2,17 +2,25 @@
  * Subject to the MIT License License.
  * See https://mit-license.org/
  */
+
 using UniRx;
 using UnityEngine;
 using System.Linq;
 using System;
 
 /// <summary>
-/// TODO
+/// Model class for <see cref="DiscreteSlider"/>
 /// </summary>
 public class DiscreteSliderModel
 {
+    /// <summary>
+    /// The current value of the discrete slider
+    /// </summary>
     public IReadOnlyReactiveProperty<float> Value { get; }
+
+    /// <summary>
+    /// The currently selected index
+    /// </summary>
     public ReactiveProperty<int> Index { get; protected set; }
 
     private float [] values;
@@ -28,7 +36,10 @@ public class DiscreteSliderModel
             .ToReactiveProperty ();
     }
 
-    // TODO write tests?
+    /// <summary>
+    /// Sets the closest discrete value
+    /// </summary>
+    /// <param name="newValue"></param>
     public void setClosestValue( float newValue )
     {
         Index.Value = Array.IndexOf ( values, values.OrderBy ( val => Math.Abs ( newValue - val ) ).First () );

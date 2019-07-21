@@ -1,10 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/* Copyright 2019 Vivien Baguio.
+ * Subject to the MIT License License.
+ * See https://mit-license.org/
+ */
+
 using UnityEngine;
 
-public class AnroidUtility
+/// <summary>
+/// Native Android Utility class
+/// </summary>
+public class AndroidUtility
 {
-
     /// <summary>
     /// Show an Android toast message.
     /// </summary>

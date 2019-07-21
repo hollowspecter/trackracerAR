@@ -3,11 +3,17 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// Interface for <see cref="RaceOverUI"/>
+/// </summary>
+public interface IRaceOverUI { }
+
+/// <summary>
+/// Manages the UI for the <see cref="RaceOverState"/>
+/// </summary>
 public class RaceOverUI : MonoBehaviour
 {
     private IRaceOverState m_state;

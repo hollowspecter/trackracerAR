@@ -4,16 +4,23 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARExtensions;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 using UniRx;
-using TMPro;
 
+/// <summary>
+/// Interface for <see cref="ICalibrateState"/>
+/// </summary>
+public interface ICalibrateUI { }
+
+/// <summary>
+/// Manages the UI for the <see cref="CalibrateState"/>.
+/// This state UI manages the automatic transition to the
+/// next state, if the ARSession has found sufficient
+/// trackables to have a stable experience.
+/// </summary>
 [RequireComponent(typeof(UIFader))]
 public class CalibrateUI : MonoBehaviour
 {
@@ -30,6 +37,8 @@ public class CalibrateUI : MonoBehaviour
     private Settings m_settings;
     private IDisposable m_subscription;
     private DialogBuilder.Factory m_dialogBuilderFactory;
+
+    #region DI
 
     [Inject]
     private void Construct( ICalibrateState _state,
@@ -57,12 +66,17 @@ public class CalibrateUI : MonoBehaviour
         gameObject.SetActive (false);
     }
 
+    #endregion
+
     #region Unity Lifecycle
 
     private void OnEnable()
     {
         m_planeManager.planeAdded += OnPlaneAdded;
         m_pointCloudManager.pointCloudUpdated += OnPointCloudUpdated;
+
+        // subscribe to the progress of the plane and point satisfaction and check 
+        // if the latest combination suffice
         m_subscription = m_planeSatisfaction
             .CombineLatest (m_pointSatisfaction, ( planeSatisfaction, pointSatisfaction ) => {
                 return (m_settings.MinNumberOfPlanes - planeSatisfaction) * (m_settings.PlaneWeight / m_settings.MinNumberOfPlanes) +
@@ -99,7 +113,7 @@ public class CalibrateUI : MonoBehaviour
 
     #endregion
 
-    #region private methods
+    #region Private Methods
 
     private void Reset()
     {
@@ -114,8 +128,6 @@ public class CalibrateUI : MonoBehaviour
 
     private void OnCheckSatisfaction( float _satisfactionPercentage )
     {
-        // todo make start button visible, and make snackbar disappear, or change text to: you can start now!
-        // and then automatically transition!
         m_progressSlider.value = _satisfactionPercentage;
 
         if ( _satisfactionPercentage >= 1.0f - Mathf.Epsilon ) {

@@ -4,12 +4,18 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Extension class for dialogs to create generic dialogs
+/// that are often used.
+/// </summary>
 public static class DialogBuilderExtension
 {
+    /// <summary>
+    /// Takes an exception and creates a generic dialog builder ready
+    /// to build to display the exception.
+    /// </summary>
     public static DialogBuilder MakeGenericExceptionDialog(this DialogBuilder value, Exception _exception )
     {
         return value.SetTitle ("Error!")

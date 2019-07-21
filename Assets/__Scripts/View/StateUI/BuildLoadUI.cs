@@ -2,25 +2,23 @@
  * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
-using TMPro;
 
+/// <summary>
+/// Interface for <see cref="BuildLoadUI"/>
+/// </summary>
 public interface IBuildLoadUI { }
 
+/// <summary>
+/// Manages the UI for the <see cref="BuildLoadState"/>
+/// </summary>
 [RequireComponent (typeof (UIFader))]
 public class BuildLoadUI : MonoBehaviour, IBuildLoadUI
 {
-    [System.Serializable]
-    public class Settings
-    {
-        public GameObject ListItem;
-    }
-
     private Settings m_settings;
     private IBuildLoadState m_state;
     private UIFader m_fader;
@@ -63,6 +61,8 @@ public class BuildLoadUI : MonoBehaviour, IBuildLoadUI
 
     #endregion
 
+    #region Private methods
+
     private void LoadList()
     {
         Debug.Log ("BuildLoadViewModel: Load list");
@@ -102,6 +102,8 @@ public class BuildLoadUI : MonoBehaviour, IBuildLoadUI
             Destroy (m_list [i].gameObject);
         }
     }
+
+    #endregion
 
     #region Callbacks
 
@@ -144,6 +146,16 @@ public class BuildLoadUI : MonoBehaviour, IBuildLoadUI
             return;
         }
         m_state.LoadAndRace (m_list [(int)m_selected].name);
+    }
+
+    #endregion
+
+    #region Settings
+
+    [System.Serializable]
+    public class Settings
+    {
+        public GameObject ListItem;
     }
 
     #endregion

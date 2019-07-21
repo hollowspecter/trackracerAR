@@ -3,12 +3,13 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
+/// <summary>
+/// Takes the TouchInput and displays it on a <see cref="Slider"/>.
+/// </summary>
 public class SpeedToSlider : MonoBehaviour
 {
     private Slider m_slider;

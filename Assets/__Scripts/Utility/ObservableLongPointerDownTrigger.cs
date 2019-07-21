@@ -4,23 +4,21 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
-using UnityEngine.EventSystems;
 
+/// <summary>
+/// UniRX Trigger that fires when a long tap on this gameobject happens.
+/// </summary>
 public class ObservableLongPointerDownTrigger : ObservableTriggerBase
 {
-    public float SqrDistanceThreshold = 0.001f;
-    public float IntervalSecond = .7f;
+    public float m_sqrDistanceThreshold = 0.001f;
+    public float m_intervalSecond = .7f;
 
-    Subject<Unit> onLongPointerDown;
-
-    float? raiseTime;
-
-    Vector3 startPosition;
+    private Subject<Unit> onLongPointerDown;
+    private float? raiseTime;
+    private Vector3 startPosition;
 
     void Update()
     {
@@ -32,14 +30,14 @@ public class ObservableLongPointerDownTrigger : ObservableTriggerBase
 
     void OnMouseDown()
     {
-        raiseTime = Time.realtimeSinceStartup + IntervalSecond;
+        raiseTime = Time.realtimeSinceStartup + m_intervalSecond;
         startPosition = transform.position;
     }
 
     private void OnMouseDrag()
     {
         if ( raiseTime != null &&
-            Vector3.SqrMagnitude(startPosition - transform.position) >= SqrDistanceThreshold) {
+            Vector3.SqrMagnitude(startPosition - transform.position) >= m_sqrDistanceThreshold) {
             raiseTime = null;
         }
     }

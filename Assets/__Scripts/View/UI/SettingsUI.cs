@@ -2,19 +2,23 @@
  * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Zenject;
-using Baguio.Splines;
 using UnityEngine.UI;
 
+/// <summary>
+/// Interface for <see cref="SettingsUI"/>
+/// </summary>
 public interface ISettingsUI
 {
     void Activate();
 }
 
-//todo remove comments if not needed, add summary
+/// <summary>
+/// Compound view class to manage the UI for the settings screen.
+/// Will load the current session's settings
+/// </summary>
 public class SettingsUI : MonoBehaviour, ISettingsUI
 {
     [SerializeField] protected DiscreteSlider m_scaleXSlider;
@@ -45,7 +49,7 @@ public class SettingsUI : MonoBehaviour, ISettingsUI
 
     #endregion
 
-    #region Unity lifecycle
+    #region Unity Methods
 
     protected virtual void Awake()
     {
@@ -112,8 +116,6 @@ public class SettingsUI : MonoBehaviour, ISettingsUI
             }
         }
 
-        Debug.Log ("Saved!");
-        Debug.Log (m_session.CurrentTrackData.ToString ());
         m_signalBus.Fire<SettingsChangedSignal> ();
 
         // deactivate

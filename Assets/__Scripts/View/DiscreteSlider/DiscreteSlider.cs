@@ -2,16 +2,16 @@
  * Subject to the MIT License License.
  * See https://mit-license.org/
  */
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UniRx;
-using Zenject;
 
 /// <summary>
-/// TODO 
-/// * write summary
-/// * test if this actually works
+/// View / Presenter class.
+/// Instantiates toggles as childs and listens/subscribes to
+/// <see cref="DiscreteSliderModel"/>
 /// </summary>
 public class DiscreteSlider : MonoBehaviour
 {

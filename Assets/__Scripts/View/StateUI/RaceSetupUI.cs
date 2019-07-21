@@ -10,6 +10,14 @@ using Zenject;
 using TMPro;
 using UniRx;
 
+/// <summary>
+/// Interface for <see cref="RaceSetupUI"/>
+/// </summary>
+public interface IRaceSetupUI { }
+
+/// <summary>
+/// Manages the UI for the <see cref="RaceSetupState"/>
+/// </summary>
 [RequireComponent (typeof (UIFader))]
 public class RaceSetupUI : MonoBehaviour
 {
@@ -27,7 +35,7 @@ public class RaceSetupUI : MonoBehaviour
     {
         m_state = _state;
         m_settings = _settings;
-        m_startButton.onClick.AddListener (StartButtonPressed);
+        m_startButton.onClick.AddListener (StartAbortButtonPressed);
 
         // Listen for state events
         m_fader = GetComponent<UIFader> ();
@@ -44,8 +52,9 @@ public class RaceSetupUI : MonoBehaviour
         m_state.OnBack ();
     }
 
-    public void StartButtonPressed()
+    public void StartAbortButtonPressed()
     {
+        // Start Button Pressed
         if ( m_subscription == null ) {
             // Start Countdown
             m_countdownText.text = (m_settings.CountdownDurationInSeconds + 1).ToString ();
@@ -60,7 +69,9 @@ public class RaceSetupUI : MonoBehaviour
                     }); //doOnComplete
 
             m_startButtonText.text = "Abort";
-        } else {
+        } 
+        // Abort Button pressed
+        else {
             m_subscription.Dispose ();
             m_subscription = null;
             m_startButtonText.text = "Start";

@@ -4,16 +4,18 @@
  */
 
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.UI;
 using Zenject;
 using UniRx;
-using System;
 
-public interface IBuildSaveUI
-{
-}
+/// <summary>
+/// Interface for <see cref="BuildSaveUI"/>
+/// </summary>
+public interface IBuildSaveUI { }
 
+/// <summary>
+/// Manages the UI for the <see cref="BuildSaveState"/>
+/// </summary>
 [RequireComponent ( typeof ( UIFader ) )]
 public class BuildSaveUI : MonoBehaviour, IBuildSaveUI
 {
@@ -29,6 +31,8 @@ public class BuildSaveUI : MonoBehaviour, IBuildSaveUI
     private DialogBuilder.Factory m_dialogBuilderFactory;
     private CompositeDisposable m_subscriptions;
     private UpdateUseCase m_useCase;
+
+    #region DI
 
     [Inject]
     private void Construct ( IBuildSaveState _state,
@@ -61,6 +65,35 @@ public class BuildSaveUI : MonoBehaviour, IBuildSaveUI
 
         gameObject.SetActive ( false );
     }
+
+    #endregion
+
+    #region Unity Methods
+
+    private void OnEnable()
+    {
+        m_subscriptions = new CompositeDisposable ();
+        m_updateToCloudToggle.isOn = m_session.CurrentTrackData.m_updateToCloud;
+        m_subscriptions.Add (m_updateToCloudToggle.OnValueChangedAsObservable ()
+            .Subscribe (isOn => {
+                // update session
+                m_session.CurrentTrackData.m_updateToCloud = isOn;
+                // update to cloud if turned on
+                if ( isOn ) {
+                    m_subscriptions.Add (m_useCase.UpdateTrackToCloud (m_session.CurrentTrackData)
+                        .Subscribe (_ => { }));
+                }
+            }));
+    }
+
+    private void OnDisable()
+    {
+        m_subscriptions?.Dispose ();
+    }
+
+    #endregion
+
+    #region UI Callbacks
 
     protected void OnValueChanged ( string _value )
     {
@@ -132,24 +165,6 @@ public class BuildSaveUI : MonoBehaviour, IBuildSaveUI
         }
     }
 
-    private void OnEnable()
-    {
-        m_subscriptions = new CompositeDisposable ();
-        m_updateToCloudToggle.isOn = m_session.CurrentTrackData.m_updateToCloud;
-        m_subscriptions.Add(m_updateToCloudToggle.OnValueChangedAsObservable ()
-            .Subscribe (isOn => {
-                // update session
-                m_session.CurrentTrackData.m_updateToCloud = isOn;
-                // update to cloud if turned on
-                if (isOn) {
-                    m_subscriptions.Add (m_useCase.UpdateTrackToCloud (m_session.CurrentTrackData)
-                        .Subscribe(_=> { }));
-                }
-            }));
-    }
+    #endregion
 
-    private void OnDisable()
-    {
-        m_subscriptions?.Dispose ();
-    }
 }

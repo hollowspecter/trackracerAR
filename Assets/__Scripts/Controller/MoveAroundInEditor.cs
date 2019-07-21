@@ -3,16 +3,18 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Moves the attached transform on a circle to
+/// simulate movement of the AR camera in editor mode
+/// </summary>
 public class MoveAroundInEditor : MonoBehaviour
 {
 #if UNITY_EDITOR
     [SerializeField]
-    private float scale = 1f;
-    private Vector3 pos = Vector3.zero;
+    private float m_scale = 1f;
+    private Vector3 m_pos = Vector3.zero;
 
     private void Start()
     {
@@ -21,10 +23,10 @@ public class MoveAroundInEditor : MonoBehaviour
 
     void Update()
     {
-        pos.x = Mathf.Sin ( Time.time ) * scale;
-        pos.z = Mathf.Cos ( Time.time ) * scale;
+        m_pos.x = Mathf.Sin ( Time.time ) * m_scale;
+        m_pos.z = Mathf.Cos ( Time.time ) * m_scale;
 
-        transform.position = pos;
+        transform.position = m_pos;
     }
 #endif
 }

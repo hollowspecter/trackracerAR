@@ -3,13 +3,13 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// TODO SUMMARY
+/// <summary>
+/// Compound view for the buttons in a dialog
+/// </summary>
 public class DialogButton : MonoBehaviour
 {
     public Button m_button;

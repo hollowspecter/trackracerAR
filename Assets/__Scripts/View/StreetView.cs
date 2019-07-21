@@ -2,19 +2,31 @@
  * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+/// View to show and hide the street view using
+/// a dissolve animation
+/// </summary>
 [RequireComponent(typeof(MeshRenderer))]
 public class StreetView : MonoBehaviour
 {
-    public bool IsOn { get; private set; }
-
     private const string DISSOLVE_ID = "_Dissolve";
 
-    [SerializeField] protected float m_dissolveDuration = 2f;
+    /// <summary>
+    /// True if the street is currently visible,
+    /// false if the street is dissolved
+    /// </summary>
+    public bool IsOn { get; private set; }
+
+    /// <summary>
+    /// Determines how long the dissolve takes to complete
+    /// in seconds
+    /// </summary>
+    [SerializeField]
+    protected float m_dissolveDuration = 2f;
 
     protected MeshRenderer m_renderer;
 
@@ -23,6 +35,11 @@ public class StreetView : MonoBehaviour
         m_renderer = GetComponent<MeshRenderer> ();
     }
 
+    /// <summary>
+    /// Shows or hides the street mesh.
+    /// </summary>
+    /// <param name="_isOn">if true, the street will show up, if false, the street will dissolve</param>
+    /// <param name="_onComplete">will be called after completion of the transition</param>
     public void ToggleAppearance(bool _isOn, TweenCallback _onComplete )
     {
         // if there is nothing to turn off, skip

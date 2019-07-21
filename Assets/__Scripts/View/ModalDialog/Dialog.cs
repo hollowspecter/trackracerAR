@@ -7,7 +7,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// TODO SUMMARY
+/// <summary>
+/// Compound view for a dialog.
+/// </summary>
 public class Dialog : MonoBehaviour
 {
     public TextMeshProUGUI m_title;

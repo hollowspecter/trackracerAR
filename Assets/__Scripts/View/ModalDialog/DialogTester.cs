@@ -3,12 +3,13 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-// TODO SUMMARY
+/// <summary>
+/// Tester class to test out the functionality of the
+/// <see cref="DialogBuilder"/>
+/// </summary>
 public class DialogTester : MonoBehaviour
 {
     public string Title = "Debug_Title";

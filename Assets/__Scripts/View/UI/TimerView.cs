@@ -4,13 +4,13 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using TMPro;
-using UnityEngine.Assertions;
 
+/// <summary>
+/// Displays the timer for the <see cref="RacingState"/>
+/// </summary>
 [RequireComponent(typeof(UIFader))]
 public class TimerView : MonoBehaviour
 {

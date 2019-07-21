@@ -3,12 +3,16 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
+/// <summary>
+/// A compund view to display information about a screen.
+/// Can be shown or hidden by the user.
+/// Using the playerprefs, each snackbar will remember its
+/// previous state throughout runs.
+/// </summary>
 public class SnackbarView : MonoBehaviour
 {
     private const string PLAYER_PRES_DEFAULT_STRING = "SNACKBAR_";

@@ -3,14 +3,18 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
+/// <summary>
+/// Interface for <see cref="BuildPaintUI"/>
+/// </summary>
 public interface IBuildPaintUI { }
 
+/// <summary>
+/// Manages the UI for the <see cref="BuildPaintState"/>
+/// </summary>
 [RequireComponent ( typeof ( UIFader ) )]
 public class BuildPaintUI : MonoBehaviour
 {

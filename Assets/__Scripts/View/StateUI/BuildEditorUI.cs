@@ -4,12 +4,17 @@
  */
 
 using UnityEngine;
-using System.Collections;
 using Zenject;
 using Baguio.Splines;
 
+/// <summary>
+/// Interface for <see cref="BuildEditorUI"/>
+/// </summary>
 public interface IBuildEditorUI { }
 
+/// <summary>
+/// Manages the UI Screen for <see cref="BuildEditorState"/>
+/// </summary>
 [RequireComponent ( typeof ( UIFader ) )]
 public class BuildEditorUI : MonoBehaviour, IBuildEditorUI
 {
