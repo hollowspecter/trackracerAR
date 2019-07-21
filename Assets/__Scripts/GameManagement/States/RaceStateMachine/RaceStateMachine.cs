@@ -9,6 +9,7 @@ using UnityEngine;
 /// Interface for the <see cref="RaceStateMachine"/>
 /// </summary>
 public interface IRaceStateMachine {
+
 }
 
 /// <summary>
@@ -16,6 +17,8 @@ public interface IRaceStateMachine {
 /// </summary>
 public class RaceStateMachine : StateMachine, IRaceStateMachine
 {
+
+
     public override void UpdateActive( double _deltaTime )
     {
         base.UpdateActive (_deltaTime);

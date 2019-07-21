@@ -56,7 +56,6 @@ public class UIFader : MonoBehaviour
     public void Activate()
     {
         gameObject.SetActive (true);
-        m_sequence.Rewind ();
         m_sequence.PlayForward ();
     }
 

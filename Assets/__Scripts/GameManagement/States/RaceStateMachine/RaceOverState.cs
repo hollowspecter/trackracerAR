@@ -29,11 +29,14 @@ public interface IRaceOverState
 public class RaceOverState : State, IRaceOverState
 {
     private SignalBus m_signalBus;
+    private IBuildStateMachine m_buildSM;
 
     [Inject]
-    private void Construct(SignalBus _signalBus )
+    private void Construct(SignalBus _signalBus,
+                           IBuildStateMachine _buildSM )
     {
         m_signalBus = _signalBus;
+        m_buildSM = _buildSM;
     }
 
     public override void EnterState ()
@@ -55,6 +58,7 @@ public class RaceOverState : State, IRaceOverState
 
     public void OnExit()
     {
+        m_buildSM.ReturnToPreviousStateFlag = true;
         m_stateMachine.TransitionToState (StateName.BUILD_SM);
     }
 }

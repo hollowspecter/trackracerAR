@@ -42,16 +42,16 @@ public class BuildDialogState : State, IBuildDialogState
 {
     private IBuildStateMachine m_buildSM;
     private ISplineManager m_splineManager;
-    private IFeaturePointsManager m_trackBuilder;
+    private IFeaturePointsManager m_featurePointManager;
 
     #region DI
 
     [Inject]
     private void Construct( [Inject (Id = "TrackParent")] ISplineManager _splineManager,
-                            IFeaturePointsManager _trackBuilder)
+                            IFeaturePointsManager _featurePointManager)
     {
         m_splineManager = _splineManager;
-        m_trackBuilder = _trackBuilder;
+        m_featurePointManager = _featurePointManager;
     }
 
     #endregion
@@ -65,7 +65,6 @@ public class BuildDialogState : State, IBuildDialogState
     public override void EnterState ()
     {
         base.EnterState ();
-        Debug.Log ( "Entering BuildDialogState" );
         m_buildSM.CurrentFeaturePointOffset = Vector3.zero;
     }
 
@@ -75,7 +74,7 @@ public class BuildDialogState : State, IBuildDialogState
         Debug.Log ( "BuildDialogState: StartNewTrack" );
         m_buildSM.CurrentTrackData = TrackData.CreateRandomizedTrackData ();
         m_splineManager.ClearMesh ();
-        m_trackBuilder.ClearFeaturePoints ();
+        m_featurePointManager.ClearFeaturePoints ();
         m_stateMachine.TransitionToState ( StateName.BUILD_PAINT_STATE );
     }
 
