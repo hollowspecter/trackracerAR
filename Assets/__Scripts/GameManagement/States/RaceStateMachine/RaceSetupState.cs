@@ -31,6 +31,7 @@ public class RaceSetupState : State, IRaceSetupState
     private VehicleSpawnManager m_vehicleManager;
     private TouchInput m_input;
     private SignalBus m_signalBus;
+    private IBuildStateMachine m_buildSM;
 
     #region DI
 
@@ -40,7 +41,8 @@ public class RaceSetupState : State, IRaceSetupState
                             DialogBuilder.Factory _dialogBuilderFactory,
                             VehicleSpawnManager _vehicleManager,
                             TouchInput _input,
-                            SignalBus _signalBus)
+                            SignalBus _signalBus,
+                            IBuildStateMachine _buildSM )
     {
         m_streetView = _streetView;
         m_splineMgr = _splineMgr;
@@ -48,6 +50,7 @@ public class RaceSetupState : State, IRaceSetupState
         m_vehicleManager = _vehicleManager;
         m_input = _input;
         m_signalBus = _signalBus;
+        m_buildSM = _buildSM;
     }
 
     #endregion
@@ -77,12 +80,15 @@ public class RaceSetupState : State, IRaceSetupState
 
     public void OnBack()
     {
+        if ( !Active ) return;
+
         m_dialogBuilderFactory.Create ()
             .SetTitle ("Exit the race?")
             .SetMessage ("Are you sure you would like to exit the race mode?")
             .SetIcon (DialogBuilder.Icon.QUESTION)
             .AddButton ("Yes", () => {
                 m_signalBus.Fire<DestroyVehicleSignal> ();
+                m_buildSM.ReturnToPreviousStateFlag = true;
                 m_stateMachine.TransitionToState (StateName.BUILD_SM);
             })
             .AddButton ("Keep Racing!")
@@ -91,6 +97,7 @@ public class RaceSetupState : State, IRaceSetupState
 
     public void OnStart()
     {
+        if ( !Active ) return;
         m_stateMachine.TransitionToState (StateName.RACE_RACING);
     }
 

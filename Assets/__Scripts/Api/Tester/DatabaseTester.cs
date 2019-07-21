@@ -17,6 +17,7 @@ public class DatabaseTester : MonoBehaviour, IBuildStateMachine
 {
     public TrackData CurrentTrackData { get => m_trackData; set => value = m_trackData; }
     public Vector3 CurrentFeaturePointOffset { get; set; }
+    public bool ReturnToPreviousStateFlag { get; set; }
 
 #pragma warning disable CS0067 // unused
     public event State.TouchHandler m_touchDetected;

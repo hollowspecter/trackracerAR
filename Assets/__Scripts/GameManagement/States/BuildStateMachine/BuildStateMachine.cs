@@ -11,6 +11,8 @@ using Zenject;
 /// </summary>
 public interface IBuildStateMachine
 {
+    bool ReturnToPreviousStateFlag { get; set; }
+
     /// <summary>
     /// Gets fired when a touch input was detected.
     /// </summary>
@@ -35,6 +37,7 @@ public interface IBuildStateMachine
 /// </summary>
 public class BuildStateMachine : StateMachine, IBuildStateMachine
 {
+    public bool ReturnToPreviousStateFlag { get; set; }
     public TrackData CurrentTrackData { get; set; }
     public Vector3 CurrentFeaturePointOffset { get; set; }
 
@@ -65,8 +68,15 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
 
     public override void EnterState()
     { 
-        base.EnterState ();
         m_trackBuilder.SetFeaturePointVisibility (true);
+        if ( ReturnToPreviousStateFlag ) {
+            ReturnToPreviousStateFlag = false;
+            if ( IsState (PreviousState)) {
+                TransitionToState (PreviousState);
+            }
+        } else {
+            base.EnterState ();
+        }
     }
 
     public override void ExitState()
@@ -77,6 +87,7 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
 
     private void TouchInput()
     {
+        if ( !Active ) return;
         if ( Input.touchCount < 1)
         {
             return;
@@ -86,6 +97,7 @@ public class BuildStateMachine : StateMachine, IBuildStateMachine
 
     private void EditorInput()
     {
+        if ( !Active ) return;
         if ( !Input.GetMouseButtonDown ( 0 ) )
         {
             return;

@@ -165,7 +165,7 @@ public class StateMachine : State
     /// <summary>
     /// return true if state is valid, <c>false</c> is statename is NONE.
     /// </summary>
-    private static bool IsState ( StateName _stateName )
+    protected static bool IsState ( StateName _stateName )
     {
         return _stateName != StateName.NONE;
     }
