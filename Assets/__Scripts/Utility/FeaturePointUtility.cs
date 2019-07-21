@@ -2,12 +2,15 @@
  * Subject to the MIT License License.
  * See https://mit-license.org/
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Zenject;
 
-public class FeaturePointUtil
+/// <summary>
+/// Class to calculate the feature points of a curve,
+/// represented as a point set.
+/// </summary>
+public class FeaturePointUtility
 {
     /// <summary>
     /// Takes in an array of points and returns

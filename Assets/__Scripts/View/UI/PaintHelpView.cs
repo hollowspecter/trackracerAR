@@ -4,13 +4,15 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UniRx;
 
+/// <summary>
+/// Compound view to display an animation to enhance
+/// the UX of the <see cref="BuildPaintState"/>
+/// </summary>
 public class PaintHelpView : MonoBehaviour
 {
     public Animator m_animator;
@@ -33,14 +35,6 @@ public class PaintHelpView : MonoBehaviour
         }
     }
 
-    private void FadeOut()
-    {
-        m_subscription?.Dispose ();
-        if (!m_sequence.IsPlaying()) {
-            m_sequence.PlayForward ();
-        }
-    }
-
     private void OnEnable()
     {
         for ( int i = 0; i < m_graphics.Length; ++i ) {
@@ -50,13 +44,21 @@ public class PaintHelpView : MonoBehaviour
         m_animator.SetTrigger ("Start");
         m_sequence.Rewind ();
         m_subscription = m_buttonTouchInput.IsPressedx
-            .Where(isPressed => isPressed)
-            .Delay(TimeSpan.FromMilliseconds(250))
+            .Where (isPressed => isPressed)
+            .Delay (TimeSpan.FromMilliseconds (250))
             .Subscribe (_ => FadeOut ());
     }
 
     private void OnDisable()
     {
         m_subscription?.Dispose ();
+    }
+
+    private void FadeOut()
+    {
+        m_subscription?.Dispose ();
+        if (!m_sequence.IsPlaying()) {
+            m_sequence.PlayForward ();
+        }
     }
 }

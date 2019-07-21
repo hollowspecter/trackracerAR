@@ -3,17 +3,23 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Zenject;
 using UniRx;
 
+/// <summary>
+/// Extends a <see cref="Button"/> to fire every Update the
+/// Button is in its pressed state.
+/// </summary>
 public class ButtonTouchInput : Button
 {
-    public ReactiveProperty<bool> IsPressedx { get; private set; }
+    /// <summary>
+    /// Fires the state of the button every frame
+    /// </summary>
+    public IReadOnlyReactiveProperty<bool> IsPressedx { get => m_isPressed; }
+
+    private ReactiveProperty<bool> m_isPressed = new ReactiveProperty<bool>(false);
 
     IBuildPaintState m_state;
 
@@ -21,14 +27,13 @@ public class ButtonTouchInput : Button
     public void Construct(IBuildPaintState _state)
     {
         m_state = _state;
-        IsPressedx = new ReactiveProperty<bool> (false);
     }
 
     private void Update()
     {
-        if (IsPressedx != null) { // update method gets also called in editor moce
-            IsPressedx.Value = (currentSelectionState == SelectionState.Pressed);
-            if ( IsPressedx.Value ) {
+        if (IsPressedx != null) { // update method gets also called in editor mode and results in nullreference exceptions
+            m_isPressed.Value = (currentSelectionState == SelectionState.Pressed);
+            if ( m_isPressed.Value ) {
                 m_state.OnTouchDetected (Input.mousePosition.x, Input.mousePosition.y);
             }
         }

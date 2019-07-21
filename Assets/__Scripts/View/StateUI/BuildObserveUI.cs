@@ -3,14 +3,20 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
+/// <summary>
+/// Interface for <see cref="BuildObserveUI"/>
+/// </summary>
+public interface IBuildObserveUI { }
+
+/// <summary>
+/// Manages the UI for the <see cref="BuildObserveState"/>
+/// </summary>
 [RequireComponent (typeof (UIFader))]
-public class BuildObserveUI : MonoBehaviour
+public class BuildObserveUI : MonoBehaviour, IBuildObserveUI
 {
     public Button m_backButton;
     public Button m_editCopyButton;

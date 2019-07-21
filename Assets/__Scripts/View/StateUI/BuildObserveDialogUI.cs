@@ -4,16 +4,35 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 using TMPro;
 using UniRx;
 
+/// <summary>
+/// Interface for <see cref="BuildObserveDialogState"/>
+/// </summary>
+public interface IBuildObserveDialogUI
+{
+    /// <summary>
+    /// The string of the inputfield where the user types in
+    /// what track they want to download
+    /// </summary>
+    string KeyToDownload { get; }
+
+    /// <summary>
+    /// Returns whether the player wants to receive live updates
+    /// for the downloaded track
+    /// </summary>
+    bool DoReceiveLiveUpdates { get; }
+}
+
+/// <summary>
+/// Manages the UI for the <see cref="BuildObserveDialogState"/>
+/// </summary>
 [RequireComponent(typeof(UIFader))]
-public class BuildObserveDialogUI : MonoBehaviour
+public class BuildObserveDialogUI : MonoBehaviour, IBuildObserveDialogUI
 {
     public string KeyToDownload { get => m_keyInputField.text; }
     public bool DoReceiveLiveUpdates { get => m_receiveLiveUpdatesToggle.isOn; }
@@ -27,6 +46,8 @@ public class BuildObserveDialogUI : MonoBehaviour
     private DialogBuilder.Factory m_dialogBuilderFactory;
     private ObserveDialogUseCase m_useCase;
     private IDisposable m_subscription;
+
+    #region DI
 
     [Inject]
     private void Construct(IBuildObserveDialogState _state,
@@ -53,6 +74,19 @@ public class BuildObserveDialogUI : MonoBehaviour
         fader.RegisterStateCallbacks ((State)m_state);
         gameObject.SetActive (false);
     }
+
+    #endregion
+
+    #region Unity methods
+
+    private void OnDisable()
+    {
+        m_subscription?.Dispose ();
+    }
+
+    #endregion
+
+    #region Button Callback
 
     private void OnDownloadButtonPressed()
     {
@@ -82,11 +116,6 @@ public class BuildObserveDialogUI : MonoBehaviour
         m_state.Back ();
     }
 
-    private void OnDisable()
-    {
-        m_subscription?.Dispose ();
-    }
-
     private void ShowInvalidKeyDialog()
     {
         m_dialogBuilderFactory.Create ()
@@ -95,4 +124,6 @@ public class BuildObserveDialogUI : MonoBehaviour
             .SetIcon (DialogBuilder.Icon.ERROR)
             .Build ();
     }
+
+    #endregion
 }

@@ -6,7 +6,11 @@
 using System.Linq;
 using UnityEngine;
 
-public class RandomStringUtil
+/// <summary>
+/// Utility class to create a random string
+/// (not used)
+/// </summary>
+public class RandomStringUtility
 {
     private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static Random random = new Random ();

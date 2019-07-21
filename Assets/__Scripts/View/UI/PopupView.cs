@@ -3,11 +3,14 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+/// View that can be activated and deactivated using
+/// a popup overlay transition.
+/// (Used to display the impress)
+/// </summary>
 public class PopupView : MonoBehaviour
 {
     private RectTransform rect;

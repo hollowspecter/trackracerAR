@@ -3,13 +3,14 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
 
-// TODO SUMMARY
+/// <summary>
+/// Builder class for dialogs.
+/// </summary>
 public class DialogBuilder
 {
     public enum Icon
@@ -85,6 +86,8 @@ public class DialogBuilder
         return dialog;
     }
 
+    #region Settings
+
     [System.Serializable]
     public class Settings
     {
@@ -93,6 +96,10 @@ public class DialogBuilder
         public Sprite[] Icons;
         public string DefaultButtonText;
     }
+
+    #endregion
+
+    #region ButtonModel
 
     [System.Serializable]
     public class ButtonModel
@@ -107,5 +114,11 @@ public class DialogBuilder
         }
     }
 
+    #endregion
+
+    #region Factory
+
     public class Factory : PlaceholderFactory<DialogBuilder> { }
+
+    #endregion
 }

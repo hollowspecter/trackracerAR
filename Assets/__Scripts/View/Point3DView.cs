@@ -4,16 +4,26 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using UniRx;
-using UniRx.Triggers;
 
+/// <summary>
+/// 3D representation and view class for a Feature Point of the
+/// Spline. Is Draggable in 3D Space.
+/// Will fire <see cref="FeaturePointChanged"/>-Events if it gets
+/// moved, deleted or copied.
+/// </summary>
 public class Point3DView : MonoBehaviour
 {
+    /// <summary>
+    /// Flags the object as dirty and it shall be deleted
+    /// </summary>
     public bool IsDirty { get; set; }
+
+    /// <summary>
+    /// Flags the object that it shall be copied
+    /// </summary>
     public bool IsCopied { get; set; }
 
     [SerializeField]

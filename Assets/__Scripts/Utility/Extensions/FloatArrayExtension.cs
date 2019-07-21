@@ -2,12 +2,22 @@
  * Subject to the MIT License License.
  * See https://mit-license.org/
  */
+
 using UnityEngine;
 
 namespace Baguio.Splines
 {
-    public static class FloatArrayExtensions
+    /// <summary>
+    /// Extension functions for float arrays
+    /// </summary>
+    public static class FloatArrayExtension
     {
+
+        /// <summary>
+        /// Samples a (preferrably) sorted and evenly spaced out float array with a t value
+        /// between 0 and 1. Lerps between to elements if t sits between them.
+        /// </summary>
+        /// <returns></returns>
         public static float Sample ( this float [] _array, float t )
         {
             int count = _array.Length;
@@ -24,5 +34,4 @@ namespace Baguio.Splines
             return Mathf.Lerp ( _array [ idLower ], _array [ idUpper ], iFloat - idLower );
         }
     }
-
 }

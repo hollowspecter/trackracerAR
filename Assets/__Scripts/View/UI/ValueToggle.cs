@@ -6,6 +6,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Extends the <see cref="Toggle"/> with an
+/// inherit int value.
+/// </summary>
 public class ValueToggle : Toggle
 {
     public int Value { get => m_value; }

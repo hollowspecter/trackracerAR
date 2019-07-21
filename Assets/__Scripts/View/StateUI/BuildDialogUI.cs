@@ -6,10 +6,14 @@
 using UnityEngine;
 using Zenject;
 
-public interface IBuildDialogUI
-{
-}
+/// <summary>
+/// Interface for <see cref="BuildDialogUI"/>
+/// </summary>
+public interface IBuildDialogUI { }
 
+/// <summary>
+/// Manages the UI screen for the <see cref="BuildDialogState"/>
+/// </summary>
 [RequireComponent ( typeof ( UIFader ) )]
 public class BuildDialogUI : MonoBehaviour, IBuildDialogUI
 {
@@ -30,15 +34,6 @@ public class BuildDialogUI : MonoBehaviour, IBuildDialogUI
         gameObject.SetActive ( false );
         m_impress.gameObject.SetActive (false);
     }
-
-    #region Unity Functions
-    #endregion
-
-    #region Public Functions
-    #endregion
-
-    #region Private Methods
-    #endregion
 
     #region Button Callbacks
 

@@ -4,13 +4,19 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using TMPro;
 using UniRx;
 
+/// <summary>
+/// Interface for <see cref="RacingUI"/>
+/// </summary>
+public interface IRacingUI { }
+
+/// <summary>
+/// Manages the UI for <see cref="RacingState"/>
+/// </summary>
 [RequireComponent (typeof (UIFader))]
 public class RacingUI : MonoBehaviour
 {

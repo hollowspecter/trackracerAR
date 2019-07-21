@@ -3,13 +3,18 @@
  * See https://mit-license.org/
  */
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
 
+/// <summary>
+/// Extension class for every class
+/// </summary>
 public static class ThrowIfNullExtension
 {
+
+    /// <summary>
+    /// Throw an <see cref="ArgumentNullException"/> if null.
+    /// </summary>
+    /// <param name="argument">Put in the exception message</param>
     public static void ThrowIfNull<T>( this T value, string argument )
     {
         if ( value == null )
