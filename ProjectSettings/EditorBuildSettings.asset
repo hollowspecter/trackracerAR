@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+    path: Assets/_Scenes/ARTrackPainter.unity
+    guid: fa234d73c95a8b24a8ffe4b40aa04f77
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: b21feb4eab749b04ea24af496b4f0385,
+      type: 2}

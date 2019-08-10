@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2e5db21895f4ac09ddf28cba082572, type: 3}
+  m_Name: DefaultConfiguration
+  m_EditorClassIdentifier: 
+  m_showTangents: 1
+  m_showNormals: 1
+  m_waypointDetectionRadius: 0.06
+  m_respawnTime: 1
+  m_distanceThreshold: 0.1
+  m_angleThreshold: 20
+  m_shapeDatas:
+  - {fileID: 11400000, guid: 067ca6ef5859e44df9448cc58ea436b3, type: 2}
+  - {fileID: 11400000, guid: a050b53371ea164419163aa6e9b268fb, type: 2}
+  - {fileID: 11400000, guid: 9e93de401e476fb4a81acfe09a063ba2, type: 2}
+  - {fileID: 11400000, guid: d3ff2da249c726447bea464f5f7e2a1c, type: 2}
+  - {fileID: 11400000, guid: d192ad3f091cccf46bab02e6f250e762, type: 2}
+  m_streetMaterials:
+  - {fileID: 2100000, guid: 31944f0cdfc0ae14ca2295c7ab1b9c78, type: 2}
+  - {fileID: 2100000, guid: 92a51c30a0b614e4a8c3ae8136c97f99, type: 2}
+  - {fileID: 2100000, guid: dc3a35e8808bbd849bb8d559b09a4d14, type: 2}
+  m_vehicles:
+  - {fileID: 2586731853333570865, guid: f34c917a27ad0294b94e97d1b0e2f14a, type: 3}
+  m_trackParts:
+  - {fileID: 1818448583653846, guid: eab06dadc1de64500bf8991b1acb569a, type: 3}
+  - {fileID: 1317886263325834, guid: 6c510a3d2e661476fb7c2feb11d2d8f0, type: 3}
+  - {fileID: 1725767755045596, guid: e1ffb19f8cda14df3a837effc5ea3fe1, type: 3}
+  m_planeLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_trackLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  m_arrowLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_loadItemList: {fileID: 1459100307635140, guid: eef163e62a519432cb04bba0d221d6fb,
+    type: 3}
