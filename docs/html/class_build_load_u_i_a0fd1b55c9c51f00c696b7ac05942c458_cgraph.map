@@ -1,0 +1,16 @@
+<map id="BuildLoadUI.Construct" name="BuildLoadUI.Construct">
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,156,209"/>
+<area shape="rect" id="node2" href="$class_build_load_u_i.html#af0c90dafd08513adbfd532fb13b27602" title=" " alt="" coords="235,56,379,83"/>
+<area shape="rect" id="node5" href="$class_build_load_u_i.html#a375693a8817f0591ecd6d7bcac0dda13" title=" " alt="" coords="207,107,407,133"/>
+<area shape="rect" id="node7" href="$class_build_load_u_i.html#a82474c4b9b6be5fed7a4f7f68caf10da" title=" " alt="" coords="216,157,399,184"/>
+<area shape="rect" id="node9" href="$class_build_load_u_i.html#ad1cd338aa836e94b0ec342abff971d4c" title=" " alt="" coords="212,208,403,235"/>
+<area shape="rect" id="node11" href="$class_u_i_fader.html#a9017b91d3209235d885f31eb96c74745" title="Subscribe to state callbacks to automatically fade in on the states enter&#45;event and fade out on the s..." alt="" coords="204,259,411,285"/>
+<area shape="rect" id="node14" href="$class_build_load_u_i.html#ae3b887750741aecba527cc4f1ae74bfe" title=" " alt="" coords="240,309,375,336"/>
+<area shape="rect" id="node3" href="$class_build_load_u_i.html#a1c17111d344f1eba162ea3d0bcd7d57f" title=" " alt="" coords="473,5,647,32"/>
+<area shape="rect" id="node4" href="$class_build_load_u_i.html#ad9a59cd2006e79243e29a6dc51907683" title=" " alt="" coords="466,56,654,83"/>
+<area shape="rect" id="node6" href="$interface_i_build_load_state.html#a8aa50c39343bd6b708f48aebf1df2ef1" title="Returns to the BuildDialogState" alt="" coords="459,107,661,133"/>
+<area shape="rect" id="node8" href="$interface_i_build_load_state.html#af2368a6e72bfbcbd956460c576e7d4d9" title="Loads the trackdata with the given filename and transitions to BuildEditorState" alt="" coords="465,157,655,184"/>
+<area shape="rect" id="node10" href="$interface_i_build_load_state.html#ad4ce918473cce0bd29e18fde884102ff" title="Loads the trackdata with the given filename and transitions to the RaceSetupState" alt="" coords="461,208,659,235"/>
+<area shape="rect" id="node12" href="$class_u_i_fader.html#a452d1651a2ca6c2c66c02927b20014d5" title="Fades in" alt="" coords="501,259,619,285"/>
+<area shape="rect" id="node13" href="$class_u_i_fader.html#a27c477d0db6be891175cf7d8397b1e21" title="Deactivates (no fadeout)" alt="" coords="495,309,625,336"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="BuildLoadUI.OnRacePressed" name="BuildLoadUI.OnRacePressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,196,32"/>
+<area shape="rect" id="node2" href="$interface_i_build_load_state.html#ad4ce918473cce0bd29e18fde884102ff" title="Loads the trackdata with the given filename and transitions to the RaceSetupState" alt="" coords="244,5,443,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="CalibrateUI.OnStart" name="CalibrateUI.OnStart">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node2" href="$interface_i_calibrate_state.html#adb884747526b4f12624c81a4ead04813" title="Transitions to BuildStateMachine" alt="" coords="188,5,343,32"/>
+</map>

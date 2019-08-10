@@ -1,0 +1,4 @@
+<map id="RaceManager.EndRace" name="RaceManager.EndRace">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$interface_i_racing_state.html#a6fe3900f6c40f4df9b008d0122eadf31" title="Transitions to RaceOverState" alt="" coords="212,5,364,32"/>
+</map>

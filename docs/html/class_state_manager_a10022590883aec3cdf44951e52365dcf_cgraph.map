@@ -1,0 +1,5 @@
+<map id="StateManager.Tick" name="StateManager.Tick">
+<area shape="rect" id="node1" title=" " alt="" coords="5,46,136,73"/>
+<area shape="rect" id="node2" href="$interface_i_root_state_machine.html#a1eea28efeeb9694f4e0b43ee0abb9384" title="Returns the names of the current states" alt="" coords="184,5,387,47"/>
+<area shape="rect" id="node3" href="$interface_i_root_state_machine.html#ae848af645e420a07f8b14acb79a68f8c" title="Call this from a tick function to pass the ticks down the state machine" alt="" coords="195,71,375,112"/>
+</map>

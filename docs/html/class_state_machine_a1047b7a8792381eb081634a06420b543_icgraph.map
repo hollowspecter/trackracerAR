@@ -1,0 +1,5 @@
+<map id="StateMachine.AddState" name="StateMachine.AddState">
+<area shape="rect" id="node1" title="Adds a new state to the statemachine. The first added state will be the default state and will be ent..." alt="" coords="260,46,420,73"/>
+<area shape="rect" id="node2" href="$class_state_machine_installer.html#abe02b505b922a4978ac9721df07da6c0" title=" " alt="" coords="16,5,201,47"/>
+<area shape="rect" id="node3" href="$class_race_test_state_machine_installer.html#ab5d6ffaa76d709a44ac4346569e805ff" title=" " alt="" coords="5,71,212,112"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Baguio.Splines.Curve.SetPath" name="Baguio.Splines.Curve.SetPath">
+<area shape="rect" id="node1" title=" " alt="" coords="763,46,959,73"/>
+<area shape="rect" id="node2" href="$class_baguio_1_1_splines_1_1_curve.html#a87c2156149cf7ed67f8dc33a7ffa5d58" title="Creates a CatmulRom Curve segment" alt="" coords="497,46,715,73"/>
+<area shape="rect" id="node3" href="$class_baguio_1_1_splines_1_1_spline.html#aa6f2097632549c9a4668e81e75d9fc82" title=" " alt="" coords="243,5,449,47"/>
+<area shape="rect" id="node5" href="$class_baguio_1_1_splines_1_1_spline.html#a56e19da1fb445731f3a734b2e75ba2e4" title=" " alt="" coords="243,71,449,112"/>
+<area shape="rect" id="node4" href="$class_baguio_1_1_splines_1_1_spline.html#aa23ffa76a9ecdbcc129d5c0b02b403c1" title="Generate an new spline through the given points." alt="" coords="5,46,195,73"/>
+</map>

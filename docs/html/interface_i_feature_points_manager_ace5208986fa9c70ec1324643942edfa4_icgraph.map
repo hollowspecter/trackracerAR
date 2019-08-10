@@ -1,0 +1,7 @@
+<map id="IFeaturePointsManager.InstantiateFeaturePoints" name="IFeaturePointsManager.InstantiateFeaturePoints">
+<area shape="rect" id="node1" title="Instantiates the feature point game objects" alt="" coords="479,23,699,65"/>
+<area shape="rect" id="node2" href="$class_build_editor_state.html#abf42681ffb5e95933e03aa1723119a2c" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="248,5,431,32"/>
+<area shape="rect" id="node3" href="$class_build_load_state.html#a7c5acfd240b297dc33e3257fdf8412dc" title=" " alt="" coords="268,56,411,83"/>
+<area shape="rect" id="node4" href="$class_build_load_state.html#a4798f05d93d38c97532648d793a0d521" title="Loads the trackdata with the given filename and transitions to BuildEditorState" alt="" coords="9,31,197,57"/>
+<area shape="rect" id="node5" href="$class_build_load_state.html#a6e61cf735d7561f3afe46bebfd34d4f9" title="Loads the trackdata with the given filename and transitions to the RaceSetupState" alt="" coords="5,81,200,108"/>
+</map>

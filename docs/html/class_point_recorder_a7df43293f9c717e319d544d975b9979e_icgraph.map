@@ -1,0 +1,4 @@
+<map id="PointRecorder.DumpPoints" name="PointRecorder.DumpPoints">
+<area shape="rect" id="node1" title="Dumps the recorded points into the array and clears the points of this recorder." alt="" coords="216,5,395,32"/>
+<area shape="rect" id="node2" href="$class_build_paint_state.html#a2dfae5f2e11f137a5de701b2f991e103" title="Converts the recorded points into the feature points of the track. Transitions to BuildEditorState" alt="" coords="5,5,168,32"/>
+</map>

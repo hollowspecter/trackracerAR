@@ -1,0 +1,17 @@
+<map id="CalibrateUI.Construct" name="CalibrateUI.Construct">
+<area shape="rect" id="node1" title=" " alt="" coords="5,309,151,336"/>
+<area shape="rect" id="node2" href="$class_calibrate_u_i.html#a1e1c0f192549f821cb895f8c4961e27b" title=" " alt="" coords="217,150,387,191"/>
+<area shape="rect" id="node12" href="$class_u_i_fader.html#a9017b91d3209235d885f31eb96c74745" title="Subscribe to state callbacks to automatically fade in on the states enter&#45;event and fade out on the s..." alt="" coords="199,309,405,336"/>
+<area shape="rect" id="node15" href="$class_calibrate_u_i.html#a0a7317b9b73bec680f6b0148178298a0" title=" " alt="" coords="241,360,363,387"/>
+<area shape="rect" id="node3" href="$class_dialog_builder.html#ac98140c43a75b65827bd05a934d76fb7" title=" " alt="" coords="459,5,622,32"/>
+<area shape="rect" id="node4" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="475,56,606,83"/>
+<area shape="rect" id="node7" href="$class_calibrate_u_i.html#a959cd15b5ba3c367b54bbbdce4991b35" title=" " alt="" coords="473,107,608,133"/>
+<area shape="rect" id="node9" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="467,157,614,184"/>
+<area shape="rect" id="node10" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="453,208,628,235"/>
+<area shape="rect" id="node11" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="467,259,614,285"/>
+<area shape="rect" id="node5" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="683,5,827,32"/>
+<area shape="rect" id="node6" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="676,56,833,83"/>
+<area shape="rect" id="node8" href="$interface_i_calibrate_state.html#adb884747526b4f12624c81a4ead04813" title="Transitions to BuildStateMachine" alt="" coords="677,107,832,133"/>
+<area shape="rect" id="node13" href="$class_u_i_fader.html#a452d1651a2ca6c2c66c02927b20014d5" title="Fades in" alt="" coords="482,309,599,336"/>
+<area shape="rect" id="node14" href="$class_u_i_fader.html#a27c477d0db6be891175cf7d8397b1e21" title="Deactivates (no fadeout)" alt="" coords="475,360,606,387"/>
+</map>

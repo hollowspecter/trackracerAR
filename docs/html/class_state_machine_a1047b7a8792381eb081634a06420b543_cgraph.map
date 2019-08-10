@@ -1,0 +1,6 @@
+<map id="StateMachine.AddState" name="StateMachine.AddState">
+<area shape="rect" id="node1" title="Adds a new state to the statemachine. The first added state will be the default state and will be ent..." alt="" coords="5,31,165,57"/>
+<area shape="rect" id="node2" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="237,5,384,32"/>
+<area shape="rect" id="node3" href="$class_state.html#a6bd4fd391c2ee80ec6d15e97772d335d" title=" " alt="" coords="213,56,408,83"/>
+<area shape="rect" id="node4" href="$class_state.html#af390d8edcdc9cad5b2be48d61d0d13af" title="Override this as your Awake/Start/Init Function. Is called when this State is added to a StateMachine" alt="" coords="456,56,560,83"/>
+</map>

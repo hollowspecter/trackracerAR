@@ -1,0 +1,13 @@
+<map id="BuildLoadState" name="BuildLoadState">
+<area shape="rect" id="node1" title="State that displays all tracks that are saved to the device. From here players can load,..." alt="" coords="405,623,531,803"/>
+<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="18,337,198,517"/>
+<area shape="rect" id="node3" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="5,587,176,840"/>
+<area shape="rect" id="node4" href="$interface_i_build_load_state.html" title="Interface of the BuildLoadState" alt="" coords="222,373,349,480"/>
+<area shape="rect" id="node5" href="$interface_i_build_state_machine.html" title="Interface for BuildStateMachine" alt="" coords="373,373,563,480"/>
+<area shape="rect" id="node6" href="$interface_i_feature_points_manager.html" title="Interface for FeaturePointsManager" alt="" coords="587,359,773,495"/>
+<area shape="rect" id="node7" href="$class_dialog_builder.html" title="Builder class for dialogs." alt="" coords="797,329,912,524"/>
+<area shape="rect" id="node8" href="$class_dialog_builder_1_1_settings.html" title=" " alt="" coords="713,160,863,267"/>
+<area shape="rect" id="node9" href="$class_dialog_factory.html" title="Prefab&#45;instantiating factory to create Dialog&#45;Canvases Todo Improvement: Convert to MemoryPool" alt="" coords="888,167,1011,259"/>
+<area shape="rect" id="node10" title=" " alt="" coords="775,5,940,97"/>
+<area shape="rect" id="node11" href="$class_dialog_factory_1_1_settings.html" title=" " alt="" coords="964,13,1119,90"/>
+</map>

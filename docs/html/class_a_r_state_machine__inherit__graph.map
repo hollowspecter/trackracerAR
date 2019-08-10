@@ -1,0 +1,6 @@
+<map id="ARStateMachine" name="ARStateMachine">
+<area shape="rect" id="node1" title="Parent state machine for build and race state machines" alt="" coords="121,549,241,627"/>
+<area shape="rect" id="node2" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="10,248,181,501"/>
+<area shape="rect" id="node3" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
+<area shape="rect" id="node4" href="$interface_i_a_r_state_machine.html" title="Interface for the ARStateMachine" alt="" coords="205,336,327,413"/>
+</map>

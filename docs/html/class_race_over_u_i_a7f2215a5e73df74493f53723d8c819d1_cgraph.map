@@ -1,0 +1,4 @@
+<map id="RaceOverUI.OnRetryButtonPressed" name="RaceOverUI.OnRetryButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" id="node2" href="$interface_i_race_over_state.html#acdb0c2c1522bdd341efc369d844fb1cc" title="Returns to the RaceSetupState" alt="" coords="233,13,397,39"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="FeaturePointUtility.IdentifyFeaturePoints" name="FeaturePointUtility.IdentifyFeaturePoints">
+<area shape="rect" id="node1" title="Takes in an array of points and returns the characteristic points of the point set." alt="" coords="216,5,391,47"/>
+<area shape="rect" id="node2" href="$class_build_paint_state.html#a2dfae5f2e11f137a5de701b2f991e103" title="Converts the recorded points into the feature points of the track. Transitions to BuildEditorState" alt="" coords="5,13,168,39"/>
+</map>

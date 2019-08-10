@@ -1,0 +1,11 @@
+<map id="BuildObserveUI.OnEditCopyButtonPressed" name="BuildObserveUI.OnEditCopyButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,125,189,166"/>
+<area shape="rect" id="node2" href="$class_dialog_builder.html#ac98140c43a75b65827bd05a934d76fb7" title=" " alt="" coords="251,5,413,32"/>
+<area shape="rect" id="node3" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="267,56,397,83"/>
+<area shape="rect" id="node6" href="$interface_i_build_observe_state.html#ad3b37a2987797a2215f47d3a6ebd33ac" title="Copies the current status of the observed track into the BuildEditorState" alt="" coords="237,107,427,133"/>
+<area shape="rect" id="node7" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="259,157,405,184"/>
+<area shape="rect" id="node8" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="245,208,419,235"/>
+<area shape="rect" id="node9" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="259,259,405,285"/>
+<area shape="rect" id="node4" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="481,31,625,57"/>
+<area shape="rect" id="node5" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="475,81,632,108"/>
+</map>

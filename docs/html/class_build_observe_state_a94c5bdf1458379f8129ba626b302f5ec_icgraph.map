@@ -1,0 +1,5 @@
+<map id="BuildObserveState.RebuildTrack" name="BuildObserveState.RebuildTrack">
+<area shape="rect" id="node1" title=" " alt="" coords="471,5,647,47"/>
+<area shape="rect" id="node2" href="$class_build_observe_state.html#ae22e15d5c4a08fc432f9bdcd0be446d6" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,13,200,39"/>
+<area shape="rect" id="node3" href="$class_build_observe_state.html#a6c838624d7e86fefd5e18067c70960cc" title=" " alt="" coords="248,35,423,76"/>
+</map>

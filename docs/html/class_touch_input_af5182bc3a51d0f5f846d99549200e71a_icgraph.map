@@ -1,0 +1,8 @@
+<map id="TouchInput.SpeedUp" name="TouchInput.SpeedUp">
+<area shape="rect" id="node1" title=" " alt="" coords="560,31,703,57"/>
+<area shape="rect" id="node2" href="$class_touch_input.html#a708328acf153d060c5f38812463229c2" title=" " alt="" coords="389,5,511,32"/>
+<area shape="rect" id="node6" href="$class_touch_input.html#adf8426050d289b41902c31683696c4d5" title=" " alt="" coords="388,56,512,83"/>
+<area shape="rect" id="node3" href="$class_touch_input.html#a63888aa5514db537e59a7ff18a127ae8" title="Call this in Update populate the Value with either Mouseclick (in Editor) or Touch Input (on device)" alt="" coords="227,31,340,57"/>
+<area shape="rect" id="node4" href="$class_touch_input_tester.html#a772b396489f21c8fe41984683e07c07f" title=" " alt="" coords="9,5,175,32"/>
+<area shape="rect" id="node5" href="$class_racing_state.html#aa923fd17d6206d545ea34eac07887aea" title="Override this as your Update Function in the State. Is only called when the current state is active" alt="" coords="5,56,179,83"/>
+</map>

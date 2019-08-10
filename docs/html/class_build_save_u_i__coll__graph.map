@@ -1,0 +1,18 @@
+<map id="BuildSaveUI" name="BuildSaveUI">
+<area shape="rect" id="node1" title="Manages the UI for the BuildSaveState" alt="" coords="391,815,575,1039"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,388,116,465"/>
+<area shape="rect" id="node10" href="$class_u_i_fader.html" title="Automatically transitions all Graphics Objects with a fade in and out. Is used for screen transitions..." alt="" coords="66,579,245,730"/>
+<area shape="rect" id="node3" href="$interface_i_build_save_u_i.html" title="Interface for BuildSaveUI" alt="" coords="269,616,364,693"/>
+<area shape="rect" id="node4" href="$interface_i_build_state_machine.html" title="Interface for BuildStateMachine" alt="" coords="388,601,579,708"/>
+<area shape="rect" id="node5" href="$class_dialog_builder.html" title="Builder class for dialogs." alt="" coords="603,557,718,752"/>
+<area shape="rect" id="node6" href="$class_dialog_builder_1_1_settings.html" title=" " alt="" coords="424,373,575,480"/>
+<area shape="rect" id="node7" href="$class_dialog_factory.html" title="Prefab&#45;instantiating factory to create Dialog&#45;Canvases Todo Improvement: Convert to MemoryPool" alt="" coords="599,381,722,473"/>
+<area shape="rect" id="node8" title=" " alt="" coords="394,182,559,274"/>
+<area shape="rect" id="node9" href="$class_dialog_factory_1_1_settings.html" title=" " alt="" coords="583,189,738,267"/>
+<area shape="rect" id="node11" href="$class_update_use_case.html" title="UseCase to update trackdata in the database;" alt="" coords="742,609,905,701"/>
+<area shape="rect" id="node12" href="$class_tracks_repository.html" title="Manages the communication to the database regarding track data." alt="" coords="755,359,897,495"/>
+<area shape="rect" id="node13" href="$class_database_api.html" title="Initializes the firebase database connection automatically and provides the neccessary database refer..." alt="" coords="762,160,893,296"/>
+<area shape="rect" id="node14" title=" " alt="" coords="712,13,801,90"/>
+<area shape="rect" id="node15" href="$class_database_api_1_1_settings.html" title=" " alt="" coords="825,5,973,97"/>
+<area shape="rect" id="node16" href="$interface_i_build_save_state.html" title="Interface for the BuildSaveState" alt="" coords="929,587,1045,723"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="BuildDialogUI.OnDownloadTrackPressed" name="BuildDialogUI.OnDownloadTrackPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,181,47"/>
+<area shape="rect" id="node2" href="$interface_i_build_dialog_state.html#a79732cba00fcdd1e43c50c57d45f9968" title="Transitions to BuildObserveDialogState" alt="" coords="229,5,401,47"/>
+</map>

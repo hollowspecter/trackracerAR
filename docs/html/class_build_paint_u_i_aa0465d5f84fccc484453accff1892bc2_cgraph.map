@@ -1,0 +1,4 @@
+<map id="BuildPaintUI.OnDoneButtonPressed" name="BuildPaintUI.OnDoneButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node2" href="$interface_i_build_paint_state.html#aa596ea1f88caff09b503fb8a47d8440f" title="Converts the recorded points into the feature points of the track. Transitions to BuildEditorState" alt="" coords="236,13,403,39"/>
+</map>

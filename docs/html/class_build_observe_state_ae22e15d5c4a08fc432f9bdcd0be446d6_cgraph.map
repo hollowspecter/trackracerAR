@@ -1,0 +1,12 @@
+<map id="BuildObserveState.EnterState" name="BuildObserveState.EnterState">
+<area shape="rect" id="node1" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,122,200,149"/>
+<area shape="rect" id="node2" href="$interface_i_feature_points_manager.html#a7f3dde92ccc8c69cab70696a8c070ffb" title="Clears all feature points" alt="" coords="255,5,446,47"/>
+<area shape="rect" id="node3" href="$class_observe_use_case.html#a5af66ee78df2a5bd3154f1497ab3d65e" title="Fetches the trackdata of the given key at once. Observable will at most emit one item." alt="" coords="261,71,440,98"/>
+<area shape="rect" id="node5" href="$class_observe_use_case.html#afec0b620c6d00aa3662233cb29fcd675" title="Observe the track with the given key." alt="" coords="248,122,453,149"/>
+<area shape="rect" id="node7" href="$class_build_observe_state.html#a94c5bdf1458379f8129ba626b302f5ec" title=" " alt="" coords="519,201,695,243"/>
+<area shape="rect" id="node10" href="$class_build_observe_state.html#a6c838624d7e86fefd5e18067c70960cc" title=" " alt="" coords="263,224,438,265"/>
+<area shape="rect" id="node4" href="$class_tracks_repository.html#a69e48f89f3983232eb21d38c1d4911f6" title="Fetches the trackdata of the given key at once." alt="" coords="501,67,712,94"/>
+<area shape="rect" id="node6" href="$class_tracks_repository.html#a39f8539797467a257e1891d312f478eb" title="Observe the track with the given key." alt="" coords="519,119,694,160"/>
+<area shape="rect" id="node8" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html#a475c138006f38809f749fb0b17014bb8" title="Generates the track using the feature points from the TrackData session model" alt="" coords="760,172,967,213"/>
+<area shape="rect" id="node9" href="$class_street_view.html#ac5d352ff76fe958f48d5eabc6f518100" title="Shows or hides the street mesh." alt="" coords="765,238,961,265"/>
+</map>

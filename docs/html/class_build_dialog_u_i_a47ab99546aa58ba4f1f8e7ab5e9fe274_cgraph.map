@@ -1,0 +1,4 @@
+<map id="BuildDialogUI.OnNewTrackButtonPressed" name="BuildDialogUI.OnNewTrackButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,183,47"/>
+<area shape="rect" id="node2" href="$interface_i_build_dialog_state.html#afb74edc21859643a812d4b3603e98fa9" title="Creates new session data and transitions to BuildPaintState" alt="" coords="231,5,409,47"/>
+</map>

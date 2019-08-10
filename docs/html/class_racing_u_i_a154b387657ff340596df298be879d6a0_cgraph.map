@@ -1,0 +1,4 @@
+<map id="RacingUI.BackButtonPressed" name="RacingUI.BackButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,200,32"/>
+<area shape="rect" id="node2" href="$interface_i_racing_state.html#ae9316e19490cc7c5fe0599443aa2aa51" title="Transitions to RaceSetupState" alt="" coords="248,5,395,32"/>
+</map>

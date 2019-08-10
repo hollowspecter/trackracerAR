@@ -1,0 +1,4 @@
+<map id="BuildStateMachine.TouchInput" name="BuildStateMachine.TouchInput">
+<area shape="rect" id="node1" title=" " alt="" coords="229,13,428,39"/>
+<area shape="rect" id="node2" href="$class_build_state_machine.html#a3d33442046c5dc5404970684beb2b5c4" title="Override this as your Update Function in the State. Is only called when the current state is active" alt="" coords="5,5,181,47"/>
+</map>

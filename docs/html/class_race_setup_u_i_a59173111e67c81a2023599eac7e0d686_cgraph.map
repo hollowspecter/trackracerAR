@@ -1,0 +1,4 @@
+<map id="RaceSetupUI.StartAbortButtonPressed" name="RaceSetupUI.StartAbortButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node2" href="$interface_i_race_setup_state.html#aca12b90619f0d2d659ae4d6b169e00fc" title="Transitions to the RacingState" alt="" coords="252,13,421,39"/>
+</map>

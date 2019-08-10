@@ -1,0 +1,14 @@
+<map id="BuildSaveUI.OnSaveButtonPressed" name="BuildSaveUI.OnSaveButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,201,184,242"/>
+<area shape="rect" id="node2" href="$class_dialog_builder.html#ac98140c43a75b65827bd05a934d76fb7" title=" " alt="" coords="246,5,409,32"/>
+<area shape="rect" id="node3" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="262,56,393,83"/>
+<area shape="rect" id="node6" href="$interface_i_build_save_state.html#ab8901cf274dfb0d5628ddd4a3eb4510b" title="Returns back to the BuildEditorState" alt="" coords="240,107,415,133"/>
+<area shape="rect" id="node7" href="$interface_i_build_save_state.html#ac8d5be9ddb8c2743e8140934aeb46e67" title="Call for ending this state and go to race state" alt="" coords="245,157,409,184"/>
+<area shape="rect" id="node8" href="$interface_i_build_save_state.html#a48e0d0ff2150133e8027ab83e95358d1" title="Returns back to the BuildDialogState" alt="" coords="232,208,423,235"/>
+<area shape="rect" id="node9" href="$interface_i_build_save_state.html#a1da807a476288f2fed27534c0db9dc22" title="Call to attempt to save the current track data to device" alt="" coords="246,259,409,285"/>
+<area shape="rect" id="node10" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="254,309,401,336"/>
+<area shape="rect" id="node11" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="240,360,415,387"/>
+<area shape="rect" id="node12" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="254,411,401,437"/>
+<area shape="rect" id="node4" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="477,31,621,57"/>
+<area shape="rect" id="node5" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="471,81,628,108"/>
+</map>

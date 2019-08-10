@@ -1,0 +1,4 @@
+<map id="BuildLoadUI.OnEditPressed" name="BuildLoadUI.OnEditPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,188,32"/>
+<area shape="rect" id="node2" href="$interface_i_build_load_state.html#af2368a6e72bfbcbd956460c576e7d4d9" title="Loads the trackdata with the given filename and transitions to BuildEditorState" alt="" coords="236,5,427,32"/>
+</map>

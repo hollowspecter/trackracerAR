@@ -1,0 +1,5 @@
+<map id="StateMachine.GetCurrentStateName" name="StateMachine.GetCurrentStateName">
+<area shape="rect" id="node1" title="Returns the current statename, prefixing the path through the hierarchial statemachine structure." alt="" coords="5,31,240,57"/>
+<area shape="rect" id="node2" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="308,5,455,32"/>
+<area shape="rect" id="node3" href="$class_state_machine.html#ac3972f6fe90cf3d78a4f432375ab6285" title=" " alt="" coords="288,56,475,83"/>
+</map>

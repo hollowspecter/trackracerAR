@@ -1,0 +1,4 @@
+<map id="BuildObserveDialogUI.OnBackButtonPressed" name="BuildObserveDialogUI.OnBackButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,203,47"/>
+<area shape="rect" id="node2" href="$interface_i_build_observe_dialog_state.html#a169582beef1a132b1af8a9c5bb286661" title="Returns to the BuildDialogState" alt="" coords="251,13,453,39"/>
+</map>

@@ -1,0 +1,25 @@
+<map id="DialogBuilder.SetTitle" name="DialogBuilder.SetTitle">
+<area shape="rect" id="node1" title=" " alt="" coords="777,384,924,411"/>
+<area shape="rect" id="node2" href="$class_dialog_tester.html#a97a5e88fbc869d17fc4640853da33840" title=" " alt="" coords="544,5,716,32"/>
+<area shape="rect" id="node3" href="$class_build_load_state.html#a4798f05d93d38c97532648d793a0d521" title="Loads the trackdata with the given filename and transitions to BuildEditorState" alt="" coords="536,56,724,83"/>
+<area shape="rect" id="node4" href="$class_build_load_state.html#a6e61cf735d7561f3afe46bebfd34d4f9" title="Loads the trackdata with the given filename and transitions to the RaceSetupState" alt="" coords="533,107,727,133"/>
+<area shape="rect" id="node5" href="$class_race_setup_state.html#aa7d12700ef262a2fc5efb024fcad4afb" title="Transitions to the BuildStateMachine" alt="" coords="546,157,714,184"/>
+<area shape="rect" id="node6" href="$class_build_paint_u_i.html#a1330a996584b5ef4f9f30e85e14522d6" title=" " alt="" coords="539,209,721,250"/>
+<area shape="rect" id="node8" href="$class_settings_u_i.html#a8e545a332468202ed7b452d2f4c00a44" title=" " alt="" coords="557,275,703,301"/>
+<area shape="rect" id="node10" href="$class_build_paint_state.html#a2dfae5f2e11f137a5de701b2f991e103" title="Converts the recorded points into the feature points of the track. Transitions to BuildEditorState" alt="" coords="549,325,711,352"/>
+<area shape="rect" id="node11" href="$class_build_observe_u_i.html#a2fbc2e0eb137159b1094d77a7ea42aa2" title=" " alt="" coords="538,377,722,418"/>
+<area shape="rect" id="node13" href="$class_build_editor_u_i.html#a48fb4a84afb9ee8416fbcf8c90c09fa4" title=" " alt="" coords="537,442,723,483"/>
+<area shape="rect" id="node14" href="$class_build_observe_u_i.html#aab93aee1305b50d82f5903e722b323f0" title=" " alt="" coords="531,507,729,549"/>
+<area shape="rect" id="node15" href="$class_build_save_u_i.html#a903ad2a4ae1ad01093691a25f39726a4" title=" " alt="" coords="541,573,719,614"/>
+<area shape="rect" id="node17" href="$class_build_editor_u_i.html#a006cd602d4867ffad2031d58c7bc3cec" title=" " alt="" coords="535,638,725,679"/>
+<area shape="rect" id="node18" href="$class_build_save_u_i.html#a51451e65def52a98e1b423ed2bb2ee38" title=" " alt="" coords="538,703,722,745"/>
+<area shape="rect" id="node19" href="$class_calibrate_u_i.html#a1e1c0f192549f821cb895f8c4961e27b" title=" " alt="" coords="545,769,715,810"/>
+<area shape="rect" id="node21" href="$class_build_observe_dialog_u_i.html#ae2eab724116bb46405a0c37a964c2d80" title=" " alt="" coords="539,834,721,875"/>
+<area shape="rect" id="node7" href="$class_build_paint_u_i.html#a015fa1c8ec077a963d32767c75ead98a" title=" " alt="" coords="295,216,448,243"/>
+<area shape="rect" id="node9" href="$class_settings_u_i.html#a205c972ca2d7d4680ba39acc9a29cfd9" title=" " alt="" coords="309,275,434,301"/>
+<area shape="rect" id="node12" href="$class_build_observe_u_i.html#a2ccfd3d7c8ab0a14aa6227f54cf5c30a" title=" " alt="" coords="286,449,457,476"/>
+<area shape="rect" id="node16" href="$class_build_save_u_i.html#aef9983172ceb523aaa6c0af63fcce5c7" title=" " alt="" coords="296,645,447,672"/>
+<area shape="rect" id="node20" href="$class_calibrate_u_i.html#a0a1bcb29ed991f63c6b9a8a82600b90a" title=" " alt="" coords="299,776,444,803"/>
+<area shape="rect" id="node22" href="$class_build_observe_dialog_u_i.html#a85d080ce0cdd8569d4ba64ccf57ea915" title=" " alt="" coords="260,834,483,875"/>
+<area shape="rect" id="node23" href="$class_build_observe_dialog_u_i.html#a0f0c2d461298464ce48006f3050180af" title=" " alt="" coords="5,841,212,868"/>
+</map>

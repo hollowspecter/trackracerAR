@@ -1,0 +1,4 @@
+<map id="BuildLoadUI.OnCancelPressed" name="BuildLoadUI.OnCancelPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,205,32"/>
+<area shape="rect" id="node2" href="$interface_i_build_load_state.html#a8aa50c39343bd6b708f48aebf1df2ef1" title="Returns to the BuildDialogState" alt="" coords="253,5,456,32"/>
+</map>

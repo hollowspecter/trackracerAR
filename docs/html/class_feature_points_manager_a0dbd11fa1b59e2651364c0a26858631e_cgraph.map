@@ -1,0 +1,5 @@
+<map id="FeaturePointsManager.Dispose" name="FeaturePointsManager.Dispose">
+<area shape="rect" id="node1" title=" " alt="" coords="5,13,209,39"/>
+<area shape="rect" id="node2" href="$class_feature_points_manager.html#a088fd49f04a8e1779bd09f06f2ffcfc1" title="Callback for a FeaturePointChanged event. Checks if any feature points get deleted or copied,..." alt="" coords="257,5,459,47"/>
+<area shape="rect" id="node3" href="$class_point3_d_factory.html#ab523b6d9cb967e19f809e861bd1e4097" title=" " alt="" coords="507,13,661,39"/>
+</map>

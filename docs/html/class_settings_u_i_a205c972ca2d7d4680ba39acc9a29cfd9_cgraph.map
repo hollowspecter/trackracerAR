@@ -1,0 +1,13 @@
+<map id="SettingsUI.Awake" name="SettingsUI.Awake">
+<area shape="rect" id="node1" title=" " alt="" coords="5,69,131,96"/>
+<area shape="rect" id="node2" href="$class_settings_u_i.html#a8e545a332468202ed7b452d2f4c00a44" title=" " alt="" coords="204,107,351,133"/>
+<area shape="rect" id="node11" href="$class_settings_u_i.html#a485ebb8f89f251483aa3862b75273abf" title=" " alt="" coords="179,31,376,57"/>
+<area shape="rect" id="node3" href="$class_dialog_builder.html#ac98140c43a75b65827bd05a934d76fb7" title=" " alt="" coords="430,56,593,83"/>
+<area shape="rect" id="node4" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="446,107,577,133"/>
+<area shape="rect" id="node7" href="$class_settings_u_i.html#aa3dfe0a1d9decf3bf7489cf3112931d1" title=" " alt="" coords="438,5,585,32"/>
+<area shape="rect" id="node8" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="438,157,585,184"/>
+<area shape="rect" id="node9" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="424,208,599,235"/>
+<area shape="rect" id="node10" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="438,259,585,285"/>
+<area shape="rect" id="node5" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="653,81,797,108"/>
+<area shape="rect" id="node6" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="647,132,804,159"/>
+</map>

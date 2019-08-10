@@ -1,0 +1,7 @@
+<map id="TouchInput.Tick" name="TouchInput.Tick">
+<area shape="rect" id="node1" title="Call this in Update populate the Value with either Mouseclick (in Editor) or Touch Input (on device)" alt="" coords="5,31,119,57"/>
+<area shape="rect" id="node2" href="$class_touch_input.html#a708328acf153d060c5f38812463229c2" title=" " alt="" coords="167,5,290,32"/>
+<area shape="rect" id="node5" href="$class_touch_input.html#adf8426050d289b41902c31683696c4d5" title=" " alt="" coords="167,56,291,83"/>
+<area shape="rect" id="node3" href="$class_touch_input.html#aac31c4ad2c7dd7799b6c0f42ee82b3e7" title=" " alt="" coords="339,5,488,32"/>
+<area shape="rect" id="node4" href="$class_touch_input.html#af5182bc3a51d0f5f846d99549200e71a" title=" " alt="" coords="342,56,485,83"/>
+</map>

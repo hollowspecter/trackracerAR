@@ -1,0 +1,4 @@
+<map id="RaceOverUI.OnExitButtonPressed" name="RaceOverUI.OnExitButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,225,32"/>
+<area shape="rect" id="node2" href="$interface_i_race_over_state.html#a3e75906527ffef79162814a1c87b9792" title="Returns to the BuildDialogState" alt="" coords="273,5,429,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="Baguio.Splines.Extruder.Extrude" name="Baguio.Splines.Extruder.Extrude">
+<area shape="rect" id="node1" title=" " alt="" coords="757,39,924,80"/>
+<area shape="rect" id="node2" href="$class_baguio_1_1_splines_1_1_spline_manager.html#ad27e2ae95697a23d564a022ebb695044" title=" " alt="" coords="507,39,709,80"/>
+<area shape="rect" id="node3" href="$class_baguio_1_1_splines_1_1_spline_manager.html#ad66762f8068cc7770ed2234b5d859eda" title="Generates the track using the feature point gameobjects" alt="" coords="256,5,459,47"/>
+<area shape="rect" id="node6" href="$class_baguio_1_1_splines_1_1_spline_manager.html#a60954a3f93316eb318a5fc22f608d031" title="Generates the track using the feature points from the TrackData session model" alt="" coords="256,71,459,112"/>
+<area shape="rect" id="node4" href="$class_baguio_1_1_splines_1_1_spline_manager.html#a5c8e0f643e63b41720b5f0b88e7224bd" title="Returns the waypoints for the vehicles steering" alt="" coords="5,5,208,47"/>
+<area shape="rect" id="node5" href="$class_baguio_1_1_splines_1_1_spline_manager_inspector.html#ab21bdcd6db6e0ff274074dc57f18cf05" title=" " alt="" coords="7,71,206,112"/>
+</map>

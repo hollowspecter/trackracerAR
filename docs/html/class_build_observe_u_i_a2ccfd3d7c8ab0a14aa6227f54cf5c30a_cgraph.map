@@ -1,0 +1,19 @@
+<map id="BuildObserveUI.Construct" name="BuildObserveUI.Construct">
+<area shape="rect" id="node1" title=" " alt="" coords="5,209,176,236"/>
+<area shape="rect" id="node2" href="$class_build_observe_u_i.html#a360beda48ce3b214c617de63ba0187db" title=" " alt="" coords="228,42,427,83"/>
+<area shape="rect" id="node4" href="$class_build_observe_u_i.html#a2fbc2e0eb137159b1094d77a7ea42aa2" title=" " alt="" coords="235,234,419,275"/>
+<area shape="rect" id="node13" href="$class_build_observe_u_i.html#aab93aee1305b50d82f5903e722b323f0" title=" " alt="" coords="228,169,427,210"/>
+<area shape="rect" id="node15" href="$class_u_i_fader.html#a9017b91d3209235d885f31eb96c74745" title="Subscribe to state callbacks to automatically fade in on the states enter&#45;event and fade out on the s..." alt="" coords="224,411,431,437"/>
+<area shape="rect" id="node3" href="$interface_i_build_observe_state.html#a363d6d770749ada3cd89f7a5b496481f" title="Returns to the BuildDialogState" alt="" coords="490,5,657,32"/>
+<area shape="rect" id="node5" href="$class_dialog_builder.html#ac98140c43a75b65827bd05a934d76fb7" title=" " alt="" coords="492,157,655,184"/>
+<area shape="rect" id="node6" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="508,208,639,235"/>
+<area shape="rect" id="node9" href="$interface_i_build_observe_state.html#ad3b37a2987797a2215f47d3a6ebd33ac" title="Copies the current status of the observed track into the BuildEditorState" alt="" coords="479,360,668,387"/>
+<area shape="rect" id="node10" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="500,259,647,285"/>
+<area shape="rect" id="node11" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="486,309,661,336"/>
+<area shape="rect" id="node12" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="500,107,647,133"/>
+<area shape="rect" id="node7" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="723,183,867,209"/>
+<area shape="rect" id="node8" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="716,233,873,260"/>
+<area shape="rect" id="node14" href="$interface_i_build_observe_state.html#aba0c382481dc45e7fe7828a56d254f43" title="Races the current status of the observed track" alt="" coords="490,56,657,83"/>
+<area shape="rect" id="node16" href="$class_u_i_fader.html#a452d1651a2ca6c2c66c02927b20014d5" title="Fades in" alt="" coords="515,411,632,437"/>
+<area shape="rect" id="node17" href="$class_u_i_fader.html#a27c477d0db6be891175cf7d8397b1e21" title="Deactivates (no fadeout)" alt="" coords="508,461,639,488"/>
+</map>

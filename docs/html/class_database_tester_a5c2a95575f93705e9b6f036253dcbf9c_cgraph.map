@@ -1,0 +1,6 @@
+<map id="DatabaseTester.OnObserveTrack" name="DatabaseTester.OnObserveTrack">
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,187,76"/>
+<area shape="rect" id="node2" href="$class_tracks_repository.html#a39f8539797467a257e1891d312f478eb" title="Observe the track with the given key." alt="" coords="243,5,417,47"/>
+<area shape="rect" id="node3" href="$class_database_tester.html#ac3c3528f0ef8521675d13db215ef2b0f" title=" " alt="" coords="235,71,425,98"/>
+<area shape="rect" id="node4" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html#a475c138006f38809f749fb0b17014bb8" title="Generates the track using the feature points from the TrackData session model" alt="" coords="473,64,680,105"/>
+</map>

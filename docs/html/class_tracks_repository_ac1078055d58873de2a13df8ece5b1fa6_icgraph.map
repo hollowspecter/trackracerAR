@@ -1,0 +1,9 @@
+<map id="TracksRepository.PushTrack" name="TracksRepository.PushTrack">
+<area shape="rect" id="node1" title="Pushes the TrackData object to the remote database. If the track already exists in the DB,..." alt="" coords="920,35,1109,61"/>
+<area shape="rect" id="node2" href="$class_database_tester.html#a78883bfd21124e22c4f4ee44d9d781b7" title=" " alt="" coords="676,5,872,32"/>
+<area shape="rect" id="node3" href="$class_update_use_case.html#a23d1dc04dfa7927749be3b922dc47a02" title="Pushes the TrackData object to the database. If the track already exists in the DB,..." alt="" coords="677,57,871,98"/>
+<area shape="rect" id="node4" href="$class_build_save_u_i.html#a771bee14b853dbf123937bb47fe3e5f7" title=" " alt="" coords="465,35,617,61"/>
+<area shape="rect" id="node5" href="$class_build_editor_state.html#a3f440070a3e2cf9e3f533116b8ba2c11" title=" " alt="" coords="453,86,628,127"/>
+<area shape="rect" id="node6" href="$class_build_editor_state.html#a135ce54189a64c67859d4ca887572430" title=" " alt="" coords="236,86,405,127"/>
+<area shape="rect" id="node7" href="$class_build_editor_state.html#abf42681ffb5e95933e03aa1723119a2c" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,93,188,120"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="BuildEditorUI.Construct" name="BuildEditorUI.Construct">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,163,57"/>
+<area shape="rect" id="node2" href="$class_u_i_fader.html#a9017b91d3209235d885f31eb96c74745" title="Subscribe to state callbacks to automatically fade in on the states enter&#45;event and fade out on the s..." alt="" coords="211,31,417,57"/>
+<area shape="rect" id="node3" href="$class_u_i_fader.html#a452d1651a2ca6c2c66c02927b20014d5" title="Fades in" alt="" coords="472,5,589,32"/>
+<area shape="rect" id="node4" href="$class_u_i_fader.html#a27c477d0db6be891175cf7d8397b1e21" title="Deactivates (no fadeout)" alt="" coords="465,56,596,83"/>
+</map>

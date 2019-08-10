@@ -1,0 +1,5 @@
+<map id="RaceManager.LapSignalReceived" name="RaceManager.LapSignalReceived">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,220,32"/>
+<area shape="rect" id="node2" href="$class_race_manager.html#a08fcaffe09d18d85ee4b0f0a42d073ed" title=" " alt="" coords="268,5,427,32"/>
+<area shape="rect" id="node3" href="$interface_i_racing_state.html#a6fe3900f6c40f4df9b008d0122eadf31" title="Transitions to RaceOverState" alt="" coords="475,5,627,32"/>
+</map>
