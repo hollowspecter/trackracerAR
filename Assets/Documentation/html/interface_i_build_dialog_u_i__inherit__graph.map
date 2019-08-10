@@ -1,0 +1,4 @@
+<map id="IBuildDialogUI" name="IBuildDialogUI">
+<area shape="rect" id="node1" title="Interface for BuildDialogUI" alt="" coords="57,5,159,83"/>
+<area shape="rect" id="node2" href="$class_build_dialog_u_i.html" title="Manages the UI screen for the BuildDialogState" alt="" coords="5,131,211,311"/>
+</map>

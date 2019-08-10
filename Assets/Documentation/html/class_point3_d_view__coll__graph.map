@@ -1,0 +1,6 @@
+<map id="Point3DView" name="Point3DView">
+<area shape="rect" id="node1" title="3D representation and view class for a Feature Point of the Spline. Is Draggable in 3D Space...." alt="" coords="21,419,220,760"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,205,116,283"/>
+<area shape="rect" id="node3" href="$class_observable_long_pointer_down_trigger.html" title="UniRX Trigger that fires when a long tap on this gameobject happens." alt="" coords="141,132,381,356"/>
+<area shape="rect" id="node4" title=" " alt="" coords="183,5,338,83"/>
+</map>

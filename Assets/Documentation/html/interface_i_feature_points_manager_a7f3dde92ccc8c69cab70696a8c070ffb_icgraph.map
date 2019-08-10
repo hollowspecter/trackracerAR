@@ -1,0 +1,5 @@
+<map id="IFeaturePointsManager.ClearFeaturePoints" name="IFeaturePointsManager.ClearFeaturePoints">
+<area shape="rect" id="node1" title="Clears all feature points" alt="" coords="248,27,439,69"/>
+<area shape="rect" id="node2" href="$class_build_observe_state.html#ae22e15d5c4a08fc432f9bdcd0be446d6" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,5,200,32"/>
+<area shape="rect" id="node3" href="$class_build_dialog_state.html#a3221b6008b905a5f903a2b8e95bc0b29" title="Creates new session data and transitions to BuildPaintState" alt="" coords="15,57,190,98"/>
+</map>

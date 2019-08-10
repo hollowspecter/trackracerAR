@@ -1,0 +1,4 @@
+<map id="VehicleSpawnManager.SpawnVehicleAtStart" name="VehicleSpawnManager.SpawnVehicleAtStart">
+<area shape="rect" id="node1" title="Spawns a vehicle on the tracks first waypoint." alt="" coords="5,5,203,47"/>
+<area shape="rect" id="node2" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html#a0d5cb41c67a3a951a5cd379408bf795b" title="Returns the waypoints for the vehicles steering" alt="" coords="251,5,457,47"/>
+</map>

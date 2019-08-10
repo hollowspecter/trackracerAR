@@ -1,0 +1,4 @@
+<map id="TimerView" name="TimerView">
+<area shape="rect" id="node1" title="Displays the timer for the RacingState" alt="" coords="5,131,128,252"/>
+<area shape="rect" id="node2" title=" " alt="" coords="11,5,122,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="BuildEditorUI" name="BuildEditorUI">
+<area shape="rect" id="node1" title="Manages the UI Screen for BuildEditorState" alt="" coords="32,131,217,311"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,116,83"/>
+<area shape="rect" id="node3" href="$interface_i_build_editor_u_i.html" title="Interface for BuildEditorUI" alt="" coords="140,5,240,83"/>
+</map>

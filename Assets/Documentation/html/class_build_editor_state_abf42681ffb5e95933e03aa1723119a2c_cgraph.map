@@ -1,0 +1,4 @@
+<map id="BuildEditorState.EnterState" name="BuildEditorState.EnterState">
+<area shape="rect" id="node1" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,13,188,39"/>
+<area shape="rect" id="node2" href="$interface_i_feature_points_manager.html#ace5208986fa9c70ec1324643942edfa4" title="Instantiates the feature point game objects" alt="" coords="236,5,456,47"/>
+</map>

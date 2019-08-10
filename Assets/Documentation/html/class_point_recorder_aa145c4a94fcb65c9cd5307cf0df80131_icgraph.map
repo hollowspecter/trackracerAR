@@ -1,0 +1,6 @@
+<map id="PointRecorder.ClearPoints" name="PointRecorder.ClearPoints">
+<area shape="rect" id="node1" title="Clears the array and the lineRenderer" alt="" coords="443,31,617,57"/>
+<area shape="rect" id="node2" href="$class_build_paint_state.html#a3bc5cd2e2edbe7014b9b59f90ddb609b" title="Clears all recorded points for a fresh start" alt="" coords="232,5,379,32"/>
+<area shape="rect" id="node3" href="$class_point_recorder.html#a7df43293f9c717e319d544d975b9979e" title="Dumps the recorded points into the array and clears the points of this recorder." alt="" coords="216,56,395,83"/>
+<area shape="rect" id="node4" href="$class_build_paint_state.html#a2dfae5f2e11f137a5de701b2f991e103" title="Converts the recorded points into the feature points of the track. Transitions to BuildEditorState" alt="" coords="5,56,168,83"/>
+</map>

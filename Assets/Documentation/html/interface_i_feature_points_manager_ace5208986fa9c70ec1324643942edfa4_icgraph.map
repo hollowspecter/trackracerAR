@@ -1,0 +1,4 @@
+<map id="IFeaturePointsManager.InstantiateFeaturePoints" name="IFeaturePointsManager.InstantiateFeaturePoints">
+<area shape="rect" id="node1" title="Instantiates the feature point game objects" alt="" coords="236,5,456,47"/>
+<area shape="rect" id="node2" href="$class_build_editor_state.html#abf42681ffb5e95933e03aa1723119a2c" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,13,188,39"/>
+</map>

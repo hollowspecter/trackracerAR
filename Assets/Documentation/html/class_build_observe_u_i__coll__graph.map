@@ -1,0 +1,11 @@
+<map id="BuildObserveUI" name="BuildObserveUI">
+<area shape="rect" id="node1" title="Manages the UI for the BuildObserveState" alt="" coords="173,587,367,737"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,388,116,465"/>
+<area shape="rect" id="node3" href="$interface_i_build_observe_u_i.html" title="Interface for BuildObserveUI" alt="" coords="140,388,253,465"/>
+<area shape="rect" id="node4" href="$interface_i_build_observe_state.html" title="Interface for BuildObserveState" alt="" coords="277,373,409,480"/>
+<area shape="rect" id="node5" href="$class_dialog_builder.html" title="Builder class for dialogs." alt="" coords="434,329,549,524"/>
+<area shape="rect" id="node6" href="$class_dialog_builder_1_1_settings.html" title=" " alt="" coords="349,160,500,267"/>
+<area shape="rect" id="node7" href="$class_dialog_factory.html" title="Prefab&#45;instantiating factory to create Dialog&#45;Canvases Todo Improvement: Convert to MemoryPool" alt="" coords="525,167,647,259"/>
+<area shape="rect" id="node8" title=" " alt="" coords="411,5,577,97"/>
+<area shape="rect" id="node9" href="$class_dialog_factory_1_1_settings.html" title=" " alt="" coords="601,13,755,90"/>
+</map>

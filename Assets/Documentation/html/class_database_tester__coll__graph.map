@@ -1,0 +1,11 @@
+<map id="DatabaseTester" name="DatabaseTester">
+<area shape="rect" id="node1" title="Use this component to test the functionality of the database interface." alt="" coords="347,645,574,869"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,432,116,509"/>
+<area shape="rect" id="node3" href="$interface_i_build_state_machine.html" title="Interface for BuildStateMachine" alt="" coords="140,417,331,524"/>
+<area shape="rect" id="node4" href="$class_track_data.html" title="Model for TrackData. Contains feature points and settings for a track. TrackData is saved and loaded ..." alt="" coords="355,359,566,583"/>
+<area shape="rect" id="node5" href="$class_tracks_repository.html" title="Manages the communication to the database regarding track data." alt="" coords="591,403,733,539"/>
+<area shape="rect" id="node6" href="$class_database_api.html" title="Initializes the firebase database connection automatically and provides the neccessary database refer..." alt="" coords="597,160,727,296"/>
+<area shape="rect" id="node7" title=" " alt="" coords="547,13,636,90"/>
+<area shape="rect" id="node8" href="$class_database_api_1_1_settings.html" title=" " alt="" coords="660,5,808,97"/>
+<area shape="rect" id="node9" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html" title="Interface for SplineManager" alt="" coords="758,410,974,531"/>
+</map>

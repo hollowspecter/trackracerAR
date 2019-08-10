@@ -1,0 +1,5 @@
+<map id="DiscreteSlider" name="DiscreteSlider">
+<area shape="rect" id="node1" title="View / Presenter class. Instantiates toggles as childs and listens/subscribes to DiscreteSliderModel" alt="" coords="60,189,219,457"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,27,116,105"/>
+<area shape="rect" id="node3" href="$class_discrete_slider_model.html" title="Model class for DiscreteSlider" alt="" coords="140,5,299,127"/>
+</map>

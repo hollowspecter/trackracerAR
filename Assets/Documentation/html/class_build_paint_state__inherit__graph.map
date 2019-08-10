@@ -1,0 +1,5 @@
+<map id="BuildPaintState" name="BuildPaintState">
+<area shape="rect" id="node1" title="Track creating state where players can draw with their device through the air" alt="" coords="103,248,275,487"/>
+<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
+<area shape="rect" id="node3" href="$interface_i_build_paint_state.html" title="Interface for BuildPaintState" alt="" coords="210,42,357,163"/>
+</map>

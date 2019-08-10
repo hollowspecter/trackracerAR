@@ -1,0 +1,5 @@
+<map id="BuildEditorState" name="BuildEditorState">
+<area shape="rect" id="node1" title=" " alt="" coords="82,248,282,575"/>
+<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
+<area shape="rect" id="node3" href="$interface_i_build_editor_state.html" title="Interface for the BuildEditorState" alt="" coords="209,42,328,163"/>
+</map>

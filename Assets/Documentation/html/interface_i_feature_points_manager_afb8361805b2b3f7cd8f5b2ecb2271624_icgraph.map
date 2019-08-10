@@ -1,0 +1,4 @@
+<map id="IFeaturePointsManager.GetFeaturePoints" name="IFeaturePointsManager.GetFeaturePoints">
+<area shape="rect" id="node1" title="Returns the feature points positions in an array from beginning to end of the track" alt="" coords="228,5,409,47"/>
+<area shape="rect" id="node2" href="$class_build_editor_state.html#a982650bb6e6ce3874304d6056045c8b7" title="Gets called when exiting this state. For more info see GameManager class" alt="" coords="5,13,180,39"/>
+</map>

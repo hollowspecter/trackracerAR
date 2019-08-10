@@ -1,0 +1,4 @@
+<map id="CalibrateState.EnterState" name="CalibrateState.EnterState">
+<area shape="rect" id="node1" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="204,5,375,32"/>
+<area shape="rect" id="node2" href="$class_calibrate_state.html#a4d108cd7fc660419634eab41c286f82e" title="Restarts the AR Session and resets the calibration progress" alt="" coords="5,5,156,32"/>
+</map>

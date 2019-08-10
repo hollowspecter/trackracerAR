@@ -1,0 +1,4 @@
+<map id="StateMachine.UpdateActive" name="StateMachine.UpdateActive">
+<area shape="rect" id="node1" title="Override this as your Update Function in the State. Is only called when the current state is active" alt="" coords="231,13,413,39"/>
+<area shape="rect" id="node2" href="$class_root_state_machine.html#a162299ba4bef118c626c0dcde556769c" title="Call this from a tick function to pass the ticks down the state machine" alt="" coords="5,5,183,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="StreetView.ToggleAppearance" name="StreetView.ToggleAppearance">
+<area shape="rect" id="node1" title="Shows or hides the street mesh." alt="" coords="236,5,432,32"/>
+<area shape="rect" id="node2" href="$class_race_setup_state.html#ac2ea68d9893c4d2ac2fa53c558f06325" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,5,188,32"/>
+</map>

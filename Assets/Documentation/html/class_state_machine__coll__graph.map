@@ -1,0 +1,4 @@
+<map id="StateMachine" name="StateMachine">
+<area shape="rect" id="node1" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="10,5,181,259"/>
+<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,321,185,501"/>
+</map>

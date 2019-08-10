@@ -1,0 +1,4 @@
+<map id="UpdateUseCase.UpdateTrackToCloud" name="UpdateUseCase.UpdateTrackToCloud">
+<area shape="rect" id="node1" title="Pushes the TrackData object to the database. If the track already exists in the DB,..." alt="" coords="5,5,199,47"/>
+<area shape="rect" id="node2" href="$class_tracks_repository.html#ac1078055d58873de2a13df8ece5b1fa6" title="Pushes the TrackData object to the remote database. If the track already exists in the DB,..." alt="" coords="247,13,436,39"/>
+</map>

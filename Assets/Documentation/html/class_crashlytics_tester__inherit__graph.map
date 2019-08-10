@@ -1,0 +1,4 @@
+<map id="CrashlyticsTester" name="CrashlyticsTester">
+<area shape="rect" id="node1" title="Periodically throws exceptions to test the connection to Firebase Crashlytics crash reporting" alt="" coords="5,131,227,237"/>
+<area shape="rect" id="node2" title=" " alt="" coords="61,5,171,83"/>
+</map>

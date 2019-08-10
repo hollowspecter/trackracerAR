@@ -1,0 +1,4 @@
+<map id="TouchInput.Tick" name="TouchInput.Tick">
+<area shape="rect" id="node1" title="Call this in Update populate the Value with either Mouseclick (in Editor) or Touch Input (on device)" alt="" coords="227,5,340,32"/>
+<area shape="rect" id="node2" href="$class_racing_state.html#aa923fd17d6206d545ea34eac07887aea" title="Override this as your Update Function in the State. Is only called when the current state is active" alt="" coords="5,5,179,32"/>
+</map>

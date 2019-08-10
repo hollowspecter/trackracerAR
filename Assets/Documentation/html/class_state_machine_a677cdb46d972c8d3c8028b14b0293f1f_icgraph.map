@@ -1,0 +1,39 @@
+<map id="StateMachine.IsState" name="StateMachine.IsState">
+<area shape="rect" id="node1" title="return true if state is valid, false is statename is NONE." alt="" coords="760,756,907,783"/>
+<area shape="rect" id="node2" href="$class_state_machine.html#a1047b7a8792381eb081634a06420b543" title="Adds a new state to the statemachine. The first added state will be the default state and will be ent..." alt="" coords="515,572,675,599"/>
+<area shape="rect" id="node3" href="$class_build_state_machine.html#a4492441b7b8711f8624df03aff3bdf64" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="231,5,429,32"/>
+<area shape="rect" id="node4" href="$class_state_machine.html#a3b34cea3986fd27195dcde6d4c8c4cb5" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="246,56,414,83"/>
+<area shape="rect" id="node5" href="$class_state_machine.html#abc0c82a1c522d6dc456c33890611e9d0" title="Gets called when exiting this state. For more info see GameManager class" alt="" coords="515,865,675,892"/>
+<area shape="rect" id="node6" href="$class_state_machine.html#ae5b18630fe335633b50b955c3e330ff6" title="Returns the current statename, prefixing the path through the hierarchial statemachine structure." alt="" coords="477,1247,712,1273"/>
+<area shape="rect" id="node8" href="$class_state_machine.html#ab5e37f4366473f0f1925748f306f1816" title="Transitions to the new State. This will call the ExitState method if" alt="" coords="507,749,683,790"/>
+<area shape="rect" id="node36" href="$class_state_machine.html#a4b81938a2b2935b25f2bf3b04091db93" title="Override this as your Update Function in the State. Is only called when the current state is active" alt="" coords="239,1521,421,1548"/>
+<area shape="rect" id="node7" href="$class_root_state_machine.html#aa14a86e3c5134d6250e84994f5a72ffa" title="Returns the names of the current states" alt="" coords="231,1573,429,1614"/>
+<area shape="rect" id="node9" href="$class_build_observe_dialog_state.html#a03eee0feccf5b59de2b658ae53b80ee9" title="Returns to the BuildDialogState" alt="" coords="231,731,429,757"/>
+<area shape="rect" id="node10" href="$class_build_observe_state.html#abab547534d371f981e86bbd60d93465e" title="Returns to the BuildDialogState" alt="" coords="249,781,411,808"/>
+<area shape="rect" id="node11" href="$class_build_load_state.html#aac1a4ecbe522dc016417e29914ee4096" title="Returns to the BuildDialogState" alt="" coords="231,832,429,859"/>
+<area shape="rect" id="node12" href="$class_calibrate_state.html#a3145d409dd39affc4583faba8ba566f1" title="Transitions to BuildStateMachine" alt="" coords="254,883,406,909"/>
+<area shape="rect" id="node13" href="$class_build_observe_state.html#aa45192c2776ca8a97b5774dcb47e0fd6" title="Copies the current status of the observed track into the BuildEditorState" alt="" coords="237,933,423,960"/>
+<area shape="rect" id="node14" href="$class_build_load_state.html#a4798f05d93d38c97532648d793a0d521" title="Loads the trackdata with the given filename and transitions to BuildEditorState" alt="" coords="236,984,424,1011"/>
+<area shape="rect" id="node15" href="$class_build_load_state.html#a6e61cf735d7561f3afe46bebfd34d4f9" title="Loads the trackdata with the given filename and transitions to the RaceSetupState" alt="" coords="233,1035,427,1061"/>
+<area shape="rect" id="node16" href="$class_build_dialog_state.html#a85495fa1f83df6d43abab8df440a510b" title="Transitions to BuildLoadState" alt="" coords="239,1085,421,1112"/>
+<area shape="rect" id="node17" href="$class_build_observe_dialog_state.html#a322b68fdee0bcad4ca0c38d297f684fb" title="Transitions to the BuildObserveState" alt="" coords="245,1137,415,1178"/>
+<area shape="rect" id="node18" href="$class_build_dialog_state.html#a34be7885ebfeeeabc682a7df15fee3dd" title="Transitions to BuildObserveDialogState" alt="" coords="245,1202,415,1243"/>
+<area shape="rect" id="node19" href="$class_racing_state.html#a546850da2f0c59ea27f4fc6390c988a4" title="Transitions to RaceSetupState" alt="" coords="258,1268,402,1295"/>
+<area shape="rect" id="node20" href="$class_race_setup_state.html#aa7d12700ef262a2fc5efb024fcad4afb" title="Transitions to the BuildStateMachine" alt="" coords="246,1319,414,1345"/>
+<area shape="rect" id="node21" href="$class_build_save_state.html#acfbca3bc2c99bace68d4cf7db30c40b3" title="Returns back to the BuildEditorState" alt="" coords="245,1369,415,1396"/>
+<area shape="rect" id="node22" href="$class_build_paint_state.html#aa41cb0b85ee9c3ed47408840ff93ea0a" title="Transitions back to the BuildDialogState" alt="" coords="243,1420,417,1447"/>
+<area shape="rect" id="node23" href="$class_build_editor_state.html#a0ddfe0eead09a110f03dd816b7d2101c" title="Returns to the BuildDialogState" alt="" coords="241,1471,419,1497"/>
+<area shape="rect" id="node24" href="$class_build_save_state.html#acad4f9a120acdffc7af03e1ba53e0ced" title="Call for ending this state and go to race state" alt="" coords="249,107,411,133"/>
+<area shape="rect" id="node25" href="$class_build_paint_state.html#a2dfae5f2e11f137a5de701b2f991e103" title="Converts the recorded points into the feature points of the track. Transitions to BuildEditorState" alt="" coords="249,157,411,184"/>
+<area shape="rect" id="node26" href="$class_race_over_state.html#a85c1d6b77b05c394810610238919be39" title="Returns to the BuildDialogState" alt="" coords="253,208,407,235"/>
+<area shape="rect" id="node27" href="$class_racing_state.html#a65043c1f9289762661b8fdf9920cb403" title="Transitions to RaceOverState" alt="" coords="255,259,405,285"/>
+<area shape="rect" id="node28" href="$class_build_save_state.html#acf5fd8f037eda326cc620cf4a7a83c5f" title="Returns back to the BuildDialogState" alt="" coords="236,309,424,336"/>
+<area shape="rect" id="node29" href="$class_build_editor_state.html#ae940f3b0043fba6f5586fc2232bed5ac" title="Transitions to the RaceSetupState" alt="" coords="247,360,413,387"/>
+<area shape="rect" id="node30" href="$class_race_over_state.html#a11f127d1d9bfd677ddd1e782e9a97531" title="Returns to the RaceSetupState" alt="" coords="249,411,411,437"/>
+<area shape="rect" id="node31" href="$class_build_editor_state.html#ab73ae11c7e3dffade8a9903b5259758f" title="Transitions to the BuildSaveState" alt="" coords="247,461,413,488"/>
+<area shape="rect" id="node32" href="$class_race_setup_state.html#ad9e6b18a3a975c2e4839a5420881adf3" title="Transitions to the RacingState" alt="" coords="247,512,413,539"/>
+<area shape="rect" id="node33" href="$class_build_observe_state.html#a520f09b834621031971ea9ed5849cf4b" title="Races the current status of the observed track" alt="" coords="249,563,411,589"/>
+<area shape="rect" id="node34" href="$class_build_dialog_state.html#a9e14d60d8dc310d6c0f3b184937da60c" title="Transitions back to CalibrateState" alt="" coords="237,613,423,640"/>
+<area shape="rect" id="node35" href="$class_build_dialog_state.html#a3221b6008b905a5f903a2b8e95bc0b29" title="Creates new session data and transitions to BuildPaintState" alt="" coords="243,665,417,706"/>
+<area shape="rect" id="node37" href="$class_root_state_machine.html#a162299ba4bef118c626c0dcde556769c" title="Call this from a tick function to pass the ticks down the state machine" alt="" coords="5,1514,183,1555"/>
+</map>

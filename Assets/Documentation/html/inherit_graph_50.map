@@ -1,0 +1,78 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_i_a_r_state_machine.html" title="Interface for the ARStateMachine" alt="" coords="243,1816,365,1843"/>
+<area shape="rect" id="node2" href="$class_a_r_state_machine.html" title="Parent state machine for build and race state machines" alt="" coords="476,2032,596,2059"/>
+<area shape="rect" id="node3" href="$interface_i_build_dialog_state.html" title="Interface for BuildDialogState" alt="" coords="29,107,150,133"/>
+<area shape="rect" id="node4" href="$class_build_dialog_state.html" title="Start point of the build process. Player can choose whether to create a new track,..." alt="" coords="245,107,363,133"/>
+<area shape="rect" id="node5" href="$interface_i_build_dialog_u_i.html" title="Interface for BuildDialogUI" alt="" coords="253,5,355,32"/>
+<area shape="rect" id="node6" href="$class_build_dialog_u_i.html" title="Manages the UI screen for the BuildDialogState" alt="" coords="487,19,585,45"/>
+<area shape="rect" id="node7" href="$interface_i_build_editor_state.html" title="Interface for the BuildEditorState" alt="" coords="30,1867,149,1893"/>
+<area shape="rect" id="node8" href="$class_build_editor_state.html" title=" " alt="" coords="246,1867,362,1893"/>
+<area shape="rect" id="node9" href="$interface_i_build_editor_u_i.html" title="Interface for BuildEditorUI" alt="" coords="254,56,354,83"/>
+<area shape="rect" id="node10" href="$class_build_editor_u_i.html" title="Manages the UI Screen for BuildEditorState" alt="" coords="487,81,585,108"/>
+<area shape="rect" id="node11" href="$interface_i_build_load_state.html" title="Interface of the BuildLoadState" alt="" coords="33,1917,146,1944"/>
+<area shape="rect" id="node12" href="$class_build_load_state.html" title="State that displays all tracks that are saved to the device. From here players can load,..." alt="" coords="249,1917,359,1944"/>
+<area shape="rect" id="node13" href="$interface_i_build_load_u_i.html" title="Interface for BuildLoadUI" alt="" coords="257,157,351,184"/>
+<area shape="rect" id="node14" href="$class_build_load_u_i.html" title="Manages the UI for the BuildLoadState" alt="" coords="491,157,581,184"/>
+<area shape="rect" id="node15" href="$interface_i_build_observe_dialog_state.html" title="Interface for the BuildObserveDialogState" alt="" coords="5,1968,173,1995"/>
+<area shape="rect" id="node16" href="$class_build_observe_dialog_state.html" title=" " alt="" coords="221,1968,387,1995"/>
+<area shape="rect" id="node17" href="$interface_i_build_observe_dialog_u_i.html" title="Interface for BuildObserveDialogState" alt="" coords="229,208,379,235"/>
+<area shape="rect" id="node18" href="$class_build_observe_dialog_u_i.html" title="Manages the UI for the BuildObserveDialogState" alt="" coords="463,208,609,235"/>
+<area shape="rect" id="node19" href="$interface_i_build_observe_state.html" title="Interface for BuildObserveState" alt="" coords="23,2019,155,2045"/>
+<area shape="rect" id="node20" href="$class_build_observe_state.html" title="State to view and receive live updates for a track that was uploaded to the cloud." alt="" coords="239,2019,369,2045"/>
+<area shape="rect" id="node21" href="$interface_i_build_observe_u_i.html" title="Interface for BuildObserveUI" alt="" coords="247,259,361,285"/>
+<area shape="rect" id="node22" href="$class_build_observe_u_i.html" title="Manages the UI for the BuildObserveState" alt="" coords="481,259,591,285"/>
+<area shape="rect" id="node23" href="$interface_i_build_paint_state.html" title="Interface for BuildPaintState" alt="" coords="32,2221,147,2248"/>
+<area shape="rect" id="node24" href="$class_build_paint_state.html" title="Track creating state where players can draw with their device through the air" alt="" coords="248,2221,360,2248"/>
+<area shape="rect" id="node25" href="$interface_i_build_save_state.html" title="Interface for the BuildSaveState" alt="" coords="33,2272,146,2299"/>
+<area shape="rect" id="node26" href="$class_build_save_state.html" title="State to handle saving the currently built track to device and cloud." alt="" coords="249,2272,359,2299"/>
+<area shape="rect" id="node27" href="$interface_i_build_save_u_i.html" title="Interface for BuildSaveUI" alt="" coords="257,309,351,336"/>
+<area shape="rect" id="node28" href="$class_build_save_u_i.html" title="Manages the UI for the BuildSaveState" alt="" coords="491,309,581,336"/>
+<area shape="rect" id="node29" href="$interface_i_build_state_machine.html" title="Interface for BuildStateMachine" alt="" coords="237,1765,371,1792"/>
+<area shape="rect" id="node30" href="$class_build_state_machine.html" title="Overall statemachine for the build process" alt="" coords="471,1931,601,1957"/>
+<area shape="rect" id="node31" href="$class_database_tester.html" title="Use this component to test the functionality of the database interface." alt="" coords="479,1779,593,1805"/>
+<area shape="rect" id="node32" href="$interface_i_calibrate_state.html" title="Interface for CalibrateState" alt="" coords="36,2323,143,2349"/>
+<area shape="rect" id="node33" href="$class_calibrate_state.html" title="Resets the AR session to calibrate ARFoundation" alt="" coords="252,2323,356,2349"/>
+<area shape="rect" id="node34" href="$interface_i_race_over_state.html" title="Interface for RaceOverState" alt="" coords="33,2373,145,2400"/>
+<area shape="rect" id="node35" href="$class_race_over_state.html" title="State displays the racing score and you can see the vehicle still racing." alt="" coords="249,2373,359,2400"/>
+<area shape="rect" id="node36" href="$interface_i_race_setup_state.html" title="Interface for RaceSetupState" alt="" coords="29,2424,149,2451"/>
+<area shape="rect" id="node37" href="$class_race_setup_state.html" title=" " alt="" coords="245,2424,363,2451"/>
+<area shape="rect" id="node38" href="$interface_i_race_state_machine.html" title="Interface for the RaceStateMachine" alt="" coords="237,2120,371,2147"/>
+<area shape="rect" id="node39" href="$class_race_state_machine.html" title="Statemachine for the Racing Feature." alt="" coords="470,2108,602,2135"/>
+<area shape="rect" id="node40" href="$interface_i_racing_state.html" title="Interface for RacingState" alt="" coords="41,2475,137,2501"/>
+<area shape="rect" id="node41" href="$class_racing_state.html" title="State during the race. Special race input will be enabled, and the time will be recorded in this stat..." alt="" coords="257,2475,351,2501"/>
+<area shape="rect" id="node42" href="$interface_i_root_state_machine.html" title="Interface for the RootStateMachine" alt="" coords="238,2171,370,2197"/>
+<area shape="rect" id="node43" href="$class_root_state_machine.html" title="The root statemachine" alt="" coords="471,2171,601,2197"/>
+<area shape="rect" id="node44" href="$interface_i_settings_u_i.html" title="Interface for SettingsUI" alt="" coords="261,360,347,387"/>
+<area shape="rect" id="node45" href="$class_settings_u_i.html" title="Compound view class to manage the UI for the settings screen. Will load the current session&#39;s setting..." alt="" coords="495,360,577,387"/>
+<area shape="rect" id="node46" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html" title="Interface for SplineManager" alt="" coords="435,664,637,691"/>
+<area shape="rect" id="node47" href="$class_baguio_1_1_splines_1_1_spline_manager.html" title="The SplineManager is the interface between the application and the spline and" alt="" coords="685,563,884,589"/>
+<area shape="rect" id="node48" title=" " alt="" coords="249,943,359,969"/>
+<area shape="rect" id="node49" href="$class_a_r_paint_brush.html" title="Draws a line along the transforms position. Was used as a first test of drawing in AR." alt="" coords="484,411,588,437"/>
+<area shape="rect" id="node50" href="$class_auth_tester.html" title="Drop the corresponding prefab into the scene to check if the authentication flow works" alt="" coords="493,512,579,539"/>
+<area shape="rect" id="node51" href="$class_baguio_1_1_splines_1_1_unique_mesh.html" title="Derive from this class to ensure the GameObject has a unique mesh and a mesh filter." alt="" coords="443,461,629,488"/>
+<area shape="rect" id="node52" href="$class_build_paint_u_i.html" title="Manages the UI for the BuildPaintState" alt="" coords="489,563,583,589"/>
+<area shape="rect" id="node53" href="$class_calibrate_u_i.html" title="Manages the UI for the CalibrateState. This state UI manages the automatic transition to the next sta..." alt="" coords="493,613,579,640"/>
+<area shape="rect" id="node54" href="$class_center_track_tool.html" title="Controller for the tool that centers the whole track in front of the camera." alt="" coords="478,715,594,741"/>
+<area shape="rect" id="node55" href="$class_crashlytics_tester.html" title="Periodically throws exceptions to test the connection to Firebase Crashlytics crash reporting" alt="" coords="475,765,597,792"/>
+<area shape="rect" id="node56" href="$class_dialog.html" title="Compound view for a dialog." alt="" coords="507,816,565,843"/>
+<area shape="rect" id="node57" href="$class_dialog_button.html" title="Compound view for the buttons in a dialog" alt="" coords="488,867,584,893"/>
+<area shape="rect" id="node58" href="$class_dialog_tester.html" title="Tester class to test out the functionality of the DialogBuilder" alt="" coords="489,917,583,944"/>
+<area shape="rect" id="node59" href="$class_discrete_slider.html" title="View / Presenter class. Instantiates toggles as childs and listens/subscribes to DiscreteSliderModel" alt="" coords="485,968,587,995"/>
+<area shape="rect" id="node60" href="$class_load_list_item_view.html" title="Compound View of a List Item in the BuildLoadState" alt="" coords="474,1019,598,1045"/>
+<area shape="rect" id="node61" href="$class_move_around_in_editor.html" title="Moves the attached transform on a circle to simulate movement of the AR camera in editor mode" alt="" coords="467,1069,605,1096"/>
+<area shape="rect" id="node62" href="$class_paint_help_view.html" title="Compound view to display an animation to enhance the UX of the BuildPaintState" alt="" coords="483,1120,589,1147"/>
+<area shape="rect" id="node63" href="$class_point3_d_view.html" title="3D representation and view class for a Feature Point of the Spline. Is Draggable in 3D Space...." alt="" coords="488,1171,584,1197"/>
+<area shape="rect" id="node64" href="$class_popup_view.html" title="View that can be activated and deactivated using a popup overlay transition. (Used to display the imp..." alt="" coords="493,1221,579,1248"/>
+<area shape="rect" id="node65" href="$class_race_over_u_i.html" title="Manages the UI for the RaceOverState" alt="" coords="491,1272,581,1299"/>
+<area shape="rect" id="node66" href="$class_race_setup_u_i.html" title="Manages the UI for the RaceSetupState" alt="" coords="487,1323,585,1349"/>
+<area shape="rect" id="node67" href="$class_racing_u_i.html" title="Manages the UI for RacingState" alt="" coords="499,1373,573,1400"/>
+<area shape="rect" id="node68" href="$class_snackbar_view.html" title="A compund view to display information about a screen. Can be shown or hidden by the user...." alt="" coords="483,1424,589,1451"/>
+<area shape="rect" id="node69" href="$class_speed_to_slider.html" title="Takes the TouchInput and displays it on a Slider." alt="" coords="483,1475,589,1501"/>
+<area shape="rect" id="node70" href="$class_street_view.html" title="View to show and hide the street view using a dissolve animation" alt="" coords="493,1525,579,1552"/>
+<area shape="rect" id="node71" href="$class_timer_view.html" title="Displays the timer for the RacingState" alt="" coords="495,1576,577,1603"/>
+<area shape="rect" id="node72" href="$class_touch_input_tester.html" title="Component to test the TouchInput functionality in an extra scenario." alt="" coords="475,1627,597,1653"/>
+<area shape="rect" id="node73" href="$class_u_i_fader.html" title="Automatically transitions all Graphics Objects with a fade in and out. Is used for screen transitions..." alt="" coords="503,1677,569,1704"/>
+<area shape="rect" id="node74" href="$class_vehicle_controller.html" title="The vehicles follow the tracks waypoints." alt="" coords="476,1728,596,1755"/>
+<area shape="rect" id="node75" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="63,2120,116,2147"/>
+<area shape="rect" id="node76" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="253,2069,355,2096"/>
+</map>

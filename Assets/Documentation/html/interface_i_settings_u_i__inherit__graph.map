@@ -1,0 +1,4 @@
+<map id="ISettingsUI" name="ISettingsUI">
+<area shape="rect" id="node1" title="Interface for SettingsUI" alt="" coords="53,5,141,83"/>
+<area shape="rect" id="node2" href="$class_settings_u_i.html" title="Compound view class to manage the UI for the settings screen. Will load the current session&#39;s setting..." alt="" coords="5,131,188,428"/>
+</map>
