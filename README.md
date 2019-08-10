@@ -4,7 +4,7 @@ Unity AR Race Track Editor and Slot Car Racing.
 
 # Documentation
 
-https://hollowspecter.github.io/master_thesis/
+https://hollowspecter.github.io/trackracerAR/
 
 # License
 
