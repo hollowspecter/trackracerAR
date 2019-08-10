@@ -29,7 +29,7 @@ namespace Baguio.Splines
             // check for traps
             if ( _points == null ) throw new System.ArgumentNullException ( "_points" );
             if ( _points.Length < 2 ) throw new System.ArgumentException ( "Array must contain at least 2 points.", "_points" );
-            if ( _precision < 1 ) _precision = 2; // minimum precision results in 4 points
+            if ( _precision < 0 ) _precision = 1; // minimum precision results in 2 points
 
             // init member
             m_pointsPerCurve = 2 << _precision;
