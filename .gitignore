@@ -82,3 +82,21 @@ Assets/StreamingAssets/crashlytics-build.properties.meta
 
 # Dematic Solution Composer specific
 Assets/StreamingAssets/config.json*
+
+Assets/Plugins/Android/Firebase/res/values/crashlytics_build_id\.xml
+
+Assets/Plugins/Android/Firebase/res/values/crashlytics_build_id\.xml\.meta
+
+Assets/Plugins/Android/Firebase/res/values/crashlytics_unity_version\.xml
+
+Assets/Plugins/Android/Firebase/res/values/crashlytics_unity_version\.xml\.meta
+
+Assets/Plugins/Android/Firebase/res/values/google-services\.xml
+
+Assets/Plugins/Android/Firebase/res/values/google-services\.xml\.meta
+
+Assets/Resources/google-services\.json\.meta
+
+Assets/Resources/GoogleService-Info\.plist
+
+Assets/Resources/GoogleService-Info\.plist\.meta
