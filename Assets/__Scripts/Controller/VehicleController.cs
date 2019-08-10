@@ -132,7 +132,7 @@ public class VehicleController : MonoBehaviour
     }
 
     [System.Obsolete ( "Move() is deprecated, use MoveWithPhysics() in FixedUpdate instead." )]
-    public void Move ()
+    private void Move ()
     {
         transform.position = Vector3.MoveTowards ( transform.position, m_waypoints [ m_currWaypointIndex ].position, m_settings.MaxSpeed * m_speedPercentage * Time.deltaTime );
         transform.rotation = Quaternion.RotateTowards ( transform.rotation, m_waypoints [ m_currWaypointIndex ].rotation, m_speedPercentage * m_settings.MaxDegrees );
