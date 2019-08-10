@@ -1,0 +1,11 @@
+<map id="BuildEditorUI.OnRaceButtonPressed" name="BuildEditorUI.OnRaceButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,125,192,166"/>
+<area shape="rect" id="node2" href="$class_dialog_builder.html#ac98140c43a75b65827bd05a934d76fb7" title=" " alt="" coords="246,5,409,32"/>
+<area shape="rect" id="node3" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="262,56,393,83"/>
+<area shape="rect" id="node6" href="$interface_i_build_editor_state.html#a9fc2f2197b78b4ad8ab52fada92bf341" title="Transitions to the RaceSetupState" alt="" coords="242,107,413,133"/>
+<area shape="rect" id="node7" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="254,157,401,184"/>
+<area shape="rect" id="node8" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="240,208,415,235"/>
+<area shape="rect" id="node9" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="254,259,401,285"/>
+<area shape="rect" id="node4" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="469,31,613,57"/>
+<area shape="rect" id="node5" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="463,81,620,108"/>
+</map>

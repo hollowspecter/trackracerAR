@@ -1,0 +1,5 @@
+<map id="RaceOverState" name="RaceOverState">
+<area shape="rect" id="node1" title="State displays the racing score and you can see the vehicle still racing." alt="" coords="126,248,235,399"/>
+<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
+<area shape="rect" id="node3" href="$interface_i_race_over_state.html" title="Interface for RaceOverState" alt="" coords="210,57,322,149"/>
+</map>

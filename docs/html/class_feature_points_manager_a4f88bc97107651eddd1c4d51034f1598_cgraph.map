@@ -1,0 +1,5 @@
+<map id="FeaturePointsManager.InstantiateFeaturePoints" name="FeaturePointsManager.InstantiateFeaturePoints">
+<area shape="rect" id="node1" title="Instantiates the feature point game objects" alt="" coords="5,35,223,76"/>
+<area shape="rect" id="node2" href="$class_feature_points_manager.html#aba24d869dab894131cc0ea8e86ecdf6f" title="Clears all feature points" alt="" coords="271,5,457,47"/>
+<area shape="rect" id="node3" href="$class_point3_d_factory.html#ab523b6d9cb967e19f809e861bd1e4097" title=" " alt="" coords="287,71,441,98"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,104,108"/>
+<area shape="rect" id="node2" href="$class_a_r_track_painter_installer.html" title="Installer for the ARTrackPainter Scene." alt="" coords="157,5,315,32"/>
+<area shape="rect" id="node3" href="$class_project_main_installer.html" title="Installed in the project context (hence, globally), do all app wide initialization here." alt="" coords="168,56,304,83"/>
+<area shape="rect" id="node4" href="$class_spline_test_installer.html" title="Test installer to install everything needed to setup a race" alt="" coords="172,107,300,133"/>
+<area shape="rect" id="node5" href="$class_track_sharing_test_installer.html" title="Test installer to setup a test environment for the sharing feature" alt="" coords="152,157,320,184"/>
+</map>

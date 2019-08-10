@@ -1,0 +1,10 @@
+<map id="Baguio.Splines.SplineManager.GenerateTrackFromTrackData" name="Baguio.Splines.SplineManager.GenerateTrackFromTrackData">
+<area shape="rect" id="node1" title="Generates the track using the feature points from the TrackData session model" alt="" coords="5,103,208,144"/>
+<area shape="rect" id="node2" href="$class_baguio_1_1_splines_1_1_spline_manager.html#ad27e2ae95697a23d564a022ebb695044" title=" " alt="" coords="256,37,459,79"/>
+<area shape="rect" id="node6" href="$class_baguio_1_1_splines_1_1_spline_manager.html#a0b54f6c9e70981b95af00ce3cf59f189" title=" " alt="" coords="256,103,459,144"/>
+<area shape="rect" id="node7" href="$class_baguio_1_1_splines_1_1_spline_manager.html#ac4f9b4fa0f14661532d107671d7d8a67" title=" " alt="" coords="256,168,459,209"/>
+<area shape="rect" id="node3" href="$class_baguio_1_1_splines_1_1_extruder.html#a285754cbb387b8625420cd0ec9ae6398" title=" " alt="" coords="511,37,677,79"/>
+<area shape="rect" id="node4" href="$class_baguio_1_1_splines_1_1_extruder.html#af067360faa34a9126b3fb04d9057087a" title=" " alt="" coords="729,5,896,47"/>
+<area shape="rect" id="node5" href="$class_baguio_1_1_splines_1_1_extruder.html#ae16df52ab739ba8ceac5666a83252f6f" title=" " alt="" coords="729,71,896,112"/>
+<area shape="rect" id="node8" href="$class_baguio_1_1_splines_1_1_spline.html#a97cdc3ef690c9ba7dbec1bbd882e5b6c" title="Returns the complete path of the spline." alt="" coords="507,168,681,209"/>
+</map>

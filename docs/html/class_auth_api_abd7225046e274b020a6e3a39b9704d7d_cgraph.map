@@ -1,0 +1,5 @@
+<map id="AuthApi.AuthApi" name="AuthApi.AuthApi">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,124,57"/>
+<area shape="rect" id="node2" href="$class_auth_api.html#aff210efe4d28874fb7984f8ebf661a2f" title=" " alt="" coords="205,5,324,32"/>
+<area shape="rect" id="node3" href="$class_auth_api.html#a8531db261df4794010447d2a9dd630d2" title="Emits the FirebaseUser on successful authentication. Emits an Exception if unsuccessful." alt="" coords="172,56,357,83"/>
+</map>

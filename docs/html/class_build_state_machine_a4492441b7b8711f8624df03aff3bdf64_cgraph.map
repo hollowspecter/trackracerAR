@@ -1,0 +1,6 @@
+<map id="BuildStateMachine.EnterState" name="BuildStateMachine.EnterState">
+<area shape="rect" id="node1" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,35,203,62"/>
+<area shape="rect" id="node2" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="479,51,625,78"/>
+<area shape="rect" id="node3" href="$interface_i_feature_points_manager.html#a039d59c513bb1344216403ff79f5e14d" title="Toggles the visibility of the feature points by turning them on and off" alt="" coords="251,28,431,69"/>
+<area shape="rect" id="node4" href="$class_state_machine.html#ab5e37f4366473f0f1925748f306f1816" title="Transitions to the new State. This will call the ExitState method if" alt="" coords="253,117,429,158"/>
+</map>

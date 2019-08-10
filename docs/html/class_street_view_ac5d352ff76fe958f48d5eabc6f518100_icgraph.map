@@ -1,0 +1,10 @@
+<map id="StreetView.ToggleAppearance" name="StreetView.ToggleAppearance">
+<area shape="rect" id="node1" title="Shows or hides the street mesh." alt="" coords="744,64,940,91"/>
+<area shape="rect" id="node2" href="$class_race_setup_state.html#ac2ea68d9893c4d2ac2fa53c558f06325" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="492,5,675,32"/>
+<area shape="rect" id="node3" href="$class_build_observe_state.html#a94c5bdf1458379f8129ba626b302f5ec" title=" " alt="" coords="495,57,671,98"/>
+<area shape="rect" id="node6" href="$class_build_editor_state.html#a2594e8d1deb99f9cb49e5ab7a196213a" title=" " alt="" coords="471,125,696,152"/>
+<area shape="rect" id="node4" href="$class_build_observe_state.html#ae22e15d5c4a08fc432f9bdcd0be446d6" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,35,200,61"/>
+<area shape="rect" id="node5" href="$class_build_observe_state.html#a6c838624d7e86fefd5e18067c70960cc" title=" " alt="" coords="248,57,423,98"/>
+<area shape="rect" id="node7" href="$class_build_editor_state.html#a135ce54189a64c67859d4ca887572430" title=" " alt="" coords="251,122,420,163"/>
+<area shape="rect" id="node8" href="$class_build_editor_state.html#abf42681ffb5e95933e03aa1723119a2c" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="11,129,194,156"/>
+</map>

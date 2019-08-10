@@ -1,0 +1,6 @@
+<map id="RootStateMachine" name="RootStateMachine">
+<area shape="rect" id="node1" title="The root statemachine" alt="" coords="106,549,279,671"/>
+<area shape="rect" id="node2" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="10,248,181,501"/>
+<area shape="rect" id="node3" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
+<area shape="rect" id="node4" href="$interface_i_root_state_machine.html" title="Interface for the RootStateMachine" alt="" coords="205,321,378,428"/>
+</map>

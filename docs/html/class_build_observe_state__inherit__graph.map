@@ -1,0 +1,5 @@
+<map id="BuildObserveState" name="BuildObserveState">
+<area shape="rect" id="node1" title="State to view and receive live updates for a track that was uploaded to the cloud." alt="" coords="97,248,272,560"/>
+<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
+<area shape="rect" id="node3" href="$interface_i_build_observe_state.html" title="Interface for BuildObserveState" alt="" coords="209,49,341,156"/>
+</map>

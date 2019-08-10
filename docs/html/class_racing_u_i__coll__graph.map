@@ -1,0 +1,9 @@
+<map id="RacingUI" name="RacingUI">
+<area shape="rect" id="node1" title="Manages the UI for RacingState" alt="" coords="152,491,311,627"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,27,116,105"/>
+<area shape="rect" id="node4" href="$class_u_i_fader.html" title="Automatically transitions all Graphics Objects with a fade in and out. Is used for screen transitions..." alt="" coords="58,233,237,384"/>
+<area shape="rect" id="node3" href="$interface_i_racing_state.html" title="Interface for RacingState" alt="" coords="242,20,338,112"/>
+<area shape="rect" id="node5" href="$class_race_manager.html" title="Automatically starts the race when the RacingState is entered. Ends the race once the number of laps ..." alt="" coords="365,189,543,428"/>
+<area shape="rect" id="node6" href="$class_race_manager_1_1_settings.html" title=" " alt="" coords="371,27,526,105"/>
+<area shape="rect" id="node7" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html" title="Interface for SplineManager" alt="" coords="550,5,766,127"/>
+</map>

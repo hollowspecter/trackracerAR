@@ -1,0 +1,4 @@
+<map id="BuildPaintState.Clear" name="BuildPaintState.Clear">
+<area shape="rect" id="node1" title="Clears all recorded points for a fresh start" alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$class_point_recorder.html#aa145c4a94fcb65c9cd5307cf0df80131" title="Clears the array and the lineRenderer" alt="" coords="200,5,375,32"/>
+</map>

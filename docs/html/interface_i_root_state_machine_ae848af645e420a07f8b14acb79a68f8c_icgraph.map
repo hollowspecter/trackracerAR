@@ -1,0 +1,4 @@
+<map id="IRootStateMachine.IUpdateActive" name="IRootStateMachine.IUpdateActive">
+<area shape="rect" id="node1" title="Call this from a tick function to pass the ticks down the state machine" alt="" coords="184,5,364,47"/>
+<area shape="rect" id="node2" href="$class_state_manager.html#a10022590883aec3cdf44951e52365dcf" title=" " alt="" coords="5,13,136,39"/>
+</map>

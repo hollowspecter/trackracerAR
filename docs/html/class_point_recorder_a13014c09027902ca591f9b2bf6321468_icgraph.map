@@ -1,0 +1,4 @@
+<map id="PointRecorder.RecordCurrentPoint" name="PointRecorder.RecordCurrentPoint">
+<area shape="rect" id="node1" title="Tries to add the current position to the points array. Checks if the new point is distanced enough." alt="" coords="273,5,464,47"/>
+<area shape="rect" id="node2" href="$class_build_paint_state.html#ab1b426997856b0039d1a7cdf1ba14651" title="Callback for alternative input sources to fire that a touch point was detected" alt="" coords="5,13,225,39"/>
+</map>

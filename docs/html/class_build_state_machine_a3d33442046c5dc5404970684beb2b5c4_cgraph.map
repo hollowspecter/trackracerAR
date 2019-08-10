@@ -1,0 +1,5 @@
+<map id="BuildStateMachine.UpdateActive" name="BuildStateMachine.UpdateActive">
+<area shape="rect" id="node1" title="Override this as your Update Function in the State. Is only called when the current state is active" alt="" coords="5,35,181,76"/>
+<area shape="rect" id="node2" href="$class_build_state_machine.html#a417dcdfc1bb5132db9b78d9ca8bffcba" title=" " alt="" coords="244,5,413,47"/>
+<area shape="rect" id="node3" href="$class_build_state_machine.html#a7325f354089688d266ecd2578f32ba1c" title=" " alt="" coords="229,71,428,98"/>
+</map>

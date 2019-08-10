@@ -1,0 +1,11 @@
+<map id="BuildLoadState.LoadAndEdit" name="BuildLoadState.LoadAndEdit">
+<area shape="rect" id="node1" title="Loads the trackdata with the given filename and transitions to BuildEditorState" alt="" coords="5,132,193,159"/>
+<area shape="rect" id="node2" href="$class_dialog_builder.html#ac98140c43a75b65827bd05a934d76fb7" title=" " alt="" coords="248,5,411,32"/>
+<area shape="rect" id="node3" href="$class_build_load_state.html#a7c5acfd240b297dc33e3257fdf8412dc" title=" " alt="" coords="258,56,401,83"/>
+<area shape="rect" id="node5" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="256,107,403,133"/>
+<area shape="rect" id="node6" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="242,157,417,184"/>
+<area shape="rect" id="node7" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="256,208,403,235"/>
+<area shape="rect" id="node8" href="$class_state_machine.html#ab5e37f4366473f0f1925748f306f1816" title="Transitions to the new State. This will call the ExitState method if" alt="" coords="241,283,417,325"/>
+<area shape="rect" id="node4" href="$interface_i_feature_points_manager.html#ace5208986fa9c70ec1324643942edfa4" title="Instantiates the feature point game objects" alt="" coords="465,49,685,90"/>
+<area shape="rect" id="node9" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="502,291,649,317"/>
+</map>

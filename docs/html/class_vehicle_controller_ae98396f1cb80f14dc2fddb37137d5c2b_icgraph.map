@@ -1,0 +1,6 @@
+<map id="VehicleController.SetWaypoint" name="VehicleController.SetWaypoint">
+<area shape="rect" id="node1" title=" " alt="" coords="481,46,680,73"/>
+<area shape="rect" id="node2" href="$class_vehicle_controller.html#aa301e2069238acc604b79f20ce4df594" title=" " alt="" coords="246,5,423,47"/>
+<area shape="rect" id="node3" href="$class_vehicle_spawn_manager.html#a0d4a1b5f911e962753fa1fb85e2bddd0" title="Spawns a vehicle on the tracks first waypoint." alt="" coords="236,71,433,112"/>
+<area shape="rect" id="node4" href="$class_race_setup_state.html#ac2ea68d9893c4d2ac2fa53c558f06325" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,78,188,105"/>
+</map>

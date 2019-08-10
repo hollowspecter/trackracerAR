@@ -1,0 +1,8 @@
+<map id="TimerView" name="TimerView">
+<area shape="rect" id="node1" title="Displays the timer for the RacingState" alt="" coords="111,491,218,583"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,270,116,347"/>
+<area shape="rect" id="node3" href="$interface_i_racing_state.html" title="Interface for RacingState" alt="" coords="143,20,239,112"/>
+<area shape="rect" id="node4" href="$class_race_manager.html" title="Automatically starts the race when the RacingState is entered. Ends the race once the number of laps ..." alt="" coords="282,189,461,428"/>
+<area shape="rect" id="node5" href="$class_race_manager_1_1_settings.html" title=" " alt="" coords="278,27,433,105"/>
+<area shape="rect" id="node6" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html" title="Interface for SplineManager" alt="" coords="457,5,673,127"/>
+</map>

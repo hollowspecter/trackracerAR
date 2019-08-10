@@ -1,0 +1,9 @@
+<map id="RaceManager.RaceManager" name="RaceManager.RaceManager">
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,192,61"/>
+<area shape="rect" id="node2" href="$class_race_manager.html#aded914dd535029609282c7942092335b" title=" " alt="" coords="248,9,412,36"/>
+<area shape="rect" id="node7" href="$class_race_manager.html#aa53902c8447b1a7d47dc8f52b932676b" title=" " alt="" coords="240,60,420,87"/>
+<area shape="rect" id="node3" href="$class_race_manager.html#ae97dfc21e002aaa23d0fd8c7a29dede5" title=" " alt="" coords="468,5,683,32"/>
+<area shape="rect" id="node6" href="$class_race_manager.html#ad7ce2ffc5490c92effbb3626f03bae48" title=" " alt="" coords="478,57,673,98"/>
+<area shape="rect" id="node4" href="$class_race_manager.html#a08fcaffe09d18d85ee4b0f0a42d073ed" title=" " alt="" coords="731,5,889,32"/>
+<area shape="rect" id="node5" href="$interface_i_racing_state.html#a6fe3900f6c40f4df9b008d0122eadf31" title="Transitions to RaceOverState" alt="" coords="937,5,1089,32"/>
+</map>

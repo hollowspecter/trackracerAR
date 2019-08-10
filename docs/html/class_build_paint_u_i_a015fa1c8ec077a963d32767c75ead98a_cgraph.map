@@ -1,0 +1,16 @@
+<map id="BuildPaintUI.Construct" name="BuildPaintUI.Construct">
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,159,209"/>
+<area shape="rect" id="node2" href="$class_build_paint_u_i.html#a3912818901c1fea4b7e0e851486d3aa4" title=" " alt="" coords="207,42,399,83"/>
+<area shape="rect" id="node4" href="$class_build_paint_u_i.html#a1330a996584b5ef4f9f30e85e14522d6" title=" " alt="" coords="211,175,394,217"/>
+<area shape="rect" id="node13" href="$class_build_paint_u_i.html#aa0465d5f84fccc484453accff1892bc2" title=" " alt="" coords="211,283,394,325"/>
+<area shape="rect" id="node3" href="$interface_i_build_paint_state.html#a6f1010e0c5a65b84587b8ef0b84b1961" title="Transitions back to the BuildDialogState" alt="" coords="447,5,623,32"/>
+<area shape="rect" id="node5" href="$class_dialog_builder.html#ac98140c43a75b65827bd05a934d76fb7" title=" " alt="" coords="453,56,616,83"/>
+<area shape="rect" id="node6" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="469,107,600,133"/>
+<area shape="rect" id="node9" href="$interface_i_build_paint_state.html#a60862c58ac503f589bb64ed0f72c22d8" title="Clears all recorded points for a fresh start" alt="" coords="460,157,609,184"/>
+<area shape="rect" id="node10" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="461,208,608,235"/>
+<area shape="rect" id="node11" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="447,259,622,285"/>
+<area shape="rect" id="node12" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="461,309,608,336"/>
+<area shape="rect" id="node7" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="677,81,821,108"/>
+<area shape="rect" id="node8" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="671,132,828,159"/>
+<area shape="rect" id="node14" href="$interface_i_build_paint_state.html#aa596ea1f88caff09b503fb8a47d8440f" title="Converts the recorded points into the feature points of the track. Transitions to BuildEditorState" alt="" coords="451,360,618,387"/>
+</map>

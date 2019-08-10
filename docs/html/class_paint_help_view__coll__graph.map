@@ -1,0 +1,7 @@
+<map id="PaintHelpView" name="PaintHelpView">
+<area shape="rect" id="node1" title="Compound view to display an animation to enhance the UX of the BuildPaintState" alt="" coords="47,359,165,539"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,204,116,281"/>
+<area shape="rect" id="node3" href="$class_button_touch_input.html" title="Extends a Button to fire every Update the Button is in its pressed state." alt="" coords="141,189,263,296"/>
+<area shape="rect" id="node4" title=" " alt="" coords="108,27,168,105"/>
+<area shape="rect" id="node5" href="$interface_i_build_paint_state.html" title="Interface for BuildPaintState" alt="" coords="193,5,339,127"/>
+</map>

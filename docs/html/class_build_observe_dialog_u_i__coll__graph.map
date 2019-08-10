@@ -1,0 +1,16 @@
+<map id="BuildObserveDialogUI" name="BuildObserveDialogUI">
+<area shape="rect" id="node1" title="Manages the UI for the BuildObserveDialogState" alt="" coords="319,815,519,1039"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,616,116,693"/>
+<area shape="rect" id="node3" href="$interface_i_build_observe_dialog_u_i.html" title="Interface for BuildObserveDialogState" alt="" coords="141,609,306,701"/>
+<area shape="rect" id="node4" href="$class_observe_dialog_use_case.html" title=" " alt="" coords="330,609,509,701"/>
+<area shape="rect" id="node5" href="$class_tracks_repository.html" title="Manages the communication to the database regarding track data." alt="" coords="348,359,491,495"/>
+<area shape="rect" id="node6" href="$class_database_api.html" title="Initializes the firebase database connection automatically and provides the neccessary database refer..." alt="" coords="354,160,485,296"/>
+<area shape="rect" id="node7" title=" " alt="" coords="304,13,393,90"/>
+<area shape="rect" id="node8" href="$class_database_api_1_1_settings.html" title=" " alt="" coords="417,5,565,97"/>
+<area shape="rect" id="node9" href="$interface_i_build_observe_dialog_state.html" title="Interface for the BuildObserveDialogState" alt="" coords="533,609,701,701"/>
+<area shape="rect" id="node10" href="$class_dialog_builder.html" title="Builder class for dialogs." alt="" coords="725,557,839,752"/>
+<area shape="rect" id="node11" href="$class_dialog_builder_1_1_settings.html" title=" " alt="" coords="640,373,791,480"/>
+<area shape="rect" id="node12" href="$class_dialog_factory.html" title="Prefab&#45;instantiating factory to create Dialog&#45;Canvases Todo Improvement: Convert to MemoryPool" alt="" coords="815,381,938,473"/>
+<area shape="rect" id="node13" title=" " alt="" coords="702,182,867,274"/>
+<area shape="rect" id="node14" href="$class_dialog_factory_1_1_settings.html" title=" " alt="" coords="891,189,1046,267"/>
+</map>

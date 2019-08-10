@@ -1,0 +1,4 @@
+<map id="StateManager.Initialize" name="StateManager.Initialize">
+<area shape="rect" id="node1" title=" " alt="" coords="5,13,160,39"/>
+<area shape="rect" id="node2" href="$interface_i_root_state_machine.html#a5da015226e5f47a4eb00795070b8bf49" title="Call this to kick off the state machine and enter the first state" alt="" coords="208,5,379,47"/>
+</map>

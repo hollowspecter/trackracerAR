@@ -1,0 +1,4 @@
+<map id="AuthTester.Setup" name="AuthTester.Setup">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$class_auth_api.html#a5927a1cf2e49799312d8412ef6ef6e9c" title="It emits FirebaseUser object depends on user&#39;s signed&#45;in state. It will emit null values if no user i..." alt="" coords="176,5,361,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="BuildEditorUI.OnCancelButtonPressed" name="BuildEditorUI.OnCancelButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,201,47"/>
+<area shape="rect" id="node2" href="$interface_i_build_editor_state.html#af93b4bf19b87d524a81b7bf856e98638" title="Returns to the BuildDialogState" alt="" coords="249,13,429,39"/>
+</map>

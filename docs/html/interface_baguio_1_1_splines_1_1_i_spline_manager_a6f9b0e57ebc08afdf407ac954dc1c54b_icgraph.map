@@ -1,0 +1,6 @@
+<map id="Baguio.Splines.ISplineManager.GenerateTrack" name="Baguio.Splines.ISplineManager.GenerateTrack">
+<area shape="rect" id="node1" title="Generates the track using the feature point gameobjects" alt="" coords="727,5,933,47"/>
+<area shape="rect" id="node2" href="$class_build_editor_state.html#a2594e8d1deb99f9cb49e5ab7a196213a" title=" " alt="" coords="453,13,679,39"/>
+<area shape="rect" id="node3" href="$class_build_editor_state.html#a135ce54189a64c67859d4ca887572430" title=" " alt="" coords="236,5,405,47"/>
+<area shape="rect" id="node4" href="$class_build_editor_state.html#abf42681ffb5e95933e03aa1723119a2c" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,13,188,39"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="DialogBuilder" name="DialogBuilder">
+<area shape="rect" id="node1" title="Builder class for dialogs." alt="" coords="89,329,203,524"/>
+<area shape="rect" id="node2" href="$class_dialog_builder_1_1_settings.html" title=" " alt="" coords="5,160,156,267"/>
+<area shape="rect" id="node3" href="$class_dialog_factory.html" title="Prefab&#45;instantiating factory to create Dialog&#45;Canvases Todo Improvement: Convert to MemoryPool" alt="" coords="181,167,303,259"/>
+<area shape="rect" id="node4" title=" " alt="" coords="67,5,233,97"/>
+<area shape="rect" id="node5" href="$class_dialog_factory_1_1_settings.html" title=" " alt="" coords="257,13,411,90"/>
+</map>

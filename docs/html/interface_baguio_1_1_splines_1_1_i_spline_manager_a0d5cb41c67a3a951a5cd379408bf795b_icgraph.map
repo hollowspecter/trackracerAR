@@ -1,0 +1,6 @@
+<map id="Baguio.Splines.ISplineManager.GetWaypoints" name="Baguio.Splines.ISplineManager.GetWaypoints">
+<area shape="rect" id="node1" title="Returns the waypoints for the vehicles steering" alt="" coords="481,27,688,69"/>
+<area shape="rect" id="node2" href="$class_vehicle_controller.html#a836ef1fbd3ac50932f1c0af52de61d39" title=" " alt="" coords="264,5,405,32"/>
+<area shape="rect" id="node3" href="$class_vehicle_spawn_manager.html#a0d4a1b5f911e962753fa1fb85e2bddd0" title="Spawns a vehicle on the tracks first waypoint." alt="" coords="236,57,433,98"/>
+<area shape="rect" id="node4" href="$class_race_setup_state.html#ac2ea68d9893c4d2ac2fa53c558f06325" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,64,188,91"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="Point3DFactory.Create" name="Point3DFactory.Create">
+<area shape="rect" id="node1" title=" " alt="" coords="523,87,677,113"/>
+<area shape="rect" id="node2" href="$class_feature_points_manager.html#a088fd49f04a8e1779bd09f06f2ffcfc1" title="Callback for a FeaturePointChanged event. Checks if any feature points get deleted or copied,..." alt="" coords="265,46,467,87"/>
+<area shape="rect" id="node6" href="$class_feature_points_manager.html#a4f88bc97107651eddd1c4d51034f1598" title="Instantiates the feature point game objects" alt="" coords="257,111,475,153"/>
+<area shape="rect" id="node3" href="$class_feature_points_manager.html#a0dbd11fa1b59e2651364c0a26858631e" title=" " alt="" coords="5,5,209,32"/>
+<area shape="rect" id="node4" href="$class_feature_points_manager.html#a9d94c852c28ccd1eb4c1f604d4d5d60b" title=" " alt="" coords="5,56,209,83"/>
+<area shape="rect" id="node5" href="$class_feature_points_manager.html#ac0312433f00437cdad4f2361d54cd837" title="Updates the featurepoints positions. if the array sizes don&#39;t match (so featurepoints got added or re..." alt="" coords="8,109,207,150"/>
+</map>

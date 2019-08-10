@@ -1,0 +1,5 @@
+<map id="StateMachine.StateMachine" name="StateMachine.StateMachine">
+<area shape="rect" id="node1" title=" " alt="" coords="535,29,721,56"/>
+<area shape="rect" id="node2" href="$class_state_machine.html#ae5b18630fe335633b50b955c3e330ff6" title="Returns the current statename, prefixing the path through the hierarchial statemachine structure." alt="" coords="252,29,487,56"/>
+<area shape="rect" id="node3" href="$class_root_state_machine.html#aa14a86e3c5134d6250e84994f5a72ffa" title="Returns the names of the current states" alt="" coords="5,22,204,63"/>
+</map>

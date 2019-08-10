@@ -1,0 +1,4 @@
+<map id="Baguio.Splines.Spline.GetLength" name="Baguio.Splines.Spline.GetLength">
+<area shape="rect" id="node1" title="Returns the length of the spline by accumulating the lengths of the curves." alt="" coords="5,5,180,47"/>
+<area shape="rect" id="node2" href="$class_baguio_1_1_splines_1_1_curve.html#a3d4fb3fd03cf1d01b2782653e833f395" title="Returns the length of this curve" alt="" coords="228,5,399,47"/>
+</map>

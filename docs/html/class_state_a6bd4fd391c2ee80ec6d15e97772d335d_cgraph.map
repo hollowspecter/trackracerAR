@@ -1,0 +1,4 @@
+<map id="State.SetParentStateMachine" name="State.SetParentStateMachine">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,200,32"/>
+<area shape="rect" id="node2" href="$class_state.html#af390d8edcdc9cad5b2be48d61d0d13af" title="Override this as your Awake/Start/Init Function. Is called when this State is added to a StateMachine" alt="" coords="248,5,352,32"/>
+</map>

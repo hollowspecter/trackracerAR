@@ -1,0 +1,6 @@
+<map id="TracksRepository.ObserveTrack" name="TracksRepository.ObserveTrack">
+<area shape="rect" id="node1" title="Observe the track with the given key." alt="" coords="501,27,676,69"/>
+<area shape="rect" id="node2" href="$class_observe_use_case.html#afec0b620c6d00aa3662233cb29fcd675" title="Observe the track with the given key." alt="" coords="248,5,453,32"/>
+<area shape="rect" id="node4" href="$class_database_tester.html#a5c2a95575f93705e9b6f036253dcbf9c" title=" " alt="" coords="260,57,441,98"/>
+<area shape="rect" id="node3" href="$class_build_observe_state.html#ae22e15d5c4a08fc432f9bdcd0be446d6" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,5,200,32"/>
+</map>

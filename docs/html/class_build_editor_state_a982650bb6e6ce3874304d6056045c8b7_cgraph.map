@@ -1,0 +1,4 @@
+<map id="BuildEditorState.ExitState" name="BuildEditorState.ExitState">
+<area shape="rect" id="node1" title="Gets called when exiting this state. For more info see GameManager class" alt="" coords="5,13,180,39"/>
+<area shape="rect" id="node2" href="$interface_i_feature_points_manager.html#afb8361805b2b3f7cd8f5b2ecb2271624" title="Returns the feature points positions in an array from beginning to end of the track" alt="" coords="228,5,409,47"/>
+</map>

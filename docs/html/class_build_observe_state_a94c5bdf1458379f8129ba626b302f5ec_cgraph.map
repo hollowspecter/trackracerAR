@@ -1,0 +1,5 @@
+<map id="BuildObserveState.RebuildTrack" name="BuildObserveState.RebuildTrack">
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,181,76"/>
+<area shape="rect" id="node2" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html#a475c138006f38809f749fb0b17014bb8" title="Generates the track using the feature points from the TrackData session model" alt="" coords="229,5,436,47"/>
+<area shape="rect" id="node3" href="$class_street_view.html#ac5d352ff76fe958f48d5eabc6f518100" title="Shows or hides the street mesh." alt="" coords="235,71,431,98"/>
+</map>

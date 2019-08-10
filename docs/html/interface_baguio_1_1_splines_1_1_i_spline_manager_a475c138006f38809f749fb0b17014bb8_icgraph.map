@@ -1,0 +1,10 @@
+<map id="Baguio.Splines.ISplineManager.GenerateTrackFromTrackData" name="Baguio.Splines.ISplineManager.GenerateTrackFromTrackData">
+<area shape="rect" id="node1" title="Generates the track using the feature points from the TrackData session model" alt="" coords="753,57,960,98"/>
+<area shape="rect" id="node2" href="$class_race_setup_state.html#ac2ea68d9893c4d2ac2fa53c558f06325" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="519,5,701,32"/>
+<area shape="rect" id="node3" href="$class_build_observe_state.html#a94c5bdf1458379f8129ba626b302f5ec" title=" " alt="" coords="522,57,698,98"/>
+<area shape="rect" id="node6" href="$class_database_tester.html#ac3c3528f0ef8521675d13db215ef2b0f" title=" " alt="" coords="515,123,705,149"/>
+<area shape="rect" id="node4" href="$class_build_observe_state.html#ae22e15d5c4a08fc432f9bdcd0be446d6" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,35,200,61"/>
+<area shape="rect" id="node5" href="$class_build_observe_state.html#a6c838624d7e86fefd5e18067c70960cc" title=" " alt="" coords="270,57,445,98"/>
+<area shape="rect" id="node7" href="$class_database_tester.html#a6a510d0c0dbcb90296f5803bfdbae678" title=" " alt="" coords="248,123,467,149"/>
+<area shape="rect" id="node8" href="$class_database_tester.html#a5c2a95575f93705e9b6f036253dcbf9c" title=" " alt="" coords="267,174,448,215"/>
+</map>

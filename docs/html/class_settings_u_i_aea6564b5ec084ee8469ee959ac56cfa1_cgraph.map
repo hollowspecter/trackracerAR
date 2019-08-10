@@ -1,0 +1,5 @@
+<map id="SettingsUI.Activate" name="SettingsUI.Activate">
+<area shape="rect" id="node1" title=" " alt="" coords="5,13,137,39"/>
+<area shape="rect" id="node2" href="$class_discrete_slider.html#adef2e7ae3a8a51b6bbf42f479ad7c777" title=" " alt="" coords="185,5,355,47"/>
+<area shape="rect" id="node3" href="$class_discrete_slider_model.html#a008e25241d4c5d6240ff436747d1bea6" title="Sets the closest discrete value" alt="" coords="403,5,607,47"/>
+</map>

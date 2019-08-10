@@ -1,0 +1,8 @@
+<map id="RaceSetupUI.Construct" name="RaceSetupUI.Construct">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,164,108"/>
+<area shape="rect" id="node2" href="$class_u_i_fader.html#a9017b91d3209235d885f31eb96c74745" title="Subscribe to state callbacks to automatically fade in on the states enter&#45;event and fade out on the s..." alt="" coords="212,52,419,79"/>
+<area shape="rect" id="node5" href="$class_race_setup_u_i.html#a59173111e67c81a2023599eac7e0d686" title=" " alt="" coords="216,103,415,145"/>
+<area shape="rect" id="node3" href="$class_u_i_fader.html#a452d1651a2ca6c2c66c02927b20014d5" title="Fades in" alt="" coords="493,5,610,32"/>
+<area shape="rect" id="node4" href="$class_u_i_fader.html#a27c477d0db6be891175cf7d8397b1e21" title="Deactivates (no fadeout)" alt="" coords="486,56,617,83"/>
+<area shape="rect" id="node6" href="$interface_i_race_setup_state.html#aca12b90619f0d2d659ae4d6b169e00fc" title="Transitions to the RacingState" alt="" coords="467,111,636,137"/>
+</map>

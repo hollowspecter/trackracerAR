@@ -1,0 +1,6 @@
+<map id="BuildEditorState.UpdateToCloud" name="BuildEditorState.UpdateToCloud">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,180,80"/>
+<area shape="rect" id="node2" href="$interface_i_feature_points_manager.html#afb8361805b2b3f7cd8f5b2ecb2271624" title="Returns the feature points positions in an array from beginning to end of the track" alt="" coords="234,5,415,47"/>
+<area shape="rect" id="node3" href="$class_update_use_case.html#a23d1dc04dfa7927749be3b922dc47a02" title="Pushes the TrackData object to the database. If the track already exists in the DB,..." alt="" coords="228,71,421,112"/>
+<area shape="rect" id="node4" href="$class_tracks_repository.html#ac1078055d58873de2a13df8ece5b1fa6" title="Pushes the TrackData object to the remote database. If the track already exists in the DB,..." alt="" coords="469,78,659,105"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="VehicleController.Init" name="VehicleController.Init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,13,147,39"/>
+<area shape="rect" id="node2" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html#a0d5cb41c67a3a951a5cd379408bf795b" title="Returns the waypoints for the vehicles steering" alt="" coords="195,5,401,47"/>
+</map>

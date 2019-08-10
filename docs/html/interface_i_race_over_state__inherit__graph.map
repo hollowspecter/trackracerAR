@@ -1,0 +1,4 @@
+<map id="IRaceOverState" name="IRaceOverState">
+<area shape="rect" id="node1" title="Interface for RaceOverState" alt="" coords="5,5,117,97"/>
+<area shape="rect" id="node2" href="$class_race_over_state.html" title="State displays the racing score and you can see the vehicle still racing." alt="" coords="7,145,116,296"/>
+</map>

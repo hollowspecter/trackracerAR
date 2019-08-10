@@ -1,0 +1,5 @@
+<map id="BuildObserveDialogUI" name="BuildObserveDialogUI">
+<area shape="rect" id="node1" title="Manages the UI for the BuildObserveDialogState" alt="" coords="42,145,242,413"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,13,116,90"/>
+<area shape="rect" id="node3" href="$interface_i_build_observe_dialog_u_i.html" title="Interface for BuildObserveDialogState" alt="" coords="141,5,306,97"/>
+</map>

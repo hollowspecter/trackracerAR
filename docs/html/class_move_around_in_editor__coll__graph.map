@@ -1,0 +1,4 @@
+<map id="MoveAroundInEditor" name="MoveAroundInEditor">
+<area shape="rect" id="node1" title="Moves the attached transform on a circle to simulate movement of the AR camera in editor mode" alt="" coords="5,131,143,208"/>
+<area shape="rect" id="node2" title=" " alt="" coords="19,5,129,83"/>
+</map>

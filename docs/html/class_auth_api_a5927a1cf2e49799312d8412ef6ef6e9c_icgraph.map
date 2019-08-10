@@ -1,0 +1,4 @@
+<map id="AuthApi.observeCurrentUser" name="AuthApi.observeCurrentUser">
+<area shape="rect" id="node1" title="It emits FirebaseUser object depends on user&#39;s signed&#45;in state. It will emit null values if no user i..." alt="" coords="176,5,361,32"/>
+<area shape="rect" id="node2" href="$class_auth_tester.html#a39b3c674af645a3aacaae6bc6581b403" title=" " alt="" coords="5,5,128,32"/>
+</map>

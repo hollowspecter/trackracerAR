@@ -1,0 +1,7 @@
+<map id="RaceTestStateMachineInstaller.InstallBindings" name="RaceTestStateMachineInstaller.InstallBindings">
+<area shape="rect" id="node1" title=" " alt="" coords="5,23,212,65"/>
+<area shape="rect" id="node2" href="$class_state_machine.html#a1047b7a8792381eb081634a06420b543" title="Adds a new state to the statemachine. The first added state will be the default state and will be ent..." alt="" coords="260,31,420,57"/>
+<area shape="rect" id="node3" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="492,5,639,32"/>
+<area shape="rect" id="node4" href="$class_state.html#a6bd4fd391c2ee80ec6d15e97772d335d" title=" " alt="" coords="468,56,663,83"/>
+<area shape="rect" id="node5" href="$class_state.html#af390d8edcdc9cad5b2be48d61d0d13af" title="Override this as your Awake/Start/Init Function. Is called when this State is added to a StateMachine" alt="" coords="711,56,815,83"/>
+</map>

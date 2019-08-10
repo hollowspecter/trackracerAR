@@ -1,0 +1,10 @@
+<map id="BuildEditorUI.OnShareButtonPressed" name="BuildEditorUI.OnShareButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,125,196,166"/>
+<area shape="rect" id="node2" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="266,31,397,57"/>
+<area shape="rect" id="node5" href="$interface_i_build_editor_state.html#a014a51781a2980b4bb2b15b115d46ab2" title="Copies the current tracks database key to the devices clipboard and returns it." alt="" coords="244,81,419,108"/>
+<area shape="rect" id="node6" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="258,132,405,159"/>
+<area shape="rect" id="node7" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="244,183,419,209"/>
+<area shape="rect" id="node8" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="258,233,405,260"/>
+<area shape="rect" id="node3" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="473,5,617,32"/>
+<area shape="rect" id="node4" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="467,56,624,83"/>
+</map>

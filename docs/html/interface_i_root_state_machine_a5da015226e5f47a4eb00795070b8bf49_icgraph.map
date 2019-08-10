@@ -1,0 +1,4 @@
+<map id="IRootStateMachine.IEnterState" name="IRootStateMachine.IEnterState">
+<area shape="rect" id="node1" title="Call this to kick off the state machine and enter the first state" alt="" coords="208,5,379,47"/>
+<area shape="rect" id="node2" href="$class_state_manager.html#a121675269e4ee9ed075815193e810eda" title=" " alt="" coords="5,13,160,39"/>
+</map>

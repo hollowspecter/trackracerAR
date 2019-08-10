@@ -1,0 +1,13 @@
+<map id="BuildObserveDialogUI.OnDownloadButtonPressed" name="BuildObserveDialogUI.OnDownloadButtonPressed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,57,228,98"/>
+<area shape="rect" id="node2" href="$class_observe_dialog_use_case.html#a84766fdba1ef5728b2ebce444ee75a9a" title="Checks if a key exists in the firebase." alt="" coords="276,5,511,32"/>
+<area shape="rect" id="node4" href="$interface_i_build_observe_dialog_state.html#af96498de7d5111b9a63272f1559b5948" title="Transitions to the BuildObserveState" alt="" coords="307,57,479,98"/>
+<area shape="rect" id="node5" href="$class_build_observe_dialog_u_i.html#ae2eab724116bb46405a0c37a964c2d80" title=" " alt="" coords="302,122,485,163"/>
+<area shape="rect" id="node3" href="$class_tracks_repository.html#a563cf2dace39e2fd3719b73b133de3ab" title="Checks if a key exists in the firebase." alt="" coords="559,5,757,32"/>
+<area shape="rect" id="node6" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="593,67,723,93"/>
+<area shape="rect" id="node9" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="585,117,731,144"/>
+<area shape="rect" id="node10" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="571,168,745,195"/>
+<area shape="rect" id="node11" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="585,219,731,245"/>
+<area shape="rect" id="node7" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="812,41,956,68"/>
+<area shape="rect" id="node8" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="805,92,963,119"/>
+</map>

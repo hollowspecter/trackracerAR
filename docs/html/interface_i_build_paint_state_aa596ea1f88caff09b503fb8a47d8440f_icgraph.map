@@ -1,0 +1,5 @@
+<map id="IBuildPaintState.OnDone" name="IBuildPaintState.OnDone">
+<area shape="rect" id="node1" title="Converts the recorded points into the feature points of the track. Transitions to BuildEditorState" alt="" coords="437,13,604,39"/>
+<area shape="rect" id="node2" href="$class_build_paint_u_i.html#aa0465d5f84fccc484453accff1892bc2" title=" " alt="" coords="207,5,389,47"/>
+<area shape="rect" id="node3" href="$class_build_paint_u_i.html#a015fa1c8ec077a963d32767c75ead98a" title=" " alt="" coords="5,13,159,39"/>
+</map>

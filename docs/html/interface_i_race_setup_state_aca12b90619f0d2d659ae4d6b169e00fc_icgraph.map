@@ -1,0 +1,5 @@
+<map id="IRaceSetupState.OnStart" name="IRaceSetupState.OnStart">
+<area shape="rect" id="node1" title="Transitions to the RacingState" alt="" coords="459,13,628,39"/>
+<area shape="rect" id="node2" href="$class_race_setup_u_i.html#a59173111e67c81a2023599eac7e0d686" title=" " alt="" coords="212,5,411,47"/>
+<area shape="rect" id="node3" href="$class_race_setup_u_i.html#a5a32be99a568ad9912973f4e4bb974c4" title=" " alt="" coords="5,13,164,39"/>
+</map>

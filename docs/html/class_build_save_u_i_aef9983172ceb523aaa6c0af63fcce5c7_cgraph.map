@@ -1,0 +1,22 @@
+<map id="BuildSaveUI.Construct" name="BuildSaveUI.Construct">
+<area shape="rect" id="node1" title=" " alt="" coords="5,335,156,361"/>
+<area shape="rect" id="node2" href="$class_build_save_u_i.html#a3e475ad86017f2a84819fc9b1d7912fc" title=" " alt="" coords="212,67,403,109"/>
+<area shape="rect" id="node4" href="$class_build_save_u_i.html#a903ad2a4ae1ad01093691a25f39726a4" title=" " alt="" coords="218,226,397,267"/>
+<area shape="rect" id="node15" href="$class_build_save_u_i.html#a51451e65def52a98e1b423ed2bb2ee38" title=" " alt="" coords="215,327,399,369"/>
+<area shape="rect" id="node17" href="$class_build_save_u_i.html#af98853ede45062ab611a690f58a1f752" title=" " alt="" coords="209,393,405,420"/>
+<area shape="rect" id="node18" href="$class_u_i_fader.html#a9017b91d3209235d885f31eb96c74745" title="Subscribe to state callbacks to automatically fade in on the states enter&#45;event and fade out on the s..." alt="" coords="204,512,411,539"/>
+<area shape="rect" id="node3" href="$interface_i_build_save_state.html#ab8901cf274dfb0d5628ddd4a3eb4510b" title="Returns back to the BuildEditorState" alt="" coords="467,5,641,32"/>
+<area shape="rect" id="node5" href="$class_dialog_builder.html#ac98140c43a75b65827bd05a934d76fb7" title=" " alt="" coords="473,56,635,83"/>
+<area shape="rect" id="node6" href="$class_dialog_builder.html#a85888b43315e5a2a01d1fe4da5d229fd" title=" " alt="" coords="489,360,619,387"/>
+<area shape="rect" id="node9" href="$interface_i_build_save_state.html#ac8d5be9ddb8c2743e8140934aeb46e67" title="Call for ending this state and go to race state" alt="" coords="472,107,636,133"/>
+<area shape="rect" id="node10" href="$interface_i_build_save_state.html#a48e0d0ff2150133e8027ab83e95358d1" title="Returns back to the BuildDialogState" alt="" coords="459,157,649,184"/>
+<area shape="rect" id="node11" href="$interface_i_build_save_state.html#a1da807a476288f2fed27534c0db9dc22" title="Call to attempt to save the current track data to device" alt="" coords="473,208,635,235"/>
+<area shape="rect" id="node12" href="$class_dialog_builder.html#a35fb419189cb18a3b539db4438c1f200" title=" " alt="" coords="481,411,627,437"/>
+<area shape="rect" id="node13" href="$class_dialog_builder.html#a4065f990d339f5c3d89e100c99124747" title=" " alt="" coords="467,259,641,285"/>
+<area shape="rect" id="node14" href="$class_dialog_builder.html#a93e69346675c5a721ec48ad7396c2f5c" title=" " alt="" coords="481,309,627,336"/>
+<area shape="rect" id="node7" href="$class_dialog_factory.html#a70b580334d8402ab88b0b1c556f817f0" title=" " alt="" coords="704,335,848,361"/>
+<area shape="rect" id="node8" href="$class_dialog.html#a73871f337fb89eaaae02249d36233dc3" title=" " alt="" coords="697,385,855,412"/>
+<area shape="rect" id="node16" href="$interface_i_build_save_state.html#a1dc4e055b6792fa52c21053382ec7b58" title="Tries to copy the database key to clipboard, also returns it." alt="" coords="470,461,638,488"/>
+<area shape="rect" id="node19" href="$class_u_i_fader.html#a452d1651a2ca6c2c66c02927b20014d5" title="Fades in" alt="" coords="495,512,613,539"/>
+<area shape="rect" id="node20" href="$class_u_i_fader.html#a27c477d0db6be891175cf7d8397b1e21" title="Deactivates (no fadeout)" alt="" coords="489,563,619,589"/>
+</map>

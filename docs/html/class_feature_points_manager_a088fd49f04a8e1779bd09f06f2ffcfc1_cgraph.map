@@ -1,0 +1,4 @@
+<map id="FeaturePointsManager.FeaturePointChanged" name="FeaturePointsManager.FeaturePointChanged">
+<area shape="rect" id="node1" title="Callback for a FeaturePointChanged event. Checks if any feature points get deleted or copied,..." alt="" coords="5,5,207,47"/>
+<area shape="rect" id="node2" href="$class_point3_d_factory.html#ab523b6d9cb967e19f809e861bd1e4097" title=" " alt="" coords="255,13,409,39"/>
+</map>

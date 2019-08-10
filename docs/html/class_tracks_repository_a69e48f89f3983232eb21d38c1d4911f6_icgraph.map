@@ -1,0 +1,6 @@
+<map id="TracksRepository.GetTrackOnce" name="TracksRepository.GetTrackOnce">
+<area shape="rect" id="node1" title="Fetches the trackdata of the given key at once." alt="" coords="515,31,725,57"/>
+<area shape="rect" id="node2" href="$class_observe_use_case.html#a5af66ee78df2a5bd3154f1497ab3d65e" title="Fetches the trackdata of the given key at once. Observable will at most emit one item." alt="" coords="268,5,447,32"/>
+<area shape="rect" id="node4" href="$class_database_tester.html#a6a510d0c0dbcb90296f5803bfdbae678" title=" " alt="" coords="248,56,467,83"/>
+<area shape="rect" id="node3" href="$class_build_observe_state.html#ae22e15d5c4a08fc432f9bdcd0be446d6" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,5,200,32"/>
+</map>

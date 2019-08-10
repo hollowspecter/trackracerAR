@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,42,61,69"/>
+<area shape="rect" id="node2" href="$class_baguio_1_1_splines_1_1_spline_manager_inspector.html" title="Custom inspector for the spline manager to add generate buttons and instructions" alt="" coords="109,5,308,47"/>
+<area shape="rect" id="node3" href="$class_value_toggle_inspector.html" title="Custom inspector to override the Toggle inspector to use the default inspector" alt="" coords="135,71,282,98"/>
+</map>

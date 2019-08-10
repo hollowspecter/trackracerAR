@@ -1,0 +1,7 @@
+<map id="RaceSetupUI" name="RaceSetupUI">
+<area shape="rect" id="node1" title="Manages the UI for the RaceSetupState" alt="" coords="217,345,403,525"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,116,83"/>
+<area shape="rect" id="node3" href="$class_u_i_fader.html" title="Automatically transitions all Graphics Objects with a fade in and out. Is used for screen transitions..." alt="" coords="58,132,237,283"/>
+<area shape="rect" id="node4" href="$class_race_setup_u_i_1_1_settings.html" title=" " alt="" coords="261,169,468,246"/>
+<area shape="rect" id="node5" href="$interface_i_race_setup_state.html" title="Interface for RaceSetupState" alt="" coords="493,161,613,253"/>
+</map>

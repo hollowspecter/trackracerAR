@@ -1,0 +1,10 @@
+<map id="BuildEditorState.OnTrackChanged" name="BuildEditorState.OnTrackChanged">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,175,145"/>
+<area shape="rect" id="node2" href="$class_build_editor_state.html#a3f440070a3e2cf9e3f533116b8ba2c11" title=" " alt="" coords="248,71,423,112"/>
+<area shape="rect" id="node6" href="$class_build_editor_state.html#a2594e8d1deb99f9cb49e5ab7a196213a" title=" " alt="" coords="223,143,448,170"/>
+<area shape="rect" id="node3" href="$interface_i_feature_points_manager.html#afb8361805b2b3f7cd8f5b2ecb2271624" title="Returns the feature points positions in an array from beginning to end of the track" alt="" coords="509,5,690,47"/>
+<area shape="rect" id="node4" href="$class_update_use_case.html#a23d1dc04dfa7927749be3b922dc47a02" title="Pushes the TrackData object to the database. If the track already exists in the DB,..." alt="" coords="503,71,696,112"/>
+<area shape="rect" id="node5" href="$class_tracks_repository.html#ac1078055d58873de2a13df8ece5b1fa6" title="Pushes the TrackData object to the remote database. If the track already exists in the DB,..." alt="" coords="751,78,940,105"/>
+<area shape="rect" id="node7" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html#a6f9b0e57ebc08afdf407ac954dc1c54b" title="Generates the track using the feature point gameobjects" alt="" coords="496,136,703,177"/>
+<area shape="rect" id="node8" href="$class_street_view.html#ac5d352ff76fe958f48d5eabc6f518100" title="Shows or hides the street mesh." alt="" coords="501,202,697,229"/>
+</map>

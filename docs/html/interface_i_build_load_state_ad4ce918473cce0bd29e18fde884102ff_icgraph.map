@@ -1,0 +1,5 @@
+<map id="IBuildLoadState.LoadAndRace" name="IBuildLoadState.LoadAndRace">
+<area shape="rect" id="node1" title="Loads the trackdata with the given filename and transitions to the RaceSetupState" alt="" coords="443,5,641,32"/>
+<area shape="rect" id="node2" href="$class_build_load_u_i.html#ad1cd338aa836e94b0ec342abff971d4c" title=" " alt="" coords="204,5,395,32"/>
+<area shape="rect" id="node3" href="$class_build_load_u_i.html#a0fd1b55c9c51f00c696b7ac05942c458" title=" " alt="" coords="5,5,156,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="IBuildSaveUI" name="IBuildSaveUI">
+<area shape="rect" id="node1" title="Interface for BuildSaveUI" alt="" coords="50,5,145,83"/>
+<area shape="rect" id="node2" href="$class_build_save_u_i.html" title="Manages the UI for the BuildSaveState" alt="" coords="5,131,189,428"/>
+</map>

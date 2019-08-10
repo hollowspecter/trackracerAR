@@ -1,0 +1,4 @@
+<map id="IBuildSaveState" name="IBuildSaveState">
+<area shape="rect" id="node1" title="Interface for the BuildSaveState" alt="" coords="5,5,121,141"/>
+<area shape="rect" id="node2" href="$class_build_save_state.html" title="State to handle saving the currently built track to device and cloud." alt="" coords="5,189,121,355"/>
+</map>

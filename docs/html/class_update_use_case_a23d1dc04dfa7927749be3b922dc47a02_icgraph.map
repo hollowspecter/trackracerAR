@@ -1,0 +1,7 @@
+<map id="UpdateUseCase.UpdateTrackToCloud" name="UpdateUseCase.UpdateTrackToCloud">
+<area shape="rect" id="node1" title="Pushes the TrackData object to the database. If the track already exists in the DB,..." alt="" coords="676,27,869,69"/>
+<area shape="rect" id="node2" href="$class_build_save_u_i.html#a771bee14b853dbf123937bb47fe3e5f7" title=" " alt="" coords="465,5,617,32"/>
+<area shape="rect" id="node3" href="$class_build_editor_state.html#a3f440070a3e2cf9e3f533116b8ba2c11" title=" " alt="" coords="453,57,628,98"/>
+<area shape="rect" id="node4" href="$class_build_editor_state.html#a135ce54189a64c67859d4ca887572430" title=" " alt="" coords="236,57,405,98"/>
+<area shape="rect" id="node5" href="$class_build_editor_state.html#abf42681ffb5e95933e03aa1723119a2c" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,64,188,91"/>
+</map>
