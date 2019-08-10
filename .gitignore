@@ -87,3 +87,6 @@ Assets/Resources/google-services.json.meta
 Assets/Resources/GoogleService-Info.plist
 Assets/Resources/GoogleService-Info.plist.meta
 Assets/Plugins/Android/Firebase/res
+Assets/StreamingAssets/google-services-desktop\.json
+
+Assets/StreamingAssets/google-services-desktop\.json\.meta
