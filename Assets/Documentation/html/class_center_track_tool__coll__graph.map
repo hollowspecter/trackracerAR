@@ -1,6 +1,0 @@
-<map id="CenterTrackTool" name="CenterTrackTool">
-<area shape="rect" id="node1" title="Controller for the tool that centers the whole track in front of the camera." alt="" coords="159,175,312,369"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,20,116,97"/>
-<area shape="rect" id="node3" href="$interface_i_build_state_machine.html" title="Interface for BuildStateMachine" alt="" coords="140,5,331,112"/>
-<area shape="rect" id="node4" href="$class_center_track_tool_1_1_settings.html" title=" " alt="" coords="355,20,523,97"/>
-</map>

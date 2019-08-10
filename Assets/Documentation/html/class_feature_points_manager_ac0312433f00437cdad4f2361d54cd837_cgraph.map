@@ -1,6 +1,0 @@
-<map id="FeaturePointsManager.UpdateFeaturePoints" name="FeaturePointsManager.UpdateFeaturePoints">
-<area shape="rect" id="node1" title="Updates the featurepoints positions. if the array sizes don&#39;t match (so featurepoints got added or re..." alt="" coords="5,39,204,80"/>
-<area shape="rect" id="node2" href="$class_feature_points_manager.html#a088fd49f04a8e1779bd09f06f2ffcfc1" title="Callback for a FeaturePointChanged event. Checks if any feature points get deleted or copied,..." alt="" coords="260,5,461,47"/>
-<area shape="rect" id="node3" href="$class_feature_points_manager.html#a4f88bc97107651eddd1c4d51034f1598" title="Instantiates the feature point game objects" alt="" coords="252,71,469,112"/>
-<area shape="rect" id="node4" href="$class_feature_points_manager.html#aba24d869dab894131cc0ea8e86ecdf6f" title="Clears all feature points" alt="" coords="517,71,704,112"/>
-</map>

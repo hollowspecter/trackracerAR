@@ -1,5 +1,0 @@
-<map id="Configuration" name="Configuration">
-<area shape="rect" id="node1" title="Configuration file as singleton. Use this to setup different build configurations i...." alt="" coords="5,316,221,701"/>
-<area shape="rect" id="node2" title=" " alt="" coords="73,5,191,83"/>
-<area shape="rect" id="node3" href="$class_baguio_1_1_splines_1_1_shape_data.html" title="Scriptable object containing the data of a track shape ready to extrude." alt="" coords="130,132,307,253"/>
-</map>

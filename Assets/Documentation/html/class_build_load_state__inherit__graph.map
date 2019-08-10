@@ -1,5 +1,0 @@
-<map id="BuildLoadState" name="BuildLoadState">
-<area shape="rect" id="node1" title="State that displays all tracks that are saved to the device. From here players can load,..." alt="" coords="100,248,267,457"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
-<area shape="rect" id="node3" href="$interface_i_build_load_state.html" title="Interface of the BuildLoadState" alt="" coords="209,49,336,156"/>
-</map>

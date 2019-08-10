@@ -1,4 +1,0 @@
-<map id="StateMachine.TransitionToState" name="StateMachine.TransitionToState">
-<area shape="rect" id="node1" title="Transitions to the new State. This will call the ExitState method if" alt="" coords="5,29,181,71"/>
-<area shape="rect" id="node2" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="229,37,376,63"/>
-</map>

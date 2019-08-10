@@ -1,7 +1,0 @@
-<map id="BuildStateMachine" name="BuildStateMachine">
-<area shape="rect" id="node1" title="Overall statemachine for the build process" alt="" coords="240,321,431,501"/>
-<area shape="rect" id="node2" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="45,5,215,259"/>
-<area shape="rect" id="node3" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,321,185,501"/>
-<area shape="rect" id="node4" href="$interface_i_build_state_machine.html" title="Interface for BuildStateMachine" alt="" coords="240,79,431,185"/>
-<area shape="rect" id="node5" href="$interface_i_feature_points_manager.html" title="Interface for FeaturePointsManager" alt="" coords="455,64,640,200"/>
-</map>

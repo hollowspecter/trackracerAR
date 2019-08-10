@@ -1,5 +1,0 @@
-<map id="ButtonTouchInput" name="ButtonTouchInput">
-<area shape="rect" id="node1" title="Extends a Button to fire every Update the Button is in its pressed state." alt="" coords="38,189,161,296"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,27,65,105"/>
-<area shape="rect" id="node3" href="$interface_i_build_paint_state.html" title="Interface for BuildPaintState" alt="" coords="90,5,237,127"/>
-</map>

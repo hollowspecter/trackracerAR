@@ -1,9 +1,0 @@
-<map id="BuildDialogState" name="BuildDialogState">
-<area shape="rect" id="node1" title="Start point of the build process. Player can choose whether to create a new track,..." alt="" coords="405,292,531,457"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="18,5,198,185"/>
-<area shape="rect" id="node3" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="5,248,176,501"/>
-<area shape="rect" id="node4" href="$interface_i_build_dialog_state.html" title="Interface for BuildDialogState" alt="" coords="222,35,349,156"/>
-<area shape="rect" id="node5" href="$interface_i_build_state_machine.html" title="Interface for BuildStateMachine" alt="" coords="373,42,563,149"/>
-<area shape="rect" id="node6" href="$interface_i_feature_points_manager.html" title="Interface for FeaturePointsManager" alt="" coords="587,27,773,163"/>
-<area shape="rect" id="node7" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html" title="Interface for SplineManager" alt="" coords="797,35,1013,156"/>
-</map>

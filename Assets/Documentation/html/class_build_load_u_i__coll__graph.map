@@ -1,9 +1,0 @@
-<map id="BuildLoadUI" name="BuildLoadUI">
-<area shape="rect" id="node1" title="Manages the UI for the BuildLoadState" alt="" coords="336,345,479,569"/>
-<area shape="rect" id="node2" title=" " alt="" coords="76,5,187,83"/>
-<area shape="rect" id="node4" href="$class_u_i_fader.html" title="Automatically transitions all Graphics Objects with a fade in and out. Is used for screen transitions..." alt="" coords="42,132,221,283"/>
-<area shape="rect" id="node5" href="$class_load_list_item_view.html" title="Compound View of a List Item in the BuildLoadState" alt="" coords="245,154,369,261"/>
-<area shape="rect" id="node3" href="$interface_i_build_load_u_i.html" title="Interface for BuildLoadUI" alt="" coords="393,169,488,246"/>
-<area shape="rect" id="node6" href="$class_build_load_u_i_1_1_settings.html" title=" " alt="" coords="512,169,655,246"/>
-<area shape="rect" id="node7" href="$interface_i_build_load_state.html" title="Interface of the BuildLoadState" alt="" coords="679,154,805,261"/>
-</map>

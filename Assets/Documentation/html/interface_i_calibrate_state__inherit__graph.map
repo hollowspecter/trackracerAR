@@ -1,4 +1,0 @@
-<map id="ICalibrateState" name="ICalibrateState">
-<area shape="rect" id="node1" title="Interface for CalibrateState" alt="" coords="5,5,112,97"/>
-<area shape="rect" id="node2" href="$class_calibrate_state.html" title="Resets the AR session to calibrate ARFoundation" alt="" coords="5,145,112,267"/>
-</map>

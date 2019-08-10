@@ -1,6 +1,0 @@
-<map id="SpeedToSlider" name="SpeedToSlider">
-<area shape="rect" id="node1" title="Takes the TouchInput and displays it on a Slider." alt="" coords="51,388,158,495"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,204,116,281"/>
-<area shape="rect" id="node3" href="$class_touch_input.html" title="Tickable class that simulates the behaviour of the unity axis input, to use on button or mouse press." alt="" coords="140,160,245,325"/>
-<area shape="rect" id="node4" href="$class_touch_input_1_1_settings.html" title=" " alt="" coords="124,5,261,97"/>
-</map>

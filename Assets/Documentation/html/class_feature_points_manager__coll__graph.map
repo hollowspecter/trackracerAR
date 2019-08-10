@@ -1,9 +1,0 @@
-<map id="FeaturePointsManager" name="FeaturePointsManager">
-<area shape="rect" id="node1" title=" " alt="" coords="223,359,408,612"/>
-<area shape="rect" id="node2" href="$interface_i_feature_points_manager.html" title="Interface for FeaturePointsManager" alt="" coords="5,160,191,296"/>
-<area shape="rect" id="node3" title=" " alt="" coords="215,189,304,267"/>
-<area shape="rect" id="node4" title=" " alt="" coords="328,189,417,267"/>
-<area shape="rect" id="node5" href="$class_point3_d_factory.html" title="Prefab&#45;Instantiating Factory to create new FeaturePoints Todo Improvement: Convert to Memory Pool" alt="" coords="441,182,573,274"/>
-<area shape="rect" id="node6" title=" " alt="" coords="323,5,497,97"/>
-<area shape="rect" id="node7" href="$class_point3_d_factory_1_1_settings.html" title=" " alt="" coords="521,13,685,90"/>
-</map>

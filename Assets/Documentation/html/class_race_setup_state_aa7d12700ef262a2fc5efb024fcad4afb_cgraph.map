@@ -1,5 +1,0 @@
-<map id="RaceSetupState.OnBack" name="RaceSetupState.OnBack">
-<area shape="rect" id="node1" title="Transitions to the BuildStateMachine" alt="" coords="5,37,173,63"/>
-<area shape="rect" id="node2" href="$class_state_machine.html#ab5e37f4366473f0f1925748f306f1816" title="Transitions to the new State. This will call the ExitState method if" alt="" coords="221,29,397,71"/>
-<area shape="rect" id="node3" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="445,37,592,63"/>
-</map>

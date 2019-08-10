@@ -1,4 +1,0 @@
-<map id="ObserveUseCase.GetTrack" name="ObserveUseCase.GetTrack">
-<area shape="rect" id="node1" title="Fetches the trackdata of the given key at once. Observable will at most emit one item." alt="" coords="5,5,184,32"/>
-<area shape="rect" id="node2" href="$class_tracks_repository.html#a69e48f89f3983232eb21d38c1d4911f6" title="Fetches the trackdata of the given key at once." alt="" coords="232,5,443,32"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="BuildDialogState.StartNewTrack" name="BuildDialogState.StartNewTrack">
-<area shape="rect" id="node1" title="Creates new session data and transitions to BuildPaintState" alt="" coords="5,104,180,145"/>
-<area shape="rect" id="node2" href="$interface_i_feature_points_manager.html#a7f3dde92ccc8c69cab70696a8c070ffb" title="Clears all feature points" alt="" coords="236,5,427,47"/>
-<area shape="rect" id="node3" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html#a26e8ea7671916704c0ab029eef1a648b" title="Clears the mesh" alt="" coords="228,71,435,112"/>
-<area shape="rect" id="node4" href="$class_track_data.html#ab3715fa4050b372b10a4c6eba1b65657" title="Returns a valid TrackData object with various randomized settings" alt="" coords="234,136,429,177"/>
-<area shape="rect" id="node5" href="$class_state_machine.html#ab5e37f4366473f0f1925748f306f1816" title="Transitions to the new State. This will call the ExitState method if" alt="" coords="243,225,419,267"/>
-<area shape="rect" id="node6" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="483,233,629,259"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="RacingState" name="RacingState">
-<area shape="rect" id="node1" title="State during the race. Special race input will be enabled, and the time will be recorded in this stat..." alt="" coords="117,248,236,399"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
-<area shape="rect" id="node3" href="$interface_i_racing_state.html" title="Interface for RacingState" alt="" coords="210,57,306,149"/>
-</map>

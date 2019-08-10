@@ -1,5 +1,0 @@
-<map id="BuildLoadUI" name="BuildLoadUI">
-<area shape="rect" id="node1" title="Manages the UI for the BuildLoadState" alt="" coords="52,131,195,413"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,116,83"/>
-<area shape="rect" id="node3" href="$interface_i_build_load_u_i.html" title="Interface for BuildLoadUI" alt="" coords="140,5,235,83"/>
-</map>

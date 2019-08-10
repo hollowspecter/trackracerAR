@@ -1,5 +1,0 @@
-<map id="Point3DFactory" name="Point3DFactory">
-<area shape="rect" id="node1" title="Prefab&#45;Instantiating Factory to create new FeaturePoints Todo Improvement: Convert to Memory Pool" alt="" coords="123,160,255,252"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,180,97"/>
-<area shape="rect" id="node3" href="$class_point3_d_factory_1_1_settings.html" title=" " alt="" coords="204,13,368,90"/>
-</map>

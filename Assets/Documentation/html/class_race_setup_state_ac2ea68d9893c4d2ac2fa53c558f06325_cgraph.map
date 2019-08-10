@@ -1,8 +1,0 @@
-<map id="RaceSetupState.EnterState" name="RaceSetupState.EnterState">
-<area shape="rect" id="node1" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,101,188,127"/>
-<area shape="rect" id="node2" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html#a475c138006f38809f749fb0b17014bb8" title="Generates the track using the feature points from the TrackData session model" alt="" coords="236,5,443,47"/>
-<area shape="rect" id="node3" href="$class_touch_input.html#a28bc199bc61ce0ed352d55a72d2c537b" title="Sets the value. Value will be clamped between 0 and 1" alt="" coords="268,71,411,98"/>
-<area shape="rect" id="node4" href="$class_vehicle_spawn_manager.html#a0d4a1b5f911e962753fa1fb85e2bddd0" title="Spawns a vehicle on the tracks first waypoint." alt="" coords="241,123,438,164"/>
-<area shape="rect" id="node6" href="$class_street_view.html#ac5d352ff76fe958f48d5eabc6f518100" title="Shows or hides the street mesh." alt="" coords="241,189,437,215"/>
-<area shape="rect" id="node5" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html#a0d5cb41c67a3a951a5cd379408bf795b" title="Returns the waypoints for the vehicles steering" alt="" coords="491,123,697,164"/>
-</map>

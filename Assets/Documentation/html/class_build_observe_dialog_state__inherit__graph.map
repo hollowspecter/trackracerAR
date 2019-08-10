@@ -1,5 +1,0 @@
-<map id="BuildObserveDialogState" name="BuildObserveDialogState">
-<area shape="rect" id="node1" title=" " alt="" coords="111,248,277,369"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
-<area shape="rect" id="node3" href="$interface_i_build_observe_dialog_state.html" title="Interface for the BuildObserveDialogState" alt="" coords="210,57,378,149"/>
-</map>

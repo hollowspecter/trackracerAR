@@ -1,5 +1,0 @@
-<map id="BuildObserveUI" name="BuildObserveUI">
-<area shape="rect" id="node1" title="Manages the UI for the BuildObserveState" alt="" coords="31,131,226,311"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,116,83"/>
-<area shape="rect" id="node3" href="$interface_i_build_observe_u_i.html" title="Interface for BuildObserveUI" alt="" coords="140,5,253,83"/>
-</map>

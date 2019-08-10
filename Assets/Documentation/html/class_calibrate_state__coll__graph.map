@@ -1,6 +1,0 @@
-<map id="CalibrateState" name="CalibrateState">
-<area shape="rect" id="node1" title="Resets the AR session to calibrate ARFoundation" alt="" coords="205,314,312,435"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="18,5,198,185"/>
-<area shape="rect" id="node3" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="5,248,176,501"/>
-<area shape="rect" id="node4" href="$interface_i_calibrate_state.html" title="Interface for CalibrateState" alt="" coords="223,49,329,141"/>
-</map>

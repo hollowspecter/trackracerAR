@@ -1,8 +1,0 @@
-<map id="RacingState" name="RacingState">
-<area shape="rect" id="node1" title="State during the race. Special race input will be enabled, and the time will be recorded in this stat..." alt="" coords="218,461,337,597"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="25,160,205,340"/>
-<area shape="rect" id="node3" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="5,403,176,656"/>
-<area shape="rect" id="node4" href="$interface_i_racing_state.html" title="Interface for RacingState" alt="" coords="229,204,325,296"/>
-<area shape="rect" id="node5" href="$class_touch_input.html" title="Tickable class that simulates the behaviour of the unity axis input, to use on button or mouse press." alt="" coords="350,167,455,333"/>
-<area shape="rect" id="node6" href="$class_touch_input_1_1_settings.html" title=" " alt="" coords="334,5,471,97"/>
-</map>

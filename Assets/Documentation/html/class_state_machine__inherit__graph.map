@@ -1,8 +1,0 @@
-<map id="StateMachine" name="StateMachine">
-<area shape="rect" id="node1" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="252,248,423,501"/>
-<area shape="rect" id="node3" href="$class_a_r_state_machine.html" title="Parent state machine for build and race state machines" alt="" coords="5,608,125,685"/>
-<area shape="rect" id="node4" href="$class_build_state_machine.html" title="Overall statemachine for the build process" alt="" coords="150,549,341,744"/>
-<area shape="rect" id="node5" href="$class_race_state_machine.html" title="Statemachine for the Racing Feature." alt="" coords="365,601,497,693"/>
-<area shape="rect" id="node6" href="$class_root_state_machine.html" title="The root statemachine" alt="" coords="521,586,695,707"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="247,5,427,200"/>
-</map>

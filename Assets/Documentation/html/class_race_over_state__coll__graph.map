@@ -1,7 +1,0 @@
-<map id="RaceOverState" name="RaceOverState">
-<area shape="rect" id="node1" title="State displays the racing score and you can see the vehicle still racing." alt="" coords="221,307,331,443"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="15,5,195,185"/>
-<area shape="rect" id="node3" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="5,248,176,501"/>
-<area shape="rect" id="node4" href="$interface_i_race_over_state.html" title="Interface for RaceOverState" alt="" coords="220,49,332,141"/>
-<area shape="rect" id="node5" href="$interface_i_build_state_machine.html" title="Interface for BuildStateMachine" alt="" coords="357,42,547,149"/>
-</map>

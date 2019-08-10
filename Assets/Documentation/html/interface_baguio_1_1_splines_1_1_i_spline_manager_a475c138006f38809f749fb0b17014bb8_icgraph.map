@@ -1,4 +1,0 @@
-<map id="Baguio.Splines.ISplineManager.GenerateTrackFromTrackData" name="Baguio.Splines.ISplineManager.GenerateTrackFromTrackData">
-<area shape="rect" id="node1" title="Generates the track using the feature points from the TrackData session model" alt="" coords="236,5,443,47"/>
-<area shape="rect" id="node2" href="$class_race_setup_state.html#ac2ea68d9893c4d2ac2fa53c558f06325" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,13,188,39"/>
-</map>

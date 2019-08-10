@@ -1,4 +1,0 @@
-<map id="RootStateMachine.EnterState" name="RootStateMachine.EnterState">
-<area shape="rect" id="node1" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="252,5,447,32"/>
-<area shape="rect" id="node2" href="$class_root_state_machine.html#ab2ae4b415114e1a010c10afa21d92d68" title="Call this to kick off the state machine and enter the first state" alt="" coords="5,5,204,32"/>
-</map>

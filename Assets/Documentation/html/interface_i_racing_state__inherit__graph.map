@@ -1,4 +1,0 @@
-<map id="IRacingState" name="IRacingState">
-<area shape="rect" id="node1" title="Interface for RacingState" alt="" coords="17,5,113,97"/>
-<area shape="rect" id="node2" href="$class_racing_state.html" title="State during the race. Special race input will be enabled, and the time will be recorded in this stat..." alt="" coords="5,145,124,296"/>
-</map>

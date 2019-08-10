@@ -1,4 +1,0 @@
-<map id="ObserveUseCase.ObserveTrack" name="ObserveUseCase.ObserveTrack">
-<area shape="rect" id="node1" title="Observe the track with the given key." alt="" coords="248,5,453,32"/>
-<area shape="rect" id="node2" href="$class_build_observe_state.html#ae22e15d5c4a08fc432f9bdcd0be446d6" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,5,200,32"/>
-</map>

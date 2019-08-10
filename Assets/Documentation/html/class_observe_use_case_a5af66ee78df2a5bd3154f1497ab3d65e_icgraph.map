@@ -1,4 +1,0 @@
-<map id="ObserveUseCase.GetTrack" name="ObserveUseCase.GetTrack">
-<area shape="rect" id="node1" title="Fetches the trackdata of the given key at once. Observable will at most emit one item." alt="" coords="248,5,427,32"/>
-<area shape="rect" id="node2" href="$class_build_observe_state.html#ae22e15d5c4a08fc432f9bdcd0be446d6" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,5,200,32"/>
-</map>

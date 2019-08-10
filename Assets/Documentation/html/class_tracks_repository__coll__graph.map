@@ -1,6 +1,0 @@
-<map id="TracksRepository" name="TracksRepository">
-<area shape="rect" id="node1" title="Manages the communication to the database regarding track data." alt="" coords="49,359,192,495"/>
-<area shape="rect" id="node2" href="$class_database_api.html" title="Initializes the firebase database connection automatically and provides the neccessary database refer..." alt="" coords="55,160,186,296"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,13,95,90"/>
-<area shape="rect" id="node4" href="$class_database_api_1_1_settings.html" title=" " alt="" coords="119,5,267,97"/>
-</map>

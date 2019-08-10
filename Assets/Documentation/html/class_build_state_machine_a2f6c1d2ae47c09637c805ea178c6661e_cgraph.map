@@ -1,4 +1,0 @@
-<map id="BuildStateMachine.ExitState" name="BuildStateMachine.ExitState">
-<area shape="rect" id="node1" title="Gets called when exiting this state. For more info see GameManager class" alt="" coords="5,13,195,39"/>
-<area shape="rect" id="node2" href="$interface_i_feature_points_manager.html#a039d59c513bb1344216403ff79f5e14d" title="Toggles the visibility of the feature points by turning them on and off" alt="" coords="243,5,423,47"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="RaceOverUI" name="RaceOverUI">
-<area shape="rect" id="node1" title="Manages the UI for the RaceOverState" alt="" coords="59,345,235,452"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,116,83"/>
-<area shape="rect" id="node3" href="$class_u_i_fader.html" title="Automatically transitions all Graphics Objects with a fade in and out. Is used for screen transitions..." alt="" coords="58,132,237,283"/>
-<area shape="rect" id="node4" href="$interface_i_race_over_state.html" title="Interface for RaceOverState" alt="" coords="261,161,373,253"/>
-</map>

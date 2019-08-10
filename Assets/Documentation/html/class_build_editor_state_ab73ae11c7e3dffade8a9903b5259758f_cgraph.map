@@ -1,5 +1,0 @@
-<map id="BuildEditorState.OnSave" name="BuildEditorState.OnSave">
-<area shape="rect" id="node1" title="Transitions to the BuildSaveState" alt="" coords="5,37,171,63"/>
-<area shape="rect" id="node2" href="$class_state_machine.html#ab5e37f4366473f0f1925748f306f1816" title="Transitions to the new State. This will call the ExitState method if" alt="" coords="219,29,395,71"/>
-<area shape="rect" id="node3" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="443,37,589,63"/>
-</map>

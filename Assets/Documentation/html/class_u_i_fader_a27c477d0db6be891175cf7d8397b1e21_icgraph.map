@@ -1,4 +1,0 @@
-<map id="UIFader.Deactivate" name="UIFader.Deactivate">
-<area shape="rect" id="node1" title="Deactivates (no fadeout)" alt="" coords="260,5,391,32"/>
-<area shape="rect" id="node2" href="$class_u_i_fader.html#a9017b91d3209235d885f31eb96c74745" title="Subscribe to state callbacks to automatically fade in on the states enter&#45;event and fade out on the s..." alt="" coords="5,5,212,32"/>
-</map>

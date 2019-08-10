@@ -1,4 +1,0 @@
-<map id="AuthTester" name="AuthTester">
-<area shape="rect" id="node1" title="Drop the corresponding prefab into the scene to check if the authentication flow works" alt="" coords="5,131,167,237"/>
-<area shape="rect" id="node2" title=" " alt="" coords="31,5,141,83"/>
-</map>

@@ -1,3 +1,0 @@
-<map id="DestroyVehicleSignal" name="DestroyVehicleSignal">
-<area shape="rect" id="node1" title="Fired if you need the current vehicle to destroy itself" alt="" coords="5,5,152,83"/>
-</map>

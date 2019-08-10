@@ -1,5 +1,0 @@
-<map id="UIFader.RegisterStateCallbacks" name="UIFader.RegisterStateCallbacks">
-<area shape="rect" id="node1" title="Subscribe to state callbacks to automatically fade in on the states enter&#45;event and fade out on the s..." alt="" coords="5,31,212,57"/>
-<area shape="rect" id="node2" href="$class_u_i_fader.html#a452d1651a2ca6c2c66c02927b20014d5" title="Fades in" alt="" coords="267,5,384,32"/>
-<area shape="rect" id="node3" href="$class_u_i_fader.html#a27c477d0db6be891175cf7d8397b1e21" title="Deactivates (no fadeout)" alt="" coords="260,56,391,83"/>
-</map>

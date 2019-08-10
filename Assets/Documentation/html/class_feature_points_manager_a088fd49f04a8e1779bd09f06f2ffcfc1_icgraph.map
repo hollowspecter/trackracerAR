@@ -1,4 +1,0 @@
-<map id="FeaturePointsManager.FeaturePointChanged" name="FeaturePointsManager.FeaturePointChanged">
-<area shape="rect" id="node1" title="Callback for a FeaturePointChanged event. Checks if any feature points get deleted or copied,..." alt="" coords="252,5,453,47"/>
-<area shape="rect" id="node2" href="$class_feature_points_manager.html#ac0312433f00437cdad4f2361d54cd837" title="Updates the featurepoints positions. if the array sizes don&#39;t match (so featurepoints got added or re..." alt="" coords="5,5,204,47"/>
-</map>

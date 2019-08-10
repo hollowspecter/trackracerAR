@@ -1,6 +1,0 @@
-<map id="RaceManager" name="RaceManager">
-<area shape="rect" id="node1" title="Automatically starts the race when the RacingState is entered. Ends the race once the number of laps ..." alt="" coords="113,189,292,428"/>
-<area shape="rect" id="node2" href="$interface_i_racing_state.html" title="Interface for RacingState" alt="" coords="5,20,101,112"/>
-<area shape="rect" id="node3" href="$class_race_manager_1_1_settings.html" title=" " alt="" coords="125,27,280,105"/>
-<area shape="rect" id="node4" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html" title="Interface for SplineManager" alt="" coords="304,5,520,127"/>
-</map>

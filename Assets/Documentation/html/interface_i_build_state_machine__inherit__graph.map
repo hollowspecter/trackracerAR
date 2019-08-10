@@ -1,5 +1,0 @@
-<map id="IBuildStateMachine" name="IBuildStateMachine">
-<area shape="rect" id="node1" title="Interface for BuildStateMachine" alt="" coords="121,5,312,112"/>
-<area shape="rect" id="node2" href="$class_build_state_machine.html" title="Overall statemachine for the build process" alt="" coords="5,197,196,391"/>
-<area shape="rect" id="node3" href="$class_database_tester.html" title="Use this component to test the functionality of the database interface." alt="" coords="221,160,447,428"/>
-</map>

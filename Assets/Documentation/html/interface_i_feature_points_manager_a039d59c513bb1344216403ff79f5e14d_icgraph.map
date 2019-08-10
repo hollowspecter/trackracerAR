@@ -1,5 +1,0 @@
-<map id="IFeaturePointsManager.SetFeaturePointVisibility" name="IFeaturePointsManager.SetFeaturePointVisibility">
-<area shape="rect" id="node1" title="Toggles the visibility of the feature points by turning them on and off" alt="" coords="251,23,431,65"/>
-<area shape="rect" id="node2" href="$class_build_state_machine.html#a4492441b7b8711f8624df03aff3bdf64" title="Gets called when entering this state. For more info see GameManager class" alt="" coords="5,5,203,32"/>
-<area shape="rect" id="node3" href="$class_build_state_machine.html#a2f6c1d2ae47c09637c805ea178c6661e" title="Gets called when exiting this state. For more info see GameManager class" alt="" coords="9,56,199,83"/>
-</map>

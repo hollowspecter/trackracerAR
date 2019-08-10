@@ -1,5 +1,0 @@
-<map id="RaceSetupState" name="RaceSetupState">
-<area shape="rect" id="node1" title=" " alt="" coords="99,248,265,457"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
-<area shape="rect" id="node3" href="$interface_i_race_setup_state.html" title="Interface for RaceSetupState" alt="" coords="210,57,330,149"/>
-</map>

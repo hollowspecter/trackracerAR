@@ -1,4 +1,0 @@
-<map id="StateMachine.AddState" name="StateMachine.AddState">
-<area shape="rect" id="node1" title="Adds a new state to the statemachine. The first added state will be the default state and will be ent..." alt="" coords="5,5,165,32"/>
-<area shape="rect" id="node2" href="$class_state_machine.html#a677cdb46d972c8d3c8028b14b0293f1f" title="return true if state is valid, false is statename is NONE." alt="" coords="213,5,360,32"/>
-</map>

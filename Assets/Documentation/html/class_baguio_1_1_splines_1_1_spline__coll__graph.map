@@ -1,5 +1,0 @@
-<map id="Baguio.Splines.Spline" name="Baguio.Splines.Spline">
-<area shape="rect" id="node1" title="A Spline consists of several Curves." alt="" coords="17,461,185,627"/>
-<area shape="rect" id="node2" href="$class_baguio_1_1_splines_1_1_curve.html" title="Represents one curve segment of a spline." alt="" coords="21,233,181,399"/>
-<area shape="rect" id="node3" href="$struct_baguio_1_1_splines_1_1_oriented_point.html" title="Represents a point in 3D space with orientation, meaning it has a position, a rotation,..." alt="" coords="5,5,197,171"/>
-</map>

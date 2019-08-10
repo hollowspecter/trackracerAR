@@ -1,4 +1,0 @@
-<map id="TracksRepository.PushTrack" name="TracksRepository.PushTrack">
-<area shape="rect" id="node1" title="Pushes the TrackData object to the remote database. If the track already exists in the DB,..." alt="" coords="247,13,436,39"/>
-<area shape="rect" id="node2" href="$class_update_use_case.html#a23d1dc04dfa7927749be3b922dc47a02" title="Pushes the TrackData object to the database. If the track already exists in the DB,..." alt="" coords="5,5,199,47"/>
-</map>

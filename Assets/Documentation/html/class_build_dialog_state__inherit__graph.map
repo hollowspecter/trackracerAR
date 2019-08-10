@@ -1,5 +1,0 @@
-<map id="BuildDialogState" name="BuildDialogState">
-<area shape="rect" id="node1" title="Start point of the build process. Player can choose whether to create a new track,..." alt="" coords="100,248,267,443"/>
-<area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="5,5,185,200"/>
-<area shape="rect" id="node3" href="$interface_i_build_dialog_state.html" title="Interface for BuildDialogState" alt="" coords="209,42,336,163"/>
-</map>

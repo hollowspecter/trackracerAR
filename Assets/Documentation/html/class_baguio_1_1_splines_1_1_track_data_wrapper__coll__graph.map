@@ -1,5 +1,0 @@
-<map id="Baguio.Splines.TrackDataWrapper" name="Baguio.Splines.TrackDataWrapper">
-<area shape="rect" id="node1" title="A scriptable object wrapper class for the TrackData data model. While this wrapper provides methods t..." alt="" coords="73,292,245,428"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,124,156"/>
-<area shape="rect" id="node3" href="$class_track_data.html" title="Model for TrackData. Contains feature points and settings for a track. TrackData is saved and loaded ..." alt="" coords="149,5,359,229"/>
-</map>

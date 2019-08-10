@@ -1,6 +1,0 @@
-<map id="Baguio.Splines.SplineManager" name="Baguio.Splines.SplineManager">
-<area shape="rect" id="node1" title="The SplineManager is the interface between the application and the spline and" alt="" coords="45,315,263,627"/>
-<area shape="rect" id="node2" href="$class_baguio_1_1_splines_1_1_unique_mesh.html" title="Derive from this class to ensure the GameObject has a unique mesh and a mesh filter." alt="" coords="6,131,115,267"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,116,83"/>
-<area shape="rect" id="node4" href="$interface_baguio_1_1_splines_1_1_i_spline_manager.html" title="Interface for SplineManager" alt="" coords="139,138,355,259"/>
-</map>
