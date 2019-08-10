@@ -1,4 +1,4 @@
 <map id="IRaceSetupState" name="IRaceSetupState">
 <area shape="rect" id="node1" title="Interface for RaceSetupState" alt="" coords="29,5,149,97"/>
-<area shape="rect" id="node2" href="$class_race_setup_state.html" title=" " alt="" coords="5,145,172,355"/>
+<area shape="rect" id="node2" href="$class_race_setup_state.html" title="Manages the setup for the race and spawns a vehicle." alt="" coords="5,145,172,355"/>
 </map>

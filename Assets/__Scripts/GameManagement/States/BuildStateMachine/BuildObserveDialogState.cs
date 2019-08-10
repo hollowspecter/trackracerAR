@@ -21,6 +21,9 @@ public interface IBuildObserveDialogState
     void Back();
 }
 
+/// <summary>
+/// Manages the dialog to download and observe track data from the cloud.
+/// </summary>
 public class BuildObserveDialogState : State, IBuildObserveDialogState
 {
     private IBuildStateMachine m_buildSM;

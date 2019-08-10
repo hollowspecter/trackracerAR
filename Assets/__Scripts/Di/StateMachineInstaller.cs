@@ -6,6 +6,9 @@
 using Zenject;
 using UnityEngine;
 
+/// <summary>
+/// Installs the state machine and wires them up to the hierarchy.
+/// </summary>
 public class StateMachineInstaller : Installer<StateMachineInstaller>
 {
     public override void InstallBindings ()

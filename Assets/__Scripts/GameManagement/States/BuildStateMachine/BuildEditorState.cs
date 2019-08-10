@@ -36,6 +36,9 @@ public interface IBuildEditorState
     string OnShare();
 }
 
+/// <summary>
+/// State to edit the current track, move feature points and edit settings.
+/// </summary>
 public class BuildEditorState : State, IBuildEditorState
 {
     private IBuildStateMachine m_buildSM;

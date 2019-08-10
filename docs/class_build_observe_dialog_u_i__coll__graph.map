@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="Manages the UI for the BuildObserveDialogState" alt="" coords="319,815,519,1039"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,616,116,693"/>
 <area shape="rect" id="node3" href="$interface_i_build_observe_dialog_u_i.html" title="Interface for BuildObserveDialogState" alt="" coords="141,609,306,701"/>
-<area shape="rect" id="node4" href="$class_observe_dialog_use_case.html" title=" " alt="" coords="330,609,509,701"/>
+<area shape="rect" id="node4" href="$class_observe_dialog_use_case.html" title="Usecase to be used in the observe dialog to check if a key exists in the cloud." alt="" coords="330,609,509,701"/>
 <area shape="rect" id="node5" href="$class_tracks_repository.html" title="Manages the communication to the database regarding track data." alt="" coords="348,359,491,495"/>
 <area shape="rect" id="node6" href="$class_database_api.html" title="Initializes the firebase database connection automatically and provides the neccessary database refer..." alt="" coords="354,160,485,296"/>
 <area shape="rect" id="node7" title=" " alt="" coords="304,13,393,90"/>

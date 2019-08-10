@@ -1,8 +1,7 @@
 <map id="TracksRepository.EvaluateKey" name="TracksRepository.EvaluateKey">
-<area shape="rect" id="node1" title="Checks if a key exists in the firebase." alt="" coords="813,63,1012,90"/>
+<area shape="rect" id="node1" title="Checks if a key exists in the firebase." alt="" coords="813,38,1012,65"/>
 <area shape="rect" id="node2" href="$class_observe_dialog_use_case.html#a84766fdba1ef5728b2ebce444ee75a9a" title="Checks if a key exists in the firebase." alt="" coords="531,13,765,39"/>
-<area shape="rect" id="node5" href="$class_check_key_use_case.html#a36c82bcd2abc745f3bbb3fdedea8f931" title=" " alt="" coords="543,63,753,90"/>
-<area shape="rect" id="node6" href="$class_database_tester.html#adc6cfb389727e8911673853add667ad0" title=" " alt="" coords="545,114,751,141"/>
+<area shape="rect" id="node5" href="$class_database_tester.html#adc6cfb389727e8911673853add667ad0" title=" " alt="" coords="545,63,751,90"/>
 <area shape="rect" id="node3" href="$class_build_observe_dialog_u_i.html#a85d080ce0cdd8569d4ba64ccf57ea915" title=" " alt="" coords="260,5,483,47"/>
 <area shape="rect" id="node4" href="$class_build_observe_dialog_u_i.html#a0f0c2d461298464ce48006f3050180af" title=" " alt="" coords="5,13,212,39"/>
 </map>

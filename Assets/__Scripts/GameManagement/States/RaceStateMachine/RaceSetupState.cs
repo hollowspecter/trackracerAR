@@ -23,6 +23,9 @@ public interface IRaceSetupState {
     void OnStart();
 }
 
+/// <summary>
+/// Manages the setup for the race and spawns a vehicle.
+/// </summary>
 public class RaceSetupState : State, IRaceSetupState
 {
     private ISplineManager m_splineMgr;

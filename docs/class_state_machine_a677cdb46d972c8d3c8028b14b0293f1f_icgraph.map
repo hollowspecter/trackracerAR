@@ -8,8 +8,8 @@
 <area shape="rect" id="node10" href="$class_state_machine.html#a60eeb316309239465792986944e84b75" title=" " alt="" coords="522,1097,683,1123"/>
 <area shape="rect" id="node11" href="$class_state_machine.html#ab5e37f4366473f0f1925748f306f1816" title="Transitions to the new State. This will call the ExitState method if" alt="" coords="515,855,691,896"/>
 <area shape="rect" id="node39" href="$class_state_machine.html#a4b81938a2b2935b25f2bf3b04091db93" title="Override this as your Update Function in the State. Is only called when the current state is active" alt="" coords="243,1654,425,1681"/>
-<area shape="rect" id="node3" href="$class_state_machine_installer.html#abe02b505b922a4978ac9721df07da6c0" title=" " alt="" coords="241,71,427,112"/>
-<area shape="rect" id="node4" href="$class_race_test_state_machine_installer.html#ab5d6ffaa76d709a44ac4346569e805ff" title=" " alt="" coords="231,5,437,47"/>
+<area shape="rect" id="node3" href="$class_race_test_state_machine_installer.html#ab5d6ffaa76d709a44ac4346569e805ff" title=" " alt="" coords="231,71,437,112"/>
+<area shape="rect" id="node4" href="$class_state_machine_installer.html#abe02b505b922a4978ac9721df07da6c0" title=" " alt="" coords="241,5,427,47"/>
 <area shape="rect" id="node9" href="$class_root_state_machine.html#aa14a86e3c5134d6250e84994f5a72ffa" title="Returns the names of the current states" alt="" coords="235,1705,433,1747"/>
 <area shape="rect" id="node12" href="$class_build_observe_dialog_state.html#a03eee0feccf5b59de2b658ae53b80ee9" title="Returns to the BuildDialogState" alt="" coords="235,1182,433,1209"/>
 <area shape="rect" id="node13" href="$class_build_observe_state.html#abab547534d371f981e86bbd60d93465e" title="Returns to the BuildDialogState" alt="" coords="253,1233,415,1259"/>
