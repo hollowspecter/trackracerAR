@@ -155,7 +155,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 36045394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159695aa2943a304c9d0dc07edf929e2, type: 3}
+  m_Script: {fileID: 11500000, guid: d0f5fe8438a4bc842bd8031cec3f7a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_minDistance: 0.01
@@ -433,7 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3859a92a05d4f5d418cb6ca605290e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LightEstimation: 0
   m_AttemptUpdate: 1
 --- !u!4 &427002220
 Transform:
@@ -1066,6 +1065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 1568414836858200, guid: f0e0be81472ff1243aa2afa27e5d0e61,
     type: 3}
+  m_DetectionFlags: -1
 --- !u!114 &1335839538
 MonoBehaviour:
   m_ObjectHideFlags: 0
