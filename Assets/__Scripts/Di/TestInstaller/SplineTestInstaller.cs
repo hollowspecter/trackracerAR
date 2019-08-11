@@ -25,4 +25,13 @@ public class SplineTestInstaller : MonoInstaller
         RaceInstaller.Install (Container);
         RaceTestStateMachineInstaller.Install (Container);
     }
+
+    public class MockBuildStateMachine : IBuildStateMachine
+    {
+        public bool ReturnToPreviousStateFlag { get => throw new System.NotImplementedException (); set => throw new System.NotImplementedException (); }
+        public TrackData CurrentTrackData { get => null; set => throw new System.NotImplementedException (); }
+        public Vector3 CurrentFeaturePointOffset { get => throw new System.NotImplementedException (); set => throw new System.NotImplementedException (); }
+
+        public event State.TouchHandler m_touchDetected;
+    }
 }

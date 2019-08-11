@@ -45,7 +45,7 @@ public class RaceSetupState : State, IRaceSetupState
                             VehicleSpawnManager _vehicleManager,
                             TouchInput _input,
                             SignalBus _signalBus,
-                            IBuildStateMachine _buildSM )
+                            [InjectOptional] IBuildStateMachine _buildSM )
     {
         m_streetView = _streetView;
         m_splineMgr = _splineMgr;

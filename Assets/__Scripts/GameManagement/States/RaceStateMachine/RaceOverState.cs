@@ -33,7 +33,7 @@ public class RaceOverState : State, IRaceOverState
 
     [Inject]
     private void Construct(SignalBus _signalBus,
-                           IBuildStateMachine _buildSM )
+                           [InjectOptional] IBuildStateMachine _buildSM )
     {
         m_signalBus = _signalBus;
         m_buildSM = _buildSM;

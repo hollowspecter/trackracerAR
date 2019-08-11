@@ -50,13 +50,17 @@ MonoBehaviour:
         type: 3}
   Race:
     InputSettings:
-      Gravity: 2
-      Sensitivity: 2
+      Gravity: 0.5
+      Sensitivity: 1
     VehicleSettings:
       MaxSpeed: 1
       MaxDegrees: 30
+      WaypointDetectionRadius: 0.06
+      RespawnTime: 1
     SetupSettings:
       CountdownDurationInSeconds: 2
+    RacingSettings:
+      MaxLaps: 3
   Firebase:
     DbSettings:
       DatabaseUrl: https://trackracerar.firebaseio.com/

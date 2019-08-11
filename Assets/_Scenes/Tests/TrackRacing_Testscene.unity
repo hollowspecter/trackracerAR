@@ -1271,8 +1271,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615903718}
-  m_LocalRotation: {x: 0.37118363, y: -0.49920908, z: 0.24970596, w: 0.74206465}
-  m_LocalPosition: {x: 0.315, y: 0.633557, z: -0.07231736}
+  m_LocalRotation: {x: -0.033917584, y: 0.95710295, z: -0.25903216, w: -0.12532353}
+  m_LocalPosition: {x: 0.91441536, y: 1.5331421, z: 2.2796068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1529,12 +1529,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d339390f528848609e42b3c04d918dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_meshRenderer: {fileID: 0}
   m_trackData:
     m_scale: {x: 0.01, y: 0.01}
     m_precision: 5
     m_closed: 1
     m_shapeIndex: 0
-    m_featurePoints: []
+    m_materialIndex: 0
+    m_featurePoints:
+    - {x: 1, y: 0, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: 0, y: 0, z: 1}
+    m_dbKey: 
+    m_updateToCloud: 0
 --- !u!23 &2102013738
 MeshRenderer:
   m_ObjectHideFlags: 0
