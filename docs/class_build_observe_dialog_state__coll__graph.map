@@ -1,5 +1,5 @@
 <map id="BuildObserveDialogState" name="BuildObserveDialogState">
-<area shape="rect" id="node1" title=" " alt="" coords="217,314,383,435"/>
+<area shape="rect" id="node1" title="Manages the dialog to download and observe track data from the cloud." alt="" coords="217,314,383,435"/>
 <area shape="rect" id="node2" href="$class_state.html" title="State Class Is an abstract class that must be inherited by new States. Initialised the states and wra..." alt="" coords="11,5,191,185"/>
 <area shape="rect" id="node3" href="$class_state_machine.html" title="StateMachine that can be derived from. Is extending the State class to enable hierarchical StateMachi..." alt="" coords="5,248,176,501"/>
 <area shape="rect" id="node4" href="$interface_i_build_observe_dialog_state.html" title="Interface for the BuildObserveDialogState" alt="" coords="216,49,384,141"/>

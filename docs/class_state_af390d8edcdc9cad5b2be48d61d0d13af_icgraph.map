@@ -2,6 +2,6 @@
 <area shape="rect" id="node1" title="Override this as your Awake/Start/Init Function. Is called when this State is added to a StateMachine" alt="" coords="711,46,815,73"/>
 <area shape="rect" id="node2" href="$class_state.html#a6bd4fd391c2ee80ec6d15e97772d335d" title=" " alt="" coords="468,46,663,73"/>
 <area shape="rect" id="node3" href="$class_state_machine.html#a1047b7a8792381eb081634a06420b543" title="Adds a new state to the statemachine. The first added state will be the default state and will be ent..." alt="" coords="260,46,420,73"/>
-<area shape="rect" id="node4" href="$class_state_machine_installer.html#abe02b505b922a4978ac9721df07da6c0" title=" " alt="" coords="16,5,201,47"/>
-<area shape="rect" id="node5" href="$class_race_test_state_machine_installer.html#ab5d6ffaa76d709a44ac4346569e805ff" title=" " alt="" coords="5,71,212,112"/>
+<area shape="rect" id="node4" href="$class_race_test_state_machine_installer.html#ab5d6ffaa76d709a44ac4346569e805ff" title=" " alt="" coords="5,5,212,47"/>
+<area shape="rect" id="node5" href="$class_state_machine_installer.html#abe02b505b922a4978ac9721df07da6c0" title=" " alt="" coords="16,71,201,112"/>
 </map>

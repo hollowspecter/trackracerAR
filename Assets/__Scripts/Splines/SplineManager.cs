@@ -80,10 +80,11 @@ namespace Baguio.Splines
             if ( m_session != null ) m_trackData = m_session.CurrentTrackData;
 
             m_points = new Vector3 [m_trackData.m_featurePoints.Length];
+            Vector3 offset = m_session?.CurrentFeaturePointOffset ?? Vector3.zero;
 
             // add the feature point offset for the center-track-tool
             for (int i=0; i<m_points.Length;++i ) {
-                m_points[i] = m_trackData.m_featurePoints[i] + m_session.CurrentFeaturePointOffset;
+                m_points[i] = m_trackData.m_featurePoints[i] + offset;
             }
 
             InitPath ();

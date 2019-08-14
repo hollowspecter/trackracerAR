@@ -42,6 +42,9 @@ public interface IFeaturePointsManager
     void UpdateFeaturePoints( ref Vector3 [] _featurePoints );
 }
 
+/// <summary>
+/// Manages the lifecycle of feature points and provides methods to manipulate them.
+/// </summary>
 public class FeaturePointsManager : IFeaturePointsManager, IInitializable, IDisposable
 {
     private Point3DFactory.Factory m_point3DFactory;

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gamesettings_809',['GameSettings',['../class_game_settings.html',1,'']]]
+  ['gamesettings_806',['GameSettings',['../class_game_settings.html',1,'']]]
 ];
